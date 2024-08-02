@@ -2,6 +2,8 @@
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP.."/intllib.lua")
 
+-- Creeper by Davedevils (from his subgame MineClone)
+
 mobs:register_mob("mobs_mc:creeper_tree", {
 	type = "monster",
 	passive = false,

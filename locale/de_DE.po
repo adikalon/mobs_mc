@@ -722,6 +722,10 @@ msgstr "Wüstenzombie"
 msgid "Zombie"
 msgstr "Zombie"
 
+#: zombie_white.lua
+msgid "Zombie White"
+msgstr "Zombie White"
+
 #: zombiepig.lua
 msgid "Zombie Pigman"
 msgstr "Schweinezombie"
