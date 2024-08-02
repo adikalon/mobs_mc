@@ -54,8 +54,6 @@ mobs_mc.items = {
 	nether_star = "mobs_mc:nether_star",
 	bone = "mobs_mc:bone",
 	slimeball = "mobs_mc:slimeball",
-	arrow = "mobs_mc:arrow",
-	bow = "mobs_mc:bow_wood",
 	head_creeper = "mobs_mc:head_creeper",
 	head_zombie = "mobs_mc:head_zombie",
 	head_skeleton = "mobs_mc:head_skeleton",
@@ -149,6 +147,14 @@ mobs_mc.items = {
 	-- Special items
 	music_discs = {}, -- No music discs by default; used by creeper. Override this if your game has music discs.
 }
+
+if mobs_mc.mods_enabled.x_bows then
+	mobs_mc.items.arrow = "x_bows:arrow_wood"
+	mobs_mc.items.bow = "x_bows:bow_wood"
+else
+	mobs_mc.items.arrow = nil
+	mobs_mc.items.bow = nil
+end
 
 -- Tables for attracting, feeding and breeding mobs
 mobs_mc.follow = {
@@ -329,4 +335,3 @@ if minetest.get_modpath("mobs_mc_gameconfig") and mobs_mc.override then
 		mobs_mc.enderman_block_texture_overrides = mobs_mc.override.enderman_block_texture_overrides
 	end
 end
-

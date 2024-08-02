@@ -12,6 +12,10 @@ end
 -- For utility functions
 mobs_mc.tools = {}
 
+mobs_mc.mods_enabled = {
+	x_bows = minetest.get_modpath("x_bows")
+}
+
 -- This function checks if the item ID has been overwritten and returns true if it is unchanged
 if minetest.get_modpath("mobs_mc_gameconfig") and mobs_mc.override and mobs_mc.override.items then
 	mobs_mc.is_item_variable_overridden = function(id)

@@ -41,18 +41,12 @@ local skeleton = {
 	damage = 2,
 	reach = 2,
 	drops = {
-		{name = mobs_mc.items.arrow,
-		chance = 1,
-		min = 0,
-		max = 2,},
-		{name = mobs_mc.items.bow,
-		chance = 11,
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.bone,
-		chance = 1,
-		min = 0,
-		max = 2,},
+		{
+			name = mobs_mc.items.bone,
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
 
 		-- Head
 		-- TODO: Only drop if killed by charged creeper
@@ -94,6 +88,24 @@ local skeleton = {
 	blood_amount = 0,
 }
 
+if mobs_mc.items.arrow then
+	table.insert(skeleton.drops, {
+		name = mobs_mc.items.arrow,
+		chance = 1,
+		min = 0,
+		max = 2,
+	})
+end
+
+if mobs_mc.items.bow then
+	table.insert(skeleton.drops, {
+		name = mobs_mc.items.bow,
+		chance = 11,
+		min = 1,
+		max = 1,
+	})
+end
+
 mobs:register_mob("mobs_mc:skeleton", skeleton)
 
 
@@ -108,14 +120,17 @@ stray.textures = {
 }
 -- TODO: different sound (w/ echo)
 -- TODO: stray's arrow inflicts slowness status
-table.insert(stray.drops, {
-	-- Chance to drop additional arrow.
-	-- TODO: Should be tipped arrow of slowness
-	name = mobs_mc.items.arrow,
-	chance = 2,
-	min = 1,
-	max = 1,
-})
+
+if mobs_mc.items.arrow then
+	table.insert(stray.drops, {
+		-- Chance to drop additional arrow.
+		-- TODO: Should be tipped arrow of slowness
+		name = mobs_mc.items.arrow,
+		chance = 2,
+		min = 1,
+		max = 1,
+	})
+end
 
 mobs:register_mob("mobs_mc:stray", stray)
 
