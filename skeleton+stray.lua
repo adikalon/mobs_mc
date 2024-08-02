@@ -41,13 +41,6 @@ local skeleton = {
 	damage = 2,
 	reach = 2,
 	drops = {
-		{
-			name = mobs_mc.items.bone,
-			chance = 1,
-			min = 0,
-			max = 2,
-		},
-
 		-- Head
 		-- TODO: Only drop if killed by charged creeper
 		{name = mobs_mc.items.head_skeleton,
@@ -103,6 +96,15 @@ if mobs_mc.items.bow then
 		chance = 11,
 		min = 1,
 		max = 1,
+	})
+end
+
+if mobs_mc.items.bone then
+	table.insert(skeleton.drops, {
+		name = mobs_mc.items.bone,
+		chance = 1,
+		min = 0,
+		max = 2,
 	})
 end
 

@@ -262,12 +262,17 @@ mobs:register_mob("mobs_mc:horse", horse)
 -- Skeleton horse
 local skeleton_horse = table.copy(horse)
 skeleton_horse.textures = {{"mobs_mc_horse_skeleton.png"}}
-skeleton_horse.drops = {
-	{name = mobs_mc.items.bone,
-	chance = 1,
-	min = 0,
-	max = 2,},
-}
+skeleton_horse.drops = {}
+
+if mobs_mc.items.bone then
+	table.insert(skeleton_horse.drops, {
+		name = mobs_mc.items.bone,
+		chance = 1,
+		min = 0,
+		max = 2,
+	})
+end
+
 skeleton_horse.sounds = {
 	random = "skeleton1",
 	death = "skeletondeath",

@@ -630,18 +630,3 @@ if c("snowball") and minetest.get_modpath("default") then
 		wield_image = "",
 	})
 end
-
-if c("bone") then
-	minetest.register_craftitem("mobs_mc:bone", {
-		description = S("Bone"),
-		_doc_items_longdesc = S("Bones can be used to tame wolves so they will protect you. They are also useful as a crafting ingredient."),
-		_doc_items_usagehelp = S("Hold the bone in your hand near wolves to attract them. Rightclick the wolf to give it a bone and tame it."),
-		inventory_image = "mcl_mobitems_bone.png"
-	})
-	if minetest.get_modpath("bones") then
-		minetest.register_craft({
-			output = "mobs_mc:bone 3",
-			recipe = {{ "bones:bones" }},
-		})
-	end
-end

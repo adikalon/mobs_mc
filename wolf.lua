@@ -59,7 +59,7 @@ local wolf = {
 		local tool = clicker:get_wielded_item()
 
 		local dog, ent
-		if tool:get_name() == mobs_mc.items.bone then
+		if mobs_mc.items.bone and tool:get_name() == mobs_mc.items.bone then
 
 			if not minetest.settings:get_bool("creative_mode") then
 				tool:take_item()

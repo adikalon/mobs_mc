@@ -52,7 +52,6 @@ mobs_mc.items = {
 	totem = "mobs_mc:totem",
 	rotten_flesh = "mobs_mc:rotten_flesh",
 	nether_star = "mobs_mc:nether_star",
-	bone = "mobs_mc:bone",
 	slimeball = "mobs_mc:slimeball",
 	head_creeper = "mobs_mc:head_creeper",
 	head_zombie = "mobs_mc:head_zombie",
@@ -156,6 +155,12 @@ else
 	mobs_mc.items.bow = nil
 end
 
+if mobs_mc.mods_enabled.bonemeal then
+	mobs_mc.items.bone = "bonemeal:bone"
+else
+	mobs_mc.items.bone = nil
+end
+
 -- Tables for attracting, feeding and breeding mobs
 mobs_mc.follow = {
 	sheep = { mobs_mc.items.wheat },
@@ -170,11 +175,16 @@ mobs_mc.follow = {
 	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw,
 		mobs_mc.items.chicken_raw, -- Minetest Game extra
 	},
-	wolf = { mobs_mc.items.bone },
 	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.beef_raw, mobs_mc.items.beef_cooked, mobs_mc.items.chicken_raw, mobs_mc.items.chicken_cooked, mobs_mc.items.rotten_flesh,
 	-- Mobs Redo items
 	"mobs:meat", "mobs:meat_raw" },
 }
+
+if mobs_mc.items.bone then
+	table.insert(mobs_mc.follow, {
+		wolf = { mobs_mc.items.bone },
+	})
+end
 
 -- Contents for replace_what
 mobs_mc.replace = {

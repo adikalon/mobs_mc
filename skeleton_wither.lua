@@ -14,9 +14,7 @@ local S, NS = dofile(MP.."/intllib.lua")
 --################### WITHER SKELETON
 --###################
 
-
-
-mobs:register_mob("mobs_mc:witherskeleton", {
+local witherskeleton = {
 	type = "monster",
 	hp_min = 20,
 	hp_max = 20,
@@ -45,10 +43,6 @@ mobs:register_mob("mobs_mc:witherskeleton", {
 		chance = 1,
 		min = 0,
 		max = 1,},
-		{name = mobs_mc.items.bone,
-		chance = 1,
-		min = 0,
-		max = 2,},
 
 		-- Head
 		{name = mobs_mc.items.head_wither_skeleton,
@@ -91,7 +85,18 @@ mobs:register_mob("mobs_mc:witherskeleton", {
 	dogshoot_count_max =0.5,
 	blood_amount = 0,
 	fear_height = 4,
-})
+}
+
+if mobs_mc.items.bone then
+	table.insert(witherskeleton.drops, {
+		name = mobs_mc.items.bone,
+		chance = 1,
+		min = 0,
+		max = 2,
+	})
+end
+
+mobs:register_mob("mobs_mc:witherskeleton", witherskeleton)
 
 --spawn
 mobs:spawn_specific("mobs_mc:witherskeleton", mobs_mc.spawn.nether_fortress, {"air"}, 0, 7, 30, 5000, 5, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
