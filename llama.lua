@@ -71,7 +71,7 @@ mobs:register_mob("mobs_mc:llama", {
 			self.terrain_type = 3
 			self.driver_attach_at = {x = 0, y = 7.5, z = -1.5}
 			self.driver_eye_offset = {x = 0, y = 3, z = 0}
-			self.driver_scale = {x = 1/self.visual_size.x, y = 1/self.visual_size.y}
+			self.driver_scale = {x = 1/3, y = 1/3}
 		end
 
 		-- if driver present allow control of llama

@@ -93,6 +93,7 @@ local horse = {
 	passive = true,
 	hp_min = 15,
 	hp_max = 30,
+	health = 30,
 	floats = 1,
 	lava_damage = 4,
 	water_damage = 1,
@@ -118,15 +119,19 @@ local horse = {
 			self.max_speed_reverse = 2
 			self.accel = 6
 			self.terrain_type = 3
-			self.driver_attach_at = {x = 0, y = 7.5, z = -1.75}
-			self.driver_eye_offset = {x = 0, y = 3, z = 0}
-			self.driver_scale = {x = 1/self.visual_size.x, y = 1/self.visual_size.y}
+			self.driver_attach_at = {x = 0, y = 4.3, z = -1.75}
+			self.driver_eye_offset = {x = 0, y = 10, z = 0}
+			self.driver_scale = {x = 1/3.0, y = 1/3.0}
+
+			-- self.driver_attach_at = {x = 0, y = 10, z = -2}
+			-- self.driver_eye_offset = {x = 0, y = 10 + 3, z = 0}
+			-- self.driver_scale = {x = 0.8, y = 0.8} -- shrink driver to fit model
 		end
 
 		-- Slowly regenerate health
 		self._regentimer = self._regentimer + dtime
 		if self._regentimer >= 4 then
-			if self.health < self.hp_max then
+			if self.health < 30 then
 				self.health = self.health + 1
 			end
 			self._regentimer = 0
@@ -299,7 +304,7 @@ donkey.animation = {
 	stand_start = 0, stand_end = 0,
 	walk_start = 0, walk_end = 40,
 }
-donkey.visual_size = { x=horse.visual_size.x*d, y=horse.visual_size.y*d }
+donkey.visual_size = { x=3.0*d, y=3.0*d }
 donkey.collisionbox = {
 	horse.collisionbox[1] * d,
 	horse.collisionbox[2] * d,
@@ -317,7 +322,7 @@ mobs:register_mob("mobs_mc:donkey", donkey)
 local m = 0.94
 local mule = table.copy(donkey)
 mule.textures = {{"mobs_mc_mule.png"}}
-mule.visual_size = { x=horse.visual_size.x*m, y=horse.visual_size.y*m }
+mule.visual_size = { x=3.0*m, y=3.0*m }
 mule.collisionbox = {
 	horse.collisionbox[1] * m,
 	horse.collisionbox[2] * m,
