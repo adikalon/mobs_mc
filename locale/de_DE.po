@@ -530,6 +530,10 @@ msgstr "Mooshroom"
 msgid "Creeper"
 msgstr "Creeper"
 
+#: creeper_tree.lua
+msgid "Creeper Tree"
+msgstr "Creeper Tree"
+
 #: ender_dragon.lua
 msgid "Ender Dragon"
 msgstr "Enderdrache"
