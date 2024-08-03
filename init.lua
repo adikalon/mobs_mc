@@ -84,8 +84,7 @@ dofile(path .. "/snowman.lua")
 dofile(path .. "/iron_golem.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/shulker.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/silverfish.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/skeleton+stray.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/skeleton_wither.lua") -- Mesh by Morn76 Animation by Pavel_S
+dofile(path .. "/skeletons.lua") -- Mesh by Morn76 Animation by Pavel_S
 dofile(path .. "/zombie.lua") -- Mesh by Morn76 Animation by Pavel_S
 dofile(path .. "/zombiepig.lua") -- Mesh by Morn76 Animation by Pavel_S
 dofile(path .. "/slime+magma_cube.lua") -- Wuzzy

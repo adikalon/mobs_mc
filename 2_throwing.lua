@@ -12,6 +12,41 @@ local S, NS = dofile(MP.."/intllib.lua")
 
 local c = mobs_mc.is_item_variable_overridden
 
+-- Arrow item
+minetest.register_craftitem("mobs_mc:arrow", {
+	description = S("Arrow"),
+	inventory_image = "mobs_mc_arrow.png",
+	groups = {not_in_creative_inventory = 1}
+})
+
+-- Arrow entity
+mobs:register_arrow("mobs_mc:arrow", {
+	visual = "wielditem",
+	visual_size = {x = 0.25, y = 0.25},
+	textures = {"mobs_mc:arrow"},
+	velocity = 35,
+	rotate = 0,
+	drop = false,
+
+	hit_player = function(self, player)
+		player:punch(self.object, 1.0, {
+			full_punch_interval = 1.0,
+			damage_groups = {fleshy = 6},
+		}, nil)
+	end,
+
+	hit_mob = function(self, player)
+		player:punch(self.object, 1.0, {
+			full_punch_interval = 1.0,
+			damage_groups = {fleshy = 6},
+		}, nil)
+	end,
+
+	hit_node = function(self, pos, node)
+		self.object:remove()
+	end
+})
+
 -- egg throwing item
 -- egg entity
 if c("egg") then
