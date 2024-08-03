@@ -13,6 +13,47 @@ with name "mobs_mc_gameconfig". ]]
 
 -- If true, mobs_mc adds the monster egg nodes (needs default mod).
 -- Set to false in your gameconfig mod if you create your own monster egg nodes.
+
+mobs_mc.mods_enabled = {
+	x_bows = minetest.get_modpath("x_bows"),
+	bonemeal = minetest.get_modpath("bonemeal"),
+	nether = minetest.get_modpath("nether"),
+	cloudlands = minetest.get_modpath("cloudlands"),
+}
+
+mobs_mc.height = {
+	min = -31000,
+	max = 31000,
+	nether_min = nil,
+	nether_max = nil,
+	floatlands_min = nil,
+	-- floatlands_max = 31000,
+}
+
+if mobs_mc.mods_enabled.nether then
+	mobs_mc.height.min = nether.FLOOR_CEILING
+	mobs_mc.height.nether_min = nether.FLOOR_CEILING
+	mobs_mc.height.nether_max = nether.DEPTH_CEILING
+end
+
+if mobs_mc.mods_enabled.cloudlands then
+	mobs_mc.height.floatlands_min = mobs_mc.load_setting("cloudlands_altitude", "number", 200)
+end
+
+if minetest.get_mapgen_setting("mg_name") == "v7" then
+	local mgv7_spflags = minetest.get_mapgen_setting("mgv7_spflags")
+	local captures_float = string.match(mgv7_spflags, "floatlands")
+	local captures_nofloat = string.match(mgv7_spflags, "nofloatlands")
+
+	if not captures_nofloat and captures_float and mobs_mc.height.floatlands_min > 1280 then
+		mobs_mc.height.floatlands_min = 1280
+	end
+end
+
+if mobs_mc.height.floatlands_min then
+	mobs_mc.height.max = mobs_mc.height.floatlands_min
+end
+
 mobs_mc.create_monster_egg_nodes = true
 
 mobs_mc.items = {}
@@ -199,6 +240,7 @@ mobs_mc.replace = {
 		{"farming:carrot_3", "farming:carrot_2", 0},
 		{"farming:carrot_2", "farming:carrot_1", 0},
 		{"farming:carrot_1", "air", 0},
+
 		-- Farming Plus carrots
 		{"farming_plus:carrot", "farming_plus:carrot_7", 0},
 		{"farming_plus:carrot_6", "farming_plus:carrot_5", 0},
@@ -208,6 +250,7 @@ mobs_mc.replace = {
 		{"farming_plus:carrot_2", "farming_plus:carrot_1", 0},
 		{"farming_plus:carrot_1", "air", 0},
 	},
+
 	-- Sheep eat grass
 	sheep = {
 		-- Grass Block
@@ -219,6 +262,7 @@ mobs_mc.replace = {
 		{ "default:grass_2", "air", 0 },
 		{ "default:grass_1", "air", 0 },
 	},
+
 	-- Silverfish populate stone, etc. with monster eggs
 	silverfish = {
 		{"default:stone", "mobs_mc:monster_egg_stone", -1},
@@ -300,6 +344,7 @@ mobs_mc.spawn = {
 	water = { mobs_mc.items.water_source, "mcl_core:water_source", "default:water_source" },
 }
 
+-- TODO: Remove this block
 -- This table contains important spawn height references for the mob spawn height.
 -- Please base your mob spawn height on these numbers to keep things clean.
 mobs_mc.spawn_height = {

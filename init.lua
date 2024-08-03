@@ -9,14 +9,40 @@ if not minetest.get_modpath("mobs_mc_gameconfig") then
 	mobs_mc = {}
 end
 
--- For utility functions
+function mobs_mc.load_setting(sname, stype, defaultval, valid_values)
+	local sval
+	if stype == "string" then
+		sval = minetest.settings:get(sname)
+	elseif stype == "bool" then
+		sval = minetest.settings:get_bool(sname)
+	elseif stype == "number" then
+		sval = tonumber(minetest.settings:get(sname))
+	end
+	if sval ~= nil then
+		if valid_values ~= nil then
+			local valid = false
+			for i=1,#valid_values do
+				if sval == valid_values[i] then
+					valid = true
+				end
+			end
+			if not valid then
+				minetest.log("error", "[mobs_mc] Invalid value for "..sname.."! Using default value ("..tostring(defaultval)..").")
+				return defaultval
+			else
+				return sval
+			end
+		else
+			return sval
+		end
+	else
+		return defaultval
+	end
+end
+
 mobs_mc.tools = {}
 
-mobs_mc.mods_enabled = {
-	x_bows = minetest.get_modpath("x_bows"),
-	bonemeal = minetest.get_modpath("bonemeal"),
-}
-
+-- TODO: Understand and simplify/remove this block
 -- This function checks if the item ID has been overwritten and returns true if it is unchanged
 if minetest.get_modpath("mobs_mc_gameconfig") and mobs_mc.override and mobs_mc.override.items then
 	mobs_mc.is_item_variable_overridden = function(id)
@@ -60,8 +86,7 @@ dofile(path .. "/squid.lua") -- Animation, sound and egg texture by daufinsyd
 
 -- NPCs
 dofile(path .. "/villager.lua") -- KrupnoPavel Mesh and animation by toby109tt  / https://github.com/22i
--- Agent texture missing
---dofile(path .. "/agent.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/agent.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
 
 -- Illagers and witch
 dofile(path .. "/villager_evoker.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
@@ -93,15 +118,6 @@ dofile(path .. "/vex.lua") -- KrupnoPavel
 dofile(path .. "/wither.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/creeper_tree.lua")
 dofile(path .. "/zombie_white.lua")
---NOTES:
---
---[[
-COLISIONBOX in minetest press f5 to see where you are looking at then put these wool collor nodes on the ground in direction of north/east/west... to make colisionbox editing easier
-#1west-pink/#2down/#3south-blue/#4east-red/#5up/#6north-yelow
-{-1, -0.5, -1, 1, 3, 1}, Right, Bottom, Back, Left, Top, Front
---]]
---
---
 
 if minetest.settings:get_bool("log_mods") then
 	minetest.log("action", "[MOD] Mobs Redo 'MC' loaded")

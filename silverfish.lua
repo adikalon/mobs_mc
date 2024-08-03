@@ -1,10 +1,5 @@
---###################
---################### SILVERFISH
---###################
-
--- intllib
 local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S, NS = dofile(MP .. "/intllib.lua")
 
 mobs:register_mob("mobs_mc:silverfish", {
 	type = "monster",
@@ -47,13 +42,13 @@ mobs:register_mob("mobs_mc:silverfish", {
 
 mobs:register_egg("mobs_mc:silverfish", S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
 
--- Monster egg blocks (Minetest Game)
-if minetest.get_modpath("default") and mobs_mc.create_monster_egg_nodes then
+if mobs_mc.create_monster_egg_nodes then
 	local spawn_silverfish = function(pos, oldnode, oldmetadata, digger)
 		if not minetest.settings:get_bool("creative_mode") then
 			minetest.add_entity(pos, "mobs_mc:silverfish")
 		end
 	end
+
 	minetest.register_node("mobs_mc:monster_egg_stone", {
 		description = S("Stone Monster Egg"),
 		tiles = {"default_stone.png"},
@@ -106,14 +101,12 @@ if minetest.get_modpath("default") and mobs_mc.create_monster_egg_nodes then
 		after_dig_node = spawn_silverfish,
 	})
 
-	-- Randomly spawn stone monster eggs in the world
-	local mg_name = minetest.get_mapgen_setting("mg_name")
-	local scarcity
-	if mg_name == "v6" then
+	local scarcity = 22 * 22 * 22
+
+	if minetest.get_mapgen_setting("mg_name") == "v6" then
 		scarcity = 28 * 28 * 28
-	else
-		scarcity = 22 * 22 * 22
 	end
+
 	minetest.register_ore({
 		ore_type       = "scatter",
 		ore            = "mobs_mc:monster_egg_stone",
@@ -123,7 +116,49 @@ if minetest.get_modpath("default") and mobs_mc.create_monster_egg_nodes then
 		clust_size     = 2,
 		y_min          = -31000,
 		y_max          = 31000,
-		biomes         = { "grassland" },
 	})
 
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "mobs_mc:monster_egg_cobble",
+		wherein        = "default:cobble",
+		clust_scarcity = scarcity,
+		clust_num_ores = 3,
+		clust_size     = 2,
+		y_min          = -31000,
+		y_max          = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "mobs_mc:monster_egg_mossycobble",
+		wherein        = "default:mossycobble",
+		clust_scarcity = scarcity,
+		clust_num_ores = 3,
+		clust_size     = 2,
+		y_min          = -31000,
+		y_max          = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "mobs_mc:monster_egg_stonebrick",
+		wherein        = "default:stonebrick",
+		clust_scarcity = scarcity,
+		clust_num_ores = 3,
+		clust_size     = 2,
+		y_min          = -31000,
+		y_max          = 31000,
+	})
+
+	minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "mobs_mc:monster_egg_stone_block",
+		wherein        = "default:stone_block",
+		clust_scarcity = scarcity,
+		clust_num_ores = 3,
+		clust_size     = 2,
+		y_min          = -31000,
+		y_max          = 31000,
+	})
 end
