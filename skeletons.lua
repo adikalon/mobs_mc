@@ -18,33 +18,6 @@ local sounds = {
 	distance = 16,
 }
 
-local fn_DamagePerSecond = function(self)
-
-	-- direct sunlight returns full damage
-	if sunlight then
-		return 7
-	end
-
-	-- Constants
-	local i_SECONDS_PER_DAY = 86400
-	local i_SECONDS_PER_5_MINUTES = 300
-
-	local i_hitPoints = self.health
-	local i_timeSpeed = tonumber(minetest.settings:get("i_timeSpeed")) or 72
-
-	if i_timeSpeed == 0 then
-		i_timeSpeed = 1
-	end
-
-	local i_inGameDayLength = i_SECONDS_PER_DAY / i_timeSpeed
-	local i_fiveInGameMinutes =
-			(i_inGameDayLength * i_SECONDS_PER_5_MINUTES) / i_SECONDS_PER_DAY
-
-	local i_damagePerSecond = i_hitPoints / i_fiveInGameMinutes
-
-	return i_damagePerSecond
-end
-
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
 
@@ -70,7 +43,7 @@ local skeleton = {
 	fear_height = 6,
 	fall_damage = true,
 	lava_damage = 9999,
-	light_damage = 1,
+	light_damage = 7,
 	light_damage_min = light_damage_min,
 	light_damage_max = light_damage_max,
 	suffocation = 0,
@@ -114,10 +87,6 @@ local skeleton = {
 		die_loop = false,
 	},
 	drops = {},
-
-	on_spawn = function(self)
-		self.light_damage = fn_DamagePerSecond(self)
-	end
 }
 
 if mobs_mc.items.arrow then
@@ -172,7 +141,7 @@ local stray = {
 	fear_height = 6,
 	fall_damage = true,
 	lava_damage = 9999,
-	light_damage = 1,
+	light_damage = 7,
 	light_damage_min = light_damage_min,
 	light_damage_max = light_damage_max,
 	suffocation = 0,
@@ -217,10 +186,6 @@ local stray = {
 		die_loop = false,
 	},
 	drops = {},
-
-	on_spawn = function(self)
-		self.light_damage = fn_DamagePerSecond(self)
-	end
 }
 
 if mobs_mc.items.arrow then
@@ -229,6 +194,24 @@ if mobs_mc.items.arrow then
 		chance = 2,
 		min = 1,
 		max = 1,
+	})
+end
+
+if mobs_mc.items.bow then
+	table.insert(stray.drops, {
+		name = mobs_mc.items.bow,
+		chance = 11,
+		min = 1,
+		max = 1,
+	})
+end
+
+if mobs_mc.items.bone then
+	table.insert(stray.drops, {
+		name = mobs_mc.items.bone,
+		chance = 1,
+		min = 0,
+		max = 2,
 	})
 end
 
@@ -252,7 +235,7 @@ local witherskeleton = {
 	fear_height = 6,
 	fall_damage = true,
 	lava_damage = 9999,
-	light_damage = 1,
+	light_damage = 7,
 	light_damage_min = light_damage_min,
 	light_damage_max = light_damage_max,
 	suffocation = 0,
@@ -297,11 +280,14 @@ local witherskeleton = {
 		die_speed = 15,
 		die_loop = false,
 	},
-	drops = {},
-
-	on_spawn = function(self)
-		self.light_damage = fn_DamagePerSecond(self)
-	end
+	drops = {
+		{
+			name = "default:sword_steel",
+			chance = 11,
+			min = 1,
+			max = 1,
+		}
+	},
 }
 
 if mobs_mc.items.bone then
