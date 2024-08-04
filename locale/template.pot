@@ -406,26 +406,6 @@ msgid ""
 "creeper."
 msgstr ""
 
-#: 4_heads.lua
-msgid "Skeleton Skull"
-msgstr ""
-
-#: 4_heads.lua
-msgid ""
-"A skeleton skull is a small decorative block which resembles the skull of a "
-"skeleton."
-msgstr ""
-
-#: 4_heads.lua
-msgid "Wither Skeleton Skull"
-msgstr ""
-
-#: 4_heads.lua
-msgid ""
-"A wither skeleton skull is a small decorative block which resembles the "
-"skull of a wither skeleton."
-msgstr ""
-
 #: agent.lua
 msgid "Agent"
 msgstr ""
@@ -564,18 +544,6 @@ msgstr ""
 
 #: silverfish.lua
 msgid "Stone Block Monster Egg"
-msgstr ""
-
-#: skeleton+stray.lua
-msgid "Skeleton"
-msgstr ""
-
-#: skeleton+stray.lua
-msgid "Stray"
-msgstr ""
-
-#: skeleton_wither.lua
-msgid "Wither Skeleton"
 msgstr ""
 
 #: slime+magma_cube.lua

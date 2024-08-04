@@ -15,7 +15,6 @@ with name "mobs_mc_gameconfig". ]]
 -- Set to false in your gameconfig mod if you create your own monster egg nodes.
 
 mobs_mc.mods_enabled = {
-	x_bows = minetest.get_modpath("x_bows"),
 	bonemeal = minetest.get_modpath("bonemeal"),
 	nether = minetest.get_modpath("nether"),
 	cloudlands = minetest.get_modpath("cloudlands"),
@@ -96,8 +95,6 @@ mobs_mc.items = {
 	slimeball = "mobs_mc:slimeball",
 	head_creeper = "mobs_mc:head_creeper",
 	head_zombie = "mobs_mc:head_zombie",
-	head_skeleton = "mobs_mc:head_skeleton",
-	head_wither_skeleton = "mobs_mc:head_wither_skeleton",
 
 	-- External items
 	-- Mobs Redo
@@ -187,14 +184,6 @@ mobs_mc.items = {
 	-- Special items
 	music_discs = {}, -- No music discs by default; used by creeper. Override this if your game has music discs.
 }
-
-if mobs_mc.mods_enabled.x_bows then
-	mobs_mc.items.arrow = "x_bows:arrow_wood"
-	mobs_mc.items.bow = "x_bows:bow_wood"
-else
-	mobs_mc.items.arrow = nil
-	mobs_mc.items.bow = nil
-end
 
 if mobs_mc.mods_enabled.bonemeal then
 	mobs_mc.items.bone = "bonemeal:bone"

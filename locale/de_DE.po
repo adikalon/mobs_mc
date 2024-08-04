@@ -478,30 +478,6 @@ msgstr ""
 "Ein Creeperkopf ist ein kleiner dekorativer Block, der wie der Kopf eines "
 "Creeper aussieht."
 
-#: 4_heads.lua
-msgid "Skeleton Skull"
-msgstr "Skelettschädel"
-
-#: 4_heads.lua
-msgid ""
-"A skeleton skull is a small decorative block which resembles the skull of a "
-"skeleton."
-msgstr ""
-"Ein Skelettschädel ist ein kleiner dekorativer Block, der wie der Schädel "
-"eines Skeletts aussieht."
-
-#: 4_heads.lua
-msgid "Wither Skeleton Skull"
-msgstr "Witherskelettschädel"
-
-#: 4_heads.lua
-msgid ""
-"A wither skeleton skull is a small decorative block which resembles the "
-"skull of a wither skeleton."
-msgstr ""
-"Ein Witherskelettschädel ist ein kleiner dekorativer Block, der wie der "
-"Schädel eines Witherskeletts aussieht."
-
 #: agent.lua
 msgid "Agent"
 msgstr "Agent"
@@ -641,18 +617,6 @@ msgstr "Silberfischchen-Steinziegel"
 #: silverfish.lua
 msgid "Stone Block Monster Egg"
 msgstr "Silberfischchen-Steinblock"
-
-#: skeleton+stray.lua
-msgid "Skeleton"
-msgstr "Skelett"
-
-#: skeleton+stray.lua
-msgid "Stray"
-msgstr "Eiswanderer"
-
-#: skeleton_wither.lua
-msgid "Wither Skeleton"
-msgstr "Witherskelett"
 
 #: slime+magma_cube.lua
 msgid "Magma Cube"
