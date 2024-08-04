@@ -95,49 +95,6 @@ if c("feather") then
 	})
 end
 
--- Cow and mooshroom
-if c("beef_raw") then
-	minetest.register_craftitem("mobs_mc:beef_raw", {
-		description = S("Raw Beef"),
-		_doc_items_longdesc = S("Raw beef is the flesh from cows and can be eaten safely. Cooking it will greatly increase its nutritional value."),
-		inventory_image = "mcl_mobitems_beef_raw.png",
-		groups = { food = 2, eatable = 3 },
-		on_use = minetest.item_eat(3),
-	})
-end
-
-if c("beef_cooked") then
-	minetest.register_craftitem("mobs_mc:beef_cooked", {
-		description = S("Steak"),
-		_doc_items_longdesc = S("Steak is cooked beef from cows and can be eaten."),
-		inventory_image = "mcl_mobitems_beef_cooked.png",
-		groups = { food = 2, eatable = 8 },
-		on_use = minetest.item_eat(8),
-	})
-end
-
-if c("beef_raw") and c("beef_cooked") then
-	minetest.register_craft({
-		type = "cooking",
-		output = "mobs_mc:beef_cooked",
-		recipe = "mobs_mc:beef_raw",
-		cooktime = 5,
-	})
-end
-
-
-if c("milk") then
-	-- milk
-	minetest.register_craftitem("mobs_mc:milk_bucket", {
-		description = S("Milk"),
-		_doc_items_longdesc = S("Milk is a food item obtained by using a bucket on a cow."),
-		inventory_image = "mobs_bucket_milk.png",
-		groups = { food = 3, eatable = 1 },
-		on_use = minetest.item_eat(1, "bucket:bucket_empty"),
-		stack_max = 1,
-	})
-end
-
 if c("bowl") then
 	minetest.register_craftitem("mobs_mc:bowl", {
 		description = S("Bowl"),
@@ -417,16 +374,6 @@ if c("rabbit_hide") then
 		description = S("Rabbit Hide"),
 		_doc_items_longdesc = S("Rabbit hide is used to create leather."),
 		inventory_image = "mcl_mobitems_rabbit_hide.png"
-	})
-end
-
-if c("leather") and c("rabbit_hide") then
-	minetest.register_craft({
-		output = "mobs:leather",
-		recipe = {
-			{ "mobs_mc:rabbit_hide", "mobs_mc:rabbit_hide" },
-			{ "mobs_mc:rabbit_hide", "mobs_mc:rabbit_hide" },
-		}
 	})
 end
 

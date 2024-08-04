@@ -78,14 +78,6 @@ msgid "Steak is cooked beef from cows and can be eaten."
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Milk"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Milk is a food item obtained by using a bucket on a cow."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Bowl"
 msgstr ""
 
@@ -422,11 +414,7 @@ msgstr ""
 msgid "Chicken"
 msgstr ""
 
-#: cow+mooshroom.lua
-msgid "Cow"
-msgstr ""
-
-#: cow+mooshroom.lua
+#: mooshroom.lua
 msgid "Mooshroom"
 msgstr ""
 

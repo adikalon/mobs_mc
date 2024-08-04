@@ -119,7 +119,7 @@ mobs:register_mob("mobs_mc:villager", {
 					else
 						inv:set_stack("output", 1, ItemStack(""))
 						minetest.sound_play("Villagerdeny", {to_player = player:get_player_name()})
-						
+
 					end
 				end,
 			})
@@ -133,7 +133,6 @@ mobs:register_mob("mobs_mc:villager", {
 			{"default:apple 12",			"default:clay_lump 1"},
 			{"default:coal_lump 20",		"default:clay_lump 1"},
 			{"default:paper 30",			"default:clay_lump 1"},
-			{"mobs:leather 10",			"default:clay_lump 1"},
 			{"default:book 2",			"default:clay_lump 1"},
 			{"default:clay_lump 3",		"default:clay_lump 1"},
 			{"farming:potato 15",		"default:clay_lump 1"},
@@ -146,7 +145,6 @@ mobs:register_mob("mobs_mc:villager", {
 			{"wool:white 15",			"default:clay_lump 1"},
 			{"farming:pumpkin 8",		"default:clay_lump 1"},
 
-			{"default:clay_lump 1",		"mobs:beef_cooked 5"},
 			{"default:clay_lump 1",		"mobs:chicken_cooked 7"},
 			{"default:clay_lump 1",		"farming:cookie 6"},
 			{"default:clay_lump 1",		"farming:pumpkin_bread 3"},
@@ -167,8 +165,8 @@ mobs:register_mob("mobs_mc:villager", {
 		local tradenum = math.random(#trades)
 		inv:set_stack("wanted", 1, ItemStack(trades[tradenum][1]))
 		inv:set_stack("offered", 1, ItemStack(trades[tradenum][2]))
-		
-		local formspec = 
+
+		local formspec =
 		"size[9,8.75]"..
 		"background[-0.19,-0.25;9.41,9.49;trading_formspec_bg.png]"..
 		"bgcolor[#080808BB;true]"..
@@ -182,7 +180,7 @@ mobs:register_mob("mobs_mc:villager", {
 		minetest.sound_play("Villagertrade", {to_player = clicker:get_player_name()})
 		minetest.show_formspec(clicker:get_player_name(), "tradespec", formspec)
 	end,
-	
+
 	]]
 })
 

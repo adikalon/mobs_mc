@@ -73,7 +73,7 @@ dofile(path .. "/4_heads.lua")
 dofile(path .. "/bat.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/rabbit.lua") -- Mesh and animation byExeterDad
 dofile(path .. "/chicken.lua") -- Mesh and animation by Pavel_S
-dofile(path .. "/cow+mooshroom.lua") -- Mesh by Morn76 Animation by Pavel_S
+dofile(path .. "/mooshroom.lua") -- Mesh by Morn76 Animation by Pavel_S
 dofile(path .. "/horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/llama.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/ocelot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i

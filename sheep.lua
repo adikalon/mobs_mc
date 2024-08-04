@@ -143,7 +143,7 @@ mobs:register_mob("mobs_mc:sheep", {
 			self.initial_color_set = true
 		end
 	end,
-	
+
 	on_rightclick = function(self, clicker)
 		local item = clicker:get_wielded_item()
 
@@ -163,7 +163,6 @@ mobs:register_mob("mobs_mc:sheep", {
 				mesh = "mobs_mc_sheepnaked.b3d",
 			})
 			if not minetest.settings:get_bool("creative_mode") then
-				item:add_wear(mobs_mc.misc.shears_wear)
 				clicker:get_inventory():set_stack("main", clicker:get_wield_index(), item)
 			end
 			self.drops = {

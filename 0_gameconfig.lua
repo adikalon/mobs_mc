@@ -18,6 +18,7 @@ mobs_mc.mods_enabled = {
 	bonemeal = minetest.get_modpath("bonemeal"),
 	nether = minetest.get_modpath("nether"),
 	cloudlands = minetest.get_modpath("cloudlands"),
+	mobs_animal = minetest.get_modpath("mobs_animal"),
 }
 
 mobs_mc.height = {
@@ -64,11 +65,8 @@ mobs_mc.items = {
 	chicken_raw = "mobs_mc:chicken_raw",
 	chicken_cooked = "mobs_mc:chicken_cooked",
 	feather = "mobs_mc:feather",
-	beef_raw = "mobs_mc:beef_raw",
-	beef_cooked = "mobs_mc:beef_cooked",
 	bowl = "mobs_mc:bowl",
 	mushroom_stew = "mobs_mc:mushroom_stew",
-	milk = "mobs_mc:milk_bucket",
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
 	ender_eye  = "mobs_mc:ender_eye",
@@ -98,14 +96,12 @@ mobs_mc.items = {
 
 	-- External items
 	-- Mobs Redo
-	leather = "mobs:leather",
 	shears = "mobs:shears",
 
 	-- Minetest Game
 	top_snow = "default:snow",
 	snow_block = "default:snowblock",
 	mushroom_red = "flowers:mushroom_red",
-	bucket = "bucket:bucket_empty",
 	grass_block = "default:dirt_with_grass",
 	string = "farming:string",
 	stick = "default:stick",
@@ -130,7 +126,6 @@ mobs_mc.items = {
 	redstone = "default:mese_crystal_fragment",
 	glass_bottle = "vessels:glass_bottle",
 	sugar = "default:papyrus",
-	wheat = "farming:wheat",
 	hay_bale = "farming:straw",
 	prismarine_shard = "default:mese_crystal_fragment",
 	prismarine_crystals = "default:mese_crystal",
@@ -193,11 +188,7 @@ end
 
 -- Tables for attracting, feeding and breeding mobs
 mobs_mc.follow = {
-	sheep = { mobs_mc.items.wheat },
-	cow = { mobs_mc.items.wheat },
-	chicken = { "farming:seed_wheat", "farming:seed_cotton" }, -- seeds in general
-	parrot = { "farming:seed_wheat", "farming:seed_cotton" }, -- seeds in general
-	horse = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.wheat, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple, mobs_mc.items.golden_carrot },
+	horse = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple, mobs_mc.items.golden_carrot },
 	pig = { mobs_mc.items.potato, mobs_mc.items.carrot, mobs_mc.items.carrot_on_a_stick,
 		mobs_mc.items.apple, -- Minetest Game extra
 	},
@@ -205,7 +196,7 @@ mobs_mc.follow = {
 	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw,
 		mobs_mc.items.chicken_raw, -- Minetest Game extra
 	},
-	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.beef_raw, mobs_mc.items.beef_cooked, mobs_mc.items.chicken_raw, mobs_mc.items.chicken_cooked, mobs_mc.items.rotten_flesh,
+	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.chicken_raw, mobs_mc.items.chicken_cooked, mobs_mc.items.rotten_flesh,
 	-- Mobs Redo items
 	"mobs:meat", "mobs:meat_raw" },
 }
