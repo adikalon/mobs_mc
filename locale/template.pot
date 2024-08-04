@@ -34,29 +34,7 @@ msgid "This item is mainly used for brewing potions and crafting."
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Raw Chicken"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Raw chicken is a food item and can be eaten safely. Cooking it will increase "
-"its nutritional value."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Cooked Chicken"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "A cooked chicken is a healthy food item which can be eaten."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Feather"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Feathers are used in crafting and are dropped from chickens."
 msgstr ""
 
 #: 1_items_default.lua
@@ -408,10 +386,6 @@ msgstr ""
 
 #: blaze.lua
 msgid "Blaze"
-msgstr ""
-
-#: chicken.lua
-msgid "Chicken"
 msgstr ""
 
 #: mooshroom.lua

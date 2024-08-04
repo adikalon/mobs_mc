@@ -37,34 +37,8 @@ msgstr ""
 "Fertigung benutzt."
 
 #: 1_items_default.lua
-msgid "Raw Chicken"
-msgstr "Rohes Hühnchen"
-
-#: 1_items_default.lua
-msgid ""
-"Raw chicken is a food item and can be eaten safely. Cooking it will increase "
-"its nutritional value."
-msgstr ""
-"Rohes Hühnchen ist ein Lebensmittel und kann problemlos gegessen werden. Es "
-"kann gegart werden, um den Nährwert zu erhöhen."
-
-#: 1_items_default.lua
-msgid "Cooked Chicken"
-msgstr "Gebratenes Hühnchen"
-
-#: 1_items_default.lua
-msgid "A cooked chicken is a healthy food item which can be eaten."
-msgstr "Ein gekochtes Hühnchen ist ein gesundes essbares Lebensmittel."
-
-#: 1_items_default.lua
 msgid "Feather"
 msgstr "Feder"
-
-#: 1_items_default.lua
-msgid "Feathers are used in crafting and are dropped from chickens."
-msgstr ""
-"Federn werden für die Fertigung benutzt und werden von Hühnern fallen "
-"gelassen."
 
 #: 1_items_default.lua
 msgid "Raw Beef"
@@ -479,10 +453,6 @@ msgstr "Fledermaus"
 #: blaze.lua
 msgid "Blaze"
 msgstr "Lohe"
-
-#: chicken.lua
-msgid "Chicken"
-msgstr "Huhn"
 
 #: mooshroom.lua
 msgid "Mooshroom"

@@ -62,9 +62,6 @@ mobs_mc.items = {
 	-- Items defined in mobs_mc
 	blaze_rod = "mobs_mc:blaze_rod",
 	blaze_powder = "mobs_mc:blaze_powder",
-	chicken_raw = "mobs_mc:chicken_raw",
-	chicken_cooked = "mobs_mc:chicken_cooked",
-	feather = "mobs_mc:feather",
 	bowl = "mobs_mc:bowl",
 	mushroom_stew = "mobs_mc:mushroom_stew",
 	dragon_egg = "mobs_mc:dragon_egg",
@@ -193,10 +190,8 @@ mobs_mc.follow = {
 		mobs_mc.items.apple, -- Minetest Game extra
 	},
 	rabbit = { mobs_mc.items.dandelion, mobs_mc.items.carrot, mobs_mc.items.golden_carrot, "farming_plus:carrot_item", },
-	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw,
-		mobs_mc.items.chicken_raw, -- Minetest Game extra
-	},
-	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.chicken_raw, mobs_mc.items.chicken_cooked, mobs_mc.items.rotten_flesh,
+	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw, },
+	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.rotten_flesh,
 	-- Mobs Redo items
 	"mobs:meat", "mobs:meat_raw" },
 }

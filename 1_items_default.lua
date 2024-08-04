@@ -57,44 +57,6 @@ if c("blaze_rod") and c("blaze_powder") then
 	})
 end
 
--- Chicken
-if c("chicken_raw") then
-	minetest.register_craftitem("mobs_mc:chicken_raw", {
-		description = S("Raw Chicken"),
-		_doc_items_longdesc = S("Raw chicken is a food item and can be eaten safely. Cooking it will increase its nutritional value."),
-		inventory_image = "mcl_mobitems_chicken_raw.png",
-		groups = { food = 2, eatable = 2 },
-		on_use = minetest.item_eat(2),
-	})
-end
-
-if c("chicken_cooked") then
-	minetest.register_craftitem("mobs_mc:chicken_cooked", {
-		description = S("Cooked Chicken"),
-		_doc_items_longdesc = S("A cooked chicken is a healthy food item which can be eaten."),
-		inventory_image = "mcl_mobitems_chicken_cooked.png",
-		groups = { food = 2, eatable = 6 },
-		on_use = minetest.item_eat(6),
-	})
-end
-
-if c("chicken_raw") and c("chicken_cooked") then
-	minetest.register_craft({
-		type = "cooking",
-		output = "mobs_mc:chicken_cooked",
-		recipe = "mobs_mc:chicken_raw",
-		cooktime = 5,
-	})
-end
-
-if c("feather") then
-	minetest.register_craftitem("mobs_mc:feather", {
-		description = S("Feather"),
-		_doc_items_longdesc = S("Feathers are used in crafting and are dropped from chickens."),
-		inventory_image = "mcl_mobitems_feather.png",
-	})
-end
-
 if c("bowl") then
 	minetest.register_craftitem("mobs_mc:bowl", {
 		description = S("Bowl"),

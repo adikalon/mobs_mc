@@ -145,7 +145,6 @@ mobs:register_mob("mobs_mc:villager", {
 			{"wool:white 15",			"default:clay_lump 1"},
 			{"farming:pumpkin 8",		"default:clay_lump 1"},
 
-			{"default:clay_lump 1",		"mobs:chicken_cooked 7"},
 			{"default:clay_lump 1",		"farming:cookie 6"},
 			{"default:clay_lump 1",		"farming:pumpkin_bread 3"},
 			{"default:clay_lump 1",		"mobs:arrow 10"},
