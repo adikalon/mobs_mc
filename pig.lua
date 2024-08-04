@@ -92,7 +92,7 @@ mobs:register_mob("mobs_mc:pig", {
 
 		local wielditem = clicker:get_wielded_item()
 		-- Feed pig
-		if wielditem:get_name() ~= mobs_mc.items.carrot_on_a_stick then
+		if wielditem:get_name() ~= "mobs_mc:carrot_on_a_stick" then
 			if mobs:feed_tame(self, clicker, 1, true, true) then return end
 		end
 		if mobs:protect(self, clicker) then return end
@@ -140,7 +140,7 @@ mobs:register_mob("mobs_mc:pig", {
 			mobs.detach(clicker, {x=1, y=0, z=0})
 			return
 
-		elseif not self.driver and self.saddle == "yes" and wielditem:get_name() == mobs_mc.items.carrot_on_a_stick then
+		elseif not self.driver and self.saddle == "yes" and wielditem:get_name() == "mobs_mc:carrot_on_a_stick" then
 			-- Ride pig if it has a saddle and player uses a carrot on a stick
 
 			mobs.attach(self, clicker)

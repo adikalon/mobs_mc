@@ -171,33 +171,7 @@ msgid ""
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Raw Rabbit"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Raw rabbit is a food item from a dead rabbit. It can be eaten safely. "
-"Cooking it will increase its nutritional value."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Cooked Rabbit"
-msgstr ""
-
-#: 1_items_default.lua
 msgid "This is a food item which can be eaten."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Rabbit Hide"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Rabbit hide is used to create leather."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Rabbit's Foot"
 msgstr ""
 
 #: 1_items_default.lua
@@ -464,11 +438,7 @@ msgstr ""
 msgid "Polar Bear"
 msgstr ""
 
-#: rabbit.lua
-msgid "Rabbit"
-msgstr ""
-
-#: rabbit.lua
+#: killer_bunny.lua
 msgid "Killer Bunny"
 msgstr ""
 

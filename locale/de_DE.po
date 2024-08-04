@@ -196,36 +196,8 @@ msgstr ""
 "kann das Schwein wie ein Pferd geritten werden."
 
 #: 1_items_default.lua
-msgid "Raw Rabbit"
-msgstr "Rohes Kaninchen"
-
-#: 1_items_default.lua
-msgid ""
-"Raw rabbit is a food item from a dead rabbit. It can be eaten safely. "
-"Cooking it will increase its nutritional value."
-msgstr ""
-"Rohes Kaninchenfleisch ist ein Lebensmittel, welches bedenkenlos verzehrt "
-"werden kann. Es kann gebraten werden, um seinen Nährwert zu erhöhen."
-
-#: 1_items_default.lua
-msgid "Cooked Rabbit"
-msgstr "Gebratenes Kaninchen"
-
-#: 1_items_default.lua
 msgid "This is a food item which can be eaten."
 msgstr "Dies ist ein Lebensmittel."
-
-#: 1_items_default.lua
-msgid "Rabbit Hide"
-msgstr "Kaninchenfell"
-
-#: 1_items_default.lua
-msgid "Rabbit hide is used to create leather."
-msgstr "Aus Kaninchenfellen wird Leder gefertigt."
-
-#: 1_items_default.lua
-msgid "Rabbit's Foot"
-msgstr "Hasenpfote"
 
 #: 1_items_default.lua
 msgid "This item is used in brewing."
@@ -530,11 +502,7 @@ msgstr "Schwein"
 msgid "Polar Bear"
 msgstr "Eisbär"
 
-#: rabbit.lua
-msgid "Rabbit"
-msgstr "Kaninchen"
-
-#: rabbit.lua
+#: killer_bunny.lua
 msgid "Killer Bunny"
 msgstr "Killer-Kaninchen"
 

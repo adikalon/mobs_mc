@@ -260,90 +260,23 @@ if c("porkchop_raw") and c("porkchop_cooked") then
 	})
 end
 
-if c("carrot_on_a_stick") then
-	minetest.register_tool("mobs_mc:carrot_on_a_stick", {
-		description = S("Carrot on a Stick"),
-		_doc_items_longdesc = S("A carrot on a stick can be used on saddled pigs to ride them. Pigs will also follow anyone who holds a carrot on a stick near them."),
-		_doc_items_usagehelp = S("Rightclick a saddled pig with the carrot on a stick to mount it. You can now ride it like a horse."),
-		wield_image = "mcl_mobitems_carrot_on_a_stick.png",
-		inventory_image = "mcl_mobitems_carrot_on_a_stick.png",
-		sounds = { breaks = "default_tool_breaks" },
-	})
-end
+minetest.register_tool("mobs_mc:carrot_on_a_stick", {
+	description = S("Carrot on a Stick"),
+	_doc_items_longdesc = S("A carrot on a stick can be used on saddled pigs to ride them. Pigs will also follow anyone who holds a carrot on a stick near them."),
+	_doc_items_usagehelp = S("Rightclick a saddled pig with the carrot on a stick to mount it. You can now ride it like a horse."),
+	wield_image = "mcl_mobitems_carrot_on_a_stick.png",
+	inventory_image = "mcl_mobitems_carrot_on_a_stick.png",
+	sounds = { breaks = "default_tool_breaks" },
+})
 
--- Poor-man's recipes for carrot on a stick
-if c("carrot_on_a_stick") and c("stick") and c("string") and minetest.get_modpath("farming") then
+if mobs_mc.mods_enabled.farming then
 	minetest.register_craft({
 		output = "mobs_mc:carrot_on_a_stick",
 		recipe = {
-			{"",            "",            "farming:string"    },
-			{"",            "group:stick", "farming:string" },
-			{"group:stick", "",            "farming:bread" },
+			{"",            "",            "farming:string"},
+			{"",            "group:stick", "farming:string"},
+			{"group:stick", "",            "farming:carrot"},
 		}
-	})
-
--- FIXME: Identify correct farming mod (check if it includes the carrot item)
-	minetest.register_craft({
-		output = "mobs_mc:carrot_on_a_stick",
-		recipe = {
-			{"",            "",            "farming:string"    },
-			{"",            "group:stick", "farming:string" },
-			{"group:stick", "",            "farming:carrot" },
-		}
-	})
-end
-
-if c("carrot_on_a_stick") and c("stick") and c("string") and minetest.get_modpath("fishing") and minetest.get_modpath("farming") then
-	minetest.register_craft({
-		type = "shapeless",
-		output = "mobs_mc:carrot_on_a_stick",
-		recipe = {"fishing:pole_wood", "farming:carrot"},
-	})
-end
-
--- Rabbit
-if c("rabbit_raw") then
-	minetest.register_craftitem("mobs_mc:rabbit_raw", {
-		description = S("Raw Rabbit"),
-		_doc_items_longdesc = S("Raw rabbit is a food item from a dead rabbit. It can be eaten safely. Cooking it will increase its nutritional value."),
-		inventory_image = "mcl_mobitems_rabbit_raw.png",
-		groups = { food = 2, eatable = 3 },
-		on_use = minetest.item_eat(3),
-	})
-end
-
-if c("rabbit_cooked") then
-	minetest.register_craftitem("mobs_mc:rabbit_cooked", {
-		description = S("Cooked Rabbit"),
-		_doc_items_longdesc = S("This is a food item which can be eaten."),
-		inventory_image = "mcl_mobitems_rabbit_cooked.png",
-		groups = { food = 2, eatable = 5 },
-		on_use = minetest.item_eat(5),
-	})
-end
-
-if c("rabbit_raw") and c("rabbit_cooked") then
-	minetest.register_craft({
-		type = "cooking",
-		output = "mobs_mc:rabbit_cooked",
-		recipe = "mobs_mc:rabbit_raw",
-		cooktime = 5,
-	})
-end
-
-if c("rabbit_hide") then
-	minetest.register_craftitem("mobs_mc:rabbit_hide", {
-		description = S("Rabbit Hide"),
-		_doc_items_longdesc = S("Rabbit hide is used to create leather."),
-		inventory_image = "mcl_mobitems_rabbit_hide.png"
-	})
-end
-
-if c("rabbit_foot") then
-	minetest.register_craftitem("mobs_mc:rabbit_foot", {
-		description = S("Rabbit's Foot"),
-		_doc_items_longdesc = S("This item is used in brewing."),
-		inventory_image = "mcl_mobitems_rabbit_foot.png"
 	})
 end
 

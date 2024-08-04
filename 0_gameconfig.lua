@@ -15,10 +15,10 @@ with name "mobs_mc_gameconfig". ]]
 -- Set to false in your gameconfig mod if you create your own monster egg nodes.
 
 mobs_mc.mods_enabled = {
-	bonemeal = minetest.get_modpath("bonemeal"),
 	nether = minetest.get_modpath("nether"),
 	cloudlands = minetest.get_modpath("cloudlands"),
 	mobs_animal = minetest.get_modpath("mobs_animal"),
+	farming = minetest.get_modpath("farming"),
 }
 
 mobs_mc.height = {
@@ -74,10 +74,6 @@ mobs_mc.items = {
 	diamond_horse_armor = "mobs_mc:diamond_horse_armor",
 	porkchop_raw = "mobs_mc:porkchop_raw",
 	porkchop_cooked = "mobs_mc:porkchop_cooked",
-	carrot_on_a_stick = "mobs_mc:carrot_on_a_stick",
-	rabbit_raw = "mobs_mc:rabbit_raw",
-	rabbit_cooked = "mobs_mc:rabbit_cooked",
-	rabbit_hide = "mobs_mc:rabbit_hide",
 	mutton_raw = "mobs_mc:mutton_raw",
 	mutton_cooked = "mobs_mc:mutton_cooked",
 	shulker_shell = "mobs_mc:shulker_shell",
@@ -128,7 +124,6 @@ mobs_mc.items = {
 	prismarine_crystals = "default:mese_crystal",
 	apple = "default:apple",
 	golden_apple = "default:apple",
-	rabbit_foot = "mobs_mc:rabbit_foot",
 
 	-- Boss items
 	wet_sponge = "default:gold_block", -- only dropped by elder guardian; there is no equivalent block in Minetest Game
@@ -136,9 +131,7 @@ mobs_mc.items = {
 	-- Other
 	nether_brick_block = "nether:brick",
 	mycelium = "ethereal:mushroom_dirt",
-	carrot = "farming:carrot",
 	potato = "farming:potato",
-	golden_carrot = "farming:carrot_gold",
 	fishing_rod = "fishing:pole_wood",
 	fish_raw = "fishing:fish_raw",
 	salmon_raw = "fishing:carp_raw",
@@ -177,23 +170,13 @@ mobs_mc.items = {
 	music_discs = {}, -- No music discs by default; used by creeper. Override this if your game has music discs.
 }
 
-if mobs_mc.mods_enabled.bonemeal then
-	mobs_mc.items.bone = "bonemeal:bone"
-else
-	mobs_mc.items.bone = nil
-end
-
 -- Tables for attracting, feeding and breeding mobs
 mobs_mc.follow = {
-	horse = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple, mobs_mc.items.golden_carrot },
-	pig = { mobs_mc.items.potato, mobs_mc.items.carrot, mobs_mc.items.carrot_on_a_stick,
-		mobs_mc.items.apple, -- Minetest Game extra
-	},
-	rabbit = { mobs_mc.items.dandelion, mobs_mc.items.carrot, mobs_mc.items.golden_carrot, "farming_plus:carrot_item", },
-	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw, },
-	dog = { mobs_mc.items.rabbit_raw, mobs_mc.items.rabbit_cooked, mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.rotten_flesh,
-	-- Mobs Redo items
-	"mobs:meat", "mobs:meat_raw" },
+	horse = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple },
+	-- TODO: Edit this
+	pig = { mobs_mc.items.potato, mobs_mc.items.carrot, "mobs_mc:carrot_on_a_stick", mobs_mc.items.apple },
+	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw },
+	dog = { mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.rotten_flesh, "mobs:meat", "mobs:meat_raw" },
 }
 
 if mobs_mc.items.bone then
@@ -204,28 +187,6 @@ end
 
 -- Contents for replace_what
 mobs_mc.replace = {
-	-- Rabbits reduce carrot growth stage by 1
-	rabbit = {
-		-- Farming Redo carrots
-		{"farming:carrot_8", "farming:carrot_7", 0},
-		{"farming:carrot_7", "farming:carrot_6", 0},
-		{"farming:carrot_6", "farming:carrot_5", 0},
-		{"farming:carrot_5", "farming:carrot_4", 0},
-		{"farming:carrot_4", "farming:carrot_3", 0},
-		{"farming:carrot_3", "farming:carrot_2", 0},
-		{"farming:carrot_2", "farming:carrot_1", 0},
-		{"farming:carrot_1", "air", 0},
-
-		-- Farming Plus carrots
-		{"farming_plus:carrot", "farming_plus:carrot_7", 0},
-		{"farming_plus:carrot_6", "farming_plus:carrot_5", 0},
-		{"farming_plus:carrot_5", "farming_plus:carrot_4", 0},
-		{"farming_plus:carrot_4", "farming_plus:carrot_3", 0},
-		{"farming_plus:carrot_3", "farming_plus:carrot_2", 0},
-		{"farming_plus:carrot_2", "farming_plus:carrot_1", 0},
-		{"farming_plus:carrot_1", "air", 0},
-	},
-
 	-- Sheep eat grass
 	sheep = {
 		-- Grass Block
