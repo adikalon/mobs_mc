@@ -9,6 +9,8 @@ local killer_bunny = {
 	passive = false,
 	attack_type = "dogfight",
 	specific_attack = {"player", "animalworld:wolf"},
+	attacks_monsters = true,
+	attack_players = true,
 	damage = 8,
 	armor = 50,
 	textures = { "mobs_mc_rabbit_caerbannog.png" },
@@ -49,13 +51,6 @@ local killer_bunny = {
 	},
 
 	follow = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
-
-	-- do_custom = function(self)
-	-- 	if not self._killer_bunny_nametag_set then
-	-- 		self.nametag = "The Killer Bunny"
-	-- 		self._killer_bunny_nametag_set = true
-	-- 	end
-	-- end,
 }
 
 if mobs_mc.mods_enabled.mobs_animal then
