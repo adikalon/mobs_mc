@@ -610,10 +610,6 @@ msgstr ""
 msgid "Zombie"
 msgstr ""
 
-#: zombie_white.lua
-msgid "Zombie White"
-msgstr ""
-
 #: zombiepig.lua
 msgid "Zombie Pigman"
 msgstr ""

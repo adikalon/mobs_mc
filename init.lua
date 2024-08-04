@@ -115,7 +115,6 @@ dofile(path .. "/slime+magma_cube.lua") -- Wuzzy
 dofile(path .. "/spider.lua") -- Spider by AspireMint (fishyWET (CC-BY-SA 3.0 license for texture)
 dofile(path .. "/vex.lua") -- KrupnoPavel
 dofile(path .. "/wither.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/zombie_white.lua")
 
 if minetest.settings:get_bool("log_mods") then
 	minetest.log("action", "[MOD] Mobs Redo 'MC' loaded")
