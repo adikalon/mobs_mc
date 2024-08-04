@@ -434,10 +434,6 @@ msgstr ""
 msgid "Creeper"
 msgstr ""
 
-#: creeper_tree.lua
-msgid "Creeper Tree"
-msgstr ""
-
 #: ender_dragon.lua
 msgid "Ender Dragon"
 msgstr ""
