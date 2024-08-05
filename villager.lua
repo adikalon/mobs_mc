@@ -150,7 +150,6 @@ mobs:register_mob("mobs_mc:villager", {
 			{"default:clay_lump 8",		"fishing:pole_wood 1"},
 			--{"default:clay_lump 4",		"potionspack:healthii 1"},
 			{"default:clay_lump 1",		"cake:cake 1"},
-			{"default:clay_lump 10",		"mobs:saddle 1"},
 			{"default:clay_lump 10",		"clock:1 1"},
 			{"default:clay_lumpd 10",		"compass:0 1"},
 			{"default:clay_lump 1",		"default:glass 5"},

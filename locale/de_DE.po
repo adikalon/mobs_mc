@@ -93,33 +93,6 @@ msgstr ""
 "toten Ghasts abgeworfen."
 
 #: 1_items_default.lua
-msgid "Saddle"
-msgstr "Sattel"
-
-#: 1_items_default.lua
-msgid ""
-"Saddles can be put on horses, donkeys, mules and pigs in order to mount them."
-msgstr ""
-"Sattel können auf Pferden, Eseln, Maultieren und Schweinen platziert werden, "
-"um sich aufzusatteln."
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick an animal while holding a saddle to put on the saddle. You can "
-"now mount the animal by rightclicking it again."
-msgstr ""
-"Rechtsklick auf ein Tier mit einem Sattel in der Hand, um den Sattel zu "
-"platzieren. Sie können sich nun mit Rechtsklick auf das Tier setzen."
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick a horse to put on the horse armor. Donkeys and mules can't wear "
-"horse armor."
-msgstr ""
-"Rechts auf ein Pferd klicken, um die Pferderüstung zu benutzen. Das "
-"funktioniert nicht mit Eseln und Maultieren."
-
-#: 1_items_default.lua
 msgid "Iron Horse Armor"
 msgstr "Eiserne Pferderüstung"
 
@@ -174,22 +147,6 @@ msgstr "Gebratenes Schweinefleisch"
 #: 1_items_default.lua
 msgid "Carrot on a Stick"
 msgstr "Karottenrute"
-
-#: 1_items_default.lua
-msgid ""
-"A carrot on a stick can be used on saddled pigs to ride them. Pigs will also "
-"follow anyone who holds a carrot on a stick near them."
-msgstr ""
-"Eine Karottenrute kann auf gesattelten Schweinen angewendet werden, um sie "
-"zu reiten. Schweine folgen auch jeden, der eine Karottenrüte trägt."
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick a saddled pig with the carrot on a stick to mount it. You can now "
-"ride it like a horse."
-msgstr ""
-"Rechts auf ein gesatteltes Schwein klicken, um sich draufzusetzen. Jetzt "
-"kann das Schwein wie ein Pferd geritten werden."
 
 #: 1_items_default.lua
 msgid "This is a food item which can be eaten."
@@ -414,10 +371,6 @@ msgstr "Großer Wächter"
 #: guardian.lua
 msgid "Guardian"
 msgstr "Wächter"
-
-#: horse.lua
-msgid "Horse"
-msgstr "Pferd"
 
 #: horse.lua
 msgid "Skeleton Horse"

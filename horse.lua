@@ -5,7 +5,7 @@
 
 -- intllib
 local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S, NS = dofile(MP .. "/intllib.lua")
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
@@ -44,39 +44,12 @@ local can_breed = function(entity_id)
 	return entity_id == "mobs_mc:horse" or "mobs_mc:mule" or entity_id == "mobs_mc:donkey"
 end
 
---[[ Generate all possible horse textures.
-Horse textures are a combination of a base texture and an optional marking overlay. ]]
--- The base horse textures
-local horse_base = {
-	"mobs_mc_horse_brown.png",
-	"mobs_mc_horse_darkbrown.png",
-	"mobs_mc_horse_white.png",
-	"mobs_mc_horse_gray.png",
-	"mobs_mc_horse_black.png",
-	"mobs_mc_horse_chestnut.png",
-}
--- Horse marking texture overlay, to be appended to the base texture string
-local horse_markings = {
-	"", -- no markings
-	"^mobs_mc_horse_markings_whitedots.png", -- snowflake appaloosa
-	"^mobs_mc_horse_markings_blackdots.png", -- sooty
-	"^mobs_mc_horse_markings_whitefield.png", -- paint
-	"^mobs_mc_horse_markings_white.png", -- stockings and blaze
-}
-
-local horse_textures = {}
-for b=1, #horse_base do
-	for m=1, #horse_markings do
-		table.insert(horse_textures, { horse_base[b] .. horse_markings[m] })
-	end
-end
-
 -- Horse
 local horse = {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_mc_horse.b3d",
-	visual_size = {x=3.0, y=3.0},
+	visual_size = {x = 3.0, y = 3.0},
 	collisionbox = {-0.69825, -0.01, -0.69825, 0.69825, 1.59, 0.69825},
 	animation = {
 		stand_speed = 25, walk_speed = 25, run_speed = 50,
@@ -89,7 +62,7 @@ local horse = {
 	fly = false,
 	walk_chance = 60,
 	view_range = 16,
-	follow = mobs_mc.follow.horse,
+	follow = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple },
 	passive = true,
 	hp_min = 15,
 	hp_max = 30,
@@ -100,12 +73,7 @@ local horse = {
 	makes_footstep_sound = true,
 	jump = true,
 	jump_height = 5.75, -- can clear 2.5 blocks
-	drops = {
-		{name = mobs_mc.items.leather,
-		chance = 1,
-		min = 0,
-		max = 2,},
-	},
+	drops = {},
 
 	do_custom = function(self, dtime)
 
@@ -122,10 +90,6 @@ local horse = {
 			self.driver_attach_at = {x = 0, y = 4.3, z = -1.75}
 			self.driver_eye_offset = {x = 0, y = 10, z = 0}
 			self.driver_scale = {x = 1/3.0, y = 1/3.0}
-
-			-- self.driver_attach_at = {x = 0, y = 10, z = -2}
-			-- self.driver_eye_offset = {x = 0, y = 10 + 3, z = 0}
-			-- self.driver_scale = {x = 0.8, y = 0.8} -- shrink driver to fit model
 		end
 
 		-- Slowly regenerate health
@@ -152,7 +116,7 @@ local horse = {
 
 		-- drop saddle when horse is killed while riding
 		if self._saddle then
-			minetest.add_item(pos, mobs_mc.items.saddle)
+			minetest.add_item(pos, "mobs:saddle")
 		end
 		-- also detach from horse properly
 		if self.driver then
@@ -190,7 +154,7 @@ local horse = {
 
 			-- Put on saddle if tamed
 			elseif not self.driver and not self._saddle
-			and clicker:get_wielded_item():get_name() == mobs_mc.items.saddle then
+			and clicker:get_wielded_item():get_name() == "mobs:saddle" then
 
 				-- Put on saddle and take saddle from player's inventory
 				local w = clicker:get_wielded_item()
@@ -257,8 +221,6 @@ local horse = {
 	end
 }
 
-mobs:register_mob("mobs_mc:horse", horse)
-
 -- Skeleton horse
 local skeleton_horse = table.copy(horse)
 skeleton_horse.textures = {{"mobs_mc_horse_skeleton.png"}}
@@ -285,12 +247,25 @@ mobs:register_mob("mobs_mc:skeleton_horse", skeleton_horse)
 -- Zombie horse
 local zombie_horse = table.copy(horse)
 zombie_horse.textures = {{"mobs_mc_horse_zombie.png"}}
+
 zombie_horse.drops = {
-	{name = mobs_mc.items.rotten_flesh,
-	chance = 1,
-	min = 0,
-	max = 2,},
+	{
+		name = "mobs_mc:rotten_flesh",
+		chance = 1,
+		min = 0,
+		max = 2,
+	},
 }
+
+if mobs_mc.mods_enabled.mobs_animal then
+	table.insert(zombie_horse.drops, {
+		name = "mobs:leather",
+		chance = 1,
+		min = 0,
+		max = 2
+	})
+end
+
 zombie_horse.sounds = {
 	random = "mobs_mc_zombie_idle",
 	war_cry = "mobs_mc_zombie_idle",
@@ -306,8 +281,10 @@ local donkey = table.copy(horse)
 donkey.textures = {{"mobs_mc_donkey.png"}}
 donkey.animation = {
 	speed_normal = 25,
-	stand_start = 0, stand_end = 0,
-	walk_start = 0, walk_end = 40,
+	stand_start = 0,
+	stand_end = 0,
+	walk_start = 0,
+	walk_end = 40,
 }
 donkey.visual_size = { x=3.0*d, y=3.0*d }
 donkey.collisionbox = {
@@ -320,6 +297,22 @@ donkey.collisionbox = {
 }
 donkey.jump = true
 donkey.jump_height = 3.75 -- can clear 1 block height
+
+if mobs_mc.mods_enabled.mobs_animal then
+	table.insert(donkey.drops, {
+		name = "mobs:meat_raw",
+		chance = 1,
+		min = 1,
+		max = 3
+	})
+
+	table.insert(donkey.drops, {
+		name = "mobs:leather",
+		chance = 1,
+		min = 0,
+		max = 2
+	})
+end
 
 mobs:register_mob("mobs_mc:donkey", donkey)
 
@@ -336,6 +329,23 @@ mule.collisionbox = {
 	horse.collisionbox[5] * m,
 	horse.collisionbox[6] * m,
 }
+
+if mobs_mc.mods_enabled.mobs_animal then
+	table.insert(mule.drops, {
+		name = "mobs:meat_raw",
+		chance = 1,
+		min = 1,
+		max = 3
+	})
+
+	table.insert(mule.drops, {
+		name = "mobs:leather",
+		chance = 1,
+		min = 0,
+		max = 2
+	})
+end
+
 mobs:register_mob("mobs_mc:mule", mule)
 
 --===========================
@@ -343,17 +353,8 @@ mobs:register_mob("mobs_mc:mule", mule)
 mobs:spawn_specific("mobs_mc:horse", mobs_mc.spawn.grassland_savanna, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 15000, 12, mobs_mc.spawn_height.water+3, mobs_mc.spawn_height.overworld_max)
 mobs:spawn_specific("mobs_mc:donkey", mobs_mc.spawn.grassland_savanna, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 15000, 12, mobs_mc.spawn_height.water+3, mobs_mc.spawn_height.overworld_max)
 
--- compatibility
-mobs:alias_mob("mobs:horse", "mobs_mc:horse")
-
 -- spawn eggs
-mobs:register_egg("mobs_mc:horse", S("Horse"), "mobs_mc_spawn_icon_horse.png", 0)
 mobs:register_egg("mobs_mc:skeleton_horse", S("Skeleton Horse"), "mobs_mc_spawn_icon_horse_skeleton.png", 0)
 mobs:register_egg("mobs_mc:zombie_horse", S("Zombie Horse"), "mobs_mc_spawn_icon_horse_zombie.png", 0)
 mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)
 mobs:register_egg("mobs_mc:mule", S("Mule"), "mobs_mc_spawn_icon_mule.png", 0)
-
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Horse loaded")
-end

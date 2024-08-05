@@ -86,27 +86,6 @@ msgid ""
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Saddle"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Saddles can be put on horses, donkeys, mules and pigs in order to mount them."
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick an animal while holding a saddle to put on the saddle. You can "
-"now mount the animal by rightclicking it again."
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick a horse to put on the horse armor. Donkeys and mules can't wear "
-"horse armor."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Iron Horse Armor"
 msgstr ""
 
@@ -152,18 +131,6 @@ msgstr ""
 
 #: 1_items_default.lua
 msgid "Carrot on a Stick"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"A carrot on a stick can be used on saddled pigs to ride them. Pigs will also "
-"follow anyone who holds a carrot on a stick near them."
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Rightclick a saddled pig with the carrot on a stick to mount it. You can now "
-"ride it like a horse."
 msgstr ""
 
 #: 1_items_default.lua
@@ -356,10 +323,6 @@ msgstr ""
 
 #: guardian.lua
 msgid "Guardian"
-msgstr ""
-
-#: horse.lua
-msgid "Horse"
 msgstr ""
 
 #: horse.lua

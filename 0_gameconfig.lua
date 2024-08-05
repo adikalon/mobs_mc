@@ -19,6 +19,7 @@ mobs_mc.mods_enabled = {
 	cloudlands = minetest.get_modpath("cloudlands"),
 	mobs_animal = minetest.get_modpath("mobs_animal"),
 	farming = minetest.get_modpath("farming"),
+	bonemeal = minetest.get_modpath("bonemeal"),
 }
 
 mobs_mc.height = {
@@ -68,7 +69,6 @@ mobs_mc.items = {
 	egg = "mobs_mc:egg",
 	ender_eye  = "mobs_mc:ender_eye",
 	ghast_tear = "mobs_mc:ghast_tear",
-	saddle = "mobs:saddle",
 	iron_horse_armor = "mobs_mc:iron_horse_armor",
 	gold_horse_armor = "mobs_mc:gold_horse_armor",
 	diamond_horse_armor = "mobs_mc:diamond_horse_armor",
@@ -79,7 +79,6 @@ mobs_mc.items = {
 	spider_eye = "mobs_mc:spider_eye",
 	snowball = "mobs_mc:snowball",
 	totem = "mobs_mc:totem",
-	rotten_flesh = "mobs_mc:rotten_flesh",
 	nether_star = "mobs_mc:nether_star",
 	slimeball = "mobs_mc:slimeball",
 	head_creeper = "mobs_mc:head_creeper",
@@ -149,10 +148,8 @@ mobs_mc.items = {
 
 -- Tables for attracting, feeding and breeding mobs
 mobs_mc.follow = {
-	horse = { mobs_mc.items.apple, mobs_mc.items.sugar, mobs_mc.items.hay_bale, mobs_mc.items.golden_apple },
 	-- TODO: Edit this
 	pig = { mobs_mc.items.potato, mobs_mc.items.carrot, "mobs_mc:carrot_on_a_stick", mobs_mc.items.apple },
-	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw },
 }
 
 -- Contents for replace_what
