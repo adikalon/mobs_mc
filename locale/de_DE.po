@@ -387,10 +387,6 @@ msgstr ""
 msgid "Agent"
 msgstr "Agent"
 
-#: bat.lua
-msgid "Bat"
-msgstr "Fledermaus"
-
 #: blaze.lua
 msgid "Blaze"
 msgstr "Lohe"
