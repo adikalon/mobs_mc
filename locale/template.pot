@@ -179,24 +179,6 @@ msgid "This item is used in brewing."
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Raw Mutton"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"Raw mutton is the flesh from a sheep and can be eaten safely. Cooking it "
-"will greatly increase its nutritional value."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Cooked Mutton"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Cooked mutton is the cooked flesh from a sheep and is used as food."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Shulker Shell"
 msgstr ""
 
@@ -434,10 +416,6 @@ msgstr ""
 
 #: killer_bunny.lua
 msgid "Killer Bunny"
-msgstr ""
-
-#: sheep.lua
-msgid "Sheep"
 msgstr ""
 
 #: shulker.lua

@@ -74,8 +74,6 @@ mobs_mc.items = {
 	diamond_horse_armor = "mobs_mc:diamond_horse_armor",
 	porkchop_raw = "mobs_mc:porkchop_raw",
 	porkchop_cooked = "mobs_mc:porkchop_cooked",
-	mutton_raw = "mobs_mc:mutton_raw",
-	mutton_cooked = "mobs_mc:mutton_cooked",
 	shulker_shell = "mobs_mc:shulker_shell",
 	magma_cream = "mobs_mc:magma_cream",
 	spider_eye = "mobs_mc:spider_eye",
@@ -148,24 +146,6 @@ mobs_mc.items = {
 	netherrack = "nether:rack",
 	nether_brick_block = "nether:brick",
 
-	-- Wool (Minecraft color scheme)
-	wool_white = "wool:white",
-	wool_light_grey = "wool:grey",
-	wool_grey = "wool:dark_grey",
-	wool_blue = "wool:blue",
-	wool_lime = "wool:green",
-	wool_green = "wool:dark_green",
-	wool_purple = "wool:violet",
-	wool_pink = "wool:pink",
-	wool_yellow = "wool:yellow",
-	wool_orange = "wool:orange",
-	wool_brown = "wool:brown",
-	wool_red = "wool:red",
-	wool_cyan = "wool:cyan",
-	wool_magenta = "wool:magenta",
-	wool_black = "wool:black",
-	-- Light blue intentionally missing
-
 	-- Special items
 	music_discs = {}, -- No music discs by default; used by creeper. Override this if your game has music discs.
 }
@@ -180,18 +160,6 @@ mobs_mc.follow = {
 
 -- Contents for replace_what
 mobs_mc.replace = {
-	-- Sheep eat grass
-	sheep = {
-		-- Grass Block
-		{ "default:dirt_with_grass", "default:dirt", -1 },
-		-- “Tall Grass”
-		{ "default:grass_5", "air", 0 },
-		{ "default:grass_4", "air", 0 },
-		{ "default:grass_3", "air", 0 },
-		{ "default:grass_2", "air", 0 },
-		{ "default:grass_1", "air", 0 },
-	},
-
 	-- Silverfish populate stone, etc. with monster eggs
 	silverfish = {
 		{"default:stone", "mobs_mc:monster_egg_stone", -1},

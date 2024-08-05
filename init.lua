@@ -79,7 +79,6 @@ dofile(path .. "/ocelot.lua") --  Mesh and animation by toby109tt  / https://git
 dofile(path .. "/parrot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/pig.lua") -- Mesh and animation by Pavel_S
 dofile(path .. "/polar_bear.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/sheep.lua") -- Mesh and animation by Pavel_S
 dofile(path .. "/dog.lua") -- KrupnoPavel
 dofile(path .. "/squid.lua") -- Animation, sound and egg texture by daufinsyd
 

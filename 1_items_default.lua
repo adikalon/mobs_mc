@@ -280,36 +280,6 @@ if mobs_mc.mods_enabled.farming then
 	})
 end
 
--- Sheep
-if c("mutton_raw") then
-	minetest.register_craftitem("mobs_mc:mutton_raw", {
-		description = S("Raw Mutton"),
-		_doc_items_longdesc = S("Raw mutton is the flesh from a sheep and can be eaten safely. Cooking it will greatly increase its nutritional value."),
-		inventory_image = "mcl_mobitems_mutton_raw.png",
-		groups = { food = 2, eatable = 4 },
-		on_use = minetest.item_eat(4),
-	})
-end
-
-if c("mutton_cooked") then
-	minetest.register_craftitem("mobs_mc:mutton_cooked", {
-		description = S("Cooked Mutton"),
-		_doc_items_longdesc = S("Cooked mutton is the cooked flesh from a sheep and is used as food."),
-		inventory_image = "mcl_mobitems_mutton_cooked.png",
-		groups = { food = 2, eatable = 8 },
-		on_use = minetest.item_eat(8),
-	})
-end
-
-if c("mutton_raw") and c("mutton_cooked") then
-	minetest.register_craft({
-		type = "cooking",
-		output = "mobs_mc:mutton_cooked",
-		recipe = "mobs_mc:mutton_raw",
-		cooktime = 5,
-	})
-end
-
 -- Shulker
 if c("shulker_shell") then
 	minetest.register_craftitem("mobs_mc:shulker_shell", {

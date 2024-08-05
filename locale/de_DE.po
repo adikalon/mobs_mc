@@ -204,29 +204,6 @@ msgid "This item is used in brewing."
 msgstr "Dieser Gegenstand wird zum Brauen benutzt."
 
 #: 1_items_default.lua
-msgid "Raw Mutton"
-msgstr "Rohes Hammelfleisch"
-
-#: 1_items_default.lua
-msgid ""
-"Raw mutton is the flesh from a sheep and can be eaten safely. Cooking it "
-"will greatly increase its nutritional value."
-msgstr ""
-"Rohes Hammelfleisch ist das Fleisch eines Schafes und ein Lebensmittel, "
-"welches bedenkenlos verzehrt werden kann. Es kann gebraten werden, um seinen "
-"Nährwert deutlich zu erhöhen."
-
-#: 1_items_default.lua
-msgid "Cooked Mutton"
-msgstr "Gebratenes Hammelfleisch"
-
-#: 1_items_default.lua
-msgid "Cooked mutton is the cooked flesh from a sheep and is used as food."
-msgstr ""
-"Gebratenes Hammelfleisch ist das gebratene Fleisch eines Schafs und dient "
-"als Lebensmittel."
-
-#: 1_items_default.lua
 msgid "Shulker Shell"
 msgstr "Shulkerschale"
 
@@ -497,10 +474,6 @@ msgstr "Eisbär"
 #: killer_bunny.lua
 msgid "Killer Bunny"
 msgstr "Killer-Kaninchen"
-
-#: sheep.lua
-msgid "Sheep"
-msgstr "Schaf"
 
 #: shulker.lua
 msgid "Shulker"
