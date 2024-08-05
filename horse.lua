@@ -348,10 +348,53 @@ end
 
 mobs:register_mob("mobs_mc:mule", mule)
 
---===========================
---Spawn Function
-mobs:spawn_specific("mobs_mc:horse", mobs_mc.spawn.grassland_savanna, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 15000, 12, mobs_mc.spawn_height.water+3, mobs_mc.spawn_height.overworld_max)
-mobs:spawn_specific("mobs_mc:donkey", mobs_mc.spawn.grassland_savanna, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 15000, 12, mobs_mc.spawn_height.water+3, mobs_mc.spawn_height.overworld_max)
+mobs:spawn({
+	name = "mobs_mc:skeleton_horse",
+	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
+	neighbors = {"group:grass"},
+	min_light = 14,
+	interval = 60,
+	chance = 8000,
+	min_height = 5,
+	max_height = 200,
+	day_toggle = true
+})
+
+mobs:spawn({
+	name = "mobs_mc:zombie_horse",
+	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
+	neighbors = {"group:grass"},
+	min_light = 14,
+	interval = 60,
+	chance = 8000,
+	min_height = 5,
+	max_height = 200,
+	day_toggle = true
+})
+
+mobs:spawn({
+	name = "mobs_mc:donkey",
+	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
+	neighbors = {"group:grass"},
+	min_light = 14,
+	interval = 60,
+	chance = 8000,
+	min_height = 5,
+	max_height = 200,
+	day_toggle = true
+})
+
+mobs:spawn({
+	name = "mobs_mc:donkey",
+	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
+	neighbors = {"group:grass"},
+	min_light = 14,
+	interval = 60,
+	chance = 8000,
+	min_height = 5,
+	max_height = 200,
+	day_toggle = true
+})
 
 -- spawn eggs
 mobs:register_egg("mobs_mc:skeleton_horse", S("Skeleton Horse"), "mobs_mc_spawn_icon_horse_skeleton.png", 0)
