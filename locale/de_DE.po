@@ -324,14 +324,6 @@ msgstr ""
 "Knochen können benutzt werden, um Wölfe zu zähmen, damit sie einen "
 "beschützen. Sie außerdem nützlich in der Fertigung."
 
-#: 1_items_default.lua
-msgid ""
-"Hold the bone in your hand near wolves to attract them. Rightclick the wolf "
-"to give it a bone and tame it."
-msgstr ""
-"Halten Sie einen Knochen in der Nähe eines Wolfes, um ihn anzulocken. "
-"Rechtsklick auf den Wolf, um ihn den Knochen zu geben un zu zähmen."
-
 #: 2_throwing.lua
 msgid "Arrow"
 msgstr "Pfeil"
@@ -594,9 +586,9 @@ msgstr "Hexe"
 msgid "Wither"
 msgstr "Wither"
 
-#: wolf.lua
-msgid "Wolf"
-msgstr "Wolf"
+#: dog.lua
+msgid "Dog"
+msgstr "Dog"
 
 #: zombie.lua
 msgid "Husk"

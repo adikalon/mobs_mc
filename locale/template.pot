@@ -276,12 +276,6 @@ msgid ""
 "useful as a crafting ingredient."
 msgstr ""
 
-#: 1_items_default.lua
-msgid ""
-"Hold the bone in your hand near wolves to attract them. Rightclick the wolf "
-"to give it a bone and tame it."
-msgstr ""
-
 #: 2_throwing.lua
 msgid "Arrow"
 msgstr ""
@@ -530,8 +524,8 @@ msgstr ""
 msgid "Wither"
 msgstr ""
 
-#: wolf.lua
-msgid "Wolf"
+#: dog.lua
+msgid "Dog"
 msgstr ""
 
 #: zombie.lua

@@ -176,14 +176,7 @@ mobs_mc.follow = {
 	-- TODO: Edit this
 	pig = { mobs_mc.items.potato, mobs_mc.items.carrot, "mobs_mc:carrot_on_a_stick", mobs_mc.items.apple },
 	ocelot = { mobs_mc.items.fish_raw, mobs_mc.items.salmon_raw, mobs_mc.items.clownfish_raw, mobs_mc.items.pufferfish_raw },
-	dog = { mobs_mc.items.mutton_raw, mobs_mc.items.mutton_cooked, mobs_mc.items.rotten_flesh, "mobs:meat", "mobs:meat_raw" },
 }
-
-if mobs_mc.items.bone then
-	table.insert(mobs_mc.follow, {
-		wolf = { mobs_mc.items.bone },
-	})
-end
 
 -- Contents for replace_what
 mobs_mc.replace = {
@@ -269,7 +262,6 @@ mobs_mc.spawn = {
 	jungle = { "default:dirt_with_rainforest_litter", "default:jungleleaves", "default:junglewood", "mcl_core:jungleleaves", "mcl_core:junglewood" },
 	snow = { "default:snow", "default:snowblock", "default:dirt_with_snow" },
 	end_city = { "default:sandstonebrick", "mcl_end:purpur_block", "mcl_end:end_stone" },
-	wolf = { mobs_mc.items.grass_block, "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock" },
 	village = { "mg_villages:road" },
 
 	-- These probably don't need overrides
