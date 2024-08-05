@@ -379,10 +379,6 @@ msgstr ""
 "Ein Creeperkopf ist ein kleiner dekorativer Block, der wie der Kopf eines "
 "Creeper aussieht."
 
-#: agent.lua
-msgid "Agent"
-msgstr "Agent"
-
 #: blaze.lua
 msgid "Blaze"
 msgstr "Lohe"

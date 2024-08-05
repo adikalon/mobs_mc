@@ -322,10 +322,6 @@ msgid ""
 "creeper."
 msgstr ""
 
-#: agent.lua
-msgid "Agent"
-msgstr ""
-
 #: blaze.lua
 msgid "Blaze"
 msgstr ""
