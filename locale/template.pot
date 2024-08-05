@@ -34,10 +34,6 @@ msgid "This item is mainly used for brewing potions and crafting."
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Feather"
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Raw Beef"
 msgstr ""
 
@@ -396,10 +392,6 @@ msgstr ""
 
 #: ocelot.lua
 msgid "Ocelot"
-msgstr ""
-
-#: parrot.lua
-msgid "Parrot"
 msgstr ""
 
 #: pig.lua

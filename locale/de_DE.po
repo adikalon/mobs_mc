@@ -37,10 +37,6 @@ msgstr ""
 "Fertigung benutzt."
 
 #: 1_items_default.lua
-msgid "Feather"
-msgstr "Feder"
-
-#: 1_items_default.lua
 msgid "Raw Beef"
 msgstr "Rohes Rindfleisch"
 
@@ -454,10 +450,6 @@ msgstr "Lama"
 #: ocelot.lua
 msgid "Ocelot"
 msgstr "Ozelot"
-
-#: parrot.lua
-msgid "Parrot"
-msgstr "Papagei"
 
 #: pig.lua
 msgid "Pig"

@@ -136,9 +136,6 @@ mobs_mc.items = {
 	clownfish_raw = "fishing:clownfish_raw",
 	pufferfish_raw = "fishing:pike_raw",
 
-	cookie = "farming:cookie",
-
-
 	-- TODO: Add actual ender pearl
 	ender_pearl = "farorb:farorb",
 
