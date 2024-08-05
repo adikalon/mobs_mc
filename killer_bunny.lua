@@ -1,6 +1,3 @@
---License for code WTFPL and otherwise stated in readmes
-
--- intllib
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP .. "/intllib.lua")
 
@@ -13,7 +10,7 @@ local killer_bunny = {
 	attack_players = true,
 	damage = 8,
 	armor = 50,
-	textures = { "mobs_mc_rabbit_caerbannog.png" },
+	textures = { "mobs_mc_killer_bunny_caerbannog.png" },
 	view_range = 16,
 	replace_rate = nil,
 	replace_what = nil,
@@ -26,7 +23,7 @@ local killer_bunny = {
 	collisionbox = {-0.2, -0.01, -0.2, 0.2, 0.49, 0.2},
 
 	visual = "mesh",
-	mesh = "mobs_mc_rabbit.b3d",
+	mesh = "mobs_mc_killer_bunny.b3d",
 	visual_size = {x=1.5, y=1.5},
 	sounds = {},
 	makes_footstep_sound = false,

@@ -467,10 +467,6 @@ msgstr "Papagei"
 msgid "Pig"
 msgstr "Schwein"
 
-#: polar_bear.lua
-msgid "Polar Bear"
-msgstr "Eisbär"
-
 #: killer_bunny.lua
 msgid "Killer Bunny"
 msgstr "Killer-Kaninchen"

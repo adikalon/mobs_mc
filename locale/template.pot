@@ -410,10 +410,6 @@ msgstr ""
 msgid "Pig"
 msgstr ""
 
-#: polar_bear.lua
-msgid "Polar Bear"
-msgstr ""
-
 #: killer_bunny.lua
 msgid "Killer Bunny"
 msgstr ""
