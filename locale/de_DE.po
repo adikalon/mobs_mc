@@ -19,18 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 1_items_default.lua
-msgid "Blaze Rod"
-msgstr "Lohenrute"
-
-#: 1_items_default.lua
-msgid "This is a crafting component dropped from dead blazes."
-msgstr "Dies ist eine Fertigungskomponente, welche von toten Lohen abfällt."
-
-#: 1_items_default.lua
-msgid "Blaze Powder"
-msgstr "Lohenstaub"
-
-#: 1_items_default.lua
 msgid "This item is mainly used for brewing potions and crafting."
 msgstr ""
 "Dieser Gegenstand wird hauptsächlich für die Trankzubereitung und die "
@@ -267,14 +255,6 @@ msgstr ""
 #: 2_throwing.lua
 msgid "Snowball"
 msgstr "Schneeball"
-
-#: 2_throwing.lua
-msgid ""
-"Snowballs can be thrown at your enemies. A snowball deals 3 damage to "
-"blazes, but is harmless to anything else."
-msgstr ""
-"Werfen Sie Schnebälle auf Ihre Feinde. Ein Schneeball richtet gegenüber "
-"Lohen 3 Schaden an, ist aber harmlos für alles andere."
 
 #: 4_heads.lua
 msgid "Zombie Head"

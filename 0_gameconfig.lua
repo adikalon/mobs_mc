@@ -62,13 +62,10 @@ mobs_mc.items = {}
 
 mobs_mc.items = {
 	-- Items defined in mobs_mc
-	blaze_rod = "mobs_mc:blaze_rod",
-	blaze_powder = "mobs_mc:blaze_powder",
 	bowl = "mobs_mc:bowl",
 	mushroom_stew = "mobs_mc:mushroom_stew",
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
-	ender_eye  = "mobs_mc:ender_eye",
 	ghast_tear = "mobs_mc:ghast_tear",
 	iron_horse_armor = "mobs_mc:iron_horse_armor",
 	gold_horse_armor = "mobs_mc:gold_horse_armor",

@@ -13,50 +13,6 @@ local S, NS = dofile(MP.."/intllib.lua")
 
 local c = mobs_mc.is_item_variable_overridden
 
--- Blaze
-if c("blaze_rod") then
-	minetest.register_craftitem("mobs_mc:blaze_rod", {
-		description = S("Blaze Rod"),
-		_doc_items_longdesc = S("This is a crafting component dropped from dead blazes."),
-		wield_image = "mcl_mobitems_blaze_rod.png",
-		inventory_image = "mcl_mobitems_blaze_rod.png",
-	})
-
-	-- Make blaze rod furnace-burnable. 1.5 times the burn time of a coal lump
-	local coalcraft, burntime
-	if minetest.get_modpath("default") then
-		coalcraft = minetest.get_craft_result({method="fuel", width=1, items={"default:coal_lump"}})
-	end
-	if coalcraft then
-		burntime = math.floor(coalcraft.time * 1.5)
-	end
-	if burntime == nil or burntime == 0 then
-		burntime = 60
-	end
-
-	minetest.register_craft({
-		type = "fuel",
-		burntime = burntime,
-		recipe = "mobs_mc:blaze_rod",
-	})
-end
-
-if c("blaze_powder") then
-	minetest.register_craftitem("mobs_mc:blaze_powder", {
-		description = S("Blaze Powder"),
-		_doc_items_longdesc = S("This item is mainly used for brewing potions and crafting."),
-		wield_image = "mcl_mobitems_blaze_powder.png",
-		inventory_image = "mcl_mobitems_blaze_powder.png",
-	})
-end
-
-if c("blaze_rod") and c("blaze_powder") then
-	minetest.register_craft({
-		output = "mobs_mc:blaze_powder 2",
-		recipe = {{ "mobs_mc:blaze_rod" }},
-	})
-end
-
 if c("bowl") then
 	minetest.register_craftitem("mobs_mc:bowl", {
 		description = S("Bowl"),
@@ -139,24 +95,6 @@ end
 local longdesc_craftitem
 if minetest.get_modpath("doc_items") then
 	longdesc_craftitem = doc.sub.items.temp.craftitem
-end
-
--- Enderman
-if c("ender_eye") then
-	minetest.register_craftitem("mobs_mc:ender_eye", {
-		description = S("Eye of Ender"),
-		_doc_items_longdesc = longdesc_craftitem,
-		inventory_image = "mcl_end_ender_eye.png",
-		groups = { craftitem = 1 },
-	})
-end
-
-if c("ender_eye") and c("blaze_powder") and c("blaze_rod") then
-	minetest.register_craft({
-		type = "shapeless",
-		output = 'mobs_mc:ender_eye',
-		recipe = { 'mobs_mc:blaze_powder', 'mobs_mc:blaze_rod'},
-	})
 end
 
 -- Ghast

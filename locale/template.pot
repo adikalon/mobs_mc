@@ -18,18 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: 1_items_default.lua
-msgid "Blaze Rod"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "This is a crafting component dropped from dead blazes."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Blaze Powder"
-msgstr ""
-
-#: 1_items_default.lua
 msgid "This item is mainly used for brewing potions and crafting."
 msgstr ""
 

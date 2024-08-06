@@ -36,12 +36,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	damage = 6,
 	reach = 2,
 	pathfinding = 1,
-	drops = {
-		{name = mobs_mc.items.blaze_rod,
-		chance = 1,
-		min = 0,
-		max = 1,},
-	},
+	drops = {},
 	animation = {
 		stand_start = 1,
 		stand_end = 40,
