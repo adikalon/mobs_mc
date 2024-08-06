@@ -92,14 +92,6 @@ msgstr ""
 "Shulkern fallen gelassen."
 
 #: 1_items_default.lua
-msgid "Magma Cream"
-msgstr "Magmacreme"
-
-#: 1_items_default.lua
-msgid "Magma cream is a crafting component."
-msgstr "Magmacreme wird zum Fertigen benutzt."
-
-#: 1_items_default.lua
 msgid "Slimeball"
 msgstr "Schleimkugel"
 

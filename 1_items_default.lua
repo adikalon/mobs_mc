@@ -124,17 +124,6 @@ if c("shulker_shell") then
 	})
 end
 
--- Magma cube
-if c("magma_cream") then
-	minetest.register_craftitem("mobs_mc:magma_cream", {
-		description = S("Magma Cream"),
-		_doc_items_longdesc = S("Magma cream is a crafting component."),
-		wield_image = "mcl_mobitems_magma_cream.png",
-		inventory_image = "mcl_mobitems_magma_cream.png",
-		groups = { brewitem = 1 },
-	})
-end
-
 -- Slime
 if c("slimeball") then
 	minetest.register_craftitem("mobs_mc:slimeball", {

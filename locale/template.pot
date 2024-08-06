@@ -83,14 +83,6 @@ msgid ""
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Magma Cream"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Magma cream is a crafting component."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Slimeball"
 msgstr ""
 

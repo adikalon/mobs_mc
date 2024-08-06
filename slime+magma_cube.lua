@@ -149,12 +149,7 @@ local magma_cube_big = {
 	damage = 6,
 	reach = 3,
 	armor = 40,
-	drops = {
-		{name = mobs_mc.items.magma_cream,
-		chance = 4,
-		min = 1,
-		max = 1,},
-	},
+	drops = {},
 	-- TODO: Fix animations
 	animation = {
 		speed_normal = 24,

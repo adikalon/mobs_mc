@@ -70,7 +70,6 @@ mobs_mc.items = {
 	porkchop_raw = "mobs_mc:porkchop_raw",
 	porkchop_cooked = "mobs_mc:porkchop_cooked",
 	shulker_shell = "mobs_mc:shulker_shell",
-	magma_cream = "mobs_mc:magma_cream",
 	spider_eye = "mobs_mc:spider_eye",
 	snowball = "mobs_mc:snowball",
 	totem = "mobs_mc:totem",
