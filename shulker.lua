@@ -14,7 +14,7 @@ local S, NS = dofile(MP.."/intllib.lua")
 --###################
 
 -- animation 45-80 is transition between passive and attack stance
-   
+
 mobs:register_mob("mobs_mc:shulker", {
 	type = "monster",
 	attack_type = "shoot",
@@ -33,12 +33,7 @@ mobs:register_mob("mobs_mc:shulker", {
 	visual_size = {x=3, y=3},
 	walk_chance = 0,
 	jump = false,
-	drops = {
-		{name = mobs_mc.items.shulker_shell,
-		chance = 1,
-		min = 0,
-		max = 1,},
-	},
+	drops = {},
 	animation = {
 		stand_speed = 25, walk_speed = 25, run_speed = 50, punch_speed = 25,
 		speed_normal = 25,		speed_run = 50,

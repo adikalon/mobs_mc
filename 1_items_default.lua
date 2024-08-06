@@ -84,16 +84,6 @@ if mobs_mc.mods_enabled.farming then
 	})
 end
 
--- Shulker
-if c("shulker_shell") then
-	minetest.register_craftitem("mobs_mc:shulker_shell", {
-		description = S("Shulker Shell"),
-		_doc_items_longdesc = S("Shulker shells are used in crafting. They are dropped from dead shulkers."),
-		inventory_image = "mcl_mobitems_shulker_shell.png",
-		groups = { craftitem = 1 },
-	})
-end
-
 -- Slime
 if c("slimeball") then
 	minetest.register_craftitem("mobs_mc:slimeball", {

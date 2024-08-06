@@ -64,10 +64,6 @@ mobs_mc.items = {
 	-- Items defined in mobs_mc
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
-	iron_horse_armor = "mobs_mc:iron_horse_armor",
-	gold_horse_armor = "mobs_mc:gold_horse_armor",
-	diamond_horse_armor = "mobs_mc:diamond_horse_armor",
-	shulker_shell = "mobs_mc:shulker_shell",
 	spider_eye = "mobs_mc:spider_eye",
 	snowball = "mobs_mc:snowball",
 	totem = "mobs_mc:totem",
