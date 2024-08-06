@@ -9,7 +9,7 @@ local S, NS = dofile(MP.."/intllib.lua")
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
-   
+
 --###################
 --################### WITHER
 --###################
@@ -47,12 +47,7 @@ mobs:register_mob("mobs_mc:wither", {
 	dogshoot_count_max =1,
 	attack_animals = true,
 	floats=1,
-	drops = {
-		{name = mobs_mc.items.nether_star,
-		chance = 1,
-		min = 1,
-		max = 1},
-	},
+	drops = {},
 	water_damage = 0,
 	lava_damage = 0,
 	light_damage = 0,
@@ -145,7 +140,7 @@ mobs:register_arrow(":mobs_mc:fireball", {
 			full_punch_interval = 0.5,
 			damage_groups = {fleshy = 8},
 		}, nil)
-		
+
 	end,
 
 	-- node hit, bursts into flame
@@ -158,4 +153,4 @@ mobs:register_arrow(":mobs_mc:fireball", {
 mobs:register_egg("mobs_mc:wither", S("Wither"), "mobs_mc_spawn_icon_wither.png", 0)
 
 --Compatibility
-mobs:alias_mob("nssm:mese_dragon", "mobs_mc:wither")	
+mobs:alias_mob("nssm:mese_dragon", "mobs_mc:wither")

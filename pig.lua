@@ -1,10 +1,7 @@
---License for code WTFPL and otherwise stated in readmes
-
--- intllib
 local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S, NS = dofile(MP .. "/intllib.lua")
 
-mobs:register_mob("mobs_mc:pig", {
+local pig = {
 	type = "animal",
 	runaway = true,
 	hp_min = 10,
@@ -13,20 +10,15 @@ mobs:register_mob("mobs_mc:pig", {
 	visual = "mesh",
 	mesh = "mobs_mc_pig.b3d",
 	textures = {{
-		"blank.png", -- baby
-		"mobs_mc_pig.png", -- base
-		"blank.png", -- saddle
+		"blank.png",
+		"mobs_mc_pig.png",
+		"blank.png",
 	}},
-	visual_size = {x=2.5, y=2.5},
+	visual_size = {x = 2.5, y = 2.5},
 	makes_footstep_sound = true,
 	walk_velocity = 1,
 	run_velocity = 3,
-	drops = {
-		{name = mobs_mc.items.porkchop_raw,
-		chance = 1,
-		min = 1,
-		max = 3,},
-	},
+	drops = {},
 	water_damage = 1,
 	lava_damage = 4,
 	light_damage = 0,
@@ -115,15 +107,23 @@ mobs:register_mob("mobs_mc:pig", {
 			self.saddle = "yes"
 			self.tamed = true
 			self.drops = {
-				{name = mobs_mc.items.porkchop_raw,
-				chance = 1,
-				min = 1,
-				max = 3,},
-				{name = "mobs:saddle",
-				chance = 1,
-				min = 1,
-				max = 1,},
+				{
+					name = "mobs:saddle",
+					chance = 1,
+					min = 1,
+					max = 1,
+				},
 			}
+
+			if mobs_mc.mods_enabled.mobs_animal then
+				table.insert(self.drops, {
+					name = "mobs:pork_raw",
+					chance = 1,
+					min = 1,
+					max = 3,
+				})
+			end
+
 			if not minetest.settings:get_bool("creative_mode") then
 				local inv = clicker:get_inventory()
 				local stack = inv:get_stack("main", clicker:get_wield_index())
@@ -168,7 +168,18 @@ mobs:register_mob("mobs_mc:pig", {
 			mobs:capture_mob(self, clicker, 0, 5, 60, false, nil)
 		end
 	end,
-})
+}
+
+if mobs_mc.mods_enabled.mobs_animal then
+	table.insert(pig.drops, {
+		name = "mobs:pork_raw",
+		chance = 1,
+		min = 1,
+		max = 3,
+	})
+end
+
+mobs:register_mob("mobs_mc:pig", pig)
 
 mobs:spawn_specific("mobs_mc:pig", mobs_mc.spawn.grassland, {"air"}, 9, minetest.LIGHT_MAX+1, 30, 15000, 30, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
 

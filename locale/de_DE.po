@@ -53,22 +53,6 @@ msgid "Eye of Ender"
 msgstr "Enderauge"
 
 #: 1_items_default.lua
-msgid "Raw Porkchop"
-msgstr "Rohes Schweinefleisch"
-
-#: 1_items_default.lua
-msgid ""
-"A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it "
-"will greatly increase its nutritional value."
-msgstr ""
-"Ein rohes Stück Schweinefleisch kann bedenkenlos gegessen werden. Man kann "
-"es braten, um seinen Nährwert stark zu erhöhen."
-
-#: 1_items_default.lua
-msgid "Cooked Porkchop"
-msgstr "Gebratenes Schweinefleisch"
-
-#: 1_items_default.lua
 msgid "Carrot on a Stick"
 msgstr "Karottenrute"
 

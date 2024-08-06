@@ -64,36 +64,6 @@ if minetest.get_modpath("doc_items") then
 	longdesc_craftitem = doc.sub.items.temp.craftitem
 end
 
--- Pig
-if c("porkchop_raw") then
-	minetest.register_craftitem("mobs_mc:porkchop_raw", {
-		description = S("Raw Porkchop"),
-		_doc_items_longdesc = S("A raw porkchop is the flesh from a pig and can be eaten safely. Cooking it will greatly increase its nutritional value."),
-		inventory_image = "mcl_mobitems_porkchop_raw.png",
-		groups = { food = 2, eatable = 3 },
-		on_use = minetest.item_eat(3),
-	})
-end
-
-if c("porkchop_cooked") then
-	minetest.register_craftitem("mobs_mc:porkchop_cooked", {
-		description = S("Cooked Porkchop"),
-		_doc_items_longdesc = "Cooked porkchop is the cooked flesh of a pig and is used as food.",
-		inventory_image = "mcl_mobitems_porkchop_cooked.png",
-		groups = { food = 2, eatable = 8 },
-		on_use = minetest.item_eat(8),
-	})
-end
-
-if c("porkchop_raw") and c("porkchop_cooked") then
-	minetest.register_craft({
-		type = "cooking",
-		output = "mobs_mc:porkchop_cooked",
-		recipe = "mobs_mc:porkchop_raw",
-		cooktime = 5,
-	})
-end
-
 minetest.register_tool("mobs_mc:carrot_on_a_stick", {
 	description = S("Carrot on a Stick"),
 	_doc_items_longdesc = S("A carrot on a stick can be used on saddled pigs to ride them. Pigs will also follow anyone who holds a carrot on a stick near them."),
@@ -233,15 +203,6 @@ if c("rotten_flesh") then
 		-- Simplified poisonous food
 		groups = { food = 2, eatable = -4 },
 		on_use = minetest.item_eat(-4),
-	})
-end
-
--- Misc.
-if c("nether_star") then
-	minetest.register_craftitem("mobs_mc:nether_star", {
-		description = S("Nether Star"),
-		_doc_items_longdesc = S("A nether star is a crafting component. It is dropped from the Wither."),
-		inventory_image = "mcl_mobitems_nether_star.png"
 	})
 end
 
