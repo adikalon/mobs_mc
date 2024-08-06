@@ -93,42 +93,6 @@ msgstr ""
 "toten Ghasts abgeworfen."
 
 #: 1_items_default.lua
-msgid "Iron Horse Armor"
-msgstr "Eiserne Pferderüstung"
-
-#: 1_items_default.lua
-msgid ""
-"Iron horse armor can be worn by horses to increase their protection from "
-"harm a bit."
-msgstr ""
-"Die Eisenpferderüstung kann von Pferden getragen werden, um sie etwas vor "
-"Schaden zu schützen."
-
-#: 1_items_default.lua
-msgid "Golden Horse Armor"
-msgstr "Goldene Pferderüstung"
-
-#: 1_items_default.lua
-msgid ""
-"Golden horse armor can be worn by horses to increase their protection from "
-"harm."
-msgstr ""
-"Die Goldpferderüstung kann von Pferden getragen werden, um sie vor Schaden "
-"zu schützen."
-
-#: 1_items_default.lua
-msgid "Diamond Horse Armor"
-msgstr "Diamantene Pferderüstung"
-
-#: 1_items_default.lua
-msgid ""
-"Diamond horse armor can be worn by horses to greatly increase their "
-"protection from harm."
-msgstr ""
-"Die Diamantpferderüstung kann von Pferden getragen werden, um ihre "
-"Schadenstoleranz stark zu erhöhen."
-
-#: 1_items_default.lua
 msgid "Raw Porkchop"
 msgstr "Rohes Schweinefleisch"
 

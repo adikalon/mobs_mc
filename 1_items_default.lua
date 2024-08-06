@@ -170,43 +170,6 @@ if c("ghast_tear") then
 	})
 end
 
--- Horse Armor
-local horse_armor_use = S("Rightclick a horse to put on the horse armor. Donkeys and mules can't wear horse armor.")
--- TODO: Balance the horse armor strength, compare with MC armor strength
-if c("iron_horse_armor") then
-	minetest.register_craftitem("mobs_mc:iron_horse_armor", {
-		description = S("Iron Horse Armor"),
-		_doc_items_longdesc = S("Iron horse armor can be worn by horses to increase their protection from harm a bit."),
-		_doc_items_usagehelp = horse_armor_use,
-		inventory_image = "mobs_mc_iron_horse_armor.png",
-		_horse_overlay_image = "mobs_mc_horse_armor_iron.png",
-		stack_max = 1,
-		groups = { horse_armor = 85 },
-	})
-end
-if c("gold_horse_armor") then
-	minetest.register_craftitem("mobs_mc:gold_horse_armor", {
-		description = S("Golden Horse Armor"),
-		_doc_items_longdesc = S("Golden horse armor can be worn by horses to increase their protection from harm."),
-		_doc_items_usagehelp = horse_armor_use,
-		inventory_image = "mobs_mc_gold_horse_armor.png",
-		_horse_overlay_image = "mobs_mc_horse_armor_gold.png",
-		stack_max = 1,
-		groups = { horse_armor = 60 },
-	})
-end
-if c("diamond_horse_armor") then
-	minetest.register_craftitem("mobs_mc:diamond_horse_armor", {
-		description = S("Diamond Horse Armor"),
-		_doc_items_longdesc = S("Diamond horse armor can be worn by horses to greatly increase their protection from harm."),
-		_doc_items_usagehelp = horse_armor_use,
-		inventory_image = "mobs_mc_diamond_horse_armor.png",
-		_horse_overlay_image = "mobs_mc_horse_armor_diamond.png",
-		stack_max = 1,
-		groups = { horse_armor = 45 },
-	})
-end
-
 -- Pig
 if c("porkchop_raw") then
 	minetest.register_craftitem("mobs_mc:porkchop_raw", {

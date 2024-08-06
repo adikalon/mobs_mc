@@ -72,7 +72,10 @@ dofile(path .. "/4_heads.lua")
 -- Animals
 dofile(path .. "/killer_bunny.lua") -- Mesh and animation byExeterDad
 dofile(path .. "/mooshroom.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/skeleton_horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/zombie_horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/donkey.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/mule.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/llama.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/ocelot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
 dofile(path .. "/pig.lua") -- Mesh and animation by Pavel_S

@@ -20,6 +20,7 @@ mobs_mc.mods_enabled = {
 	mobs_animal = minetest.get_modpath("mobs_animal"),
 	farming = minetest.get_modpath("farming"),
 	bonemeal = minetest.get_modpath("bonemeal"),
+	mob_horse = minetest.get_modpath("mob_horse"),
 }
 
 mobs_mc.height = {
@@ -38,7 +39,7 @@ if mobs_mc.mods_enabled.nether then
 end
 
 if mobs_mc.mods_enabled.cloudlands then
-	mobs_mc.height.floatlands_min = mobs_mc.load_setting("cloudlands_altitude", "number", 200)
+	mobs_mc.height.floatlands_min = tonumber(minetest.settings:get("cloudlands_altitude")) or 200
 end
 
 if minetest.get_mapgen_setting("mg_name") == "v7" then

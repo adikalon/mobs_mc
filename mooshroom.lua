@@ -1,7 +1,5 @@
--- Translation support
-local S = minetest.get_translator("mobs_animal")
-
--- Cow by sirrobzeroone
+local MP = minetest.get_modpath(minetest.get_current_modname())
+local S, NS = dofile(MP .. "/intllib.lua")
 
 local mooshroom = {
 	type = "animal",
@@ -36,7 +34,24 @@ local mooshroom = {
 	jump_height = 6,
 	pushable = true,
 	drops = {
-		{name = "flowers:mushroom_brown", chance = 1, min = 0, max = 2},
+		{
+			name = "flowers:mushroom_brown",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "mobs:meat_raw",
+			chance = 1,
+			min = 1,
+			max = 3
+		},
+		{
+			name = "mobs:leather",
+			chance = 1,
+			min = 0,
+			max = 2
+		},
 	},
 	water_damage = 0.01,
 	lava_damage = 5,
@@ -65,11 +80,8 @@ local mooshroom = {
 	fear_height = 2,
 
 	on_rightclick = function(self, clicker)
-
-		-- feed or tame
 		if mobs:feed_tame(self, clicker, 8, true, true) then
 
-			-- if fed 7x wheat or grass then cow can be milked again
 			if self.food and self.food > 6 then
 				self.gotten = false
 			end
@@ -133,29 +145,12 @@ local mooshroom = {
 
 		self.food = (self.food or 0) + 1
 
-		-- if cow replaces 8x grass then it can be milked again
 		if self.food >= 8 then
 			self.food = 0
 			self.gotten = false
 		end
 	end
 }
-
-if mobs_mc.mods_enabled.mobs_animal then
-	table.insert(mooshroom.drops, {
-		name = "mobs:meat_raw",
-		chance = 1,
-		min = 1,
-		max = 3
-	})
-
-	table.insert(mooshroom.drops, {
-		name = "mobs:leather",
-		chance = 1,
-		min = 0,
-		max = 2
-	})
-end
 
 mobs:register_mob("mobs_mc:mooshroom", mooshroom)
 
