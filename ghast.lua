@@ -41,10 +41,6 @@ mobs:register_mob("mobs_mc:ghast", {
 		chance = 1,
 		min = 0,
 		max = 2,},
-		{name = mobs_mc.items.ghast_tear,
-		chance = 1,
-		min = 0,
-		max = 1,},
 	},
 	animation = {
 		stand_speed = 50, walk_speed = 50, run_speed = 50,
@@ -72,7 +68,7 @@ mobs:register_mob("mobs_mc:ghast", {
 	fly = true,
 	fly_in = {"air"},
 	jump_chance = 98,
-	fear_height = 120,	
+	fear_height = 120,
 	blood_amount = 0,
 })
 

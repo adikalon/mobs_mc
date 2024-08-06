@@ -53,18 +53,6 @@ msgid "Eye of Ender"
 msgstr "Enderauge"
 
 #: 1_items_default.lua
-msgid "Ghast Tear"
-msgstr "Ghastträne"
-
-#: 1_items_default.lua
-msgid ""
-"A ghast tear is an item used in potion brewing. It is dropped from dead "
-"ghasts."
-msgstr ""
-"Eine Ghastträne kann für die Trankzubereitung benutzt werden. Sie wird von "
-"toten Ghasts abgeworfen."
-
-#: 1_items_default.lua
 msgid "Raw Porkchop"
 msgstr "Rohes Schweinefleisch"
 

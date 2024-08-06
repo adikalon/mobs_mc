@@ -48,16 +48,6 @@ msgid "Eye of Ender"
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Ghast Tear"
-msgstr ""
-
-#: 1_items_default.lua
-msgid ""
-"A ghast tear is an item used in potion brewing. It is dropped from dead "
-"ghasts."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Raw Porkchop"
 msgstr ""
 

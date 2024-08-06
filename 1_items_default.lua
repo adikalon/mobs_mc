@@ -64,17 +64,6 @@ if minetest.get_modpath("doc_items") then
 	longdesc_craftitem = doc.sub.items.temp.craftitem
 end
 
--- Ghast
-if c("ghast_tear") then
-	minetest.register_craftitem("mobs_mc:ghast_tear", {
-		description = S("Ghast Tear"),
-		_doc_items_longdesc = S("A ghast tear is an item used in potion brewing. It is dropped from dead ghasts."),
-		wield_image = "mcl_mobitems_ghast_tear.png",
-		inventory_image = "mcl_mobitems_ghast_tear.png",
-		groups = { brewitem = 1 },
-	})
-end
-
 -- Pig
 if c("porkchop_raw") then
 	minetest.register_craftitem("mobs_mc:porkchop_raw", {

@@ -64,7 +64,6 @@ mobs_mc.items = {
 	-- Items defined in mobs_mc
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
-	ghast_tear = "mobs_mc:ghast_tear",
 	iron_horse_armor = "mobs_mc:iron_horse_armor",
 	gold_horse_armor = "mobs_mc:gold_horse_armor",
 	diamond_horse_armor = "mobs_mc:diamond_horse_armor",
