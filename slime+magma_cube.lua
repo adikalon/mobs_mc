@@ -104,13 +104,7 @@ slime_tiny.collisionbox = {-0.2505, -0.01, -0.2505, 0.2505, 0.50, 0.2505}
 slime_tiny.visual_size = {x=3.125, y=3.125}
 slime_tiny.damage = 0
 slime_tiny.reach = 2.5
-slime_tiny.drops = {
-	-- slimeball
-	{name = mobs_mc.items.slimeball,
-	chance = 1,
-	min = 0,
-	max = 2,},
-}
+slime_tiny.drops = {}
 slime_tiny.walk_velocity = 0.7
 slime_tiny.run_velocity = 0.7
 slime_tiny.jump_height = 3

@@ -67,7 +67,6 @@ mobs_mc.items = {
 	spider_eye = "mobs_mc:spider_eye",
 	snowball = "mobs_mc:snowball",
 	totem = "mobs_mc:totem",
-	slimeball = "mobs_mc:slimeball",
 	head_creeper = "mobs_mc:head_creeper",
 	head_zombie = "mobs_mc:head_zombie",
 

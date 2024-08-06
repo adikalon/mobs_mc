@@ -76,16 +76,6 @@ msgstr ""
 "Shulkern fallen gelassen."
 
 #: 1_items_default.lua
-msgid "Slimeball"
-msgstr "Schleimkugel"
-
-#: 1_items_default.lua
-msgid "Slimeballs are used in crafting. They are dropped from slimes."
-msgstr ""
-"Schleimkugeln werden in der Fertigung benutzt. Sie werden von Schleimen "
-"fallen gelassen."
-
-#: 1_items_default.lua
 msgid "Spider Eye"
 msgstr "Spinnenauge"
 

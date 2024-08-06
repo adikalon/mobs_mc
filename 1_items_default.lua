@@ -84,21 +84,6 @@ if mobs_mc.mods_enabled.farming then
 	})
 end
 
--- Slime
-if c("slimeball") then
-	minetest.register_craftitem("mobs_mc:slimeball", {
-		description = S("Slimeball"),
-		_doc_items_longdesc = S("Slimeballs are used in crafting. They are dropped from slimes."),
-		inventory_image = "mcl_mobitems_slimeball.png"
-	})
-	if minetest.get_modpath("mesecons_materials") then
-		minetest.register_craft({
-			output = "mesecons_materials:glue",
-			recipe = {{ "mobs_mc:slimeball" }},
-		})
-	end
-end
-
 -- Spider
 if c("spider_eye") then
 	minetest.register_craftitem("mobs_mc:spider_eye", {

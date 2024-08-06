@@ -69,14 +69,6 @@ msgid ""
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Slimeball"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Slimeballs are used in crafting. They are dropped from slimes."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Spider Eye"
 msgstr ""
 
