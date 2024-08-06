@@ -13,39 +13,6 @@ local S, NS = dofile(MP.."/intllib.lua")
 
 local c = mobs_mc.is_item_variable_overridden
 
-if c("bowl") then
-	minetest.register_craftitem("mobs_mc:bowl", {
-		description = S("Bowl"),
-		_doc_items_longdesc = S("Bowls are mainly used to hold tasty soups."),
-		inventory_image = "mcl_core_bowl.png",
-	})
-
-	minetest.register_craft({
-		output = "mobs_mc:bowl",
-		recipe = {
-			{ "group:wood", "", "group:wood" },
-			{ "", "group:wood", "", },
-		}
-	})
-
-	minetest.register_craft({
-		type = "fuel",
-		recipe = "mobs_mc:bowl",
-		burntime = 5,
-	})
-end
-
-if c("mushroom_stew") then
-	minetest.register_craftitem("mobs_mc:mushroom_stew", {
-		description = S("Mushroom Stew"),
-		_doc_items_longdesc = S("Mushroom stew is a healthy soup."),
-		inventory_image = "farming_mushroom_stew.png",
-		groups = { food = 3, eatable = 6 },
-		on_use = minetest.item_eat(6, "mobs_mc:bowl"),
-		stack_max = 1,
-	})
-end
-
 -- Ender dragon
 if c("dragon_egg") then
 

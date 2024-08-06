@@ -40,22 +40,6 @@ msgid "Steak is cooked beef from cows and can be eaten."
 msgstr ""
 
 #: 1_items_default.lua
-msgid "Bowl"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Bowls are mainly used to hold tasty soups."
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Mushroom Stew"
-msgstr ""
-
-#: 1_items_default.lua
-msgid "Mushroom stew is a healthy soup."
-msgstr ""
-
-#: 1_items_default.lua
 msgid "Dragon Egg"
 msgstr ""
 

@@ -45,22 +45,6 @@ msgid "Steak is cooked beef from cows and can be eaten."
 msgstr "Steak ist gebratenes Rindfleisch und kann gegessen werden."
 
 #: 1_items_default.lua
-msgid "Bowl"
-msgstr "Schale"
-
-#: 1_items_default.lua
-msgid "Bowls are mainly used to hold tasty soups."
-msgstr "Schüsseln werden benutzt, um leckere Suppen zu transportieren."
-
-#: 1_items_default.lua
-msgid "Mushroom Stew"
-msgstr "Pilzsuppe"
-
-#: 1_items_default.lua
-msgid "Mushroom stew is a healthy soup."
-msgstr "Pilzsuppe ist ein leckeres Gericht."
-
-#: 1_items_default.lua
 msgid "Dragon Egg"
 msgstr "Drachenei"
 

@@ -62,8 +62,6 @@ mobs_mc.items = {}
 
 mobs_mc.items = {
 	-- Items defined in mobs_mc
-	bowl = "mobs_mc:bowl",
-	mushroom_stew = "mobs_mc:mushroom_stew",
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
 	ghast_tear = "mobs_mc:ghast_tear",
