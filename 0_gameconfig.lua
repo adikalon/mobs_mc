@@ -47,7 +47,7 @@ if minetest.get_mapgen_setting("mg_name") == "v7" then
 	local captures_float = string.match(mgv7_spflags, "floatlands")
 	local captures_nofloat = string.match(mgv7_spflags, "nofloatlands")
 
-	if not captures_nofloat and captures_float and mobs_mc.height.floatlands_min > 1280 then
+	if not captures_nofloat and captures_float and mobs_mc.height.floatlands_min and mobs_mc.height.floatlands_min > 1280 then
 		mobs_mc.height.floatlands_min = 1280
 	end
 end
