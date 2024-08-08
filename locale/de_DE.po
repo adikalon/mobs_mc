@@ -190,10 +190,6 @@ msgstr ""
 "Eier können geworfen werden und zerbrechen bei einem Treffer. Es gibt eine "
 "kleine Chance, dass 1 oder sogar 4 Küken auftauchen"
 
-#: 2_throwing.lua
-msgid "Snowball"
-msgstr "Schneeball"
-
 #: 4_heads.lua
 msgid "Zombie Head"
 msgstr "Zombiekopf"

@@ -65,7 +65,6 @@ mobs_mc.items = {
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
 	spider_eye = "mobs_mc:spider_eye",
-	snowball = "mobs_mc:snowball",
 	totem = "mobs_mc:totem",
 	head_creeper = "mobs_mc:head_creeper",
 	head_zombie = "mobs_mc:head_zombie",

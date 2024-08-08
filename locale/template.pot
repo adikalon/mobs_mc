@@ -161,16 +161,6 @@ msgid ""
 "even 4 chicks will pop out"
 msgstr ""
 
-#: 2_throwing.lua
-msgid "Snowball"
-msgstr ""
-
-#: 2_throwing.lua
-msgid ""
-"Snowballs can be thrown at your enemies. A snowball deals 3 damage to "
-"blazes, but is harmless to anything else."
-msgstr ""
-
 #: 4_heads.lua
 msgid "Zombie Head"
 msgstr ""

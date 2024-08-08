@@ -60,14 +60,11 @@ dofile(path .. "/0_gameconfig.lua")
 --Items
 dofile(path .. "/1_items_default.lua")
 
--- Bow, arrow and throwables
-dofile(path .. "/2_throwing.lua")
-
 -- Shared functions
-dofile(path .. "/3_shared.lua")
+dofile(path .. "/2_shared.lua")
 
 --Mob heads
-dofile(path .. "/4_heads.lua")
+dofile(path .. "/3_heads.lua")
 
 -- Animals
 dofile(path .. "/killer_bunny.lua") -- Mesh and animation byExeterDad
