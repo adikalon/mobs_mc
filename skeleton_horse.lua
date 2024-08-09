@@ -80,7 +80,7 @@ local skeleton_horse = {
 			minetest.add_item(pos, "mobs:saddle")
 		end
 
-		if self.shoed and mobs_mc.mods_enabled.mob_horse then
+		if self.shoed and minetest.registered_items[self.shoed] then
 			minetest.add_item(pos, self.shoed)
 		end
 	end,
@@ -136,7 +136,7 @@ local skeleton_horse = {
 				return
 			end
 
-			if mobs_mc.mods_enabled.mob_horse and item:find("mobs:horseshoe") then
+			if item:find("mobs:horseshoe") then
 				if self.shoed then
 					minetest.add_item(self.object:get_pos(), self.shoed)
 				end
@@ -186,9 +186,9 @@ local skeleton_horse = {
 	end,
 }
 
-if mobs_mc.mods_enabled.bonemeal then
+if mobs_mc.items.bone then
 	table.insert(skeleton_horse.drops, {
-		name = "bonemeal:bone",
+		name = mobs_mc.items.bone,
 		chance = 1,
 		min = 0,
 		max = 2,

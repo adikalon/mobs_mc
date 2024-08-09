@@ -115,9 +115,9 @@ local pig = {
 				},
 			}
 
-			if mobs_mc.mods_enabled.mobs_animal then
+			if mobs_mc.items.pork_raw then
 				table.insert(self.drops, {
-					name = "mobs:pork_raw",
+					name = mobs_mc.items.pork_raw,
 					chance = 1,
 					min = 1,
 					max = 3,
@@ -170,9 +170,9 @@ local pig = {
 	end,
 }
 
-if mobs_mc.mods_enabled.mobs_animal then
+if mobs_mc.items.pork_raw then
 	table.insert(pig.drops, {
-		name = "mobs:pork_raw",
+		name = mobs_mc.items.pork_raw,
 		chance = 1,
 		min = 1,
 		max = 3,

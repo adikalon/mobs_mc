@@ -88,7 +88,7 @@ local mule = {
 			minetest.add_item(pos, "mobs:saddle")
 		end
 
-		if self.shoed and mobs_mc.mods_enabled.mob_horse then
+		if self.shoed and minetest.registered_items[self.shoed] then
 			minetest.add_item(pos, self.shoed)
 		end
 	end,
@@ -144,7 +144,7 @@ local mule = {
 				return
 			end
 
-			if mobs_mc.mods_enabled.mob_horse and item:find("mobs:horseshoe") then
+			if item:find("mobs:horseshoe") then
 				if self.shoed then
 					minetest.add_item(self.object:get_pos(), self.shoed)
 				end

@@ -73,13 +73,13 @@ minetest.register_tool("mobs_mc:carrot_on_a_stick", {
 	sounds = { breaks = "default_tool_breaks" },
 })
 
-if mobs_mc.mods_enabled.farming then
+if mobs_mc.items.carrot then
 	minetest.register_craft({
 		output = "mobs_mc:carrot_on_a_stick",
 		recipe = {
 			{"",            "",            "farming:string"},
 			{"",            "group:stick", "farming:string"},
-			{"group:stick", "",            "farming:carrot"},
+			{"group:stick", "",            mobs_mc.items.carrot},
 		}
 	})
 end

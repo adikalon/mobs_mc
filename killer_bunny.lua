@@ -50,16 +50,18 @@ local killer_bunny = {
 	follow = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
 }
 
-if mobs_mc.mods_enabled.mobs_animal then
+if mobs_mc.items.rabbit_raw then
 	table.insert(killer_bunny.drops, {
-		name = "mobs:rabbit_raw",
+		name = mobs_mc.items.rabbit_raw,
 		chance = 1,
 		min = 1,
 		max = 1,
 	})
+end
 
+if mobs_mc.items.rabbit_hide then
 	table.insert(killer_bunny.drops, {
-		name = "mobs:rabbit_hide",
+		name = mobs_mc.items.rabbit_hide,
 		chance = 1,
 		min = 0,
 		max = 1,

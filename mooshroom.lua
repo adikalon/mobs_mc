@@ -92,7 +92,7 @@ local mooshroom = {
 		if mobs:protect(self, clicker) then return end
 		if mobs:capture_mob(self, clicker, 0, 5, 60, false, nil) then return end
 
-		if mobs_mc.mods_enabled.mobs_animal then
+		if mobs_mc.items.bucket_milk then
 			local tool = clicker:get_wielded_item()
 			local name = clicker:get_player_name()
 			local item = tool:get_name()
@@ -117,11 +117,13 @@ local mooshroom = {
 				tool:take_item()
 				clicker:set_wielded_item(tool)
 
-				local ret_item = "mobs:bucket_milk"
+				local ret_item = mobs_mc.items.bucket_milk
 
-				if item == "wooden_bucket:bucket_wood_empty"
-				or item == "bucket_wooden:bucket_empty" then
-					ret_item = "mobs:wooden_bucket_milk"
+				if mobs_mc.items.wooden_bucket_milk then
+					if item == "wooden_bucket:bucket_wood_empty"
+					or item == "bucket_wooden:bucket_empty" then
+						ret_item = mobs_mc.items.wooden_bucket_milk
+					end
 				end
 
 				if inv:room_for_item("main", {name = ret_item}) then

@@ -14,15 +14,6 @@ with name "mobs_mc_gameconfig". ]]
 -- If true, mobs_mc adds the monster egg nodes (needs default mod).
 -- Set to false in your gameconfig mod if you create your own monster egg nodes.
 
-mobs_mc.mods_enabled = {
-	nether = minetest.get_modpath("nether"),
-	cloudlands = minetest.get_modpath("cloudlands"),
-	mobs_animal = minetest.get_modpath("mobs_animal"),
-	farming = minetest.get_modpath("farming"),
-	bonemeal = minetest.get_modpath("bonemeal"),
-	mob_horse = minetest.get_modpath("mob_horse"),
-}
-
 mobs_mc.height = {
 	min = -31000,
 	max = 31000,
@@ -32,13 +23,13 @@ mobs_mc.height = {
 	-- floatlands_max = 31000,
 }
 
-if mobs_mc.mods_enabled.nether then
+if minetest.get_modpath("nether") then
 	mobs_mc.height.min = nether.FLOOR_CEILING
 	mobs_mc.height.nether_min = nether.FLOOR_CEILING
 	mobs_mc.height.nether_max = nether.DEPTH_CEILING
 end
 
-if mobs_mc.mods_enabled.cloudlands then
+if minetest.get_modpath("cloudlands") then
 	mobs_mc.height.floatlands_min = tonumber(minetest.settings:get("cloudlands_altitude")) or 200
 end
 
@@ -61,6 +52,21 @@ mobs_mc.create_monster_egg_nodes = true
 mobs_mc.items = {}
 
 mobs_mc.items = {
+	rabbit_raw = (minetest.registered_items["mobs:rabbit_raw"] and "mobs:rabbit_raw" or nil),
+	rabbit_hide = (minetest.registered_items["mobs:rabbit_hide"] and "mobs:rabbit_hide" or nil),
+	bucket_milk = (minetest.registered_items["mobs:bucket_milk"] and "mobs:bucket_milk" or nil),
+	wooden_bucket_milk = (minetest.registered_items["mobs:wooden_bucket_milk"] and "mobs:wooden_bucket_milk" or nil),
+	pork_raw = (minetest.registered_items["mobs:pork_raw"] and "mobs:pork_raw" or nil),
+	carrot = (minetest.registered_items["farming:carrot"] and "farming:carrot" or nil),
+	bone = (minetest.registered_items["bonemeal:bone"] and "bonemeal:bone" or nil),
+
+
+
+
+
+
+
+
 	-- Items defined in mobs_mc
 	dragon_egg = "mobs_mc:dragon_egg",
 	egg = "mobs_mc:egg",
