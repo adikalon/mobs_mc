@@ -1,115 +1,65 @@
---MCmobs v0.4
---maikerumine
---made for MC like Survival game
---License for code WTFPL and otherwise stated in readmes
+local path = minetest.get_modpath(minetest.get_current_modname())
 
-local path = minetest.get_modpath("mobs_mc")
+mobs_mc = {}
 
-if not minetest.get_modpath("mobs_mc_gameconfig") then
-	mobs_mc = {}
+mobs_mc.custom_spawn = false
+local input = io.open(path .. "spawn.lua", "r")
+
+if input then
+	mobs_mc.custom_spawn = true
+	input:close()
+	input = nil
 end
 
-function mobs_mc.load_setting(sname, stype, defaultval, valid_values)
-	local sval
-	if stype == "string" then
-		sval = minetest.settings:get(sname)
-	elseif stype == "bool" then
-		sval = minetest.settings:get_bool(sname)
-	elseif stype == "number" then
-		sval = tonumber(minetest.settings:get(sname))
-	end
-	if sval ~= nil then
-		if valid_values ~= nil then
-			local valid = false
-			for i=1,#valid_values do
-				if sval == valid_values[i] then
-					valid = true
-				end
-			end
-			if not valid then
-				minetest.log("error", "[mobs_mc] Invalid value for "..sname.."! Using default value ("..tostring(defaultval)..").")
-				return defaultval
-			else
-				return sval
-			end
-		else
-			return sval
-		end
-	else
-		return defaultval
-	end
-end
+-- CONFIG
+dofile(path .. "/0_config.lua")
 
-mobs_mc.tools = {}
+-- ITEMS
+dofile(path .. "/1_items.lua")
 
--- TODO: Understand and simplify/remove this block
--- This function checks if the item ID has been overwritten and returns true if it is unchanged
-if minetest.get_modpath("mobs_mc_gameconfig") and mobs_mc.override and mobs_mc.override.items then
-	mobs_mc.is_item_variable_overridden = function(id)
-		return mobs_mc.override.items[id] == nil
-	end
-else
-	-- No items are overwritten, so always return true
-	mobs_mc.is_item_variable_overridden = function(id)
-		return true
-	end
-end
-
---MOB ITEMS SELECTOR SWITCH
-dofile(path .. "/0_gameconfig.lua")
---Items
-dofile(path .. "/1_items_default.lua")
-
--- Shared functions
-dofile(path .. "/2_shared.lua")
-
---Mob heads
-dofile(path .. "/3_heads.lua")
-
--- Animals
-dofile(path .. "/killer_bunny.lua") -- Mesh and animation byExeterDad
-dofile(path .. "/mooshroom.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/skeleton_horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/zombie_horse.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/donkey.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/mule.lua") -- KrupnoPavel; Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/llama.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/ocelot.lua") --  Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/pig.lua") -- Mesh and animation by Pavel_S
-dofile(path .. "/dog.lua") -- KrupnoPavel
-dofile(path .. "/squid.lua") -- Animation, sound and egg texture by daufinsyd
+-- ANIMALS
+dofile(path .. "/killer_bunny.lua")
+dofile(path .. "/mooshroom.lua")
+dofile(path .. "/skeleton_horse.lua")
+dofile(path .. "/zombie_horse.lua")
+dofile(path .. "/donkey.lua")
+dofile(path .. "/mule.lua")
+dofile(path .. "/llama.lua")
+dofile(path .. "/ocelot.lua")
+dofile(path .. "/pig.lua")
+dofile(path .. "/dog.lua")
+dofile(path .. "/squid.lua")
 
 -- NPCs
-dofile(path .. "/villager.lua") -- KrupnoPavel Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/villager.lua")
 
--- Illagers and witch
-dofile(path .. "/villager_evoker.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/villager_vindicator.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/villager_zombie.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
+-- VILLAGERS AND WITCH
+dofile(path .. "/villager_evoker.lua")
+dofile(path .. "/villager_vindicator.lua")
+dofile(path .. "/villager_zombie.lua")
+dofile(path .. "/witch.lua")
 
-dofile(path .. "/witch.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-
---Monsters
-dofile(path .. "/blaze.lua") -- Animation by daufinsyd
-dofile(path .. "/creeper.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/ender_dragon.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/enderman.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/endermite.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/villager_illusioner.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/ghast.lua") -- maikerumine
-dofile(path .. "/guardian.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/guardian_elder.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
+-- MONSTERS
+dofile(path .. "/blaze.lua")
+dofile(path .. "/creeper.lua")
+dofile(path .. "/ender_dragon.lua")
+dofile(path .. "/enderman.lua")
+dofile(path .. "/endermite.lua")
+dofile(path .. "/villager_illusioner.lua")
+dofile(path .. "/ghast.lua")
+dofile(path .. "/guardian.lua")
+dofile(path .. "/guardian_elder.lua")
 dofile(path .. "/snowman.lua")
-dofile(path .. "/iron_golem.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/shulker.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/silverfish.lua") -- maikerumine Mesh and animation by toby109tt  / https://github.com/22i
-dofile(path .. "/zombie.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/zombiepig.lua") -- Mesh by Morn76 Animation by Pavel_S
-dofile(path .. "/slime+magma_cube.lua") -- Wuzzy
-dofile(path .. "/spider.lua") -- Spider by AspireMint (fishyWET (CC-BY-SA 3.0 license for texture)
-dofile(path .. "/vex.lua") -- KrupnoPavel
-dofile(path .. "/wither.lua") -- Mesh and animation by toby109tt  / https://github.com/22i
+dofile(path .. "/iron_golem.lua")
+dofile(path .. "/shulker.lua")
+dofile(path .. "/silverfish.lua")
+dofile(path .. "/zombie.lua")
+dofile(path .. "/zombiepig.lua")
+dofile(path .. "/slime+magma_cube.lua")
+dofile(path .. "/spider.lua")
+dofile(path .. "/vex.lua")
+dofile(path .. "/wither.lua")
 
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "[MOD] Mobs Redo 'MC' loaded")
+if mobs_mc.custom_spawn then
+	dofile(path .. "/spawn.lua")
 end

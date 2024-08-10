@@ -40,7 +40,7 @@ local pig = {
 		run_start = 0,
 		run_end = 40,
 	},
-	follow = mobs_mc.follow.pig,
+	follow = mobs_mc.follows.pig,
 	view_range = 5,
 	do_custom = function(self, dtime)
 

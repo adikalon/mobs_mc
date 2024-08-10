@@ -22,6 +22,53 @@ local take_frequency_max = 90
 local place_frequency_min = 10
 local place_frequency_max = 30
 
+local takables = {
+	-- Generic handling, useful for entensions
+	"group:enderman_takable",
+
+	-- Generic nodes
+	"group:sand",
+	"group:flower",
+
+	-- Minetest Game
+	"default:dirt",
+	"default:dirt_with_grass",
+	"default:dirt_with_dry_grass",
+	"default:dirt_with_snow",
+	"default:dirt_with_rainforest_litter",
+	"default:dirt_with_grass_footsteps",
+-- FIXME: For some reason, Minetest has a Lua error when an enderman tries to place a Minetest Game cactus.
+-- Maybe this is because default:cactus has rotate_and_place?
+--	"default:cactus", -- TODO: Re-enable cactus when it works again
+	"default:gravel",
+	"default:clay",
+	"flowers:mushroom_red",
+	"flowers:mushroom_brown",
+	"tnt:tnt",
+
+	-- Nether mod
+	"nether:rack",
+}
+
+--[[ Table of nodes to replace when an enderman takes it.
+If the enderman takes an indexed node, it the enderman will get the item in the value.
+Table indexes: Original node, taken by enderman.
+Table values: The item which the enderman *actually* gets
+Example:
+	mobs_mc.enderman_node_replace = {
+		["default:dirt_with_dry_grass"] = "default_dirt_with_grass",
+	}
+-- This means, if the enderman takes a dirt with dry grass, he will get a dirt with grass
+-- on his hand instead.
+]]
+local enderman_replace_on_take = {} -- no replacements by default
+
+-- A table which can be used to override block textures of blocks carried by endermen.
+-- Only works for cube-shaped nodes and nodeboxes.
+-- Key: itemstrings of the blocks to replace
+local enderman_block_texture_overrides = {
+}
+
 -- Create the textures table for the enderman, depending on which kind of block
 -- the enderman holds (if any).
 local create_enderman_textures = function(block_type, itemstring)
@@ -43,9 +90,9 @@ local create_enderman_textures = function(block_type, itemstring)
 		local tiles = minetest.registered_nodes[itemstring].tiles
 		local textures = {}
 		local last
-		if mobs_mc.enderman_block_texture_overrides[itemstring] then
+		if enderman_block_texture_overrides[itemstring] then
 			-- Texture override available? Use these instead!
-			textures = mobs_mc.enderman_block_texture_overrides[itemstring]
+			textures = enderman_block_texture_overrides[itemstring]
 		else
 			-- Extract the texture names
 			for i = 1, 6 do
@@ -211,15 +258,15 @@ mobs:register_mob("mobs_mc:enderman", {
 			self._take_place_timer = 0
 			self._next_take_place_time = math.random(place_frequency_min, place_frequency_max)
 			local pos = self.object:getpos()
-			local takable_nodes = minetest.find_nodes_in_area({x=pos.x-2, y=pos.y-1, z=pos.z-2}, {x=pos.x+2, y=pos.y+1, z=pos.z+2}, mobs_mc.enderman_takable)
+			local takable_nodes = minetest.find_nodes_in_area({x=pos.x-2, y=pos.y-1, z=pos.z-2}, {x=pos.x+2, y=pos.y+1, z=pos.z+2}, takables)
 			if #takable_nodes >= 1 then
 				local r = pr:next(1, #takable_nodes)
 				local take_pos = takable_nodes[r]
 				local node = minetest.get_node(take_pos)
 				local dug = minetest.dig_node(take_pos)
 				if dug then
-					if mobs_mc.enderman_replace_on_take[node.name] then
-						self._taken_node = mobs_mc.enderman_replace_on_take[node.name]
+					if enderman_replace_on_take[node.name] then
+						self._taken_node = enderman_replace_on_take[node.name]
 					else
 						self._taken_node = node.name
 					end
@@ -341,4 +388,3 @@ if minetest.settings:get_bool("log_mods") then
 
 	minetest.log("action", "MC Enderman loaded")
 end
-

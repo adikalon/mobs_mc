@@ -1,0 +1,9 @@
+# textdomain:mobs_mc
+
+Dragon Egg=
+Carrot on a Stick=
+Rotten Flesh=
+Spider Eye=
+Totem of Undying=
+Zombie Head=
+Creeper Head=
