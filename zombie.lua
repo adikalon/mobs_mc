@@ -3,9 +3,7 @@
 --made for MC like Survival game
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
@@ -121,14 +119,12 @@ baby_husk.run_velocity = 2.4
 
 mobs:register_mob("mobs_mc:baby_husk", baby_husk)
 
-
--- Spawning
-
-mobs:spawn_specific("mobs_mc:zombie", mobs_mc.spawn.solid, {"air"}, 0, 7, 30, 6000, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
--- Baby zombie is 20 times less likely than regular zombies
-mobs:spawn_specific("mobs_mc:baby_zombie", mobs_mc.spawn.solid, {"air"}, 0, 7, 30, 60000, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
-mobs:spawn_specific("mobs_mc:husk", mobs_mc.spawn.desert, {"air"}, 0, 7, 30, 6500, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
-mobs:spawn_specific("mobs_mc:baby_husk", mobs_mc.spawn.desert, {"air"}, 0, 7, 30, 65000, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.zombie)
+	mobs:spawn(mobs_mc.spawns.baby_zombie)
+	mobs:spawn(mobs_mc.spawns.husk)
+	mobs:spawn(mobs_mc.spawns.baby_husk)
+end
 
 -- Compatibility
 mobs:alias_mob("mobs:zombie", "mobs_mc:zombie")

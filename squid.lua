@@ -4,9 +4,7 @@
 --################### SQUID
 --###################
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:squid", {
     type = "animal",
@@ -57,10 +55,10 @@ mobs:register_mob("mobs_mc:squid", {
 
 -- Spawn near the water surface
 
-local water = mobs_mc.spawn_height.water
 --name, nodes, neighbours, minlight, maxlight, interval, chance, active_object_count, min_height, max_height
-mobs:spawn_specific("mobs_mc:squid", mobs_mc.spawn.water, {mobs_mc.items.water_source}, 0, minetest.LIGHT_MAX+1, 30, 5500, 3, water-16, water)
-
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.squid)
+end
 -- compatibility
 mobs:alias_mob("mobs:squid", "mobs_mc:squid")
 

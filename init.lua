@@ -3,7 +3,7 @@ local path = minetest.get_modpath(minetest.get_current_modname())
 mobs_mc = {}
 
 mobs_mc.custom_spawn = false
-local input = io.open(path .. "spawn.lua", "r")
+local input = io.open(path .. "/spawn.lua", "r")
 
 if input then
 	mobs_mc.custom_spawn = true

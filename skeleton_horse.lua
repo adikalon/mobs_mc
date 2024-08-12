@@ -1,5 +1,4 @@
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP .. "/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 local shoes = {
 	["mobs:horseshoe_steel"] = {9, 6, 4, "mobs_mc_horseshoe_steelo.png"},

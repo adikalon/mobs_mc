@@ -3,9 +3,7 @@
 --made for MC like Survival game
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
@@ -73,7 +71,9 @@ mobs:register_mob("mobs_mc:ghast", {
 })
 
 
-mobs:spawn_specific("mobs_mc:ghast", mobs_mc.spawn.nether, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 18000, 2, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.ghast)
+end
 
 -- fireball (weapon)
 mobs:register_arrow(":mobs_monster:fireball", {

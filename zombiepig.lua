@@ -3,9 +3,7 @@
 --made for MC like Survival game
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 --###################
@@ -88,13 +86,18 @@ baby_pigman.light_damage = 0
 
 mobs:register_mob("mobs_mc:baby_pigman", baby_pigman)
 
--- Regular spawning in the Nether
-mobs:spawn_specific("mobs_mc:pigman", mobs_mc.spawn.solid, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 6000, 3, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
--- Baby zombie is 20 times less likely than regular zombies
-mobs:spawn_specific("mobs_mc:baby_pigman", mobs_mc.spawn.solid, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 100000, 4, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
+-- -- Regular spawning in the Nether
+-- mobs:spawn_specific("mobs_mc:pigman", mobs_mc.spawn.solid, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 6000, 3, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
+-- -- Baby zombie is 20 times less likely than regular zombies
+-- mobs:spawn_specific("mobs_mc:baby_pigman", mobs_mc.spawn.solid, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 100000, 4, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
 
--- Spawning in Nether portals in the Overworld
-mobs:spawn_specific("mobs_mc:pigman", mobs_mc.spawn.nether_portal, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 500, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+-- -- Spawning in Nether portals in the Overworld
+-- mobs:spawn_specific("mobs_mc:pigman", mobs_mc.spawn.nether_portal, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 500, 4, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.pigman)
+	mobs:spawn(mobs_mc.spawns.baby_pigman)
+end
 
 -- compatibility
 mobs:alias_mob("mobs:pigman", "mobs_mc:pigman")

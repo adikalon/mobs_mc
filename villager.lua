@@ -3,9 +3,7 @@
 --made for MC like Survival game
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 --###################
@@ -180,7 +178,9 @@ mobs:register_mob("mobs_mc:villager", {
 	]]
 })
 
-mobs:spawn_specific("mobs_mc:villager", mobs_mc.spawn.village, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 8000, 4, mobs_mc.spawn_height.water+1, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.villager)
+end
 
 -- compatibility
 mobs:alias_mob("mobs:villager", "mobs_mc:villager")

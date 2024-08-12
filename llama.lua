@@ -1,6 +1,4 @@
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --###################
 --################### LLAMA
@@ -136,8 +134,9 @@ mobs:register_mob("mobs_mc:llama", {
 
 })
 
---spawn
-mobs:spawn_specific("mobs_mc:llama", mobs_mc.spawn.savanna, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 15000, 5, mobs_mc.spawn_height.water+15, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.llama)
+end
 
 -- spawn eggs
 mobs:register_egg("mobs_mc:llama", S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)

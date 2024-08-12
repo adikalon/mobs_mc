@@ -4,9 +4,7 @@
 --################### GUARDIAN
 --###################
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:guardian_elder", {
 	type = "monster",
@@ -88,8 +86,9 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	blood_amount = 0,
 })
 
-mobs:spawn_specific("mobs_mc:guardian_elder", mobs_mc.spawn.water, mobs_mc.spawn_water, 0, minetest.LIGHT_MAX+1, 30, 40000, 2, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.water-18)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.guardian_elder)
+end
 
 -- spawn eggs
 mobs:register_egg("mobs_mc:guardian_elder", S("Elder Guardian"), "mobs_mc_spawn_icon_guardian_elder.png", 0)
-

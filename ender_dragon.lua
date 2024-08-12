@@ -2,9 +2,7 @@
 --################### ENDERDRAGON
 --###################
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --[[
 mobs:register_mob("mobs_mc:12enderdragon", {
@@ -33,7 +31,7 @@ mobs:register_mob("mobs_mc:12enderdragon", {
 	},
 })
 
-mobs:register_egg("mobs_mc:12enderdragon", "Enderdragon", "enderdragon_inv.png", 0)	
+mobs:register_egg("mobs_mc:12enderdragon", "Enderdragon", "enderdragon_inv.png", 0)
 ]]
 mobs:register_mob("mobs_mc:enderdragon", {
 	type = "monster",
@@ -64,7 +62,7 @@ mobs:register_mob("mobs_mc:enderdragon", {
 	jump_height = 14,
 	stepheight = 1.2,
 	jump_chance = 100,
-	fear_height = 120,	
+	fear_height = 120,
 	fly = true,
 	fly_in = {"air"},
 	dogshoot_switch = 1,
@@ -169,7 +167,7 @@ mobs:register_arrow(":mobs_mc:fireball2", {
 			full_punch_interval = 0.5,
 			damage_groups = {fleshy = 12},
 		}, nil)
-		
+
 	end,
 
 	-- node hit, bursts into flame
@@ -177,7 +175,7 @@ mobs:register_arrow(":mobs_mc:fireball2", {
 		mobs:explosion(pos, 3, 0, 1)
 		--from tnt
 		minetest.sound_play("tnt_explode", {pos = pos, gain = 1.5, max_hear_distance = 2*64})
-		
+
 	end
 })
 

@@ -3,9 +3,7 @@
 --made for MC like Survival game
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
@@ -82,7 +80,9 @@ cave_spider.walk_velocity = 4.1
 mobs:register_mob("mobs_mc:cave_spider", cave_spider)
 
 
-mobs:spawn_specific("mobs_mc:spider", mobs_mc.spawn.solid, {"air"}, 0, 7, 30, 17000, 2, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.spider then
+	mobs:spawn(mobs_mc.spawns.blaze)
+end
 
 -- compatibility
 mobs:alias_mob("mobs:spider", "mobs_mc:spider")

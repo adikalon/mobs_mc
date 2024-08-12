@@ -1,5 +1,4 @@
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP .. "/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 local pig = {
 	type = "animal",
@@ -181,7 +180,9 @@ end
 
 mobs:register_mob("mobs_mc:pig", pig)
 
-mobs:spawn_specific("mobs_mc:pig", mobs_mc.spawn.grassland, {"air"}, 9, minetest.LIGHT_MAX+1, 30, 15000, 30, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.pig)
+end
 
 -- compatibility
 mobs:alias_mob("mobs:pig", "mobs_mc:pig")

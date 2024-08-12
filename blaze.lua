@@ -1,17 +1,4 @@
--- daufinsyd
--- My work is under the LGPL terms
--- Model and mobs_blaze.png see https://github.com/22i/minecraft-voxel-blender-models
--- blaze.lua partial copy of mobs_mc/ghast.lua
-
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
-
---dofile(minetest.get_modpath("mobs").."/api.lua")
---###################
---################### BLAZE
---###################
-
+local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:blaze", {
 	type = "monster",
@@ -24,7 +11,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	textures = {
 		{"mobs_mc_blaze.png"},
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	sounds = {
 		random = "mobs_mc_blaze_breath",
 		death = "mobs_mc_blaze_died",
@@ -47,7 +34,6 @@ mobs:register_mob("mobs_mc:blaze", {
 		shoot_start = 1,
 		shoot_end = 40,
 	},
-	-- MC Wiki: takes 1 damage every half second while in water
 	water_damage = 2,
 	lava_damage = 0,
 	fall_damage = 0,
@@ -66,16 +52,16 @@ mobs:register_mob("mobs_mc:blaze", {
 	blood_amount = 0,
 })
 
-mobs:spawn_specific("mobs_mc:blaze", mobs_mc.spawn.nether_fortress, {"air"}, 0, minetest.LIGHT_MAX+1, 30, 5000, 3, mobs_mc.spawn_height.nether_min, mobs_mc.spawn_height.nether_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.blaze)
+end
 
--- Blaze fireball
 mobs:register_arrow("mobs_mc:blaze_fireball", {
 	visual = "sprite",
 	visual_size = {x = 0.3, y = 0.3},
 	textures = {"mcl_fire_fire_charge.png"},
 	velocity = 12,
 
-	-- Direct hit, no fire... just plenty of pain
 	hit_player = function(self, player)
 		player:punch(self.object, 1.0, {
 			full_punch_interval = 1.0,
@@ -90,7 +76,6 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 		}, nil)
 	end,
 
-	-- Node hit, make fire
 	hit_node = function(self, pos, node)
 		if node.name == "air" then
 			minetest.set_node(pos_above, {name=mobs_mc.items.fire})
@@ -108,14 +93,4 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 	end
 })
 
--- spawn eggs
 mobs:register_egg("mobs_mc:blaze", S("Blaze"), "mobs_mc_spawn_icon_blaze.png", 0)
-
-
-
-
-
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Blaze loaded")
-end

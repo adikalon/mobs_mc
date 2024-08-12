@@ -1,8 +1,6 @@
 --License for code WTFPL and otherwise stated in readmes
 
--- intllib
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
+local S = minetest.get_translator(minetest.get_current_modname())
 
 --dofile(minetest.get_modpath("mobs").."/api.lua")
 
@@ -39,7 +37,7 @@ mobs:register_mob("mobs_mc:creeper", {
 	run_velocity = 2.1,
 	runaway_from = { "mobs_mc:ocelot", "mobs_mc:cat" },
 	attack_type = "explode",
-	
+
 	explosion_radius = 3,
 	reach = 4,
 	explosion_damage_radius = 7,
@@ -127,7 +125,9 @@ mobs:register_mob("mobs_mc:creeper", {
 })
 
 
-mobs:spawn_specific("mobs_mc:creeper", mobs_mc.spawn.solid, {"air"}, 0, 7, 20, 16500, 2, mobs_mc.spawn_height.overworld_min, mobs_mc.spawn_height.overworld_max)
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.creeper)
+end
 
 -- compatibility
 mobs:alias_mob("mobs:creeper", "mobs_mc:creeper")
