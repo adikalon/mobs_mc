@@ -113,7 +113,20 @@ mobs_mc.drops = {
 	baby_pigman = {},
 	baby_zombie = {},
 	blaze = {},
-	creeper = {},
+	creeper = {
+		{
+			name = "tnt:gunpowder",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "mobs_mc:head_creeper",
+			chance = 200,
+			min = 1,
+			max = 1,
+		},
+	},
 	cave_spider = {},
 	dog = {},
 	donkey = {},

@@ -23,7 +23,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	damage = 6,
 	reach = 2,
 	pathfinding = 1,
-	drops = {},
+	drops = mobs_mc.drops.blaze,
 	animation = {
 		stand_start = 1,
 		stand_end = 40,

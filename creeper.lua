@@ -1,16 +1,4 @@
---License for code WTFPL and otherwise stated in readmes
-
 local S = minetest.get_translator(minetest.get_current_modname())
-
---dofile(minetest.get_modpath("mobs").."/api.lua")
-
-
---###################
---################### CREEPER
---###################
-
-
-
 
 mobs:register_mob("mobs_mc:creeper", {
 	type = "monster",
@@ -23,11 +11,9 @@ mobs:register_mob("mobs_mc:creeper", {
 	textures = {
 		{"mobs_mc_creeper.png"},
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	sounds = {
 		attack = "tnt_ignite",
-		--TODO: death = "",
-		--TODO: damage = "",
 		fuse = "tnt_ignite",
 		explode = "tnt_explode",
 		distance = 16,
@@ -35,9 +21,8 @@ mobs:register_mob("mobs_mc:creeper", {
 	makes_footstep_sound = true,
 	walk_velocity = 1.05,
 	run_velocity = 2.1,
-	runaway_from = { "mobs_mc:ocelot", "mobs_mc:cat" },
+	runaway_from = {"mobs_mc:ocelot", "mobs_animal:kitten"},
 	attack_type = "explode",
-
 	explosion_radius = 3,
 	reach = 4,
 	explosion_damage_radius = 7,
@@ -45,26 +30,23 @@ mobs:register_mob("mobs_mc:creeper", {
 	allow_fuse_reset = true,
 	stop_to_explode = true,
 
-	-- Force-ignite creeper with flint and steel and explode after 1.5 seconds.
-	-- TODO: Make creeper flash after doing this as well.
-	-- TODO: Test and debug this code.
 	on_rightclick = function(self, clicker)
 		if self._forced_explosion_countdown_timer ~= nil then
 			return
 		end
+
 		local item = clicker:get_wielded_item()
-		if item:get_name() == mobs_mc.items.flint_and_steel then
-			if not minetest.settings:get_bool("creative_mode") then
-				-- Wear tool
-				local wdef = item:get_definition()
-				item:add_wear(1000)
-				-- Tool break sound
-				if item:get_count() == 0 and wdef.sound and wdef.sound.breaks then
-					minetest.sound_play(wdef.sound.breaks, {pos = clicker:getpos(), gain = 0.5})
-				end
-				clicker:set_wielded_item(item)
+
+		if item:get_name() == "fire:flint_and_steel" then
+			local wdef = item:get_definition()
+			-- item:add_wear(1000)
+
+			if item:get_count() == 0 and wdef.sound and wdef.sound.breaks then
+				minetest.sound_play(wdef.sound.breaks, {pos = clicker:getpos(), gain = 0.5})
 			end
-			self._forced_explosion_countdown_timer = self.explosion_timer
+
+			clicker:set_wielded_item(item)
+			self._forced_explosion_countdown_timer = self.explosion_timer * 2
 			minetest.sound_play(self.sounds.attack, {pos = self.object:getpos(), gain = 1, max_hear_distance = 16})
 		end
 	end,
@@ -77,28 +59,8 @@ mobs:register_mob("mobs_mc:creeper", {
 			end
 		end
 	end,
-	on_die = function(self, pos)
-		-- Drop a random music disc
-		-- TODO: Only do this if killed by skeleton
-		if math.random(1, 200) == 1 then
-			local r = math.random(1, #mobs_mc.items.music_discs)
-			minetest.add_item({x=pos.x, y=pos.y+1, z=pos.z}, mobs_mc.items.music_discs[r])
-		end
-	end,
 	maxdrops = 2,
-	drops = {
-		{name = mobs_mc.items.gunpowder,
-		chance = 1,
-		min = 0,
-		max = 2,},
-
-		-- Head
-		-- TODO: Only drop if killed by charged creeper
-		{name = mobs_mc.items.head_creeper,
-		chance = 200, -- 0.5%
-		min = 1,
-		max = 1,},
-	},
+	drops = mobs_mc.drops.creeper,
 	animation = {
 		speed_normal = 24,
 		speed_run = 48,
@@ -129,12 +91,4 @@ if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.creeper)
 end
 
--- compatibility
-mobs:alias_mob("mobs:creeper", "mobs_mc:creeper")
-
--- spawn eggs
 mobs:register_egg("mobs_mc:creeper", S("Creeper"), "mobs_mc_spawn_icon_creeper.png", 0)
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Creeper loaded")
-end
