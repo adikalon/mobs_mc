@@ -158,12 +158,10 @@ local donkey = {
 					self.object:set_texture_mod(self.texture_mods)
 				end
 
-				minetest.chat_send_player(player_name,
-						S("Horse shoes fitted -")
-						.. S(" speed: ") .. speed
-						.. S(" , jump height: ") .. jump
-						.. S(" , stop speed: ") .. reverse)
-
+				minetest.chat_send_player(
+					player_name,
+					S("Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
+				)
 				tool:take_item()
 
 				clicker:set_wielded_item(tool)
