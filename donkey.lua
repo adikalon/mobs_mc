@@ -32,7 +32,7 @@ local donkey = {
 	fly = false,
 	walk_chance = 60,
 	view_range = 16,
-	follow = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
+	follow = mobs_mc.follows.donkey,
 	passive = true,
 	hp_min = 15,
 	hp_max = 30,
@@ -43,20 +43,7 @@ local donkey = {
 	makes_footstep_sound = true,
 	jump = true,
 	jump_height = 3.75,
-	drops = {
-		{
-			name = "mobs:meat_raw",
-			chance = 1,
-			min = 1,
-			max = 3
-		},
-		{
-			name = "mobs:leather",
-			chance = 1,
-			min = 0,
-			max = 2
-		},
-	},
+	drops = mobs_mc.drops.donkey,
 	do_custom = function(self, dtime)
 		if not self.v2 then
 			self.v2 = 0
@@ -195,16 +182,8 @@ local donkey = {
 
 mobs:register_mob("mobs_mc:donkey", donkey)
 
-mobs:spawn({
-	name = "mobs_mc:donkey",
-	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
-})
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.donkey)
+end
 
 mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)

@@ -56,7 +56,7 @@ mobs_mc.follows = {
 	creeper = {},
 	cave_spider = {},
 	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone"},
-	donkey = {},
+	donkey = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	enderdragon = {},
 	enderman = {},
 	endermite = {},
@@ -173,7 +173,20 @@ mobs_mc.drops = {
 	},
 	cave_spider = {},
 	dog = {},
-	donkey = {},
+	donkey = {
+		{
+			name = "mobs:meat_raw",
+			chance = 1,
+			min = 1,
+			max = 3
+		},
+		{
+			name = "mobs:leather",
+			chance = 1,
+			min = 0,
+			max = 2
+		},
+	},
 	enderdragon = {},
 	enderman = {},
 	endermite = {},

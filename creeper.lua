@@ -29,36 +29,6 @@ mobs:register_mob("mobs_mc:creeper", {
 	explosion_timer = 1.5,
 	allow_fuse_reset = true,
 	stop_to_explode = true,
-
-	on_rightclick = function(self, clicker)
-		if self._forced_explosion_countdown_timer ~= nil then
-			return
-		end
-
-		local item = clicker:get_wielded_item()
-
-		if item:get_name() == "fire:flint_and_steel" then
-			local wdef = item:get_definition()
-			-- item:add_wear(1000)
-
-			if item:get_count() == 0 and wdef.sound and wdef.sound.breaks then
-				minetest.sound_play(wdef.sound.breaks, {pos = clicker:getpos(), gain = 0.5})
-			end
-
-			clicker:set_wielded_item(item)
-			self._forced_explosion_countdown_timer = self.explosion_timer * 2
-			minetest.sound_play(self.sounds.attack, {pos = self.object:getpos(), gain = 1, max_hear_distance = 16})
-		end
-	end,
-	do_custom = function(self, dtime)
-		if self._forced_explosion_countdown_timer ~= nil then
-			self._forced_explosion_countdown_timer = self._forced_explosion_countdown_timer - dtime
-			if self._forced_explosion_countdown_timer <= 0 then
-				mobs:explosion(self.object:getpos(), self.explosion_radius, 0, 1, self.sounds.explode)
-				self.object:remove()
-			end
-		end
-	end,
 	maxdrops = 2,
 	drops = mobs_mc.drops.creeper,
 	animation = {
@@ -85,6 +55,37 @@ mobs:register_mob("mobs_mc:creeper", {
 	view_range = 16,
 	blood_amount = 0,
 	follow = mobs_mc.follows.creeper,
+
+	on_rightclick = function(self, clicker)
+		if self._forced_explosion_countdown_timer ~= nil then
+			return
+		end
+
+		local item = clicker:get_wielded_item()
+
+		if item:get_name() == "fire:flint_and_steel" then
+			local wdef = item:get_definition()
+			-- item:add_wear(1000)
+
+			if item:get_count() == 0 and wdef.sound and wdef.sound.breaks then
+				minetest.sound_play(wdef.sound.breaks, {pos = clicker:getpos(), gain = 0.5})
+			end
+
+			clicker:set_wielded_item(item)
+			self._forced_explosion_countdown_timer = self.explosion_timer * 2
+			minetest.sound_play(self.sounds.attack, {pos = self.object:getpos(), gain = 1, max_hear_distance = 16})
+		end
+	end,
+
+	do_custom = function(self, dtime)
+		if self._forced_explosion_countdown_timer ~= nil then
+			self._forced_explosion_countdown_timer = self._forced_explosion_countdown_timer - dtime
+			if self._forced_explosion_countdown_timer <= 0 then
+				mobs:explosion(self.object:getpos(), self.explosion_radius, 0, 1, self.sounds.explode)
+				self.object:remove()
+			end
+		end
+	end,
 })
 
 
