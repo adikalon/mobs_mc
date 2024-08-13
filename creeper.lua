@@ -84,6 +84,7 @@ mobs:register_mob("mobs_mc:creeper", {
 	light_damage = 0,
 	view_range = 16,
 	blood_amount = 0,
+	follow = mobs_mc.follows.creeper,
 })
 
 

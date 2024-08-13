@@ -44,11 +44,55 @@ mobs_mc.items = {
 	carrot = (minetest.registered_items["farming:carrot"] and "farming:carrot" or nil),
 	bone = (minetest.registered_items["bonemeal:bone"] and "bonemeal:bone" or nil),
 	potato = (minetest.registered_items["farming:potato"] and "farming:potato" or nil),
+	lava_orb = (minetest.registered_items["mobs:lava_orb"] and "mobs:lava_orb" or nil),
 }
 
 -- FOLLOWS
 mobs_mc.follows = {
+	baby_husk = {},
+	baby_pigman = {},
+	baby_zombie = {},
+	blaze = {},
+	creeper = {},
+	cave_spider = {},
+	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone"},
+	donkey = {},
+	enderdragon = {},
+	enderman = {},
+	endermite = {},
+	ghast = {},
+	guardian = {},
+	guardian_elder = {},
+	iron_golem = {},
+	husk = {},
+	llama = {},
+	magma_cube_tiny = {},
+	magma_cube_small = {},
+	magma_cube_big = {},
+	mooshroom = {},
+	mule = {},
+	ocelot = {},
 	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
+	pigman = {},
+	shulker = {},
+	silverfish = {},
+	skeleton_horse = {},
+	slime_tiny = {},
+	slime_small = {},
+	slime_big = {},
+	snowman = {},
+	spider = {},
+	squid = {},
+	vex = {},
+	evoker = {},
+	illusioner = {},
+	vindicator = {},
+	villager_zombie = {},
+	villager = {},
+	witch = {},
+	wither = {},
+	zombie_horse = {},
+	zombie = {},
 }
 
 if mobs_mc.items.potato then
@@ -167,6 +211,10 @@ mobs_mc.drops = {
 	zombie_horse = {},
 	zombie = {},
 }
+
+if mobs_mc.items.lava_orb then
+	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 15, min = 1, max = 1})
+end
 
 -- SPAWNS
 mobs_mc.spawns = {

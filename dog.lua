@@ -1,10 +1,7 @@
---License for code WTFPL and otherwise stated in readmes
-
 local S = minetest.get_translator(minetest.get_current_modname())
 
 local dog = {
 	type = "animal",
-
 	hp_min = 20,
 	hp_max = 20,
 	passive = true,
@@ -15,7 +12,7 @@ local dog = {
 	textures = {
 		{"mobs_mc_dog.png"},
 	},
-	visual_size = {x = 2.7, y = 2.7},
+	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = true,
 	owner = "",
 	order = "roam",
@@ -38,7 +35,8 @@ local dog = {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
-	follow = {"mobs:meat", "mobs:meat_raw", "mobs_mc:rotten_flesh"},
+	drops = mobs_mc.drops.dog,
+	follow = mobs_mc.follows.dog,
 
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 4, true, true) then return end
@@ -75,16 +73,8 @@ local dog = {
 
 mobs:register_mob("mobs_mc:dog", dog)
 
-mobs:spawn({
-	name = "mobs_mc:killer_bunny",
-	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
-})
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.dog)
+end
 
 mobs:register_egg("mobs_mc:dog", S("Dog"), "mobs_mc_spawn_icon_dog.png", 0)

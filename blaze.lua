@@ -50,6 +50,8 @@ mobs:register_mob("mobs_mc:blaze", {
 	jump_chance = 98,
 	fear_height = 120,
 	blood_amount = 0,
+	follow = mobs_mc.follows.blaze,
+	glow = 10,
 })
 
 if not mobs_mc.custom_spawn then
@@ -78,7 +80,7 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 
 	hit_node = function(self, pos, node)
 		if node.name == "air" then
-			minetest.set_node(pos_above, {name=mobs_mc.items.fire})
+			minetest.set_node(pos_above, {"fire:basic_flame"})
 		else
 			local v = self.object:getvelocity()
 			v = vector.normalize(v)
@@ -87,7 +89,7 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 			-- Set fire if node is air, or a replacable flammable node (e.g. a plant)
 			if crashnode.name == "air" or
 					(minetest.registered_nodes[crashnode.name].buildable_to and minetest.get_item_group(crashnode.name, "flammable") >= 1) then
-				minetest.set_node(crashpos, {name=mobs_mc.items.fire})
+				minetest.set_node(crashpos, {name = "fire:basic_flame"})
 			end
 		end
 	end
