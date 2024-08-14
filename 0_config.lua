@@ -197,7 +197,14 @@ mobs_mc.drops = {
 	},
 	enderman = {},
 	endermite = {},
-	ghast = {},
+	ghast = {
+		{
+			name = "tnt:gunpowder",
+			chance = 1,
+			min = 0,
+			max = 2,
+		}
+	},
 	guardian = {},
 	guardian_elder = {},
 	iron_golem = {},
