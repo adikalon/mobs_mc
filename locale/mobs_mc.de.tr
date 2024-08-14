@@ -1,6 +1,5 @@
 # textdomain:mobs_mc
 
-Dragon Egg=Drachenei
 Carrot on a Stick=Karottenrute
 Totem of Undying=Totem der Unsterblichkeit
 Zombie Head=Zombiekopf
@@ -11,7 +10,6 @@ Dog=Hund
 Donkey=Esel
 Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3=
 Eselsschuhe angebracht. Geschwindigkeit: @1, Sprunghöhe: @2, Stoppgeschwindigkeit: @3
-Ender Dragon=Enderdrache
 Enderman=Enderman
 Endermite=Endermite
 Ghast=Ghast
