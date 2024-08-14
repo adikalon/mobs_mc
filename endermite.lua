@@ -1,7 +1,3 @@
---###################
---################### ENDERMITE
---###################
-
 local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:endermite", {
@@ -17,7 +13,7 @@ mobs:register_mob("mobs_mc:endermite", {
 	textures = {
 		{"mobs_mc_endermite.png"},
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = false,
 	sounds = {
 		random = "mobs_rat",
@@ -33,6 +29,12 @@ mobs:register_mob("mobs_mc:endermite", {
 	damage = 2,
 	reach = 1,
 	blood_amount = 0,
+	drops = mobs_mc.drops.endermite,
+	follow = mobs_mc.follows.endermite,
 })
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.endermite)
+end
 
 mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)
