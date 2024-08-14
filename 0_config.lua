@@ -45,6 +45,10 @@ mobs_mc.items = {
 	bone = (minetest.registered_items["bonemeal:bone"] and "bonemeal:bone" or nil),
 	potato = (minetest.registered_items["farming:potato"] and "farming:potato" or nil),
 	lava_orb = (minetest.registered_items["mobs:lava_orb"] and "mobs:lava_orb" or nil),
+	rawfish = (minetest.registered_items["animalworld:rawfish"] and "animalworld:rawfish" or nil),
+	raw_exotic_fish = (minetest.registered_items["marinaramobs:raw_exotic_fish"] and "marinaramobs:raw_exotic_fish" or nil),
+	catfish_raw = (minetest.registered_items["nativevillages:catfish_raw"] and "nativevillages:catfish_raw" or nil),
+	fish_edible = (minetest.registered_items["xocean:fish_edible"] and "xocean:fish_edible" or nil),
 }
 
 -- FOLLOWS
@@ -196,7 +200,26 @@ mobs_mc.drops = {
 		}
 	},
 	guardian = {},
-	guardian_elder = {},
+	guardian_elder = {
+		{
+			name = "default:mese_crystal_fragment",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "default:gold_block",
+			chance = 1,
+			min = 1,
+			max = 1,
+		},
+		{
+			name = "default:mese_crystal",
+			chance = 4,
+			min = 1,
+			max = 1,
+		},
+	},
 	iron_golem = {},
 	husk = {},
 	llama = {},
@@ -231,6 +254,22 @@ mobs_mc.drops = {
 
 if mobs_mc.items.lava_orb then
 	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 15, min = 1, max = 1})
+end
+
+if mobs_mc.items.rawfish then
+	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.rawfish, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.raw_exotic_fish then
+	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.raw_exotic_fish, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.catfish_raw then
+	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.catfish_raw, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.fish_edible then
+	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
 end
 
 -- SPAWNS
