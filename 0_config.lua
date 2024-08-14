@@ -187,7 +187,14 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	enderdragon = {},
+	enderdragon = {
+		{
+			name = "mobs_mc:dragon_egg",
+			chance = 1,
+			min = 1,
+			max = 1,
+		},
+	},
 	enderman = {},
 	endermite = {},
 	ghast = {},
