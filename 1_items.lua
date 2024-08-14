@@ -61,23 +61,6 @@ if mobs_mc.items.carrot then
 	})
 end
 
--- ROTTEN FLESH
-minetest.register_craftitem("mobs_mc:rotten_flesh", {
-	description = S("Rotten Flesh"),
-	inventory_image = "mcl_mobitems_rotten_flesh.png",
-	groups = {food = 2, eatable = -4},
-	on_use = minetest.item_eat(-4),
-})
-
--- SPIDER EYE
-minetest.register_craftitem("mobs_mc:spider_eye", {
-	description = S("Spider Eye"),
-	inventory_image = "mcl_mobitems_spider_eye.png",
-	wield_image = "mcl_mobitems_spider_eye.png",
-	groups = {food = 2, eatable = -2},
-	on_use = minetest.item_eat(-2),
-})
-
 -- TOTEM OF UNDYING
 local totem_fail_nodes = {}
 local hud_totem = {}
