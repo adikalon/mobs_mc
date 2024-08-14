@@ -42,7 +42,6 @@ dofile(path .. "/witch.lua")
 -- MONSTERS
 dofile(path .. "/blaze.lua")
 dofile(path .. "/creeper.lua")
-dofile(path .. "/ender_dragon.lua")
 dofile(path .. "/enderman.lua")
 dofile(path .. "/endermite.lua")
 dofile(path .. "/villager_illusioner.lua")

@@ -57,7 +57,6 @@ mobs_mc.follows = {
 	cave_spider = {},
 	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone"},
 	donkey = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
-	enderdragon = {},
 	enderman = {},
 	endermite = {},
 	ghast = {},
@@ -113,7 +112,6 @@ mobs_mc.spawn_nodes = {
 	cave_spider = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	dog = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	donkey = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	enderdragon = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	enderman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	endermite = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	ghast = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -185,14 +183,6 @@ mobs_mc.drops = {
 			chance = 1,
 			min = 0,
 			max = 2
-		},
-	},
-	enderdragon = {
-		{
-			name = "mobs_mc:dragon_egg",
-			chance = 1,
-			min = 1,
-			max = 1,
 		},
 	},
 	enderman = {},
@@ -325,17 +315,6 @@ mobs_mc.spawns = {
 	donkey = {
 		name = "mobs_mc:donkey",
 		nodes = mobs_mc.spawn_nodes.donkey,
-		neighbors = {"air"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000,
-		min_height = 5,
-		max_height = 200,
-		day_toggle = true
-	},
-	enderdragon = {
-		name = "mobs_mc:enderdragon",
-		nodes = mobs_mc.spawn_nodes.enderdragon,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
