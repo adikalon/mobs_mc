@@ -1,25 +1,5 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local colors = {
-	"mobs_mc_shulker.png",
-	"mobs_mc_shulker_black.png",
-	"mobs_mc_shulker_blue.png",
-	"mobs_mc_shulker_brown.png",
-	"mobs_mc_shulker_cyan.png",
-	"mobs_mc_shulker_gray.png",
-	"mobs_mc_shulker_green.png",
-	"mobs_mc_shulker_light_blue.png",
-	"mobs_mc_shulker_lime.png",
-	"mobs_mc_shulker_magenta.png",
-	"mobs_mc_shulker_orange.png",
-	"mobs_mc_shulker_pink.png",
-	"mobs_mc_shulker_purple.png",
-	"mobs_mc_shulker_red.png",
-	"mobs_mc_shulker_silver.png",
-	"mobs_mc_shulker_white.png",
-	"mobs_mc_shulker_yellow.png",
-}
-
 mobs:register_mob("mobs_mc:shulker", {
 	type = "monster",
 	attack_type = "shoot",
@@ -33,7 +13,25 @@ mobs:register_mob("mobs_mc:shulker", {
 	collisionbox = {-0.5, -0.01, -0.5, 0.5, 0.99, 0.5},
 	visual = "mesh",
 	mesh = "mobs_mc_shulker.b3d",
-	textures = { "mobs_mc_shulker.png", },
+	textures = {
+		{"mobs_mc_shulker.png"},
+		{"mobs_mc_shulker_black.png"},
+		{"mobs_mc_shulker_blue.png"},
+		{"mobs_mc_shulker_brown.png"},
+		{"mobs_mc_shulker_cyan.png"},
+		{"mobs_mc_shulker_gray.png"},
+		{"mobs_mc_shulker_green.png"},
+		{"mobs_mc_shulker_light_blue.png"},
+		{"mobs_mc_shulker_lime.png"},
+		{"mobs_mc_shulker_magenta.png"},
+		{"mobs_mc_shulker_orange.png"},
+		{"mobs_mc_shulker_pink.png"},
+		{"mobs_mc_shulker_purple.png"},
+		{"mobs_mc_shulker_red.png"},
+		{"mobs_mc_shulker_silver.png"},
+		{"mobs_mc_shulker_white.png"},
+		{"mobs_mc_shulker_yellow.png"},
+	},
 	visual_size = {x = 2.7, y = 2.7},
 	walk_chance = 0,
 	jump = false,
@@ -60,10 +58,6 @@ mobs:register_mob("mobs_mc:shulker", {
 	water_damage = 1,
 	lava_damage = 4,
 	light_damage = 0,
-	on_spawn = function(self)
-		local color = math.random(1, #colors)
-		self.object:set_properties({textures = {colors[color]}})
-	end,
 })
 
 mobs:register_arrow("mobs_mc:shulkerbullet", {
