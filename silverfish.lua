@@ -24,8 +24,8 @@ mobs:register_mob("mobs_mc:silverfish", {
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 4,
+	replace_rate = 10,
 	replace_what = mobs_mc.replaces.silverfish,
-	replace_rate = 2,
 	animation = {
 		speed_normal = 25,
 		speed_run = 50,
@@ -722,3 +722,7 @@ if minetest.registered_items["underch:vindesite"] then
 end
 
 mobs:register_egg("mobs_mc:silverfish", S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.silverfish)
+end
