@@ -49,6 +49,7 @@ mobs_mc.items = {
 	raw_exotic_fish = (minetest.registered_items["marinaramobs:raw_exotic_fish"] and "marinaramobs:raw_exotic_fish" or nil),
 	catfish_raw = (minetest.registered_items["nativevillages:catfish_raw"] and "nativevillages:catfish_raw" or nil),
 	fish_edible = (minetest.registered_items["xocean:fish_edible"] and "xocean:fish_edible" or nil),
+	leather = (minetest.registered_items["mobs:leather"] and "mobs:leather" or nil),
 }
 
 -- FOLLOWS
@@ -69,7 +70,7 @@ mobs_mc.follows = {
 	iron_golem = {},
 	husk = {},
 	killer_bunny = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
-	llama = {},
+	llama = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
@@ -313,6 +314,10 @@ end
 
 if mobs_mc.items.rabbit_hide then
 	table.insert(mobs_mc.drops.killer_bunny, {name = mobs_mc.items.rabbit_hide, chance = 1, min = 0, max = 1})
+end
+
+if mobs_mc.items.leather then
+	table.insert(mobs_mc.drops.llama, {name = mobs_mc.items.leather, chance = 1, min = 0, max = 2})
 end
 
 -- SPAWNS

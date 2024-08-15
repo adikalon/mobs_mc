@@ -1,9 +1,5 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
---###################
---################### LLAMA
---###################
-
 mobs:register_mob("mobs_mc:llama", {
 	type = "animal",
 	hp_min = 15,
@@ -12,33 +8,26 @@ mobs:register_mob("mobs_mc:llama", {
 	collisionbox = {-0.45, -0.01, -0.45, 0.45, 1.86, 0.45},
 	visual = "mesh",
 	mesh = "mobs_mc_llama.b3d",
-	textures = { -- 1: chest -- 2: decor (carpet) -- 3: llama base texture
+	textures = {
 		{"blank.png", "blank.png", "mobs_mc_llama_brown.png"},
 		{"blank.png", "blank.png", "mobs_mc_llama_creamy.png"},
 		{"blank.png", "blank.png", "mobs_mc_llama_gray.png"},
 		{"blank.png", "blank.png", "mobs_mc_llama_white.png"},
 		{"blank.png", "blank.png", "mobs_mc_llama.png"},
-		-- TODO: Implement carpet (aka decor) on llama
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = true,
 	runaway = true,
 	walk_velocity = 1,
 	run_velocity = 4.4,
 	floats = 1,
-	drops = {
-		{name = mobs_mc.items.leather,
-		chance = 1,
-		min = 0,
-		max = 2,},
-	},
+	drops = mobs_mc.drops.llama,
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 4,
 	sounds = {
 		random = "mobs_mc_llama",
-		-- TODO: Death and damage sounds
 		distance = 16,
 	},
 	animation = {
@@ -56,91 +45,77 @@ mobs:register_mob("mobs_mc:llama", {
 		look_start = 78,
 		look_end = 108,
 	},
-	follow = mobs_mc.items.horse,
+	follow = mobs_mc.follows.llama,
 	view_range = 16,
 	do_custom = function(self, dtime)
-
-		-- set needed values if not already present
 		if not self.v2 then
 			self.v2 = 0
 			self.max_speed_forward = 4
 			self.max_speed_reverse = 2
 			self.accel = 4
 			self.terrain_type = 3
-			self.driver_attach_at = {x = 0, y = 7.5, z = -1.5}
-			self.driver_eye_offset = {x = 0, y = 3, z = 0}
+			self.driver_attach_at = {x = 0, y = 4.3, z = -1.5}
+			self.driver_eye_offset = {x = 0, y = 15, z = 0}
 			self.driver_scale = {x = 1/3, y = 1/3}
 		end
 
-		-- if driver present allow control of llama
 		if self.driver then
-
 			mobs.drive(self, "walk", "stand", false, dtime)
 
-			return false -- skip rest of mob functions
+			return false
 		end
 
 		return true
 	end,
 
 	on_die = function(self, pos)
-
-		-- detach from llama properly
 		if self.driver then
 			mobs.detach(self.driver, {x = 1, y = 0, z = 1})
 		end
+	end,
 
+	do_punch = function(self, hitter)
+		if hitter ~= self.driver then
+			return true
+		end
 	end,
 
 	on_rightclick = function(self, clicker)
-
-		-- Make sure player is clicking
 		if not clicker or not clicker:is_player() then
 			return
 		end
 
-		local item = clicker:get_wielded_item()
-		if item:get_name() == mobs_mc.items.hay_bale then
-			-- Breed with hay bale
-			if mobs:feed_tame(self, clicker, 1, true, false) then return end
-		else
-			-- Feed with anything else
-			if mobs:feed_tame(self, clicker, 1, false, true) then return end
+		if mobs:feed_tame(self, clicker, 10, true, true) then
+			return
 		end
-		if mobs:protect(self, clicker) then return end
 
-		-- Make sure tamed llama is mature and being clicked by owner only
-		if self.tamed and not self.child and self.owner == clicker:get_player_name() then
+		if mobs:protect(self, clicker) then
+			return
+		end
 
-			local inv = clicker:get_inventory()
+		local player_name = clicker:get_player_name()
 
-			-- detatch player already riding llama
+		if self.tamed and self.owner == player_name then
 			if self.driver and clicker == self.driver then
-
 				mobs.detach(clicker, {x = 1, y = 0, z = 1})
-
-			-- attach player to llama
-			elseif not self.driver then
-
-				self.object:set_properties({stepheight = 1.1})
+				return
+			else
 				mobs.attach(self, clicker)
 			end
 
-		-- Used to capture llama
-		elseif not self.driver and clicker:get_wielded_item():get_name() ~= "" then
-			mobs:capture_mob(self, clicker, 0, 5, 60, false, nil)
+			if not self.driver then
+				self.order = "stand"
+				self.object:set_properties({stepheight = 1.2})
+				return
+			end
 		end
-	end
 
+		if mobs:capture_mob(self, clicker, nil, nil, 100, false, nil) then return end
+	end,
 })
+
+mobs:register_egg("mobs_mc:llama", S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.llama)
-end
-
--- spawn eggs
-mobs:register_egg("mobs_mc:llama", S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Llama loaded")
 end
