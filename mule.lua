@@ -45,6 +45,7 @@ mobs:register_mob("mobs_mc:mule", {
 	jump_height = 3.75,
 	drops = mobs_mc.drops.mule,
 	replace_what = mobs_mc.replaces.mule,
+	specific_attack = mobs_mc.attacks.mule,
 
 	do_custom = function(self, dtime)
 		if not self.v2 then

@@ -46,6 +46,7 @@ mobs:register_mob("mobs_mc:enderman", {
 	attack_type = "dogfight",
 	blood_amount = 0,
 	replace_what = mobs_mc.replaces.enderman,
+	specific_attack = mobs_mc.attacks.enderman,
 })
 
 mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)

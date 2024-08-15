@@ -32,6 +32,7 @@ mobs:register_mob("mobs_mc:endermite", {
 	drops = mobs_mc.drops.endermite,
 	follow = mobs_mc.follows.endermite,
 	replace_what = mobs_mc.replaces.endermite,
+	specific_attack = mobs_mc.attacks.endermite,
 })
 
 mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)

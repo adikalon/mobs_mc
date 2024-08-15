@@ -45,6 +45,8 @@ mobs:register_mob("mobs_mc:donkey", {
 	jump_height = 3.75,
 	drops = mobs_mc.drops.donkey,
 	replace_what = mobs_mc.replaces.donkey,
+	specific_attack = mobs_mc.attacks.donkey,
+
 	do_custom = function(self, dtime)
 		if not self.v2 then
 			self.v2 = 0

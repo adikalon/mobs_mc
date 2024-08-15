@@ -56,6 +56,7 @@ mobs:register_mob("mobs_mc:creeper", {
 	blood_amount = 0,
 	follow = mobs_mc.follows.creeper,
 	replace_what = mobs_mc.replaces.creeper,
+	specific_attack = mobs_mc.attacks.creeper,
 
 	on_rightclick = function(self, clicker)
 		if self._forced_explosion_countdown_timer ~= nil then

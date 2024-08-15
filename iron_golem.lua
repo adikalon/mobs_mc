@@ -51,6 +51,7 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	blood_amount = 0,
 	follow = mobs_mc.follows.blaze,
 	replace_what = mobs_mc.replaces.iron_golem,
+	specific_attack = mobs_mc.attacks.iron_golem,
 })
 
 mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)

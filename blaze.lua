@@ -52,6 +52,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	blood_amount = 0,
 	follow = mobs_mc.follows.blaze,
 	replace_what = mobs_mc.replaces.blaze,
+	specific_attack = mobs_mc.attacks.blaze,
 	glow = 10,
 })
 

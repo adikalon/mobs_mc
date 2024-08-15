@@ -4,7 +4,7 @@ mobs:register_mob("mobs_mc:killer_bunny", {
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
-	specific_attack = {"player", "animalworld:wolf"},
+	specific_attack = mobs_mc.attacks.killer_bunny,
 	attacks_monsters = true,
 	attack_players = true,
 	damage = 8,

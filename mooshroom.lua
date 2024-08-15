@@ -52,6 +52,7 @@ mobs:register_mob("mobs_mc:mooshroom", {
 	replace_rate = 10,
 	replace_what = mobs_mc.replaces.mooshroom,
 	fear_height = 2,
+	specific_attack = mobs_mc.attacks.mooshroom,
 
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 8, true, true) then
