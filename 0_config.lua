@@ -187,7 +187,9 @@ mobs_mc.replaces = {
 	pig = {},
 	pigman = {},
 	shulker = {},
-	silverfish = {},
+	silverfish = {
+		{"default:stone", "mobs_mc:monster_egg_stone", -1},
+	},
 	skeleton_horse = {},
 	slime_tiny = {},
 	slime_small = {},

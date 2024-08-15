@@ -14,7 +14,7 @@ mobs:register_mob("mobs_mc:silverfish", {
 		{"mobs_mc_silverfish.png"},
 	},
 	pathfinding = 1,
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	sounds = {},
 	makes_footstep_sound = false,
 	walk_velocity = 0.6,
@@ -24,146 +24,57 @@ mobs:register_mob("mobs_mc:silverfish", {
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 4,
-	replace_what = {
-		{"default:stone", "mobs_mc:monster_egg_stone", -1},
-		{"default:cobble", "mobs_mc:monster_egg_cobble", -1},
-		{"default:mossycobble", "mobs_mc:monster_egg_mossycobble", -1},
-		{"default:stonebrick", "mobs_mc:monster_egg_stonebrick", -1},
-		{"default:stone_block", "mobs_mc:monster_egg_stone_block", -1},
-	},
+	replace_what = mobs_mc.replaces.silverfish,
 	replace_rate = 2,
 	animation = {
-		speed_normal = 25,		speed_run = 50,
-		stand_start = 0,		stand_end = 20,
-		walk_start = 0,		walk_end = 20,
-		run_start = 0,		run_end = 20,
+		speed_normal = 25,
+		speed_run = 50,
+		stand_start = 0,
+		stand_end = 20,
+		walk_start = 0,
+		walk_end = 20,
+		run_start = 0,
+		run_end = 20,
 	},
 	view_range = 16,
 	attack_type = "dogfight",
 	damage = 1,
 	reach = 1,
 	blood_amount = 0,
+	drops = mobs_mc.drops.silverfish,
+	follow = mobs_mc.follows.silverfish,
+	specific_attack = mobs_mc.attacks.silverfish,
+})
+
+local spawn_silverfish = function(pos, oldnode, oldmetadata, digger)
+	minetest.add_entity(pos, "mobs_mc:silverfish")
+end
+
+minetest.register_node("mobs_mc:monster_egg_stone", {
+	description = S("Stone Monster Egg"),
+	tiles = {"default_stone.png"},
+	groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
+	drop = '',
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	after_dig_node = spawn_silverfish,
+})
+
+local scarcity = 22 * 22 * 22
+
+if minetest.get_mapgen_setting("mg_name") == "v6" then
+	scarcity = 28 * 28 * 28
+end
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mobs_mc:monster_egg_stone",
+	wherein        = "default:stone",
+	clust_scarcity = scarcity,
+	clust_num_ores = 3,
+	clust_size     = 2,
+	y_min          = -31000,
+	y_max          = 31000,
 })
 
 mobs:register_egg("mobs_mc:silverfish", S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
-
-if mobs_mc.create_monster_egg_nodes then
-	local spawn_silverfish = function(pos, oldnode, oldmetadata, digger)
-		if not minetest.settings:get_bool("creative_mode") then
-			minetest.add_entity(pos, "mobs_mc:silverfish")
-		end
-	end
-
-	minetest.register_node("mobs_mc:monster_egg_stone", {
-		description = S("Stone Monster Egg"),
-		tiles = {"default_stone.png"},
-		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
-		drop = '',
-		is_ground_content = true,
-		sounds = default.node_sound_stone_defaults(),
-		after_dig_node = spawn_silverfish,
-	})
-
-	minetest.register_node("mobs_mc:monster_egg_cobble", {
-		description = S("Cobblestone Monster Egg"),
-		tiles = {"default_cobble.png"},
-		is_ground_content = false,
-		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
-		drop = '',
-		sounds = default.node_sound_stone_defaults(),
-		after_dig_node = spawn_silverfish,
-	})
-
-	minetest.register_node("mobs_mc:monster_egg_mossycobble", {
-		description = S("Mossy Cobblestone Monster Egg"),
-		tiles = {"default_mossycobble.png"},
-		is_ground_content = false,
-		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
-		drop = '',
-		sounds = default.node_sound_stone_defaults(),
-		after_dig_node = spawn_silverfish,
-	})
-
-	minetest.register_node("mobs_mc:monster_egg_stonebrick", {
-		description = S("Stone Brick Monster Egg"),
-		paramtype2 = "facedir",
-		place_param2 = 0,
-		tiles = {"default_stone_brick.png"},
-		is_ground_content = false,
-		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
-		drop = '',
-		sounds = default.node_sound_stone_defaults(),
-		after_dig_node = spawn_silverfish,
-	})
-
-	minetest.register_node("mobs_mc:monster_egg_stone_block", {
-		description = S("Stone Block Monster Egg"),
-		tiles = {"default_stone_block.png"},
-		is_ground_content = false,
-		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
-		drop = '',
-		sounds = default.node_sound_stone_defaults(),
-		after_dig_node = spawn_silverfish,
-	})
-
-	local scarcity = 22 * 22 * 22
-
-	if minetest.get_mapgen_setting("mg_name") == "v6" then
-		scarcity = 28 * 28 * 28
-	end
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mobs_mc:monster_egg_stone",
-		wherein        = "default:stone",
-		clust_scarcity = scarcity,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_min          = -31000,
-		y_max          = 31000,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mobs_mc:monster_egg_cobble",
-		wherein        = "default:cobble",
-		clust_scarcity = scarcity,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_min          = -31000,
-		y_max          = 31000,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mobs_mc:monster_egg_mossycobble",
-		wherein        = "default:mossycobble",
-		clust_scarcity = scarcity,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_min          = -31000,
-		y_max          = 31000,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mobs_mc:monster_egg_stonebrick",
-		wherein        = "default:stonebrick",
-		clust_scarcity = scarcity,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_min          = -31000,
-		y_max          = 31000,
-	})
-
-	minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mobs_mc:monster_egg_stone_block",
-		wherein        = "default:stone_block",
-		clust_scarcity = scarcity,
-		clust_num_ores = 3,
-		clust_size     = 2,
-		y_min          = -31000,
-		y_max          = 31000,
-	})
-end
