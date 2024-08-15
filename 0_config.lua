@@ -239,7 +239,20 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	iron_golem = {},
+	iron_golem = {
+		{
+			name = "default:steel_ingot",
+			chance = 1,
+			min = 3,
+			max = 5,
+		},
+		{
+			name = "flowers:rose",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+	},
 	husk = {},
 	llama = {},
 	magma_cube_tiny = {},

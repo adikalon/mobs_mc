@@ -1,16 +1,4 @@
---MCmobs v0.4
---maikerumine
---made for MC like Survival game
---License for code WTFPL and otherwise stated in readmes
-
 local S = minetest.get_translator(minetest.get_current_modname())
-
---dofile(minetest.get_modpath("mobs").."/api.lua")
---###################
---################### IRON GOLEM
---###################
-
-
 
 mobs:register_mob("mobs_mc:iron_golem", {
 	type = "npc",
@@ -23,10 +11,9 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	textures = {
 		{"mobs_mc_iron_golem.png"},
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = true,
 	sounds = {
-		-- TODO
 		distance = 16,
 	},
 	view_range = 16,
@@ -36,54 +23,37 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	floats = 0,
 	walk_velocity = 0.6,
 	run_velocity = 1.2,
-	-- Approximation
 	damage = 14,
 	reach = 3,
 	group_attack = true,
 	attacks_monsters = true,
 	attack_type = "dogfight",
-	drops = {
-		{name = mobs_mc.items.iron_ingot,
-		chance = 1,
-		min = 3,
-		max = 5,},
-		{name = mobs_mc.items.poppy,
-		chance = 1,
-		min = 0,
-		max = 2,},
-	},
+	drops = mobs_mc.drops.iron_golem,
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
 	fall_damage = 0,
 	animation = {
-		stand_speed = 15, walk_speed = 15, run_speed = 25, punch_speed = 15,
-		stand_start = 0,		stand_end = 0,
-		walk_start = 0,		walk_end = 40,
-		run_start = 0,		run_end = 40,
-		punch_start = 40,  punch_end = 50,
+		stand_speed = 15,
+		walk_speed = 15,
+		run_speed = 25,
+		punch_speed = 15,
+		stand_start = 0,
+		stand_end = 0,
+		walk_start = 0,
+		walk_end = 40,
+		run_start = 0,
+		run_end = 40,
+		punch_start = 40,
+		punch_end = 50,
 	},
 	jump = true,
 	blood_amount = 0,
+	follow = mobs_mc.follows.blaze,
 })
 
-
--- spawn eggs
-mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
-
-
---[[ This is to be called when a pumpkin or jack'o lantern has been placed. Recommended: In the on_construct function of the node.
-This summons an iron golen if placing the pumpkin created an iron golem summon pattern:
-
-.P.
-III
-.I.
-
-P = Pumpkin or jack'o lantern
-I = Iron block
-. = Air
-]]
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Iron Golem loaded")
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.iron_golem)
 end
+
+mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
