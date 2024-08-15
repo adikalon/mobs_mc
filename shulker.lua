@@ -35,7 +35,6 @@ mobs:register_mob("mobs_mc:shulker", {
 	visual_size = {x = 2.7, y = 2.7},
 	walk_chance = 0,
 	jump = false,
-	drops = {},
 	animation = {
 		stand_speed = 25,
 		walk_speed = 25,
@@ -58,6 +57,10 @@ mobs:register_mob("mobs_mc:shulker", {
 	water_damage = 1,
 	lava_damage = 4,
 	light_damage = 0,
+	drops = mobs_mc.drops.shulker,
+	follow = mobs_mc.follows.shulker,
+	replace_what = mobs_mc.replaces.shulker,
+	specific_attack = mobs_mc.attacks.shulker,
 })
 
 mobs:register_arrow("mobs_mc:shulkerbullet", {
@@ -87,14 +90,6 @@ mobs:register_arrow("mobs_mc:shulkerbullet", {
 
 mobs:register_egg("mobs_mc:shulker", S("Shulker"), "mobs_mc_spawn_icon_shulker.png", 0)
 
-mobs:spawn({
-	name = "mobs_mc:shulker",
-	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
-})
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.shulker)
+end
