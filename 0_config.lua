@@ -199,7 +199,26 @@ mobs_mc.drops = {
 			max = 2,
 		}
 	},
-	guardian = {},
+	guardian = {
+		{
+			name = "default:mese_crystal_fragment",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "default:gold_block",
+			chance = 1,
+			min = 1,
+			max = 1,
+		},
+		{
+			name = "default:mese_crystal",
+			chance = 4,
+			min = 1,
+			max = 1,
+		},
+	},
 	guardian_elder = {
 		{
 			name = "default:mese_crystal_fragment",

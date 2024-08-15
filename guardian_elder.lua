@@ -36,7 +36,7 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	},
 	drops = mobs_mc.drops.guardian_elder,
 	fly = true,
-	fly_in = { mobs_mc.items.water_source, mobs_mc.items.river_water_source },
+	fly_in = {"default:river_water_source", "default:water_source", "df_farming:dwarven_syrup_source", "ebiomes:swamp_water_source", "livingcaves:water_source", "swamp:swamp_water_source"},
 	stepheight = 0.1,
 	jump = false,
 	water_damage = 0,
@@ -44,6 +44,7 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	light_damage = 0,
 	view_range = 16,
 	blood_amount = 0,
+	air_damage = 2,
 	follow = mobs_mc.follows.guardian_elder,
 })
 

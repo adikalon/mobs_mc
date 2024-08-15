@@ -1,9 +1,3 @@
--- v1.4
-
---###################
---################### GUARDIAN
---###################
-
 local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:guardian", {
@@ -24,54 +18,25 @@ mobs:register_mob("mobs_mc:guardian", {
 	textures = {
 		{"mobs_mc_guardian.png"},
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	sounds = {
 		damage = "mobs_mc_squid_hurt",
 		distance = 16,
 	},
 	animation = {
-		stand_speed = 25, walk_speed = 25, run_speed = 50,
-		stand_start = 0,		stand_end = 20,
-		walk_start = 0,		walk_end = 20,
-		run_start = 0,		run_end = 20,
+		stand_speed = 25,
+		walk_speed = 25,
+		run_speed = 50,
+		stand_start = 0,
+		stand_end = 20,
+		walk_start = 0,
+		walk_end = 20,
+		run_start = 0,
+		run_end = 20,
 	},
-	drops = {
-		{name = mobs_mc.items.prismarine_shard,
-		chance = 1,
-		min = 0,
-		max = 2,},
-
-		-- The following drops are approximations
-		-- Fish / prismarine crystal
-		{name = mobs_mc.items.fish_raw,
-		chance = 4,
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.prismarine_crystals,
-		chance = 4,
-		min = 1,
-		max = 1,},
-
-		-- Rare drop: fish
-		{name = mobs_mc.items.fish_raw,
-		chance = 160, -- 2.5% / 4
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.salmon_raw,
-		chance = 160,
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.clownfish_raw,
-		chance = 160,
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.pufferfish_raw,
-		chance = 160,
-		min = 1,
-		max = 1,},
-	},
+	drops = mobs_mc.drops.guardian,
 	fly = true,
-	fly_in = { mobs_mc.items.water_source, mobs_mc.items.river_water_source },
+	fly_in = {"default:river_water_source", "default:water_source", "df_farming:dwarven_syrup_source", "ebiomes:swamp_water_source", "livingcaves:water_source", "swamp:swamp_water_source"},
 	stepheight = 0.1,
 	jump = false,
 	view_range = 16,
@@ -79,11 +44,12 @@ mobs:register_mob("mobs_mc:guardian", {
 	lava_damage = 4,
 	light_damage = 0,
 	blood_amount = 0,
+	air_damage = 2,
+	follow = mobs_mc.follows.guardian,
 })
 
 if not mobs_mc.guardian then
-	mobs:spawn(mobs_mc.spawns.guardian_elder)
+	mobs:spawn(mobs_mc.spawns.guardian)
 end
 
--- spawn eggs
 mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)
