@@ -48,8 +48,8 @@ mobs:register_mob("mobs_mc:guardian", {
 	follow = mobs_mc.follows.guardian,
 })
 
+mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)
+
 if not mobs_mc.guardian then
 	mobs:spawn(mobs_mc.spawns.guardian)
 end
-
-mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)

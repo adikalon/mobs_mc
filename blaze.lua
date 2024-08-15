@@ -54,10 +54,6 @@ mobs:register_mob("mobs_mc:blaze", {
 	glow = 10,
 })
 
-if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.blaze)
-end
-
 mobs:register_arrow("mobs_mc:blaze_fireball", {
 	visual = "sprite",
 	visual_size = {x = 0.3, y = 0.3},
@@ -96,3 +92,7 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 })
 
 mobs:register_egg("mobs_mc:blaze", S("Blaze"), "mobs_mc_spawn_icon_blaze.png", 0)
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.blaze)
+end

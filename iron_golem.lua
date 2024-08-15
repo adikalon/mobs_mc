@@ -52,8 +52,8 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	follow = mobs_mc.follows.blaze,
 })
 
+mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
+
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.iron_golem)
 end
-
-mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)

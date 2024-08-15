@@ -1,6 +1,6 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local dog = {
+mobs:register_mob("mobs_mc:dog", {
 	type = "animal",
 	hp_min = 20,
 	hp_max = 20,
@@ -69,12 +69,10 @@ local dog = {
 
 	jump = true,
 	attacks_monsters = true,
-}
+})
 
-mobs:register_mob("mobs_mc:dog", dog)
+mobs:register_egg("mobs_mc:dog", S("Dog"), "mobs_mc_spawn_icon_dog.png", 0)
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.dog)
 end
-
-mobs:register_egg("mobs_mc:dog", S("Dog"), "mobs_mc_spawn_icon_dog.png", 0)

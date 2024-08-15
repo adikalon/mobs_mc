@@ -88,9 +88,8 @@ mobs:register_mob("mobs_mc:creeper", {
 	end,
 })
 
+mobs:register_egg("mobs_mc:creeper", S("Creeper"), "mobs_mc_spawn_icon_creeper.png", 0)
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.creeper)
 end
-
-mobs:register_egg("mobs_mc:creeper", S("Creeper"), "mobs_mc_spawn_icon_creeper.png", 0)

@@ -47,8 +47,8 @@ mobs:register_mob("mobs_mc:enderman", {
 	blood_amount = 0,
 })
 
+mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)
+
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.enderman)
 end
-
-mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)

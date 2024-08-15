@@ -1,6 +1,6 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local killer_bunny = {
+mobs:register_mob("mobs_mc:killer_bunny", {
 	type = "monster",
 	passive = false,
 	attack_type = "dogfight",
@@ -9,18 +9,16 @@ local killer_bunny = {
 	attack_players = true,
 	damage = 8,
 	armor = 50,
-	textures = { "mobs_mc_killer_bunny_caerbannog.png" },
+	textures = {"mobs_mc_killer_bunny_caerbannog.png"},
 	view_range = 16,
 	replace_rate = nil,
 	replace_what = nil,
 	on_rightclick = nil,
 	run_velocity = 6,
 	reach = 1,
-
 	hp_min = 3,
 	hp_max = 3,
 	collisionbox = {-0.2, -0.01, -0.2, 0.2, 0.49, 0.2},
-
 	visual = "mesh",
 	mesh = "mobs_mc_killer_bunny.b3d",
 	visual_size = {x=1.5, y=1.5},
@@ -30,7 +28,7 @@ local killer_bunny = {
 	floats = 1,
 	runaway = true,
 	jump = true,
-	drops = {},
+	drops = mobs_mc.drops.killer_bunny,
 	water_damage = 1,
 	lava_damage = 4,
 	light_damage = 0,
@@ -45,40 +43,11 @@ local killer_bunny = {
 		run_start = 0,
 		run_end = 20,
 	},
-
-	follow = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
-}
-
-if mobs_mc.items.rabbit_raw then
-	table.insert(killer_bunny.drops, {
-		name = mobs_mc.items.rabbit_raw,
-		chance = 1,
-		min = 1,
-		max = 1,
-	})
-end
-
-if mobs_mc.items.rabbit_hide then
-	table.insert(killer_bunny.drops, {
-		name = mobs_mc.items.rabbit_hide,
-		chance = 1,
-		min = 0,
-		max = 1,
-	})
-end
-
-mobs:register_mob("mobs_mc:killer_bunny", killer_bunny)
-
-mobs:spawn({
-	name = "mobs_mc:killer_bunny",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
+	follow = mobs_mc.follows.killer_bunny,
 })
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.killer_bunny)
+end
 
 mobs:register_egg("mobs_mc:killer_bunny", S("Killer Bunny"), "mobs_mc_spawn_icon_killer_bunny.png", 0)

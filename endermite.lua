@@ -33,8 +33,8 @@ mobs:register_mob("mobs_mc:endermite", {
 	follow = mobs_mc.follows.endermite,
 })
 
+mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)
+
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.endermite)
 end
-
-mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)

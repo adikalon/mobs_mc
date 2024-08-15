@@ -8,7 +8,7 @@ local shoes = {
 	["mobs:horseshoe_crystal"] = {11, 6, 9, "mobs_mc_horseshoe_crystalo.png"}
 }
 
-local donkey = {
+mobs:register_mob("mobs_mc:donkey", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_mc_horse.b3d",
@@ -176,12 +176,10 @@ local donkey = {
 			mobs.attach(self, clicker)
 		end
 	end,
-}
+})
 
-mobs:register_mob("mobs_mc:donkey", donkey)
+mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.donkey)
 end
-
-mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)

@@ -68,6 +68,7 @@ mobs_mc.follows = {
 	guardian_elder = {},
 	iron_golem = {},
 	husk = {},
+	killer_bunny = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
@@ -123,6 +124,7 @@ mobs_mc.spawn_nodes = {
 	guardian_elder = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	iron_golem = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	husk = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
+	killer_bunny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	llama = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	magma_cube_tiny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	magma_cube_small = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -254,6 +256,7 @@ mobs_mc.drops = {
 		},
 	},
 	husk = {},
+	killer_bunny = {},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
@@ -302,6 +305,14 @@ end
 
 if mobs_mc.items.fish_edible then
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.rabbit_raw then
+	table.insert(mobs_mc.drops.killer_bunny, {name = mobs_mc.items.rabbit_raw, chance = 1, min = 1, max = 1})
+end
+
+if mobs_mc.items.rabbit_hide then
+	table.insert(mobs_mc.drops.killer_bunny, {name = mobs_mc.items.rabbit_hide, chance = 1, min = 0, max = 1})
 end
 
 -- SPAWNS
@@ -463,6 +474,17 @@ mobs_mc.spawns = {
 	husk = {
 		name = "mobs_mc:husk",
 		nodes = mobs_mc.spawn_nodes.husk,
+		neighbors = {"air"},
+		min_light = 14,
+		interval = 60,
+		chance = 8000,
+		min_height = 5,
+		max_height = 200,
+		day_toggle = true
+	},
+	killer_bunny = {
+		name = "mobs_mc:killer_bunny",
+		nodes = mobs_mc.spawn_nodes.killer_bunny,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
