@@ -451,6 +451,10 @@ if mobs_mc.items.leather then
 	table.insert(mobs_mc.drops.llama, {name = mobs_mc.items.leather, chance = 1, min = 0, max = 2})
 end
 
+if mobs_mc.items.pork_raw then
+	table.insert(mobs_mc.drops.pig, {name = mobs_mc.items.pork_raw, chance = 1, min = 1, max = 1})
+end
+
 -- SPAWNS
 mobs_mc.spawns = {
 	baby_husk = {

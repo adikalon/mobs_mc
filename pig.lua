@@ -1,6 +1,6 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local pig = {
+mobs:register_mob("mobs_mc:pig", {
 	type = "animal",
 	runaway = true,
 	hp_min = 10,
@@ -8,16 +8,18 @@ local pig = {
 	collisionbox = {-0.45, -0.01, -0.45, 0.45, 0.865, 0.45},
 	visual = "mesh",
 	mesh = "mobs_mc_pig.b3d",
-	textures = {{
+	textures = {
+		{
 		"blank.png",
 		"mobs_mc_pig.png",
 		"blank.png",
-	}},
+		}
+	},
 	visual_size = {x = 2.5, y = 2.5},
 	makes_footstep_sound = true,
 	walk_velocity = 1,
 	run_velocity = 3,
-	drops = {},
+	drops = mobs_mc.drops.pig,
 	water_damage = 1,
 	lava_damage = 4,
 	light_damage = 0,
@@ -40,10 +42,11 @@ local pig = {
 		run_end = 40,
 	},
 	follow = mobs_mc.follows.pig,
+	replace_what = mobs_mc.replaces.pig,
+	specific_attack = mobs_mc.attacks.pig,
 	view_range = 5,
-	do_custom = function(self, dtime)
 
-		-- set needed values if not already present
+	do_custom = function(self, dtime)
 		if not self.v2 then
 			self.v2 = 0
 			self.max_speed_forward = 4
@@ -55,25 +58,22 @@ local pig = {
 			self.driver_scale = {x = 1/2.5, y = 1/2.5}
 		end
 
-		-- if driver present allow control of horse
 		if self.driver then
-
 			mobs.drive(self, "walk", "stand", false, dtime)
-
-			return false -- skip rest of mob functions
+			return false
 		end
 
 		return true
 	end,
 
 	on_die = function(self, pos)
-
-		-- drop saddle when horse is killed while riding
-		-- also detach from horse properly
 		if self.driver then
 			mobs.detach(self.driver, {x = 1, y = 0, z = 1})
 		end
 
+		if self.saddle then
+			minetest.add_item(pos, "mobs:saddle")
+		end
 	end,
 
 	on_rightclick = function(self, clicker)
@@ -82,115 +82,78 @@ local pig = {
 		end
 
 		local wielditem = clicker:get_wielded_item()
-		-- Feed pig
+
 		if wielditem:get_name() ~= "mobs_mc:carrot_on_a_stick" then
-			if mobs:feed_tame(self, clicker, 1, true, true) then return end
+			if mobs:feed_tame(self, clicker, 6, true, true) then return end
 		end
+
 		if mobs:protect(self, clicker) then return end
 
 		if self.child then
 			return
 		end
 
-		-- Put saddle on pig
 		local item = clicker:get_wielded_item()
-		if item:get_name() == "mobs:saddle" and self.saddle ~= "yes" then
+
+		if item:get_name() == "mobs:saddle" and not self.saddle then
 			self.base_texture = {
-				"blank.png", -- baby
-				"mobs_mc_pig.png", -- base
-				"mobs_mc_pig_saddle.png", -- saddle
+				"blank.png",
+				"mobs_mc_pig.png",
+				"mobs_mc_pig_saddle.png",
 			}
+
 			self.object:set_properties({
 				textures = self.base_texture
 			})
-			self.saddle = "yes"
-			self.tamed = true
-			self.drops = {
-				{
-					name = "mobs:saddle",
-					chance = 1,
-					min = 1,
-					max = 1,
-				},
-			}
 
-			if mobs_mc.items.pork_raw then
-				table.insert(self.drops, {
-					name = mobs_mc.items.pork_raw,
-					chance = 1,
-					min = 1,
-					max = 3,
-				})
-			end
+			self.saddle = true
 
-			if not minetest.settings:get_bool("creative_mode") then
-				local inv = clicker:get_inventory()
-				local stack = inv:get_stack("main", clicker:get_wield_index())
-				stack:take_item()
-				inv:set_stack("main", clicker:get_wield_index(), stack)
-			end
+			local inv = clicker:get_inventory()
+			local stack = inv:get_stack("main", clicker:get_wield_index())
+			stack:take_item()
+			inv:set_stack("main", clicker:get_wield_index(), stack)
+
 			return
 		end
 
-		-- Mount or detach player
 		local name = clicker:get_player_name()
+
 		if self.driver and clicker == self.driver then
-			-- Detach if already attached
-			mobs.detach(clicker, {x=1, y=0, z=0})
+			mobs.detach(clicker, {x = 1, y = 0, z = 0})
 			return
 
-		elseif not self.driver and self.saddle == "yes" and wielditem:get_name() == "mobs_mc:carrot_on_a_stick" then
-			-- Ride pig if it has a saddle and player uses a carrot on a stick
-
+		elseif not self.driver and self.tamed and self.saddle and wielditem:get_name() == "mobs_mc:carrot_on_a_stick" then
 			mobs.attach(self, clicker)
+			local inv = self.driver:get_inventory()
 
-			if not minetest.settings:get_bool("creative_mode") then
+			if wielditem:get_wear() > 63000 then
+				local def = wielditem:get_definition()
 
-				local inv = self.driver:get_inventory()
-				-- 26 uses
-				if wielditem:get_wear() > 63000 then
-					-- Break carrot on a stick
-					local def = wielditem:get_definition()
-					if def.sounds and def.sounds.breaks then
-						minetest.sound_play(def.sounds.breaks, {pos = clicker:getpos(), max_hear_distance = 8, gain = 0.5})
-					end
-					wielditem = {name = mobs_mc.items.fishing_rod, count = 1}
-				else
-					wielditem:add_wear(2521)
+				if def.sounds and def.sounds.breaks then
+					minetest.sound_play(def.sounds.breaks, {pos = clicker:getpos(), max_hear_distance = 8, gain = 0.5})
 				end
-				inv:set_stack("main",self.driver:get_wield_index(), wielditem)
+
+				wielditem = {name = "default:stick", count = 1}
+			else
+				wielditem:add_wear(2521)
 			end
+
+			inv:set_stack("main",self.driver:get_wield_index(), wielditem)
+
 			return
 
-		-- Capture pig
 		elseif not self.driver and clicker:get_wielded_item():get_name() ~= "" then
 			mobs:capture_mob(self, clicker, 0, 5, 60, false, nil)
 		end
 	end,
-}
-
-if mobs_mc.items.pork_raw then
-	table.insert(pig.drops, {
-		name = mobs_mc.items.pork_raw,
-		chance = 1,
-		min = 1,
-		max = 3,
-	})
-end
-
-mobs:register_mob("mobs_mc:pig", pig)
+})
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.pig)
 end
 
--- compatibility
-mobs:alias_mob("mobs:pig", "mobs_mc:pig")
-
--- spawn eggs
 mobs:register_egg("mobs_mc:pig", S("Pig"), "mobs_mc_spawn_icon_pig.png", 0)
 
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC Pig loaded")
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.pig)
 end
