@@ -8,7 +8,7 @@ local shoes = {
 	["mobs:horseshoe_crystal"] = {11, 6, 9, "mobs_mc_horseshoe_crystalo.png"}
 }
 
-local mule = {
+mobs:register_mob("mobs_mc:mule", {
 	type = "animal",
 	visual = "mesh",
 	mesh = "mobs_mc_horse.b3d",
@@ -32,7 +32,7 @@ local mule = {
 	fly = false,
 	walk_chance = 60,
 	view_range = 16,
-	follow = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
+	follow = mobs_mc.follows.mule,
 	passive = true,
 	hp_min = 15,
 	hp_max = 30,
@@ -43,20 +43,9 @@ local mule = {
 	makes_footstep_sound = true,
 	jump = true,
 	jump_height = 3.75,
-	drops = {
-		{
-			name = "mobs:meat_raw",
-			chance = 1,
-			min = 1,
-			max = 3
-		},
-		{
-			name = "mobs:leather",
-			chance = 1,
-			min = 0,
-			max = 2
-		},
-	},
+	drops = mobs_mc.drops.mule,
+	replace_what = mobs_mc.replaces.mule,
+
 	do_custom = function(self, dtime)
 		if not self.v2 then
 			self.v2 = 0
@@ -71,7 +60,6 @@ local mule = {
 
 		if self.driver then
 			mobs.drive(self, "walk", "stand", false, dtime)
-
 			return false
 		end
 
@@ -119,9 +107,7 @@ local mule = {
 			local item = tool:get_name()
 
 			if self.driver and clicker == self.driver then
-
 				mobs.detach(clicker, {x = 1, y = 0, z = 1})
-
 				return
 			end
 
@@ -129,17 +115,12 @@ local mule = {
 			and not self.child
 			and clicker:get_wielded_item():get_name() == "mobs:saddle"
 			and not self.saddle then
-
 				self.saddle = true
 				self.order = "stand"
 				self.object:set_properties({stepheight = 1.2})
-
 				inv:remove_item("main", "mobs:saddle")
-
 				self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
-
 				self.object:set_texture_mod(self.texture_mods)
-
 				return
 			end
 
@@ -160,25 +141,21 @@ local mule = {
 				self.shoed = item
 
 				if overlay then
-
 					self.texture_mods = "^" .. overlay
 
 					if self.saddle then
-						self.texture_mods = self.texture_mods
-							.. "^mobs_mc_horse_saddle.png"
+						self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
 					end
 
 					self.object:set_texture_mod(self.texture_mods)
 				end
 
-				minetest.chat_send_player(player_name,
-						S("Horse shoes fitted -")
-						.. S(" speed: ") .. speed
-						.. S(" , jump height: ") .. jump
-						.. S(" , stop speed: ") .. reverse)
+				minetest.chat_send_player(
+					player_name,
+					S("Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
+				)
 
 				tool:take_item()
-
 				clicker:set_wielded_item(tool)
 
 				return
@@ -191,20 +168,10 @@ local mule = {
 			mobs.attach(self, clicker)
 		end
 	end,
-}
-
-mobs:register_mob("mobs_mc:mule", mule)
-
-mobs:spawn({
-	name = "mobs_mc:mule",
-	nodes = {"default:dirt_with_grass", "default:dirt_with_rainforest_litter", "default:dirt", "default:dirt_with_snow", "default:snow", "default:snowblock"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
 })
 
 mobs:register_egg("mobs_mc:mule", S("Mule"), "mobs_mc_spawn_icon_mule.png", 0)
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.mule)
+end

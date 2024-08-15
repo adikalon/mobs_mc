@@ -8,8 +8,7 @@ Blaze=Lohe
 Creeper=Creeper
 Dog=Hund
 Donkey=Esel
-Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3=
-Eselsschuhe angebracht. Geschwindigkeit: @1, Sprunghöhe: @2, Stoppgeschwindigkeit: @3
+Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3=Eselsschuhe angebracht. Geschwindigkeit: @1, Sprunghöhe: @2, Stoppgeschwindigkeit: @3
 Enderman=Enderman
 Endermite=Endermite
 Ghast=Ghast
@@ -20,3 +19,5 @@ Killer Bunny=Killer-Kaninchen
 Llama=Lama
 Cow already milked!=Kuh schon gemolken!
 Mooshroom=Mooshroom
+Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3=Pantolettenschuhe angebracht. Geschwindigkeit: @1, Sprunghöhe: @2, Stoppgeschwindigkeit: @3
+Mule=Maultier

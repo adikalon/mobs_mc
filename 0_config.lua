@@ -75,7 +75,7 @@ mobs_mc.follows = {
 	magma_cube_small = {},
 	magma_cube_big = {},
 	mooshroom = {"farming:wheat", "default:grass_1", "farming:barley", "farming:oat", "farming:rye"},
-	mule = {},
+	mule = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	ocelot = {},
 	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
 	pigman = {},
@@ -333,7 +333,20 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	mule = {},
+	mule = {
+		{
+			name = "mobs:meat_raw",
+			chance = 1,
+			min = 1,
+			max = 3
+		},
+		{
+			name = "mobs:leather",
+			chance = 1,
+			min = 0,
+			max = 2
+		},
+	},
 	ocelot = {},
 	pig = {},
 	pigman = {},
