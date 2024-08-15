@@ -12,7 +12,7 @@ mobs:register_mob("mobs_mc:killer_bunny", {
 	textures = {"mobs_mc_killer_bunny_caerbannog.png"},
 	view_range = 16,
 	replace_rate = nil,
-	replace_what = nil,
+	replace_what = mobs_mc.replaces.killer_bunny,
 	on_rightclick = nil,
 	run_velocity = 6,
 	reach = 1,

@@ -46,6 +46,7 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	blood_amount = 0,
 	air_damage = 2,
 	follow = mobs_mc.follows.guardian_elder,
+	replace_what = mobs_mc.replaces.guardian_elder,
 })
 
 mobs:register_egg("mobs_mc:guardian_elder", S("Elder Guardian"), "mobs_mc_spawn_icon_guardian_elder.png", 0)

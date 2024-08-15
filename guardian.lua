@@ -46,6 +46,7 @@ mobs:register_mob("mobs_mc:guardian", {
 	blood_amount = 0,
 	air_damage = 2,
 	follow = mobs_mc.follows.guardian,
+	replace_what = mobs_mc.replaces.guardian,
 })
 
 mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)

@@ -55,6 +55,7 @@ mobs:register_mob("mobs_mc:ghast", {
 	blood_amount = 0,
 	glow = 5,
 	follow = mobs_mc.follows.ghast,
+	replace_what = mobs_mc.replaces.ghast,
 })
 
 mobs:register_arrow(":mobs_monster:fireball", {

@@ -51,6 +51,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	fear_height = 120,
 	blood_amount = 0,
 	follow = mobs_mc.follows.blaze,
+	replace_what = mobs_mc.replaces.blaze,
 	glow = 10,
 })
 

@@ -45,6 +45,7 @@ mobs:register_mob("mobs_mc:enderman", {
 	fear_height = 4,
 	attack_type = "dogfight",
 	blood_amount = 0,
+	replace_what = mobs_mc.replaces.enderman,
 })
 
 mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)

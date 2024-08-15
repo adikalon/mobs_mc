@@ -1,6 +1,6 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local mooshroom = {
+mobs:register_mob("mobs_mc:mooshroom", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
@@ -10,7 +10,7 @@ local mooshroom = {
 	hp_min = 5,
 	hp_max = 20,
 	armor = 200,
-	visual_size = {x = 2.7, y = 2.7},
+	visual_size = {x = 2.8, y = 2.8},
 	collisionbox = {-0.4, -0.01, -0.4, 0.4, 1.2, 0.4},
 	visual = "mesh",
 	mesh = "mobs_mc_cow.b3d",
@@ -32,26 +32,7 @@ local mooshroom = {
 	jump = true,
 	jump_height = 6,
 	pushable = true,
-	drops = {
-		{
-			name = "flowers:mushroom_brown",
-			chance = 1,
-			min = 0,
-			max = 2,
-		},
-		{
-			name = "mobs:meat_raw",
-			chance = 1,
-			min = 1,
-			max = 3
-		},
-		{
-			name = "mobs:leather",
-			chance = 1,
-			min = 0,
-			max = 2
-		},
-	},
+	drops = mobs_mc.drops.mooshroom,
 	water_damage = 0.01,
 	lava_damage = 5,
 	light_damage = 0,
@@ -66,16 +47,10 @@ local mooshroom = {
 		run_start = 0,
 		run_end = 40,
 	},
-	follow = {
-		"farming:wheat", "default:grass_1", "farming:barley",
-		"farming:oat", "farming:rye",
-	},
+	follow = mobs_mc.follows.mooshroom,
 	view_range = 8,
 	replace_rate = 10,
-	replace_what = {
-		{"group:grass", "air", 0},
-		{"default:dirt_with_grass", "default:dirt", -1},
-	},
+	replace_what = mobs_mc.replaces.mooshroom,
 	fear_height = 2,
 
 	on_rightclick = function(self, clicker)
@@ -105,9 +80,7 @@ local mooshroom = {
 				end
 
 				if self.gotten == true then
-
 					minetest.chat_send_player(name, S("Cow already milked!"))
-
 					return
 				end
 
@@ -129,9 +102,7 @@ local mooshroom = {
 					clicker:get_inventory():add_item("main", ret_item)
 				else
 					local pos = self.object:get_pos()
-
 					pos.y = pos.y + 0.5
-
 					minetest.add_item(pos, {name = ret_item})
 				end
 
@@ -143,28 +114,17 @@ local mooshroom = {
 	end,
 
 	on_replace = function(self, pos, oldnode, newnode)
-
 		self.food = (self.food or 0) + 1
 
 		if self.food >= 8 then
 			self.food = 0
 			self.gotten = false
 		end
-	end
-}
-
-mobs:register_mob("mobs_mc:mooshroom", mooshroom)
-
-mobs:spawn({
-	name = "mobs_mc:mooshroom",
-	nodes = {"default:dirt_with_grass", "ethereal:green_dirt"},
-	neighbors = {"group:grass"},
-	min_light = 14,
-	interval = 60,
-	chance = 8000,
-	min_height = 5,
-	max_height = 200,
-	day_toggle = true
+	end,
 })
 
 mobs:register_egg("mobs_mc:mooshroom", S("Mooshroom"), "mobs_mc_spawn_icon_mooshroom.png", 0)
+
+if not mobs_mc.custom_spawn then
+	mobs:spawn(mobs_mc.spawns.mooshroom)
+end

@@ -47,6 +47,7 @@ mobs:register_mob("mobs_mc:llama", {
 	},
 	follow = mobs_mc.follows.llama,
 	view_range = 16,
+	replace_what = mobs_mc.replaces.llama,
 	do_custom = function(self, dtime)
 		if not self.v2 then
 			self.v2 = 0

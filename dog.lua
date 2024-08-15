@@ -37,6 +37,7 @@ mobs:register_mob("mobs_mc:dog", {
 	light_damage = 0,
 	drops = mobs_mc.drops.dog,
 	follow = mobs_mc.follows.dog,
+	replace_what = mobs_mc.replaces.dog,
 
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 4, true, true) then return end

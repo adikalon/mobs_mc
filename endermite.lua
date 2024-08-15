@@ -31,6 +31,7 @@ mobs:register_mob("mobs_mc:endermite", {
 	blood_amount = 0,
 	drops = mobs_mc.drops.endermite,
 	follow = mobs_mc.follows.endermite,
+	replace_what = mobs_mc.replaces.endermite,
 })
 
 mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)
