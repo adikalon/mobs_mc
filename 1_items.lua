@@ -92,6 +92,140 @@ minetest.register_on_player_hpchange(function(player, hp_change)
 	return hp_change
 end, true)
 
+-- HORSE ARMOR
+minetest.register_craftitem("mobs_mc:horse_armor_iron", {
+	description = S("Iron Horse Armor"),
+	inventory_image = "mobs_mc_iron_horse_armor.png",
+	_horse_overlay_image = "mobs_mc_horse_armor_iron.png",
+	stack_max = 1,
+	groups = { horse_armor = 85 },
+})
+
+minetest.register_craftitem("mobs_mc:horse_armor_gold", {
+	description = S("Golden Horse Armor"),
+	inventory_image = "mobs_mc_gold_horse_armor.png",
+	_horse_overlay_image = "mobs_mc_horse_armor_gold.png",
+	stack_max = 1,
+	groups = { horse_armor = 60 },
+})
+
+minetest.register_craftitem("mobs_mc:horse_armor_diamond", {
+	description = S("Diamond Horse Armor"),
+	inventory_image = "mobs_mc_diamond_horse_armor.png",
+	_horse_overlay_image = "mobs_mc_horse_armor_diamond.png",
+	stack_max = 1,
+	groups = { horse_armor = 45 },
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horse_armor_iron",
+	recipe = {
+		{"",                    "",                    "default:steel_ingot"},
+		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
+		{"default:steel_ingot", "mobs:leather",        "default:steel_ingot"},
+	}
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horse_armor_gold",
+	recipe = {
+		{"",                   "",                   "default:gold_ingot"},
+		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
+		{"default:gold_ingot", "mobs:leather",       "default:gold_ingot"},
+	}
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horse_armor_diamond",
+	recipe = {
+		{"",                "",                "default:diamond"},
+		{"default:diamond", "default:diamond", "default:diamond"},
+		{"default:diamond", "mobs:leather",    "default:diamond"},
+	}
+})
+
+-- HORSE SHOES
+minetest.register_craftitem("mobs_mc:horseshoe_steel", {
+	description = S("Steel Horseshoes"),
+	inventory_image = "mobs_mc_horseshoe_steel.png",
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horseshoe_steel",
+	recipe = {
+		{"",                    "default:steelblock", ""                   },
+		{"default:steel_ingot", "",                   "default:steel_ingot"},
+		{"default:steel_ingot", "",                   "default:steel_ingot"},
+	}
+})
+
+minetest.register_craftitem("mobs_mc:horseshoe_bronze", {
+	description = S("Bronze Horseshoes"),
+	inventory_image = "mobs_mc_horseshoe_bronze.png",
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horseshoe_bronze",
+	recipe = {
+		{"",                     "default:bronzeblock", ""                    },
+		{"default:bronze_ingot", "",                    "default:bronze_ingot"},
+		{"default:bronze_ingot", "",                    "default:bronze_ingot"},
+	}
+})
+
+minetest.register_craftitem("mobs_mc:horseshoe_mese", {
+	description = S("Mese Horseshoes"),
+	inventory_image = "mobs_mc_horseshoe_mese.png",
+})
+
+minetest.register_craft({
+	output = "mobs_mc:horseshoe_mese",
+	recipe = {
+		{"",                              "default:mese", ""                             },
+		{"default:mese_crystal_fragment", "",             "default:mese_crystal_fragment"},
+		{"default:mese_crystal_fragment", "",             "default:mese_crystal_fragment"},
+	}
+})
+
+minetest.register_craftitem("mobs_mc:horseshoe_diamond", {
+	description = S("Diamond Horseshoes"),
+	inventory_image = "mobs_mc_horseshoe_diamond.png",
+})
+
+minetest.register_craft({
+	output = "mobs:horseshoe_diamond",
+	recipe = {
+		{"",                "default:diamondblock", ""               },
+		{"default:diamond", "",                     "default:diamond"},
+		{"default:diamond", "",                     "default:diamond"},
+	}
+})
+
+if minetest.registered_items["ethereal:crystal_block"] and minetest.registered_items["ethereal:crystal_ingot"] then
+
+	minetest.register_craftitem("mobs_mc:horseshoe_crystal", {
+		description = S("Crystal Horseshoes"),
+		inventory_image = "mobs_mc_horseshoe_crystal.png",
+	})
+
+	minetest.register_craft({
+		output = "mobs_mc:horseshoe_crystal",
+		recipe = {
+			{"",                       "ethereal:crystal_block", ""                      },
+			{"ethereal:crystal_ingot", "",                       "ethereal:crystal_ingot"},
+			{"ethereal:crystal_ingot", "",                       "ethereal:crystal_ingot"},
+		}
+	})
+end
+
+mobs_mc.shoes = {
+	["mobs_mc:horseshoe_steel"] = {7, 4, 2, "mobs_mc_horseshoe_steelo.png"},
+	["mobs_mc:horseshoe_bronze"] = {7, 4, 4, "mobs_mc_horseshoe_bronzeo.png"},
+	["mobs_mc:horseshoe_mese"] = {9, 5, 8, "mobs_mc_horseshoe_meseo.png"},
+	["mobs_mc:horseshoe_diamond"] = {10, 6, 6, "mobs_mc_horseshoe_diamondo.png"},
+	["mobs_mc:horseshoe_crystal"] = {11, 6, 6, "mobs_mc_horseshoe_crystalo.png"}
+}
+
 -- HEADS
 local function addhead(mobname, desc)
 	minetest.register_node("mobs_mc:head_" .. mobname, {

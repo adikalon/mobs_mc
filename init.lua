@@ -29,6 +29,7 @@ dofile(path .. "/ocelot.lua")
 dofile(path .. "/pig.lua")
 dofile(path .. "/dog.lua")
 dofile(path .. "/squid.lua")
+dofile(path .. "/horse.lua")
 
 -- NPCs
 dofile(path .. "/villager.lua")
