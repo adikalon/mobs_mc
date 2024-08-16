@@ -256,7 +256,7 @@ mobs_mc.attacks = {
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
-	snowman = {},
+	-- snowman = {},
 	spider = {},
 	squid = {},
 	vex = {},
@@ -405,7 +405,14 @@ mobs_mc.drops = {
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
-	snowman = {},
+	snowman = {
+		{
+			name = "default:snowblock",
+			chance = 1,
+			min = 0,
+			max = 5,
+		}
+	},
 	spider = {},
 	squid = {},
 	vex = {},
