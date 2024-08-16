@@ -15,7 +15,7 @@ mobs:register_mob("mobs_mc:ghast", {
 	visual_size = {x = 12, y = 12},
 	sounds = {
 		shoot = "mobs_fireball",
-		death = "zombiedeath",
+		death = "mobs_mc_zombie_death",
 		damage = "ghast_damage",
 		attack = "mobs_fireball",
 		random = "mobs_eerie",

@@ -16,7 +16,6 @@ mobs:register_mob("mobs_mc:creeper", {
 		attack = "tnt_ignite",
 		fuse = "tnt_ignite",
 		explode = "tnt_explode",
-		distance = 16,
 	},
 	makes_footstep_sound = true,
 	walk_velocity = 1.05,

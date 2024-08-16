@@ -20,8 +20,11 @@ mobs:register_mob("mobs_mc:guardian", {
 	},
 	visual_size = {x = 3, y = 3},
 	sounds = {
-		damage = "mobs_mc_squid_hurt",
-		distance = 16,
+		random = "mobs_mc_guardian_random",
+		war_cry = "mobs_mc_guardian_random",
+		damage = "mobs_mc_guardian_hurt",
+		death = "mobs_mc_guardian_death",
+		flop = "mobs_mc_squid_flop",
 	},
 	animation = {
 		stand_speed = 25,

@@ -18,8 +18,11 @@ mobs:register_mob("mobs_mc:dog", {
 	order = "roam",
 	owner_loyal = true,
 	sounds = {
-		random = "mobs_dog_random",
-		distance = 16,
+		random = "mobs_mc_dog_bark",
+		attack = "mobs_mc_dog_bark",
+		war_cry = "mobs_mc_dog_growl",
+		damage = "mobs_mc_dog_hurt",
+		death = "mobs_mc_dog_death",
 	},
 	pathfinding = 1,
 	floats = 1,

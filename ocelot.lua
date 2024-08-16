@@ -21,8 +21,9 @@ mobs:register_mob("mobs_mc:ocelot", {
 	fall_damage = 0,
 	fear_height = 4,
 	sounds = {
-		random = "mobs_ocelot",
-		distance = 16,
+		random = "mobs_mc_ocelot",
+		damage = "mobs_mc_ocelot_hurt",
+		death = "mobs_mc_ocelot_hurt",
 	},
 	animation = {
 		speed_normal = 25,

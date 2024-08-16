@@ -16,7 +16,6 @@ mobs:register_mob("mobs_mc:blaze", {
 		random = "mobs_mc_blaze_breath",
 		death = "mobs_mc_blaze_died",
 		damage = "mobs_mc_blaze_hurt",
-		distance = 16,
 	},
 	walk_velocity = .8,
 	run_velocity = 1.6,

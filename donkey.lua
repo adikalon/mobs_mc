@@ -22,10 +22,9 @@ mobs:register_mob("mobs_mc:donkey", {
 		walk_end = 40,
 	},
 	sounds = {
-		random = "skeleton1",
-		death = "skeletondeath",
-		damage = "skeletonhurt1",
-		distance = 16,
+		random = "mobs_mc_donkey_random",
+		damage = "mobs_mc_donkey_hurt",
+		death = "mobs_mc_donkey_death",
 	},
 	textures = {{"mobs_mc_donkey.png"}},
 	fear_height = 4,

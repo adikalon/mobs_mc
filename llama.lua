@@ -28,7 +28,6 @@ mobs:register_mob("mobs_mc:llama", {
 	fear_height = 4,
 	sounds = {
 		random = "mobs_mc_llama",
-		distance = 16,
 	},
 	animation = {
 		speed_normal = 24,
