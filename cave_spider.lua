@@ -1,28 +1,28 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-mobs:register_mob("mobs_mc:spider", {
+mobs:register_mob("mobs_mc:cave_spider", {
 	type = "monster",
 	passive = false,
 	docile_by_day = true,
 	attack_type = "dogfight",
 	pathfinding = 1,
-	damage = 2,
+	damage = 3,
 	reach = 2,
-	hp_min = 16,
-	hp_max = 16,
-	collisionbox = {-0.7, -0.01, -0.7, 0.7, 0.89, 0.7},
+	hp_min = 1,
+	hp_max = 12,
+	collisionbox = {-0.35, -0.01, -0.35, 0.35, 0.49, 0.35},
 	visual = "mesh",
 	mesh = "mobs_mc_spider.b3d",
 	textures = {
-		{"mobs_mc_spider.png"},
+		{"mobs_mc_cave_spider.png"},
 	},
-	visual_size = {x = 3, y = 3},
+	visual_size = {x = 1.66666, y = 1.5},
 	makes_footstep_sound = false,
 	sounds = {
 		random = "mobs_spider",
 		attack = "mobs_spider",
 	},
-	walk_velocity = 3.9,
+	walk_velocity = 4.1,
 	jump = true,
 	jump_height = 2,
 	view_range = 16,
@@ -43,14 +43,14 @@ mobs:register_mob("mobs_mc:spider", {
 		run_end = 20,
 	},
 	blood_amount = 0,
-	drops = mobs_mc.drops.spider,
-	follow = mobs_mc.follows.spider,
-	replace_what = mobs_mc.replaces.spider,
-	specific_attack = mobs_mc.attacks.spider,
+	drops = mobs_mc.drops.cave_spider,
+	follow = mobs_mc.follows.cave_spider,
+	replace_what = mobs_mc.replaces.cave_spider,
+	specific_attack = mobs_mc.attacks.cave_spider,
 })
 
-mobs:register_egg("mobs_mc:spider", S("Spider"), "mobs_mc_spawn_icon_spider.png", 0)
+mobs:register_egg("mobs_mc:cave_spider", S("Cave Spider"), "mobs_mc_spawn_icon_cave_spider.png", 0)
 
 if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.spider)
+	mobs:spawn(mobs_mc.spawns.cave_spider)
 end

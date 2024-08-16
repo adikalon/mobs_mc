@@ -240,7 +240,7 @@ mobs_mc.attacks = {
 	ghast = {},
 	guardian = {},
 	guardian_elder = {},
-	iron_golem = {},
+	-- iron_golem = {},
 	horse = {},
 	husk = {},
 	llama = {},
@@ -257,7 +257,7 @@ mobs_mc.attacks = {
 	slime_small = {},
 	slime_big = {},
 	-- snowman = {},
-	spider = {},
+	spider = {"player", "mobs_mc:iron_golem"},
 	squid = {},
 	vex = {},
 	evoker = {},
@@ -413,7 +413,14 @@ mobs_mc.drops = {
 			max = 5,
 		}
 	},
-	spider = {},
+	spider = {
+		{
+			name = "farming:string",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+	},
 	squid = {},
 	vex = {},
 	evoker = {},

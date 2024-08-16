@@ -2,7 +2,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:iron_golem", {
 	type = "npc",
-	passive = true,
+	passive = false,
 	hp_min = 100,
 	hp_max = 100,
 	collisionbox = {-0.7, -0.01, -0.7, 0.7, 2.69, 0.7},
@@ -51,7 +51,7 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	blood_amount = 0,
 	follow = mobs_mc.follows.blaze,
 	replace_what = mobs_mc.replaces.iron_golem,
-	specific_attack = mobs_mc.attacks.iron_golem,
+	-- specific_attack = mobs_mc.attacks.iron_golem,
 })
 
 mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)

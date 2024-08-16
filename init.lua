@@ -54,6 +54,7 @@ dofile(path .. "/zombiepig.lua")
 dofile(path .. "/slime.lua")
 dofile(path .. "/magma_cube.lua")
 dofile(path .. "/spider.lua")
+dofile(path .. "/cave_spider.lua")
 dofile(path .. "/vex.lua")
 dofile(path .. "/wither.lua")
 
