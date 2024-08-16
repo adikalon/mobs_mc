@@ -421,7 +421,14 @@ mobs_mc.drops = {
 			max = 2,
 		},
 	},
-	squid = {},
+	squid = {
+		{
+			name = "dye:black",
+			chance = 1,
+			min = 1,
+			max = 3,
+		},
+	},
 	vex = {},
 	evoker = {},
 	illusioner = {},
