@@ -84,6 +84,10 @@ mobs:register_mob("mobs_mc:mule", {
 		if self.shoed and minetest.registered_items[self.shoed] then
 			minetest.add_item(pos, self.shoed)
 		end
+
+		if self._horse_armor and minetest.registered_items[self._horse_armor] then
+			minetest.add_item(pos, self._horse_armor)
+		end
 	end,
 
 	do_punch = function(self, hitter)
@@ -112,67 +116,88 @@ mobs:register_mob("mobs_mc:mule", {
 			local tool = clicker:get_wielded_item()
 			local item = tool:get_name()
 
-			if self.driver and clicker == self.driver then
-				mobs.detach(clicker, {x = 1, y = 0, z = 1})
-				return
-			end
-
-			if not self.driver
-			and not self.child
-			and clicker:get_wielded_item():get_name() == "mobs:saddle"
-			and not self.saddle then
-				self.saddle = true
-				self.order = "stand"
-				self.object:set_properties({stepheight = 1.2})
-				inv:remove_item("main", "mobs:saddle")
-				self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
-				self.object:set_texture_mod(self.texture_mods)
-				return
-			end
-
-			if item:find("mobs:horseshoe") then
-				if self.shoed then
-					minetest.add_item(self.object:get_pos(), self.shoed)
+			if not self.driver and not self.child then
+				if
+					self.saddle
+					and not item:find("mobs_mc:horseshoe")
+					and not item:find("mobs_mc:horse_armor")
+					and item ~= "mobs:saddle"
+				then
+					mobs.attach(self, clicker)
+					return
 				end
 
-				local speed = shoes[item][1]
-				local jump = shoes[item][2]
-				local reverse = shoes[item][3]
-				local overlay = shoes[item][4]
+				if not self.saddle and item == "mobs:saddle" then
+					self.saddle = true
+					self.order = "stand"
+					self.object:set_properties({stepheight = 1.2})
+					inv:remove_item("main", "mobs:saddle")
+					self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
+					self.object:set_texture_mod(self.texture_mods)
+					return
+				end
 
-				self.max_speed_forward = speed
-				self.jump_height = jump
-				self.max_speed_reverse = reverse
-				self.accel = speed
-				self.shoed = item
-
-				if overlay then
-					self.texture_mods = "^" .. overlay
-
-					if self.saddle then
-						self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
+				if item:find("mobs_mc:horseshoe") then
+					if self.shoed then
+						minetest.add_item(self.object:get_pos(), self.shoed)
 					end
 
-					self.object:set_texture_mod(self.texture_mods)
+					local speed = mobs_mc.shoes[item][1]
+					local jump = mobs_mc.shoes[item][2]
+					local reverse = mobs_mc.shoes[item][3]
+					local overlay = mobs_mc.shoes[item][4]
+
+					self.max_speed_forward = speed
+					self.jump_height = jump
+					self.max_speed_reverse = reverse
+					self.accel = speed
+					self.shoed = item
+
+					if overlay then
+						self.texture_mods = self.texture_mods .. "^" .. overlay
+						self.object:set_texture_mod(self.texture_mods)
+					end
+
+					minetest.chat_send_player(
+						player_name,
+						S("Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
+					)
+
+					if not minetest.settings:get_bool("creative_mode") then
+						tool:take_item()
+						clicker:set_wielded_item(tool)
+					end
+
+					return
 				end
 
-				minetest.chat_send_player(
-					player_name,
-					S("Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
-				)
+				if not self._horse_armor and item:find("mobs_mc:horse_armor") then
+					self.armor = minetest.get_item_group(item, "horse_armor")
+					self._horse_armor = item
 
-				tool:take_item()
-				clicker:set_wielded_item(tool)
+					if not minetest.settings:get_bool("creative_mode") then
+						tool:take_item()
+						clicker:set_wielded_item(tool)
+					end
 
+					local agroups = self.object:get_armor_groups()
+					agroups.fleshy = self.armor
+					self.object:set_armor_groups(agroups)
+
+					self.texture_mods = self.texture_mods .. "^" .. minetest.registered_items[self._horse_armor]._horse_overlay_image
+					self.object:set_texture_mod(self.texture_mods)
+
+					return
+				end
+			end
+
+			if self.driver and clicker == self.driver then
+				mobs.detach(clicker, {x = 1, y = 0, z = 1})
 				return
 			end
 		end
 
 		if mobs:capture_mob(self, clicker, nil, nil, 100, false, nil) then return end
-
-		if self.saddle and self.owner == player_name then
-			mobs.attach(self, clicker)
-		end
 	end,
 })
 
