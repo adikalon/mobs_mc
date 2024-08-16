@@ -429,7 +429,14 @@ mobs_mc.drops = {
 			max = 3,
 		},
 	},
-	vex = {},
+	vex = {
+		{
+			name = "default:sword_steel",
+			chance = 1,
+			min = 1,
+			max = 1,
+		},
+	},
 	evoker = {},
 	illusioner = {},
 	vindicator = {},
