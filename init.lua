@@ -31,7 +31,7 @@ dofile(path .. "/horse.lua")
 dofile(path .. "/villager.lua")
 
 -- VILLAGERS AND WITCH
-dofile(path .. "/villager_evoker.lua")
+dofile(path .. "/evoker.lua")
 dofile(path .. "/villager_vindicator.lua")
 dofile(path .. "/villager_zombie.lua")
 dofile(path .. "/witch.lua")

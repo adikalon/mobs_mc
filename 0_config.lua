@@ -50,6 +50,7 @@ mobs_mc.items = {
 	catfish_raw = (minetest.registered_items["nativevillages:catfish_raw"] and "nativevillages:catfish_raw" or nil),
 	fish_edible = (minetest.registered_items["xocean:fish_edible"] and "xocean:fish_edible" or nil),
 	leather = (minetest.registered_items["mobs:leather"] and "mobs:leather" or nil),
+	emerald = (minetest.registered_items["underch:emerald"] and "underch:emerald" or nil),
 }
 
 -- FOLLOWS
@@ -437,7 +438,20 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	evoker = {},
+	evoker = {
+		{
+			name = "default:diamond",
+			chance = 1,
+			min = 0,
+			max = 1,
+		},
+		{
+			name = "mobs_mc:totem",
+			chance = 1,
+			min = 1,
+			max = 1,
+		},
+	},
 	illusioner = {},
 	vindicator = {},
 	villager_zombie = {},
@@ -473,6 +487,10 @@ end
 
 if mobs_mc.items.pork_raw then
 	table.insert(mobs_mc.drops.pig, {name = mobs_mc.items.pork_raw, chance = 1, min = 1, max = 1})
+end
+
+if mobs_mc.items.emerald then
+	table.insert(mobs_mc.drops.evoker, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
 end
 
 -- SPAWNS
