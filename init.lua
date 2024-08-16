@@ -18,10 +18,6 @@ dofile(path .. "/0_config.lua")
 dofile(path .. "/1_items.lua")
 
 -- ANIMALS
-dofile(path .. "/killer_bunny.lua")
-dofile(path .. "/mooshroom.lua")
-dofile(path .. "/skeleton_horse.lua")
-dofile(path .. "/zombie_horse.lua")
 dofile(path .. "/donkey.lua")
 dofile(path .. "/mule.lua")
 dofile(path .. "/llama.lua")

@@ -70,19 +70,16 @@ mobs_mc.follows = {
 	iron_golem = {},
 	horse = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	husk = {},
-	killer_bunny = {"flowers:dandelion_yellow", "flowers:dandelion_yellow", "group:grass", "farming:carrot", "farming:carrot_gold"},
 	llama = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
-	mooshroom = {"farming:wheat", "default:grass_1", "farming:barley", "farming:oat", "farming:rye"},
 	mule = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	ocelot = {"fishing:fish_raw"},
 	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
 	pigman = {},
 	shulker = {},
 	silverfish = {},
-	skeleton_horse = {},
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
@@ -97,7 +94,6 @@ mobs_mc.follows = {
 	villager = {},
 	witch = {},
 	wither = {},
-	zombie_horse = {},
 	zombie = {},
 }
 
@@ -127,19 +123,16 @@ mobs_mc.spawn_nodes = {
 	iron_golem = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	horse = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	husk = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	killer_bunny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	llama = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	magma_cube_tiny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	magma_cube_small = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	magma_cube_big = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	mooshroom = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	mule = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	ocelot = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	pig = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	shulker = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	silverfish = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	skeleton_horse = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	slime_tiny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	slime_small = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	slime_big = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -154,7 +147,6 @@ mobs_mc.spawn_nodes = {
 	villager = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	witch = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	wither = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	zombie_horse = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	zombie = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 }
 
@@ -176,15 +168,10 @@ mobs_mc.replaces = {
 	iron_golem = {},
 	horse = {},
 	husk = {},
-	killer_bunny = {},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
-	mooshroom = {
-		{"group:grass", "air", 0},
-		{"default:dirt_with_grass", "default:dirt", -1},
-	},
 	mule = {},
 	ocelot = {},
 	pig = {},
@@ -221,7 +208,6 @@ mobs_mc.replaces = {
 		{"underch:slate", "mobs_mc:monster_egg_slate", -1},
 		{"underch:vindesite", "mobs_mc:monster_egg_vindesite", -1},
 	},
-	skeleton_horse = {},
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
@@ -236,7 +222,6 @@ mobs_mc.replaces = {
 	villager = {},
 	witch = {},
 	wither = {},
-	zombie_horse = {},
 	zombie = {},
 }
 
@@ -258,19 +243,16 @@ mobs_mc.attacks = {
 	iron_golem = {},
 	horse = {},
 	husk = {},
-	killer_bunny = {"player", "animalworld:wolf"},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
-	mooshroom = {},
 	mule = {},
 	ocelot = {"mobs_animal:chicken", "mobs_animal:rat", "animalworld:rat"},
 	pig = {},
 	pigman = {},
 	shulker = {},
 	silverfish = {},
-	skeleton_horse = {},
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
@@ -285,7 +267,6 @@ mobs_mc.attacks = {
 	villager = {},
 	witch = {},
 	wither = {},
-	zombie_horse = {},
 	zombie = {},
 }
 
@@ -398,31 +379,10 @@ mobs_mc.drops = {
 		},
 	},
 	husk = {},
-	killer_bunny = {},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
-	mooshroom = {
-		{
-			name = "flowers:mushroom_brown",
-			chance = 1,
-			min = 0,
-			max = 2,
-		},
-		{
-			name = "mobs:meat_raw",
-			chance = 1,
-			min = 1,
-			max = 3
-		},
-		{
-			name = "mobs:leather",
-			chance = 1,
-			min = 0,
-			max = 2
-		},
-	},
 	mule = {
 		{
 			name = "mobs:meat_raw",
@@ -442,7 +402,6 @@ mobs_mc.drops = {
 	pigman = {},
 	shulker = {},
 	silverfish = {},
-	skeleton_horse = {},
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
@@ -457,7 +416,6 @@ mobs_mc.drops = {
 	villager = {},
 	witch = {},
 	wither = {},
-	zombie_horse = {},
 	zombie = {},
 }
 
@@ -479,14 +437,6 @@ end
 
 if mobs_mc.items.fish_edible then
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.rabbit_raw then
-	table.insert(mobs_mc.drops.killer_bunny, {name = mobs_mc.items.rabbit_raw, chance = 1, min = 1, max = 1})
-end
-
-if mobs_mc.items.rabbit_hide then
-	table.insert(mobs_mc.drops.killer_bunny, {name = mobs_mc.items.rabbit_hide, chance = 1, min = 0, max = 1})
 end
 
 if mobs_mc.items.leather then
@@ -675,17 +625,6 @@ mobs_mc.spawns = {
 		max_height = 200,
 		day_toggle = true
 	},
-	killer_bunny = {
-		name = "mobs_mc:killer_bunny",
-		nodes = mobs_mc.spawn_nodes.killer_bunny,
-		neighbors = {"air"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000,
-		min_height = 5,
-		max_height = 200,
-		day_toggle = true
-	},
 	llama = {
 		name = "mobs_mc:llama",
 		nodes = mobs_mc.spawn_nodes.llama,
@@ -722,17 +661,6 @@ mobs_mc.spawns = {
 	magma_cube_big = {
 		name = "mobs_mc:magma_cube_big",
 		nodes = mobs_mc.spawn_nodes.magma_cube_big,
-		neighbors = {"air"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000,
-		min_height = 5,
-		max_height = 200,
-		day_toggle = true
-	},
-	mooshroom = {
-		name = "mobs_mc:mooshroom",
-		nodes = mobs_mc.spawn_nodes.mooshroom,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
@@ -799,17 +727,6 @@ mobs_mc.spawns = {
 	silverfish = {
 		name = "mobs_mc:silverfish",
 		nodes = mobs_mc.spawn_nodes.silverfish,
-		neighbors = {"air"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000,
-		min_height = 5,
-		max_height = 200,
-		day_toggle = true
-	},
-	skeleton_horse = {
-		name = "mobs_mc:skeleton_horse",
-		nodes = mobs_mc.spawn_nodes.skeleton_horse,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
@@ -964,17 +881,6 @@ mobs_mc.spawns = {
 	wither = {
 		name = "mobs_mc:wither",
 		nodes = mobs_mc.spawn_nodes.wither,
-		neighbors = {"air"},
-		min_light = 14,
-		interval = 60,
-		chance = 8000,
-		min_height = 5,
-		max_height = 200,
-		day_toggle = true
-	},
-	zombie_horse = {
-		name = "mobs_mc:zombie_horse",
-		nodes = mobs_mc.spawn_nodes.zombie_horse,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
