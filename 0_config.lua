@@ -456,7 +456,20 @@ mobs_mc.drops = {
 		},
 	},
 	illusioner = {},
-	vindicator = {},
+	vindicator = {
+		{
+			name = "default:diamond",
+			chance = 1,
+			min = 0,
+			max = 1,
+		},
+		{
+			name = "default:axe_steel",
+			chance = 11,
+			min = 1,
+			max = 1,
+		},
+	},
 	villager_zombie = {},
 	villager = {},
 	witch = {},
@@ -506,6 +519,10 @@ end
 
 if mobs_mc.items.arrow_diamond then
 	table.insert(mobs_mc.drops.illusioner, {name = mobs_mc.items.arrow_diamond, chance = 1, min = 1, max = 5})
+end
+
+if mobs_mc.items.emerald then
+	table.insert(mobs_mc.drops.vindicator, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
 end
 
 -- SPAWNS
