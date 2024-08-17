@@ -26,8 +26,8 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 	group_attack = true,
 	drops = mobs_mc.drops.villager_zombie,
 	sounds = {
-		random = "mobs_mc_zombie_idle",
-		war_cry = "mobs_mc_zombie_idle",
+		random = "mobs_mc_zombie_growl",
+		war_cry = "mobs_mc_zombie_growl",
 		death = "mobs_mc_zombie_death",
 		damage = "mobs_mc_zombie_hurt",
 	},
