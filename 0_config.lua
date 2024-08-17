@@ -298,9 +298,29 @@ mobs_mc.attacks = {
 
 -- DROPS
 mobs_mc.drops = {
-	baby_husk = {},
+	baby_husk = {
+		{
+			name = "default:steel_ingot",
+			chance = 120,
+			min = 1,
+			max = 1,
+		},
+	},
 	baby_pigman = {},
-	baby_zombie = {},
+	baby_zombie = {
+		{
+			name = "default:steel_ingot",
+			chance = 120,
+			min = 1,
+			max = 1,
+		},
+		{
+			name = "mobs_mc:head_zombie",
+			chance = 200,
+			min = 1,
+			max = 1,
+		},
+	},
 	blaze = {},
 	creeper = {
 		{
@@ -404,7 +424,14 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	husk = {},
+	husk = {
+		{
+			name = "default:steel_ingot",
+			chance = 120,
+			min = 1,
+			max = 1,
+		},
+	},
 	llama = {},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
@@ -522,7 +549,20 @@ mobs_mc.drops = {
 		},
 	},
 	wither = {},
-	zombie = {},
+	zombie = {
+		{
+			name = "default:steel_ingot",
+			chance = 120,
+			min = 1,
+			max = 1,
+		},
+		{
+			name = "mobs_mc:head_zombie",
+			chance = 200,
+			min = 1,
+			max = 1,
+		},
+	},
 }
 
 if mobs_mc.items.lava_orb then
@@ -663,6 +703,38 @@ end
 
 if mobs_mc.items.potion_water_breath_02 then
 	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_water_breath_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.carrot then
+	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potato then
+	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.carrot then
+	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potato then
+	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.carrot then
+	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potato then
+	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.carrot then
+	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potato then
+	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
 end
 
 -- SPAWNS
