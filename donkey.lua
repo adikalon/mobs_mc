@@ -18,7 +18,9 @@ mobs:register_mob("mobs_mc:donkey", {
 		damage = "mobs_mc_donkey_hurt",
 		death = "mobs_mc_donkey_death",
 	},
-	textures = {{"mobs_mc_donkey.png"}},
+	textures = {
+		{"mobs_mc_donkey.png"},
+	},
 	fear_height = 4,
 	fly = false,
 	walk_chance = 60,

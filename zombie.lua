@@ -59,7 +59,6 @@ local zombie = {
 		war_cry = "mobs_mc_zombie_idle",
 		death = "mobs_mc_zombie_death",
 		damage = "mobs_mc_zombie_hurt",
-		distance = 16,
 	},
 	walk_velocity = .8,
 	run_velocity = 1.6,

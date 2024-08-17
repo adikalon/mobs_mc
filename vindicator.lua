@@ -23,11 +23,6 @@ mobs:register_mob("mobs_mc:vindicator", {
 	walk_velocity = 1.2,
 	run_velocity = 2.4,
 	attack_type = "dogfight",
-	sounds = {
-		random = "Villager1",
-		death = "Villagerdead",
-		damage = "Villagerhurt1",
-	},
 	animation = {
 		stand_speed = 25,
 		walk_speed = 25,

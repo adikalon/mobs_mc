@@ -26,13 +26,6 @@ mobs:register_mob("mobs_mc:evoker", {
 	attack_type = "dogfight",
 	shoot_interval = 15,
 	passive = false,
-	sounds = {
-		random = "Villagerdead",
-		death = "Villagerdead",
-		damage = "mese_dragon",
-		attack = "zombiedeath",
-		distance = 16,
-	},
 	animation = {
 		walk_speed = 25,
 		run_speed = 25,

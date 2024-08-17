@@ -19,7 +19,6 @@ mobs:register_mob("mobs_mc:endermite", {
 		random = "mobs_mc_endermite_random",
 		damage = "mobs_mc_endermite_hurt",
 		death = "mobs_mc_endermite_death",
-		distance = 16,
 	},
 	walk_velocity = 1,
 	run_velocity = 2,

@@ -54,6 +54,28 @@ mobs_mc.items = {
 	bow_wood = (minetest.registered_items["x_bows:bow_wood"] and "x_bows:bow_wood" or nil),
 	quiver = (minetest.registered_items["x_bows:quiver"] and "x_bows:quiver" or nil),
 	arrow_diamond = (minetest.registered_items["x_bows:arrow_diamond"] and "x_bows:arrow_diamond" or nil),
+
+	potion_dispel = (minetest.registered_items["gadgets_consumables:potion_dispel"] and "gadgets_consumables:potion_dispel" or nil),
+	potion_fire_shield_01 = (minetest.registered_items["gadgets_consumables:potion_fire_shield_01"] and "gadgets_consumables:potion_fire_shield_01" or nil),
+	potion_fire_shield_02 = (minetest.registered_items["gadgets_consumables:potion_fire_shield_02"] and "gadgets_consumables:potion_fire_shield_02" or nil),
+	potion_gravity_01 = (minetest.registered_items["gadgets_consumables:potion_gravity_01"] and "gadgets_consumables:potion_gravity_01" or nil),
+	potion_gravity_02 = (minetest.registered_items["gadgets_consumables:potion_gravity_02"] and "gadgets_consumables:potion_gravity_02" or nil),
+	potion_gravity_03 = (minetest.registered_items["gadgets_consumables:potion_gravity_03"] and "gadgets_consumables:potion_gravity_03" or nil),
+	potion_health_regen_01 = (minetest.registered_items["gadgets_consumables:potion_health_regen_01"] and "gadgets_consumables:potion_health_regen_01" or nil),
+	potion_health_regen_02 = (minetest.registered_items["gadgets_consumables:potion_health_regen_02"] and "gadgets_consumables:potion_health_regen_02" or nil),
+	potion_jump_01 = (minetest.registered_items["gadgets_consumables:potion_jump_01"] and "gadgets_consumables:potion_jump_01" or nil),
+	potion_jump_02 = (minetest.registered_items["gadgets_consumables:potion_jump_02"] and "gadgets_consumables:potion_jump_02" or nil),
+	potion_jump_03 = (minetest.registered_items["gadgets_consumables:potion_jump_03"] and "gadgets_consumables:potion_jump_03" or nil),
+	potion_mana_regen_01 = (minetest.registered_items["gadgets_consumables:potion_mana_regen_01"] and "gadgets_consumables:potion_mana_regen_01" or nil),
+	potion_mana_regen_02 = (minetest.registered_items["gadgets_consumables:potion_mana_regen_02"] and "gadgets_consumables:potion_mana_regen_02" or nil),
+	potion_speed_01 = (minetest.registered_items["gadgets_consumables:potion_speed_01"] and "gadgets_consumables:potion_speed_01" or nil),
+	potion_speed_02 = (minetest.registered_items["gadgets_consumables:potion_speed_02"] and "gadgets_consumables:potion_speed_02" or nil),
+	potion_speed_03 = (minetest.registered_items["gadgets_consumables:potion_speed_03"] and "gadgets_consumables:potion_speed_03" or nil),
+	potion_stamina_regen_01 = (minetest.registered_items["gadgets_consumables:potion_stamina_regen_01"] and "gadgets_consumables:potion_stamina_regen_01" or nil),
+	potion_stamina_regen_02 = (minetest.registered_items["gadgets_consumables:potion_stamina_regen_02"] and "gadgets_consumables:potion_stamina_regen_02" or nil),
+	potion_teleport = (minetest.registered_items["gadgets_consumables:potion_teleport"] and "gadgets_consumables:potion_teleport" or nil),
+	potion_water_breath_01 = (minetest.registered_items["gadgets_consumables:potion_water_breath_01"] and "gadgets_consumables:potion_water_breath_01" or nil),
+	potion_water_breath_02 = (minetest.registered_items["gadgets_consumables:potion_water_breath_02"] and "gadgets_consumables:potion_water_breath_02" or nil),
 }
 
 -- FOLLOWS
@@ -479,7 +501,26 @@ mobs_mc.drops = {
 		},
 	},
 	villager = {},
-	witch = {},
+	witch = {
+		{
+			name = "vessels:glass_bottle",
+			chance = 8,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "tnt:gunpowder",
+			chance = 8,
+			min = 0,
+			max = 2,
+		},
+		{
+			name = "default:papyrus",
+			chance = 8,
+			min = 0,
+			max = 2,
+		},
+	},
 	wither = {},
 	zombie = {},
 }
@@ -538,6 +579,90 @@ end
 
 if mobs_mc.items.potato then
 	table.insert(mobs_mc.drops.villager_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_dispel then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_dispel, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_fire_shield_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_fire_shield_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_fire_shield_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_fire_shield_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_gravity_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_gravity_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_gravity_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_gravity_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_gravity_03 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_gravity_03, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_health_regen_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_health_regen_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_health_regen_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_health_regen_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_jump_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_jump_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_jump_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_jump_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_jump_03 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_jump_03, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_mana_regen_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_mana_regen_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_mana_regen_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_mana_regen_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_speed_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_speed_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_speed_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_speed_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_speed_03 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_speed_03, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_stamina_regen_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_stamina_regen_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_stamina_regen_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_stamina_regen_02, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_teleport then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_teleport, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_water_breath_01 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_water_breath_01, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.potion_water_breath_02 then
+	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_water_breath_02, chance = 150, min = 1, max = 1})
 end
 
 -- SPAWNS

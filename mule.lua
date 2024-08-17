@@ -12,19 +12,15 @@ mobs:register_mob("mobs_mc:mule", {
 		stand_end = 0,
 		walk_start = 0,
 		walk_end = 40,
-		},
-	sounds = {
-		random = "skeleton1",
-		death = "skeletondeath",
-		damage = "skeletonhurt1",
-		distance = 16,
 	},
 	sounds = {
 		random = "mobs_mc_donkey_random",
 		damage = "mobs_mc_donkey_hurt",
 		death = "mobs_mc_donkey_death",
 	},
-	textures = {{"mobs_mc_mule.png"}},
+	textures = {
+		{"mobs_mc_mule.png"},
+	},
 	fear_height = 4,
 	fly = false,
 	walk_chance = 60,
