@@ -1,13 +1,5 @@
 local S = minetest.get_translator(minetest.get_current_modname())
 
-local shoes = {
-	["mobs:horseshoe_steel"] = {7, 4, 2, "mobs_mc_horseshoe_steelo.png"},
-	["mobs:horseshoe_bronze"] = {7, 4, 4, "mobs_mc_horseshoe_bronzeo.png"},
-	["mobs:horseshoe_mese"] = {9, 5, 8, "mobs_mc_horseshoe_meseo.png"},
-	["mobs:horseshoe_diamond"] = {10, 6, 6, "mobs_mc_horseshoe_diamondo.png"},
-	["mobs:horseshoe_crystal"] = {11, 6, 9, "mobs_mc_horseshoe_crystalo.png"}
-}
-
 mobs:register_mob("mobs_mc:donkey", {
 	type = "animal",
 	visual = "mesh",
