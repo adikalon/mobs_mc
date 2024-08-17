@@ -51,6 +51,9 @@ mobs_mc.items = {
 	fish_edible = (minetest.registered_items["xocean:fish_edible"] and "xocean:fish_edible" or nil),
 	leather = (minetest.registered_items["mobs:leather"] and "mobs:leather" or nil),
 	emerald = (minetest.registered_items["underch:emerald"] and "underch:emerald" or nil),
+	bow_wood = (minetest.registered_items["x_bows:bow_wood"] and "x_bows:bow_wood" or nil),
+	quiver = (minetest.registered_items["x_bows:quiver"] and "x_bows:quiver" or nil),
+	arrow_diamond = (minetest.registered_items["x_bows:arrow_diamond"] and "x_bows:arrow_diamond" or nil),
 }
 
 -- FOLLOWS
@@ -491,6 +494,18 @@ end
 
 if mobs_mc.items.emerald then
 	table.insert(mobs_mc.drops.evoker, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
+end
+
+if mobs_mc.items.bow_wood then
+	table.insert(mobs_mc.drops.illusioner, {name = mobs_mc.items.bow_wood, chance = 15, min = 1, max = 1})
+end
+
+if mobs_mc.items.quiver then
+	table.insert(mobs_mc.drops.illusioner, {name = mobs_mc.items.quiver, chance = 150, min = 1, max = 1})
+end
+
+if mobs_mc.items.arrow_diamond then
+	table.insert(mobs_mc.drops.illusioner, {name = mobs_mc.items.arrow_diamond, chance = 1, min = 1, max = 5})
 end
 
 -- SPAWNS
