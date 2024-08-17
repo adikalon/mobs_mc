@@ -44,8 +44,6 @@ local zombie = {
 	attack_type = "dogfight",
 }
 
-mobs:register_mob("mobs_mc:zombie", zombie)
-
 local baby_zombie = table.copy(zombie)
 baby_zombie.collisionbox = {-0.25, -0.01, -0.25, 0.25, 0.94, 0.25}
 baby_zombie.visual_size = {x = zombie.visual_size.x/2, y = zombie.visual_size.y/2}
@@ -54,8 +52,8 @@ baby_zombie.run_velocity = 2.4
 baby_zombie.light_damage = 0
 baby_zombie.drops = mobs_mc.drops.baby_zombie,
 
+mobs:register_mob("mobs_mc:zombie", zombie)
 mobs:register_mob("mobs_mc:baby_zombie", baby_zombie)
-
 mobs:register_egg("mobs_mc:zombie", S("Zombie"), "mobs_mc_spawn_icon_zombie.png", 0)
 
 if not mobs_mc.custom_spawn then

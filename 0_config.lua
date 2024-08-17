@@ -81,7 +81,7 @@ mobs_mc.items = {
 -- FOLLOWS
 mobs_mc.follows = {
 	baby_husk = {},
-	baby_pigman = {},
+	baby_zombie_pigman = {},
 	baby_zombie = {},
 	blaze = {},
 	creeper = {},
@@ -103,7 +103,7 @@ mobs_mc.follows = {
 	mule = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	ocelot = {"fishing:fish_raw"},
 	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
-	pigman = {},
+	zombie_pigman = {},
 	shulker = {},
 	silverfish = {},
 	slime_tiny = {},
@@ -134,7 +134,7 @@ end
 -- SPAWN NODES
 mobs_mc.spawn_nodes = {
 	baby_husk = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	baby_pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
+	baby_zombie_pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	baby_zombie = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	blaze = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	creeper = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -156,7 +156,7 @@ mobs_mc.spawn_nodes = {
 	mule = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	ocelot = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	pig = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-	pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
+	zombie_pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	shulker = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	silverfish = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	slime_tiny = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -179,7 +179,7 @@ mobs_mc.spawn_nodes = {
 -- REPLACE
 mobs_mc.replaces = {
 	baby_husk = {},
-	baby_pigman = {},
+	baby_zombie_pigman = {},
 	baby_zombie = {},
 	blaze = {},
 	creeper = {},
@@ -201,7 +201,7 @@ mobs_mc.replaces = {
 	mule = {},
 	ocelot = {},
 	pig = {},
-	pigman = {},
+	zombie_pigman = {},
 	shulker = {},
 	silverfish = {
 		{"default:stone", "mobs_mc:monster_egg_stone", -1},
@@ -254,7 +254,7 @@ mobs_mc.replaces = {
 -- ATTACKS
 mobs_mc.attacks = {
 	baby_husk = {},
-	baby_pigman = {},
+	baby_zombie_pigman = {},
 	baby_zombie = {},
 	blaze = {},
 	creeper = {},
@@ -276,7 +276,7 @@ mobs_mc.attacks = {
 	mule = {},
 	ocelot = {"mobs_animal:chicken", "mobs_animal:rat", "animalworld:rat"},
 	pig = {},
-	pigman = {},
+	zombie_pigman = {},
 	shulker = {},
 	silverfish = {},
 	slime_tiny = {},
@@ -306,7 +306,20 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	baby_pigman = {},
+	baby_zombie_pigman = {
+		{
+			name = "default:gold_lump",
+			chance = 1,
+			min = 0,
+			max = 1,
+		},
+		{
+			name = "default:gold_ingot",
+			chance = 40,
+			min = 1,
+			max = 1,
+		},
+	},
 	baby_zombie = {
 		{
 			name = "default:steel_ingot",
@@ -452,7 +465,26 @@ mobs_mc.drops = {
 	},
 	ocelot = {},
 	pig = {},
-	pigman = {},
+	zombie_pigman = {
+		{
+			name = "default:gold_lump",
+			chance = 1,
+			min = 0,
+			max = 1,
+		},
+		{
+			name = "default:gold_ingot",
+			chance = 40,
+			min = 1,
+			max = 1,
+		},
+		{
+			name = "default:sword_mese",
+			chance = 12,
+			min = 1,
+			max = 1,
+		},
+	},
 	shulker = {},
 	silverfish = {},
 	slime_tiny = {},
@@ -750,9 +782,9 @@ mobs_mc.spawns = {
 		max_height = 200,
 		day_toggle = true
 	},
-	baby_pigman = {
-		name = "mobs_mc:baby_pigman",
-		nodes = mobs_mc.spawn_nodes.baby_pigman,
+	baby_zombie_pigman = {
+		name = "mobs_mc:baby_zombie_pigman",
+		nodes = mobs_mc.spawn_nodes.baby_zombie_pigman,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
@@ -992,9 +1024,9 @@ mobs_mc.spawns = {
 		max_height = 200,
 		day_toggle = true
 	},
-	pigman = {
-		name = "mobs_mc:pigman",
-		nodes = mobs_mc.spawn_nodes.pigman,
+	zombie_pigman = {
+		name = "mobs_mc:zombie_pigman",
+		nodes = mobs_mc.spawn_nodes.zombie_pigman,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,

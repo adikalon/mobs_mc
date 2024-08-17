@@ -46,8 +46,6 @@ local husk = {
 	attack_type = "dogfight",
 }
 
-mobs:register_mob("mobs_mc:husk", husk)
-
 local baby_husk = table.copy(husk)
 baby_husk.collisionbox = {-0.25, -0.01, -0.25, 0.25, 0.94, 0.25}
 baby_husk.visual_size = {x = husk.visual_size.x/2, y = husk.visual_size.y/2}
@@ -55,15 +53,8 @@ baby_husk.walk_velocity = 1.2
 baby_husk.run_velocity = 2.4
 baby_husk.drops = mobs_mc.drops.baby_husk,
 
+mobs:register_mob("mobs_mc:husk", husk)
 mobs:register_mob("mobs_mc:baby_husk", baby_husk)
-
-if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.zombie)
-	mobs:spawn(mobs_mc.spawns.baby_zombie)
-	mobs:spawn(mobs_mc.spawns.husk)
-	mobs:spawn(mobs_mc.spawns.baby_husk)
-end
-
 mobs:register_egg("mobs_mc:husk", S("Husk"), "mobs_mc_spawn_icon_husk.png", 0)
 
 if not mobs_mc.custom_spawn then
