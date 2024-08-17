@@ -1,16 +1,4 @@
---MCmobs v0.4
---maikerumine
---made for MC like Survival game
---License for code WTFPL and otherwise stated in readmes
-
 local S = minetest.get_translator(minetest.get_current_modname())
-
---dofile(minetest.get_modpath("mobs").."/api.lua")
-
---###################
---################### ZOMBIE VILLAGER
---###################
-
 
 mobs:register_mob("mobs_mc:villager_zombie", {
 	type = "monster",
@@ -28,7 +16,7 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 		{"mobs_mc_zombie_smith.png"},
 		{"mobs_mc_zombie_villager.png"}
 	},
-	visual_size = {x=3, y=3},
+	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = true,
 	damage = 3,
 	reach = 2,
@@ -36,30 +24,12 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 	run_velocity = 2.4,
 	attack_type = "dogfight",
 	group_attack = true,
-	drops = {
-		{name = mobs_mc.items.rotten_flesh,
-		chance = 1,
-		min = 0,
-		max = 2,},
-		{name = mobs_mc.items.iron_ingot,
-		chance = 120, -- 2.5% / 3
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.carrot,
-		chance = 120, -- 2.5% / 3
-		min = 1,
-		max = 1,},
-		{name = mobs_mc.items.potato,
-		chance = 120, -- 2.5% / 3
-		min = 1,
-		max = 1,},
-	},
+	drops = mobs_mc.drops.villager_zombie,
 	sounds = {
 		random = "mobs_mc_zombie_idle",
 		war_cry = "mobs_mc_zombie_idle",
 		death = "mobs_mc_zombie_death",
 		damage = "mobs_mc_zombie_hurt",
-		distance = 16,
 	},
 	animation = {
 		speed_normal = 25,
@@ -76,16 +46,10 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 	light_damage = 1,
 	view_range = 16,
 	fear_height = 5,
-
 })
+
+mobs:register_egg("mobs_mc:villager_zombie", S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)
 
 if not mobs_mc.custom_spawn then
 	mobs:spawn(mobs_mc.spawns.villager_zombie)
-end
-
--- spawn eggs
-mobs:register_egg("mobs_mc:villager_zombie", S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)
-
-if minetest.settings:get_bool("log_mods") then
-	minetest.log("action", "MC mobs Zombie Villager loaded")
 end

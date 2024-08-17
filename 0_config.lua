@@ -470,7 +470,14 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	villager_zombie = {},
+	villager_zombie = {
+		{
+			name = "default:steel_ingot",
+			chance = 120,
+			min = 1,
+			max = 1,
+		},
+	},
 	villager = {},
 	witch = {},
 	wither = {},
@@ -523,6 +530,14 @@ end
 
 if mobs_mc.items.emerald then
 	table.insert(mobs_mc.drops.vindicator, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
+end
+
+if mobs_mc.items.carrot then
+	table.insert(mobs_mc.drops.villager_zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+end
+
+if mobs_mc.items.potato then
+	table.insert(mobs_mc.drops.villager_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
 end
 
 -- SPAWNS
