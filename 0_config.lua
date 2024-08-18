@@ -76,6 +76,7 @@ mobs_mc.items = {
 	potion_teleport = (minetest.registered_items["gadgets_consumables:potion_teleport"] and "gadgets_consumables:potion_teleport" or nil),
 	potion_water_breath_01 = (minetest.registered_items["gadgets_consumables:potion_water_breath_01"] and "gadgets_consumables:potion_water_breath_01" or nil),
 	potion_water_breath_02 = (minetest.registered_items["gadgets_consumables:potion_water_breath_02"] and "gadgets_consumables:potion_water_breath_02" or nil),
+	chicken_feather = (minetest.registered_items["mobs:chicken_feather"] and "mobs:chicken_feather" or nil),
 }
 
 -- FOLLOWS
@@ -102,6 +103,7 @@ mobs_mc.follows = {
 	magma_cube_big = {},
 	mule = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
 	ocelot = {"fishing:fish_raw"},
+	parrot = {"aqua_farming:alga_seed", "aqua_farming:sea_anemone_seed", "aqua_farming:sea_cucumber_seed", "aqua_farming:sea_grass_seed", "aqua_farming:sea_strawberry_seed", "aqua_farming:sponge_seed", "df_farming:cave_wheat_seed", "df_farming:dimple_cup_seed", "df_farming:pig_tail_seed", "df_farming:sweet_pod_seed", "farming:seed_barley", "farming:seed_cotton", "farming:seed_hemp", "farming:seed_mint", "farming:seed_oat", "farming:seed_rice", "farming:seed_rye", "farming:seed_sunflower", "farming:seed_wheat", "farming:sunflower_seeds_toasted"},
 	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
 	zombie_pigman = {},
 	shulker = {},
@@ -155,6 +157,7 @@ mobs_mc.spawn_nodes = {
 	magma_cube_big = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	mule = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	ocelot = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
+	parrot = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	pig = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	zombie_pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	shulker = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -464,6 +467,7 @@ mobs_mc.drops = {
 		},
 	},
 	ocelot = {},
+	parrot = {},
 	pig = {},
 	zombie_pigman = {
 		{
@@ -769,6 +773,10 @@ if mobs_mc.items.potato then
 	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
 end
 
+if mobs_mc.items.chicken_feather then
+	table.insert(mobs_mc.drops.parrot, {name = mobs_mc.items.chicken_feather, chance = 1, min = 1, max = 2})
+end
+
 -- SPAWNS
 mobs_mc.spawns = {
 	baby_husk = {
@@ -1005,6 +1013,17 @@ mobs_mc.spawns = {
 	ocelot = {
 		name = "mobs_mc:ocelot",
 		nodes = mobs_mc.spawn_nodes.ocelot,
+		neighbors = {"air"},
+		min_light = 14,
+		interval = 60,
+		chance = 8000,
+		min_height = 5,
+		max_height = 200,
+		day_toggle = true
+	},
+	parrot = {
+		name = "mobs_mc:parrot",
+		nodes = mobs_mc.spawn_nodes.parrot,
 		neighbors = {"air"},
 		min_light = 14,
 		interval = 60,
