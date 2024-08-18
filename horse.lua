@@ -59,7 +59,7 @@ mobs:register_mob("mobs_mc:horse", {
 	jump_height = 5.75,
 	sounds = {
 		random = "mobs_mc_horse_random",
-		damage = "mobs_mc_horse_death",
+		damage = "mobs_mc_horse_hurt",
 		death = "mobs_mc_horse_death",
 	},
 	drops = mobs_mc.drops.horse,

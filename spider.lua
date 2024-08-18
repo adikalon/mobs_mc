@@ -19,8 +19,10 @@ mobs:register_mob("mobs_mc:spider", {
 	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = false,
 	sounds = {
-		random = "mobs_spider",
-		attack = "mobs_spider",
+		random = "mobs_mc_spider_random",
+		attack = "mobs_mc_spider_attack",
+		damage = "mobs_mc_spider_hurt",
+		death = "mobs_mc_spider_death",
 	},
 	walk_velocity = 3.9,
 	jump = true,

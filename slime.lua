@@ -16,6 +16,7 @@ local slime_big = {
 	blood_texture ="mobs_mc_slime_blood.png",
 	makes_footstep_sound = true,
 	sounds = {
+		random = "green_slime_land",
 		jump = "green_slime_jump",
 		death = "green_slime_death",
 		damage = "green_slime_damage",

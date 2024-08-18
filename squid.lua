@@ -14,7 +14,9 @@ mobs:register_mob("mobs_mc:squid", {
 	},
 	sounds = {
 		damage = "mobs_mc_squid_hurt",
-	},
+		death = "mobs_mc_squid_death",
+		flop = "mobs_mc_squid_flop",
+    },
 	animation = {
 		stand_start = 1,
 		stand_end = 60,
