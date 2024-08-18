@@ -120,7 +120,7 @@ mobs:register_mob("mobs_mc:mule", {
 					self.order = "stand"
 					self.object:set_properties({stepheight = 1.2})
 					inv:remove_item("main", "mobs:saddle")
-					self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png"
+					self.texture_mods = self.texture_mods .. "^mobs_mc_horse_saddle.png^mobs_mc_horse_chest.png"
 					self.object:set_texture_mod(self.texture_mods)
 					return
 				end

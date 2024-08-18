@@ -66,7 +66,7 @@ mobs:register_mob("mobs_mc:shulker", {
 mobs:register_arrow("mobs_mc:shulkerbullet", {
 	visual = "sprite",
 	visual_size = {x = 0.25, y = 0.25},
-	textures = {"mobs_mc_shulker.png"},
+	textures = {"mobs_mc_shulkerbullet.png"},
 	velocity = 6,
 
 	hit_player = function(self, player)

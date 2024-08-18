@@ -15,6 +15,7 @@ mobs:register_mob("mobs_mc:snowman", {
 	visual = "mesh",
 	mesh = "mobs_mc_snowman.b3d",
 	textures = {
+		{"mobs_mc_snowman.png"},
 		{"mobs_mc_snowman.png^mobs_mc_snowman_pumpkin.png"},
 	},
 	gotten_texture = {"mobs_mc_snowman.png"},
