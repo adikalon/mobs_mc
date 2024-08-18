@@ -135,6 +135,7 @@ end
 
 -- SPAWN NODES
 mobs_mc.spawn_nodes = {
+	axolotl = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	baby_husk = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	baby_zombie_pigman = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	baby_zombie = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
@@ -301,6 +302,7 @@ mobs_mc.attacks = {
 
 -- DROPS
 mobs_mc.drops = {
+	axolotl = {},
 	baby_husk = {
 		{
 			name = "default:steel_ingot",
@@ -779,6 +781,17 @@ end
 
 -- SPAWNS
 mobs_mc.spawns = {
+	axolotl = {
+		name = "mobs_mc:baby_husk",
+		nodes = mobs_mc.spawn_nodes.axolotl,
+		neighbors = {"air"},
+		min_light = 14,
+		interval = 60,
+		chance = 8000,
+		min_height = 5,
+		max_height = 200,
+		day_toggle = true
+	},
 	baby_husk = {
 		name = "mobs_mc:baby_husk",
 		nodes = mobs_mc.spawn_nodes.baby_husk,
