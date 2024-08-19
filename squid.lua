@@ -38,6 +38,8 @@ mobs:register_mob("mobs_mc:squid", {
 	lava_damage = 4,
 	light_damage = 0,
 	runaway = true,
+	air_damage = 2,
+	fall_damage = true,
 	fear_height = 4,
 	blood_texture = "mobs_mc_squid_blood.png",
 	follow = mobs_mc.follows.squid,

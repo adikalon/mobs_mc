@@ -23,7 +23,6 @@ mobs:register_mob("mobs_mc:enderman", {
 	run_velocity = 3.4,
 	damage = 7,
 	reach = 2,
-	drops = mobs_mc.drops.enderman,
 	animation = {
 		walk_speed = 25,
 		run_speed = 50,
@@ -37,16 +36,14 @@ mobs:register_mob("mobs_mc:enderman", {
 		punch_start = 81,
 		punch_end = 120,
 	},
-	follow = mobs_mc.follows.enderman,
 	water_damage = 8,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	fear_height = 4,
 	attack_type = "dogfight",
 	blood_amount = 0,
-	replace_what = mobs_mc.replaces.enderman,
-	specific_attack = mobs_mc.attacks.enderman,
+	fall_damage = true,
 })
 
 mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)

@@ -37,7 +37,7 @@ mobs:register_mob("mobs_mc:blaze", {
 	lava_damage = 0,
 	fall_damage = 0,
 	fall_speed = -2.25,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	attack_type = "dogshoot",
 	arrow = "mobs_mc:blaze_fireball",
@@ -49,9 +49,6 @@ mobs:register_mob("mobs_mc:blaze", {
 	jump_chance = 98,
 	fear_height = 120,
 	blood_amount = 0,
-	follow = mobs_mc.follows.blaze,
-	replace_what = mobs_mc.replaces.blaze,
-	specific_attack = mobs_mc.attacks.blaze,
 	glow = 10,
 })
 

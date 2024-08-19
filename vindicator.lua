@@ -2,6 +2,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:vindicator", {
 	type = "monster",
+	passive = false,
 	physical = false,
 	pathfinding = 1,
 	hp_min = 24,
@@ -35,11 +36,12 @@ mobs:register_mob("mobs_mc:vindicator", {
 		punch_start = 90,
 		punch_end = 110,
 	},
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	fear_height = 4,
+	fall_damage = true,
 	drops = mobs_mc.drops.vindicator,
 })
 

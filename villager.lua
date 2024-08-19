@@ -47,11 +47,12 @@ mobs:register_mob("mobs_mc:villager", {
 		run_start = 0,
 		run_end = 40,
 	},
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
 	view_range = 16,
 	fear_height = 4,
+	fall_damage = true,
 })
 
 if not mobs_mc.custom_spawn then

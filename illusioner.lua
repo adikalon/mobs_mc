@@ -2,6 +2,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:illusioner", {
 	type = "monster",
+	passive = false,
 	attack_type = "shoot",
 	shoot_interval = 0.5,
 	arrow = "mobs_mc:arrow_entity",
@@ -35,6 +36,9 @@ mobs:register_mob("mobs_mc:illusioner", {
 	view_range = 16,
 	fear_height = 4,
 	lava_damage = 4,
+	light_damage = 2,
+	water_damage = 0.01,
+	fall_damage = true,
 	drops = mobs_mc.drops.illusioner,
 })
 

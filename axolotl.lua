@@ -40,13 +40,14 @@ mobs:register_mob("mobs_mc:axolotl", {
 	fly = true,
 	fly_in = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	jump = false,
-	fall_speed = 0.5,
+	fall_speed = true,
 	view_range = 16,
 	water_damage = 0,
 	lava_damage = 4,
 	light_damage = 0,
 	runaway = true,
 	fear_height = 4,
+	air_damage = 2,
 	blood_texture = "mobs_mc_squid_blood.png",
 })
 

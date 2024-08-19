@@ -42,11 +42,12 @@ mobs:register_mob("mobs_mc:witch", {
 		shoot_start = 50,
 		shoot_end = 82,
 	},
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 5,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	fear_height = 4,
+	fall_damage = true,
 })
 
 mobs:register_arrow("mobs_mc:potion_arrow", {

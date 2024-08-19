@@ -32,13 +32,12 @@ mobs:register_mob("mobs_mc:donkey", {
 	health = 30,
 	floats = 1,
 	lava_damage = 4,
-	water_damage = 1,
+	water_damage = 0.01,
 	makes_footstep_sound = true,
 	jump = true,
 	jump_height = 3.75,
+	fall_damage = true,
 	drops = mobs_mc.drops.donkey,
-	replace_what = mobs_mc.replaces.donkey,
-	specific_attack = mobs_mc.attacks.donkey,
 
 	do_custom = function(self, dtime)
 		if not self.v2 then

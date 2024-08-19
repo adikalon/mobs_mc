@@ -20,10 +20,11 @@ mobs:register_mob("mobs_mc:pig", {
 	walk_velocity = 1,
 	run_velocity = 3,
 	drops = mobs_mc.drops.pig,
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 4,
+	fall_damage = true,
 	sounds = {
 		random = "mobs_pig",
 		death = "mobs_pig_angry",
@@ -41,8 +42,6 @@ mobs:register_mob("mobs_mc:pig", {
 		run_end = 40,
 	},
 	follow = mobs_mc.follows.pig,
-	replace_what = mobs_mc.replaces.pig,
-	specific_attack = mobs_mc.attacks.pig,
 	view_range = 5,
 
 	do_custom = function(self, dtime)

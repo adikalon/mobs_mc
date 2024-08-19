@@ -37,9 +37,9 @@ local magma_cube_big = {
 		death_start = 88,
 		death_end = 118,
 	},
-	water_damage = 0,
+	water_damage = 2,
 	lava_damage = 0,
-	light_damage = 0,
+	light_damage = 2,
 	fall_damage = 0,
 	view_range = 16,
 	attack_type = "dogfight",
@@ -51,9 +51,6 @@ local magma_cube_big = {
 	fear_height = 100000,
 	glow = 10,
 	drops = mobs_mc.drops.magma_cube_big,
-	follow = mobs_mc.follows.magma_cube_big,
-	replace_what = mobs_mc.replaces.magma_cube_big,
-	specific_attack = mobs_mc.attacks.magma_cube_big,
 
 	on_die = function(self, pos)
 		local angle, posadd
@@ -87,9 +84,6 @@ magma_cube_small.armor = 70
 magma_cube_small.sounds.jump = "mobs_mc_magma_cube_small"
 magma_cube_small.sounds.death = "mobs_mc_magma_cube_small"
 magma_cube_small.drops = mobs_mc.drops.magma_cube_small
-magma_cube_small.follow = mobs_mc.follows.magma_cube_small
-magma_cube_small.replace_what = mobs_mc.replaces.magma_cube_small
-magma_cube_small.specific_attack = mobs_mc.attacks.magma_cube_small
 magma_cube_small.on_die = function(self, pos)
 	local angle, posadd, dir
 	angle = math.random(0, math.pi*2)
@@ -120,9 +114,6 @@ magma_cube_tiny.on_die = nil
 magma_cube_small.sounds.jump = "mobs_mc_magma_cube_small"
 magma_cube_small.sounds.death = "mobs_mc_magma_cube_small"
 magma_cube_tiny.drops = mobs_mc.drops.magma_cube_tiny
-magma_cube_tiny.follow = mobs_mc.follows.magma_cube_tiny
-magma_cube_tiny.replace_what = mobs_mc.replaces.magma_cube_tiny
-magma_cube_tiny.specific_attack = mobs_mc.attacks.magma_cube_tiny
 
 mobs:register_mob("mobs_mc:magma_cube_big", magma_cube_big)
 mobs:register_mob("mobs_mc:magma_cube_small", magma_cube_small)

@@ -34,7 +34,7 @@ mobs:register_mob("mobs_mc:parrot", {
 		walk_end = 130,
 	},
 	walk_chance = 100,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
 	fall_damage = 0,

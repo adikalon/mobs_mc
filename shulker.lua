@@ -54,13 +54,11 @@ mobs:register_mob("mobs_mc:shulker", {
 	blood_amount = 0,
 	view_range = 16,
 	fear_height = 4,
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
+	fall_damage = true,
 	drops = mobs_mc.drops.shulker,
-	follow = mobs_mc.follows.shulker,
-	replace_what = mobs_mc.replaces.shulker,
-	specific_attack = mobs_mc.attacks.shulker,
 })
 
 mobs:register_arrow("mobs_mc:shulkerbullet", {

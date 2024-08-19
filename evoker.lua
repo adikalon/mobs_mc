@@ -37,11 +37,12 @@ mobs:register_mob("mobs_mc:evoker", {
 		shoot_start = 120,
 		shoot_end = 140,
 	},
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	fear_height = 4,
+	fall_damage = true,
 	drops = mobs_mc.drops.evoker,
 
 	custom_attack = function(self, to_attack)

@@ -20,10 +20,10 @@ mobs:register_mob("mobs_mc:ocelot", {
 	run_velocity = 3,
 	floats = 1,
 	runaway = true,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
-	fall_damage = 0,
+	fall_damage = true,
 	fear_height = 4,
 	sounds = {
 		random = "mobs_mc_ocelot",
@@ -48,9 +48,14 @@ mobs:register_mob("mobs_mc:ocelot", {
 	damage = 2,
 	reach = 1,
 	attack_animals = true,
-	specific_attack = mobs_mc.attacks.ocelot,
+	specific_attack = {"mobs_animal:chicken", "mobs_animal:rat", "animalworld:rat"},
 	drops = mobs_mc.drops.ocelot,
-	replace_what = mobs_mc.replaces.ocelot,
+
+	on_rightclick = function(self, clicker)
+		if mobs:feed_tame(self, clicker, 5, false, true) then return end
+		if mobs:protect(self, clicker) then return end
+		if mobs:capture_mob(self, clicker, 0, 50, 80, false, nil) then return end
+	end,
 })
 
 mobs:register_egg("mobs_mc:ocelot", S("Ocelot"), "mobs_mc_spawn_icon_ocelot.png", 0)

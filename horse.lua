@@ -53,7 +53,7 @@ mobs:register_mob("mobs_mc:horse", {
 	health = 30,
 	floats = 1,
 	lava_damage = 4,
-	water_damage = 1,
+	water_damage = 0.01,
 	makes_footstep_sound = true,
 	jump = true,
 	jump_height = 5.75,
@@ -62,9 +62,8 @@ mobs:register_mob("mobs_mc:horse", {
 		damage = "mobs_mc_horse_hurt",
 		death = "mobs_mc_horse_death",
 	},
+	fall_damage = true,
 	drops = mobs_mc.drops.horse,
-	replace_what = mobs_mc.replaces.blaze,
-	specific_attack = mobs_mc.attacks.blaze,
 
 	do_custom = function(self, dtime)
 		if not self.v2 then

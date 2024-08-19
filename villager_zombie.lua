@@ -2,6 +2,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:villager_zombie", {
 	type = "monster",
+	passive = false,
 	hp_min = 20,
 	hp_max = 20,
 	armor = 90,
@@ -41,11 +42,12 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 		run_start = 0,
         run_end = 20,
 	},
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 5,
-	light_damage = 1,
+	light_damage = 2,
 	view_range = 16,
 	fear_height = 5,
+	fall_damage = true,
 })
 
 mobs:register_egg("mobs_mc:villager_zombie", S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)

@@ -32,13 +32,12 @@ mobs:register_mob("mobs_mc:mule", {
 	health = 30,
 	floats = 1,
 	lava_damage = 4,
-	water_damage = 1,
+	water_damage = 0.01,
 	makes_footstep_sound = true,
+	fall_damage = true,
 	jump = true,
 	jump_height = 3.75,
 	drops = mobs_mc.drops.mule,
-	replace_what = mobs_mc.replaces.mule,
-	specific_attack = mobs_mc.attacks.mule,
 
 	do_custom = function(self, dtime)
 		if not self.v2 then

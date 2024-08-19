@@ -41,6 +41,8 @@ local zombie = {
 	lava_damage = 4,
 	light_damage = 2,
 	view_range = 16,
+	water_damage = 0.01,
+	fall_damage = true,
 	attack_type = "dogfight",
 }
 
@@ -49,7 +51,6 @@ baby_zombie.collisionbox = {-0.25, -0.01, -0.25, 0.25, 0.94, 0.25}
 baby_zombie.visual_size = {x = zombie.visual_size.x/2, y = zombie.visual_size.y/2}
 baby_zombie.walk_velocity = 1.2
 baby_zombie.run_velocity = 2.4
-baby_zombie.light_damage = 0
 baby_zombie.drops = mobs_mc.drops.baby_zombie,
 
 mobs:register_mob("mobs_mc:zombie", zombie)

@@ -22,10 +22,11 @@ mobs:register_mob("mobs_mc:llama", {
 	run_velocity = 4.4,
 	floats = 1,
 	drops = mobs_mc.drops.llama,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
 	fear_height = 4,
+	fall_damage = true,
 	sounds = {
 		random = "mobs_mc_llama",
 	},
@@ -46,8 +47,6 @@ mobs:register_mob("mobs_mc:llama", {
 	},
 	follow = mobs_mc.follows.llama,
 	view_range = 16,
-	replace_what = mobs_mc.replaces.llama,
-	specific_attack = mobs_mc.attacks.llama,
 
 	do_custom = function(self, dtime)
 		if not self.v2 then

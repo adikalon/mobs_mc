@@ -2,6 +2,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:creeper", {
 	type = "monster",
+	passive = false,
 	hp_min = 20,
 	hp_max = 20,
 	collisionbox = {-0.3, -0.01, -0.3, 0.3, 1.69, 0.3},
@@ -48,14 +49,12 @@ mobs:register_mob("mobs_mc:creeper", {
 	},
 	floats = 1,
 	fear_height = 4,
-	water_damage = 1,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	blood_amount = 0,
-	follow = mobs_mc.follows.creeper,
-	replace_what = mobs_mc.replaces.creeper,
-	specific_attack = mobs_mc.attacks.creeper,
+	fall_damage = true,
 
 	on_rightclick = function(self, clicker)
 		if self._forced_explosion_countdown_timer ~= nil then

@@ -29,10 +29,11 @@ mobs:register_mob("mobs_mc:cave_spider", {
 	jump_height = 2,
 	view_range = 16,
 	floats = 1,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	fear_height = 4,
+	fall_damage = true,
 	animation = {
 		stand_speed = 10,
 		walk_speed = 25,
@@ -46,9 +47,6 @@ mobs:register_mob("mobs_mc:cave_spider", {
 	},
 	blood_amount = 0,
 	drops = mobs_mc.drops.cave_spider,
-	follow = mobs_mc.follows.cave_spider,
-	replace_what = mobs_mc.replaces.cave_spider,
-	specific_attack = mobs_mc.attacks.cave_spider,
 })
 
 mobs:register_egg("mobs_mc:cave_spider", S("Cave Spider"), "mobs_mc_spawn_icon_cave_spider.png", 0)

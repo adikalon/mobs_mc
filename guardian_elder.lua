@@ -44,13 +44,11 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	jump = false,
 	water_damage = 0,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
 	blood_amount = 0,
 	air_damage = 2,
-	follow = mobs_mc.follows.guardian_elder,
-	replace_what = mobs_mc.replaces.guardian_elder,
-	specific_attack = mobs_mc.attacks.guardian_elder,
+	fall_damage = true,
 })
 
 mobs:register_egg("mobs_mc:guardian_elder", S("Elder Guardian"), "mobs_mc_spawn_icon_guardian_elder.png", 0)

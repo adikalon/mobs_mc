@@ -35,7 +35,7 @@ mobs:register_mob("mobs_mc:ghast", {
 		run_end = 40,
 	},
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	fall_damage = 0,
 	view_range = 100,
 	attack_type = "dogshoot",
@@ -54,9 +54,6 @@ mobs:register_mob("mobs_mc:ghast", {
 	fear_height = 120,
 	blood_amount = 0,
 	glow = 5,
-	follow = mobs_mc.follows.ghast,
-	replace_what = mobs_mc.replaces.ghast,
-	specific_attack = mobs_mc.attacks.ghast,
 })
 
 mobs:register_arrow(":mobs_monster:fireball", {

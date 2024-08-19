@@ -49,12 +49,10 @@ mobs_mc.items = {
 	raw_exotic_fish = (minetest.registered_items["marinaramobs:raw_exotic_fish"] and "marinaramobs:raw_exotic_fish" or nil),
 	catfish_raw = (minetest.registered_items["nativevillages:catfish_raw"] and "nativevillages:catfish_raw" or nil),
 	fish_edible = (minetest.registered_items["xocean:fish_edible"] and "xocean:fish_edible" or nil),
-	leather = (minetest.registered_items["mobs:leather"] and "mobs:leather" or nil),
 	emerald = (minetest.registered_items["underch:emerald"] and "underch:emerald" or nil),
 	bow_wood = (minetest.registered_items["x_bows:bow_wood"] and "x_bows:bow_wood" or nil),
 	quiver = (minetest.registered_items["x_bows:quiver"] and "x_bows:quiver" or nil),
 	arrow_diamond = (minetest.registered_items["x_bows:arrow_diamond"] and "x_bows:arrow_diamond" or nil),
-
 	potion_dispel = (minetest.registered_items["gadgets_consumables:potion_dispel"] and "gadgets_consumables:potion_dispel" or nil),
 	potion_fire_shield_01 = (minetest.registered_items["gadgets_consumables:potion_fire_shield_01"] and "gadgets_consumables:potion_fire_shield_01" or nil),
 	potion_fire_shield_02 = (minetest.registered_items["gadgets_consumables:potion_fire_shield_02"] and "gadgets_consumables:potion_fire_shield_02" or nil),
@@ -77,61 +75,24 @@ mobs_mc.items = {
 	potion_water_breath_01 = (minetest.registered_items["gadgets_consumables:potion_water_breath_01"] and "gadgets_consumables:potion_water_breath_01" or nil),
 	potion_water_breath_02 = (minetest.registered_items["gadgets_consumables:potion_water_breath_02"] and "gadgets_consumables:potion_water_breath_02" or nil),
 	chicken_feather = (minetest.registered_items["mobs:chicken_feather"] and "mobs:chicken_feather" or nil),
+	green_bucket = (minetest.registered_items["underch:green_bucket"] and "underch:green_bucket" or nil),
+	green_slimestone = (minetest.registered_items["underch:green_slimestone"] and "underch:green_slimestone" or nil),
+	shield_bronze = (minetest.registered_items["shields:shield_bronze"] and "shields:shield_bronze" or nil),
+	shield_steel = (minetest.registered_items["shields:shield_steel"] and "shields:shield_steel" or nil),
+	jackolantern = (minetest.registered_items["farming:jackolantern"] and "farming:jackolantern" or nil),
 }
 
 -- FOLLOWS
 mobs_mc.follows = {
-	baby_husk = {},
-	baby_zombie_pigman = {},
-	baby_zombie = {},
-	blaze = {},
-	creeper = {},
-	cave_spider = {},
-	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone"},
-	donkey = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
-	enderman = {},
-	endermite = {},
-	ghast = {},
-	guardian = {},
-	guardian_elder = {},
-	iron_golem = {},
-	horse = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
-	husk = {},
-	llama = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
-	magma_cube_tiny = {},
-	magma_cube_small = {},
-	magma_cube_big = {},
-	mule = {"farming:wheat", "default:apple", "farming:oat", "farming:barley", "farming:corn"},
-	ocelot = {"fishing:fish_raw"},
+	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone", "goblins:goblins_goblin_bone", "goblins:goblins_goblin_bone_meaty"},
+	donkey = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
+	horse = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
+	llama = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
+	mule = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
+	ocelot = {"animalworld:rawfish", "marinaramobs:raw_exotic_fish", "nativevillages:catfish_raw", "xocean:fish_edible"},
 	parrot = {"aqua_farming:alga_seed", "aqua_farming:sea_anemone_seed", "aqua_farming:sea_cucumber_seed", "aqua_farming:sea_grass_seed", "aqua_farming:sea_strawberry_seed", "aqua_farming:sponge_seed", "df_farming:cave_wheat_seed", "df_farming:dimple_cup_seed", "df_farming:pig_tail_seed", "df_farming:sweet_pod_seed", "farming:seed_barley", "farming:seed_cotton", "farming:seed_hemp", "farming:seed_mint", "farming:seed_oat", "farming:seed_rice", "farming:seed_rye", "farming:seed_sunflower", "farming:seed_wheat", "farming:sunflower_seeds_toasted"},
-	pig = {"default:apple", "mobs_mc:carrot_on_a_stick"},
-	zombie_pigman = {},
-	shulker = {},
-	silverfish = {},
-	slime_tiny = {},
-	slime_small = {},
-	slime_big = {},
-	snowman = {},
-	spider = {},
-	squid = {},
-	vex = {},
-	evoker = {},
-	illusioner = {},
-	vindicator = {},
-	villager_zombie = {},
-	villager = {},
-	witch = {},
-	wither = {},
-	zombie = {},
+	pig = {"default:apple", "farming:carrot", "farming:potato", "mobs_mc:carrot_on_a_stick"},
 }
-
-if mobs_mc.items.potato then
-	table.insert(mobs_mc.follows.pig, mobs_mc.items.potato)
-end
-
-if mobs_mc.items.carrot then
-	table.insert(mobs_mc.follows.pig, mobs_mc.items.carrot)
-end
 
 -- SPAWN NODES
 mobs_mc.spawn_nodes = {
@@ -178,126 +139,6 @@ mobs_mc.spawn_nodes = {
 	witch = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	wither = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
 	zombie = {"group:cracky", "group:crumbly", "group:shovely", "group:pickaxey"},
-}
-
--- REPLACE
-mobs_mc.replaces = {
-	baby_husk = {},
-	baby_zombie_pigman = {},
-	baby_zombie = {},
-	blaze = {},
-	creeper = {},
-	cave_spider = {},
-	dog = {},
-	donkey = {},
-	enderman = {},
-	endermite = {},
-	ghast = {},
-	guardian = {},
-	guardian_elder = {},
-	iron_golem = {},
-	horse = {},
-	husk = {},
-	llama = {},
-	magma_cube_tiny = {},
-	magma_cube_small = {},
-	magma_cube_big = {},
-	mule = {},
-	ocelot = {},
-	pig = {},
-	zombie_pigman = {},
-	shulker = {},
-	silverfish = {
-		{"default:stone", "mobs_mc:monster_egg_stone", -1},
-		{"underch:afualite", "mobs_mc:monster_egg_afualite", -1},
-		{"underch:amphibolite", "mobs_mc:monster_egg_amphibolite", -1},
-		{"underch:andesite", "mobs_mc:monster_egg_andesite", -1},
-		{"underch:aplite", "mobs_mc:monster_egg_aplite", -1},
-		{"underch:basalt", "mobs_mc:monster_egg_basalt", -1},
-		{"underch:dark_vindesite", "mobs_mc:monster_egg_dark_vindesite", -1},
-		{"underch:diorite", "mobs_mc:monster_egg_diorite", -1},
-		{"underch:dolomite", "mobs_mc:monster_egg_dolomite", -1},
-		{"underch:emutite", "mobs_mc:monster_egg_emutite", -1},
-		{"underch:gabbro", "mobs_mc:monster_egg_gabbro", -1},
-		{"underch:gneiss", "mobs_mc:monster_egg_gneiss", -1},
-		{"underch:granite", "mobs_mc:monster_egg_granite", -1},
-		{"underch:green_slimestone", "mobs_mc:monster_egg_green_slimestone", -1},
-		{"underch:hektorite", "mobs_mc:monster_egg_hektorite", -1},
-		{"underch:limestone", "mobs_mc:monster_egg_limestone", -1},
-		{"underch:marble", "mobs_mc:monster_egg_marble", -1},
-		{"underch:omphyrite", "mobs_mc:monster_egg_omphyrite", -1},
-		{"underch:pegmatite", "mobs_mc:monster_egg_pegmatite", -1},
-		{"underch:peridotite", "mobs_mc:monster_egg_peridotite", -1},
-		{"underch:phonolite", "mobs_mc:monster_egg_phonolite", -1},
-		{"underch:phylite", "mobs_mc:monster_egg_phylite", -1},
-		{"underch:purple_slimestone", "mobs_mc:monster_egg_purple_slimestone", -1},
-		{"underch:quartzite", "mobs_mc:monster_egg_quartzite", -1},
-		{"underch:red_slimestone", "mobs_mc:monster_egg_red_slimestone", -1},
-		{"underch:schist", "mobs_mc:monster_egg_schist", -1},
-		{"underch:sichamine", "mobs_mc:monster_egg_sichamine", -1},
-		{"underch:slate", "mobs_mc:monster_egg_slate", -1},
-		{"underch:vindesite", "mobs_mc:monster_egg_vindesite", -1},
-	},
-	slime_tiny = {},
-	slime_small = {},
-	slime_big = {},
-	snowman = {},
-	spider = {},
-	squid = {},
-	vex = {},
-	evoker = {},
-	illusioner = {},
-	vindicator = {},
-	villager_zombie = {},
-	villager = {},
-	witch = {},
-	wither = {},
-	zombie = {},
-}
-
--- ATTACKS
-mobs_mc.attacks = {
-	baby_husk = {},
-	baby_zombie_pigman = {},
-	baby_zombie = {},
-	blaze = {},
-	creeper = {},
-	cave_spider = {},
-	dog = {},
-	donkey = {},
-	enderman = {},
-	endermite = {},
-	ghast = {},
-	guardian = {},
-	guardian_elder = {},
-	-- iron_golem = {},
-	horse = {},
-	husk = {},
-	llama = {},
-	magma_cube_tiny = {},
-	magma_cube_small = {},
-	magma_cube_big = {},
-	mule = {},
-	ocelot = {"mobs_animal:chicken", "mobs_animal:rat", "animalworld:rat"},
-	pig = {},
-	zombie_pigman = {},
-	shulker = {},
-	silverfish = {},
-	slime_tiny = {},
-	slime_small = {},
-	slime_big = {},
-	-- snowman = {},
-	spider = {"player", "mobs_mc:iron_golem"},
-	squid = {},
-	vex = {},
-	evoker = {},
-	illusioner = {},
-	vindicator = {},
-	villager_zombie = {},
-	villager = {},
-	witch = {},
-	wither = {},
-	zombie = {},
 }
 
 -- DROPS
@@ -354,8 +195,14 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	cave_spider = {},
-	dog = {},
+	cave_spider = {
+		{
+			name = "farming:string",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+	},
 	donkey = {
 		{
 			name = "mobs:meat_raw",
@@ -370,8 +217,6 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	enderman = {},
-	endermite = {},
 	ghast = {
 		{
 			name = "tnt:gunpowder",
@@ -436,6 +281,12 @@ mobs_mc.drops = {
 	},
 	horse = {
 		{
+			name = "mobs:meat_raw",
+			chance = 1,
+			min = 1,
+			max = 3
+		},
+		{
 			name = "mobs:leather",
 			chance = 1,
 			min = 0,
@@ -450,7 +301,20 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	llama = {},
+	llama = {
+		{
+			name = "mobs:meat_raw",
+			chance = 1,
+			min = 1,
+			max = 3
+		},
+		{
+			name = "mobs:leather",
+			chance = 1,
+			min = 0,
+			max = 2
+		},
+	},
 	magma_cube_tiny = {},
 	magma_cube_small = {},
 	magma_cube_big = {},
@@ -468,7 +332,14 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	ocelot = {},
+	ocelot = {
+		{
+			name = "farming:string",
+			chance = 1,
+			min = 0,
+			max = 2,
+		},
+	},
 	parrot = {},
 	pig = {},
 	zombie_pigman = {
@@ -491,8 +362,20 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	shulker = {},
-	silverfish = {},
+	shulker = {
+		{
+			name = "default:steel_ingot",
+			chance = 1,
+			min = 1,
+			max = 5,
+		},
+		{
+			name = "default:bronze_ingot",
+			chance = 1,
+			min = 1,
+			max = 5,
+		},
+	},
 	slime_tiny = {},
 	slime_small = {},
 	slime_big = {},
@@ -565,7 +448,14 @@ mobs_mc.drops = {
 			max = 1,
 		},
 	},
-	villager = {},
+	villager = {
+		{
+			name = "default:gold_ingot",
+			chance = 10,
+			min = 1,
+			max = 5,
+		},
+	},
 	witch = {
 		{
 			name = "vessels:glass_bottle",
@@ -586,7 +476,14 @@ mobs_mc.drops = {
 			max = 2,
 		},
 	},
-	wither = {},
+	wither = {
+		{
+			name = "mobs_mc:totem",
+			chance = 1,
+			min = 3,
+			max = 10,
+		},
+	},
 	zombie = {
 		{
 			name = "default:steel_ingot",
@@ -603,8 +500,24 @@ mobs_mc.drops = {
 	},
 }
 
+if mobs_mc.items.rawfish then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.rawfish, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.raw_exotic_fish then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.raw_exotic_fish, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.catfish_raw then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.catfish_raw, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.fish_edible then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
+end
+
 if mobs_mc.items.lava_orb then
-	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 15, min = 1, max = 1})
+	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 5, min = 1, max = 3})
 end
 
 if mobs_mc.items.rawfish then
@@ -621,10 +534,6 @@ end
 
 if mobs_mc.items.fish_edible then
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.leather then
-	table.insert(mobs_mc.drops.llama, {name = mobs_mc.items.leather, chance = 1, min = 0, max = 2})
 end
 
 if mobs_mc.items.pork_raw then
@@ -777,6 +686,36 @@ end
 
 if mobs_mc.items.chicken_feather then
 	table.insert(mobs_mc.drops.parrot, {name = mobs_mc.items.chicken_feather, chance = 1, min = 1, max = 2})
+end
+
+if mobs_mc.items.lava_orb then
+	table.insert(mobs_mc.drops.magma_cube_big, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
+	table.insert(mobs_mc.drops.magma_cube_small, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
+	table.insert(mobs_mc.drops.magma_cube_tiny, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
+end
+
+if mobs_mc.items.green_bucket then
+	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_bucket, chance = 1, min = 1, max = 1})
+	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_bucket, chance = 1, min = 1, max = 1})
+	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_bucket, chance = 1, min = 1, max = 1})
+end
+
+if mobs_mc.items.green_slimestone then
+	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_slimestone, chance = 1, min = 1, max = 5})
+	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_slimestone, chance = 1, min = 1, max = 5})
+	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_slimestone, chance = 1, min = 1, max = 5})
+end
+
+if mobs_mc.items.shield_bronze then
+	table.insert(mobs_mc.drops.shulker, {name = mobs_mc.items.shield_bronze, chance = 100, min = 1, max = 1})
+end
+
+if mobs_mc.items.shield_steel then
+	table.insert(mobs_mc.drops.shulker, {name = mobs_mc.items.shield_steel, chance = 100, min = 1, max = 1})
+end
+
+if mobs_mc.items.jackolantern then
+	table.insert(mobs_mc.drops.snowman, {name = mobs_mc.items.jackolantern, chance = 50, min = 1, max = 1})
 end
 
 -- SPAWNS

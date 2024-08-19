@@ -3,6 +3,7 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local husk = {
 	type = "monster",
+	passive = false,
 	hp_min = 20,
 	hp_max = 20,
 	armor = 90,
@@ -40,9 +41,10 @@ local husk = {
 		run_end = 40,
 	},
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	view_range = 16,
-    water_damage = 3,
+    water_damage = 0.01,
+	fall_damage = true,
 	attack_type = "dogfight",
 }
 

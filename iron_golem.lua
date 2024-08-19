@@ -29,10 +29,10 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	attacks_monsters = true,
 	attack_type = "dogfight",
 	drops = mobs_mc.drops.iron_golem,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
-	fall_damage = 0,
+	fall_damage = true,
 	animation = {
 		stand_speed = 15,
 		walk_speed = 15,
@@ -49,9 +49,6 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	},
 	jump = true,
 	blood_amount = 0,
-	follow = mobs_mc.follows.blaze,
-	replace_what = mobs_mc.replaces.iron_golem,
-	-- specific_attack = mobs_mc.attacks.iron_golem,
 })
 
 mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)

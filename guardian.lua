@@ -4,7 +4,7 @@ mobs:register_mob("mobs_mc:guardian", {
 	type = "monster",
 	hp_min = 30,
 	hp_max = 30,
-    	passive = false,
+	passive = false,
 	attack_type = "dogfight",
 	pathfinding = 1,
 	view_range = 16,
@@ -45,12 +45,10 @@ mobs:register_mob("mobs_mc:guardian", {
 	view_range = 16,
 	water_damage = 0,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	blood_amount = 0,
 	air_damage = 2,
-	follow = mobs_mc.follows.guardian,
-	replace_what = mobs_mc.replaces.guardian,
-	specific_attack = mobs_mc.attacks.guardian,
+	fall_damage = true,
 })
 
 mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)

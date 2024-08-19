@@ -7,7 +7,7 @@ mobs:register_mob("mobs_mc:snowman", {
 	hp_max = 4,
 	pathfinding = 1,
 	view_range = 10,
-	fall_damage = 0,
+	fall_damage = true,
 	water_damage = 4,
 	lava_damage = 20,
 	attacks_monsters = true,
@@ -43,9 +43,6 @@ mobs:register_mob("mobs_mc:snowman", {
 	},
 	blood_amount = 0,
 	drops = mobs_mc.drops.snowman,
-	follow = mobs_mc.follows.snowman,
-	replace_what = mobs_mc.replaces.snowman,
-	-- specific_attack = mobs_mc.attacks.snowman,
 
 	do_custom = function(self, dtime)
 		if not self._snowtimer then

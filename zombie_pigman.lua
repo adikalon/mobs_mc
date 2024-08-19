@@ -44,11 +44,12 @@ local zombie_pigman = {
 		punch_start = 90,
 		punch_end = 130,
 	},
-	water_damage = 1,
-	lava_damage = 0,
-	light_damage = 0,
+	water_damage = 0.01,
+	lava_damage = 4,
+	light_damage = 2,
 	fear_height = 4,
 	view_range = 16,
+	fall_damage = true,
 }
 
 local baby_zombie_pigman = table.copy(zombie_pigman)

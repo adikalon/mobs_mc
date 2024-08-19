@@ -23,18 +23,15 @@ mobs:register_mob("mobs_mc:endermite", {
 	walk_velocity = 1,
 	run_velocity = 2,
 	jump = true,
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	fear_height = 4,
 	view_range = 16,
 	damage = 2,
 	reach = 1,
 	blood_amount = 0,
-	drops = mobs_mc.drops.endermite,
-	follow = mobs_mc.follows.endermite,
-	replace_what = mobs_mc.replaces.endermite,
-	specific_attack = mobs_mc.attacks.endermite,
+	fall_damage = true,
 })
 
 mobs:register_egg("mobs_mc:endermite", S("Endermite"), "mobs_mc_spawn_icon_endermite.png", 0)

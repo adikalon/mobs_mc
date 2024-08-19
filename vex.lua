@@ -73,9 +73,9 @@ mobs:register_mob("mobs_mc:vex", {
 		end
 	end,
 
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 1,
 	fly = true,
 	fly_in = {"air"},
 })

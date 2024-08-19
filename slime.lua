@@ -39,9 +39,9 @@ local slime_big = {
 		death_start = 88,
 		death_end = 118,
 	},
-	water_damage = 0,
+	water_damage = 0.01,
 	lava_damage = 4,
-	light_damage = 0,
+	light_damage = 2,
 	fall_damage = 0,
 	view_range = 16,
 	attack_type = "dogfight",
@@ -54,9 +54,6 @@ local slime_big = {
 	jump_chance = 100,
 	fear_height = 60,
 	drops = mobs_mc.drops.slime_big,
-	follow = mobs_mc.follows.slime_big,
-	replace_what = mobs_mc.replaces.slime_big,
-	specific_attack = mobs_mc.attacks.slime_big,
 
 	on_die = function(self, pos)
 		local angle, posadd
@@ -85,9 +82,6 @@ slime_small.walk_velocity = 1.3
 slime_small.run_velocity = 1.3
 slime_small.jump_height = 4.3
 slime_small.drops = mobs_mc.drops.slime_small
-slime_small.follow = mobs_mc.follows.slime_small
-slime_small.replace_what = mobs_mc.replaces.slime_small
-slime_small.specific_attack = mobs_mc.attacks.slime_small
 slime_small.on_die = function(self, pos)
 	local angle, posadd, dir
 	angle = math.random(0, math.pi*2)
@@ -114,9 +108,6 @@ slime_tiny.run_velocity = 0.7
 slime_tiny.jump_height = 3
 slime_tiny.on_die = nil
 slime_tiny.drops = mobs_mc.drops.slime_tiny
-slime_tiny.follow = mobs_mc.follows.slime_tiny
-slime_tiny.replace_what = mobs_mc.replaces.slime_tiny
-slime_tiny.specific_attack = mobs_mc.attacks.slime_tiny
 
 mobs:register_mob("mobs_mc:slime_big", slime_big)
 mobs:register_mob("mobs_mc:slime_small", slime_small)
