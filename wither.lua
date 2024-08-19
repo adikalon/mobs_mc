@@ -60,7 +60,7 @@ mobs:register_mob("mobs_mc:wither", {
 mobs:register_arrow("mobs_mc:fireball", {
 	visual = "sprite",
 	visual_size = {x = 0.75, y = 0.75},
-	textures = {"mobs_mc_wither_projectile.png"},
+	textures = {"mobs_mc_wither_fireball.png"},
 	velocity = 6,
 
 	hit_player = function(self, player)
