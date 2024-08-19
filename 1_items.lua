@@ -117,33 +117,6 @@ minetest.register_craftitem("mobs_mc:horse_armor_diamond", {
 	groups = { horse_armor = 45 },
 })
 
-minetest.register_craft({
-	output = "mobs_mc:horse_armor_iron",
-	recipe = {
-		{"",                    "",                    "default:steel_ingot"},
-		{"default:steel_ingot", "default:steel_ingot", "default:steel_ingot"},
-		{"default:steel_ingot", "mobs:leather",        "default:steel_ingot"},
-	}
-})
-
-minetest.register_craft({
-	output = "mobs_mc:horse_armor_gold",
-	recipe = {
-		{"",                   "",                   "default:gold_ingot"},
-		{"default:gold_ingot", "default:gold_ingot", "default:gold_ingot"},
-		{"default:gold_ingot", "mobs:leather",       "default:gold_ingot"},
-	}
-})
-
-minetest.register_craft({
-	output = "mobs_mc:horse_armor_diamond",
-	recipe = {
-		{"",                "",                "default:diamond"},
-		{"default:diamond", "default:diamond", "default:diamond"},
-		{"default:diamond", "mobs:leather",    "default:diamond"},
-	}
-})
-
 -- HORSE SHOES
 minetest.register_craftitem("mobs_mc:horseshoe_steel", {
 	description = S("Steel Horseshoes"),
