@@ -138,29 +138,17 @@ minetest.register_craftitem("mobs_mc:horseshoe_diamond", {
 	inventory_image = "mobs_mc_horseshoe_diamond.png",
 })
 
-if minetest.registered_items["ethereal:crystal_block"] and minetest.registered_items["ethereal:crystal_ingot"] then
+minetest.register_craftitem("mobs_mc:horseshoe_crystal", {
+	description = S("Crystal Horseshoes"),
+	inventory_image = "mobs_mc_horseshoe_crystal.png",
+})
 
-	minetest.register_craftitem("mobs_mc:horseshoe_crystal", {
-		description = S("Crystal Horseshoes"),
-		inventory_image = "mobs_mc_horseshoe_crystal.png",
-	})
-
-	minetest.register_craft({
-		output = "mobs_mc:horseshoe_crystal",
-		recipe = {
-			{"",                       "ethereal:crystal_block", ""                      },
-			{"ethereal:crystal_ingot", "",                       "ethereal:crystal_ingot"},
-			{"ethereal:crystal_ingot", "",                       "ethereal:crystal_ingot"},
-		}
-	})
-end
-
-mobs_mc.shoes = {
-	["mobs_mc:horseshoe_steel"] = {7, 4, 2, "mobs_mc_horseshoe_steelo.png"},
-	["mobs_mc:horseshoe_bronze"] = {7, 4, 4, "mobs_mc_horseshoe_bronzeo.png"},
-	["mobs_mc:horseshoe_mese"] = {9, 5, 8, "mobs_mc_horseshoe_meseo.png"},
-	["mobs_mc:horseshoe_diamond"] = {10, 6, 6, "mobs_mc_horseshoe_diamondo.png"},
-	["mobs_mc:horseshoe_crystal"] = {11, 6, 6, "mobs_mc_horseshoe_crystalo.png"}
+mobs_mc.horseshoes = {
+	["mobs_mc:horseshoe_steel"] = {7, 6, 2, "mobs_mc_horseshoe_steelo.png"},
+	["mobs_mc:horseshoe_bronze"] = {7, 6, 4, "mobs_mc_horseshoe_bronzeo.png"},
+	["mobs_mc:horseshoe_mese"] = {9, 7, 8, "mobs_mc_horseshoe_meseo.png"},
+	["mobs_mc:horseshoe_diamond"] = {10, 8, 6, "mobs_mc_horseshoe_diamondo.png"},
+	["mobs_mc:horseshoe_crystal"] = {11, 8, 6, "mobs_mc_horseshoe_crystalo.png"}
 }
 
 -- HEADS

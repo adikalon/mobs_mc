@@ -130,10 +130,10 @@ mobs:register_mob("mobs_mc:donkey", {
 						minetest.add_item(self.object:get_pos(), self.shoed)
 					end
 
-					local speed = mobs_mc.shoes[item][1]
-					local jump = mobs_mc.shoes[item][2]
-					local reverse = mobs_mc.shoes[item][3]
-					local overlay = mobs_mc.shoes[item][4]
+					local speed = mobs_mc.horseshoes[item][1]
+					local jump = mobs_mc.horseshoes[item][2]
+					local reverse = mobs_mc.horseshoes[item][3]
+					local overlay = mobs_mc.horseshoes[item][4]
 
 					self.max_speed_forward = speed
 					self.jump_height = jump
