@@ -36,13 +36,8 @@ mobs_mc.create_monster_egg_nodes = true
 
 -- ITEMS
 mobs_mc.items = {
-	rabbit_raw = (minetest.registered_items["mobs:rabbit_raw"] and "mobs:rabbit_raw" or nil),
-	rabbit_hide = (minetest.registered_items["mobs:rabbit_hide"] and "mobs:rabbit_hide" or nil),
-	bucket_milk = (minetest.registered_items["mobs:bucket_milk"] and "mobs:bucket_milk" or nil),
-	wooden_bucket_milk = (minetest.registered_items["mobs:wooden_bucket_milk"] and "mobs:wooden_bucket_milk" or nil),
 	pork_raw = (minetest.registered_items["mobs:pork_raw"] and "mobs:pork_raw" or nil),
 	carrot = (minetest.registered_items["farming:carrot"] and "farming:carrot" or nil),
-	bone = (minetest.registered_items["bonemeal:bone"] and "bonemeal:bone" or nil),
 	potato = (minetest.registered_items["farming:potato"] and "farming:potato" or nil),
 	lava_orb = (minetest.registered_items["mobs:lava_orb"] and "mobs:lava_orb" or nil),
 	rawfish = (minetest.registered_items["animalworld:rawfish"] and "animalworld:rawfish" or nil),
@@ -502,38 +497,29 @@ mobs_mc.drops = {
 
 if mobs_mc.items.rawfish then
 	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.rawfish, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.raw_exotic_fish then
-	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.raw_exotic_fish, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.catfish_raw then
-	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.catfish_raw, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.fish_edible then
-	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
-end
-
-if mobs_mc.items.lava_orb then
-	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 5, min = 1, max = 3})
-end
-
-if mobs_mc.items.rawfish then
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.rawfish, chance = 160, min = 1, max = 1})
 end
 
 if mobs_mc.items.raw_exotic_fish then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.raw_exotic_fish, chance = 160, min = 1, max = 1})
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.raw_exotic_fish, chance = 160, min = 1, max = 1})
 end
 
 if mobs_mc.items.catfish_raw then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.catfish_raw, chance = 160, min = 1, max = 1})
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.catfish_raw, chance = 160, min = 1, max = 1})
 end
 
 if mobs_mc.items.fish_edible then
+	table.insert(mobs_mc.drops.axolotl, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
 	table.insert(mobs_mc.drops.guardian_elder, {name = mobs_mc.items.fish_edible, chance = 160, min = 1, max = 1})
+end
+
+if mobs_mc.items.lava_orb then
+	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 5, min = 1, max = 3})
+	table.insert(mobs_mc.drops.magma_cube_big, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
+	table.insert(mobs_mc.drops.magma_cube_small, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
+	table.insert(mobs_mc.drops.magma_cube_tiny, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
 end
 
 if mobs_mc.items.pork_raw then
@@ -542,6 +528,7 @@ end
 
 if mobs_mc.items.emerald then
 	table.insert(mobs_mc.drops.evoker, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
+	table.insert(mobs_mc.drops.vindicator, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
 end
 
 if mobs_mc.items.bow_wood then
@@ -556,16 +543,20 @@ if mobs_mc.items.arrow_diamond then
 	table.insert(mobs_mc.drops.illusioner, {name = mobs_mc.items.arrow_diamond, chance = 1, min = 1, max = 5})
 end
 
-if mobs_mc.items.emerald then
-	table.insert(mobs_mc.drops.vindicator, {name = mobs_mc.items.emerald, chance = 1, min = 0, max = 1})
-end
-
 if mobs_mc.items.carrot then
 	table.insert(mobs_mc.drops.villager_zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
 end
 
 if mobs_mc.items.potato then
 	table.insert(mobs_mc.drops.villager_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
+	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
 end
 
 if mobs_mc.items.potion_dispel then
@@ -652,46 +643,8 @@ if mobs_mc.items.potion_water_breath_02 then
 	table.insert(mobs_mc.drops.witch, {name = mobs_mc.items.potion_water_breath_02, chance = 150, min = 1, max = 1})
 end
 
-if mobs_mc.items.carrot then
-	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.potato then
-	table.insert(mobs_mc.drops.zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.carrot then
-	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.potato then
-	table.insert(mobs_mc.drops.baby_zombie, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.carrot then
-	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.potato then
-	table.insert(mobs_mc.drops.husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.carrot then
-	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.carrot, chance = 120, min = 1, max = 1})
-end
-
-if mobs_mc.items.potato then
-	table.insert(mobs_mc.drops.baby_husk, {name = mobs_mc.items.potato, chance = 120, min = 1, max = 1})
-end
-
 if mobs_mc.items.chicken_feather then
 	table.insert(mobs_mc.drops.parrot, {name = mobs_mc.items.chicken_feather, chance = 1, min = 1, max = 2})
-end
-
-if mobs_mc.items.lava_orb then
-	table.insert(mobs_mc.drops.magma_cube_big, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
-	table.insert(mobs_mc.drops.magma_cube_small, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
-	table.insert(mobs_mc.drops.magma_cube_tiny, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
 end
 
 if mobs_mc.items.green_bucket then
