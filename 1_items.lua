@@ -123,27 +123,9 @@ minetest.register_craftitem("mobs_mc:horseshoe_steel", {
 	inventory_image = "mobs_mc_horseshoe_steel.png",
 })
 
-minetest.register_craft({
-	output = "mobs_mc:horseshoe_steel",
-	recipe = {
-		{"",                    "default:steelblock", ""                   },
-		{"default:steel_ingot", "",                   "default:steel_ingot"},
-		{"default:steel_ingot", "",                   "default:steel_ingot"},
-	}
-})
-
 minetest.register_craftitem("mobs_mc:horseshoe_bronze", {
 	description = S("Bronze Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_bronze.png",
-})
-
-minetest.register_craft({
-	output = "mobs_mc:horseshoe_bronze",
-	recipe = {
-		{"",                     "default:bronzeblock", ""                    },
-		{"default:bronze_ingot", "",                    "default:bronze_ingot"},
-		{"default:bronze_ingot", "",                    "default:bronze_ingot"},
-	}
 })
 
 minetest.register_craftitem("mobs_mc:horseshoe_mese", {
@@ -151,27 +133,9 @@ minetest.register_craftitem("mobs_mc:horseshoe_mese", {
 	inventory_image = "mobs_mc_horseshoe_mese.png",
 })
 
-minetest.register_craft({
-	output = "mobs_mc:horseshoe_mese",
-	recipe = {
-		{"",                              "default:mese", ""                             },
-		{"default:mese_crystal_fragment", "",             "default:mese_crystal_fragment"},
-		{"default:mese_crystal_fragment", "",             "default:mese_crystal_fragment"},
-	}
-})
-
 minetest.register_craftitem("mobs_mc:horseshoe_diamond", {
 	description = S("Diamond Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_diamond.png",
-})
-
-minetest.register_craft({
-	output = "mobs:horseshoe_diamond",
-	recipe = {
-		{"",                "default:diamondblock", ""               },
-		{"default:diamond", "",                     "default:diamond"},
-		{"default:diamond", "",                     "default:diamond"},
-	}
 })
 
 if minetest.registered_items["ethereal:crystal_block"] and minetest.registered_items["ethereal:crystal_ingot"] then
