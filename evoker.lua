@@ -4,6 +4,7 @@ local pr = PseudoRandom(os.time()*666)
 
 mobs:register_mob("mobs_mc:evoker", {
 	type = "monster",
+	passive = false,
 	physical = true,
 	pathfinding = 1,
 	hp_min = 24,
@@ -25,7 +26,6 @@ mobs:register_mob("mobs_mc:evoker", {
 	group_attack = true,
 	attack_type = "dogfight",
 	shoot_interval = 15,
-	passive = false,
 	animation = {
 		walk_speed = 25,
 		run_speed = 25,

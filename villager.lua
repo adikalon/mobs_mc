@@ -8,24 +8,12 @@ mobs:register_mob("mobs_mc:villager", {
 	visual = "mesh",
 	mesh = "mobs_mc_villager.b3d",
 	textures = {
-		{
-			"mobs_mc_villager.png",
-		},
-		{
-			"mobs_mc_villager_farmer.png",
-		},
-		{
-			"mobs_mc_villager_priest.png",
-		},
-		{
-			"mobs_mc_villager_librarian.png",
-		},
-		{
-			"mobs_mc_villager_butcher.png",
-		},
-		{
-			"mobs_mc_villager_smith.png",
-		},
+		{"mobs_mc_villager.png"},
+		{"mobs_mc_villager_farmer.png"},
+		{"mobs_mc_villager_priest.png"},
+		{"mobs_mc_villager_librarian.png"},
+		{"mobs_mc_villager_butcher.png"},
+		{"mobs_mc_villager_smith.png"},
 	},
 	visual_size = {x = 3, y = 3},
 	makes_footstep_sound = true,
@@ -53,6 +41,7 @@ mobs:register_mob("mobs_mc:villager", {
 	view_range = 16,
 	fear_height = 4,
 	fall_damage = true,
+	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
 if not mobs_mc.custom_spawn then

@@ -2,16 +2,16 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:blaze", {
 	type = "monster",
-	hp_min = 20,
-	hp_max = 20,
-	collisionbox = {-0.3, -0.01, -0.3, 0.3, 1.79, 0.3},
+	hp_min = 50,
+	hp_max = 50,
+	collisionbox = {-1.2, -0.04, -1.2, 1.2, 7.16, 1.2},
 	rotate = -180,
 	visual = "mesh",
 	mesh = "mobs_mc_blaze.b3d",
 	textures = {
 		{"mobs_mc_blaze.png"},
 	},
-	visual_size = {x = 3, y = 3},
+	visual_size = {x = 12, y = 12},
 	sounds = {
 		random = "mobs_mc_blaze_breath",
 		death = "mobs_mc_blaze_died",
@@ -20,7 +20,6 @@ mobs:register_mob("mobs_mc:blaze", {
 	walk_velocity = .8,
 	run_velocity = 1.6,
 	damage = 6,
-	reach = 2,
 	pathfinding = 1,
 	drops = mobs_mc.drops.blaze,
 	animation = {
@@ -46,8 +45,8 @@ mobs:register_mob("mobs_mc:blaze", {
 	jump = true,
 	jump_height = 4,
 	fly = true,
+	fly_in = "air",
 	jump_chance = 98,
-	fear_height = 120,
 	blood_amount = 0,
 	glow = 10,
 })
@@ -80,7 +79,7 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 			v = vector.normalize(v)
 			local crashpos = vector.subtract(pos, v)
 			local crashnode = minetest.get_node(crashpos)
-			-- Set fire if node is air, or a replacable flammable node (e.g. a plant)
+
 			if crashnode.name == "air" or
 					(minetest.registered_nodes[crashnode.name].buildable_to and minetest.get_item_group(crashnode.name, "flammable") >= 1) then
 				minetest.set_node(crashpos, {name = "fire:basic_flame"})

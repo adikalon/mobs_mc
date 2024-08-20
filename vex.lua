@@ -37,6 +37,11 @@ mobs:register_mob("mobs_mc:vex", {
 		run_end = 40,
 	},
 	drops = mobs_mc.drops.vex,
+	water_damage = 0.01,
+	lava_damage = 4,
+	light_damage = 1,
+	fly = true,
+	fly_in = {"air"},
 
 	do_custom = function(self, dtime)
 		if self.state == "attack" then
@@ -72,12 +77,6 @@ mobs:register_mob("mobs_mc:vex", {
 			end
 		end
 	end,
-
-	water_damage = 0.01,
-	lava_damage = 4,
-	light_damage = 1,
-	fly = true,
-	fly_in = {"air"},
 })
 
 mobs:register_egg("mobs_mc:vex", S("Vex"), "mobs_mc_spawn_icon_vex.png", 0)

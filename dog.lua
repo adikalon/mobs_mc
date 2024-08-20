@@ -38,6 +38,7 @@ mobs:register_mob("mobs_mc:dog", {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
+	stay_near = {{"mg_villages:mob_spawner"}, 5},
 	follow = mobs_mc.follows.dog,
 	fall_damage = true,
 

@@ -3,9 +3,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 mobs:register_mob("mobs_mc:ghast", {
 	type = "monster",
 	pathfinding = 1,
-	group_attack = true,
-	hp_min = 10,
-	hp_max = 10,
+	hp_min = 100,
+	hp_max = 100,
 	collisionbox = {-2, 5, -2, 2, 9, 2},
 	visual = "mesh",
 	mesh = "mobs_mc_ghast.b3d",
@@ -34,7 +33,7 @@ mobs:register_mob("mobs_mc:ghast", {
 		run_start = 0,
 		run_end = 40,
 	},
-	lava_damage = 4,
+	lava_damage = 0,
 	light_damage = 2,
 	fall_damage = 0,
 	view_range = 100,
@@ -47,13 +46,12 @@ mobs:register_mob("mobs_mc:ghast", {
 	passive = false,
 	jump = true,
 	jump_height = 4,
-	floats=1,
+	floats = 1,
 	fly = true,
 	fly_in = {"air"},
-	jump_chance = 98,
-	fear_height = 120,
+	jump_chance = 1,
 	blood_amount = 0,
-	glow = 5,
+	glow = 10,
 })
 
 mobs:register_arrow(":mobs_monster:fireball", {

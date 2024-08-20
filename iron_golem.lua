@@ -49,6 +49,7 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	},
 	jump = true,
 	blood_amount = 0,
+	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
 mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)

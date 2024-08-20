@@ -48,6 +48,7 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 	view_range = 16,
 	fear_height = 5,
 	fall_damage = true,
+	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
 mobs:register_egg("mobs_mc:villager_zombie", S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)
