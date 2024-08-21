@@ -20,7 +20,7 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	sounds = {
 		damage = "mobs_mc_iron_golem_hurt"
 	},
-	view_range = 16,
+	view_range = 100,
 	stepheight = 1.1,
 	owner = "",
 	order = "follow",

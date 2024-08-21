@@ -46,7 +46,6 @@ mobs:register_mob("mobs_mc:parrot", {
 	physical = true,
 	fly = true,
 	fly_in = {"air"},
-	fear_height = 4,
 	view_range = 16,
 	follow = mobs_mc.follows.parrot,
 

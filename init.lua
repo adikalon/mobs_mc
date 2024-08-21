@@ -17,6 +17,9 @@ dofile(path .. "/0_config.lua")
 -- ITEMS
 dofile(path .. "/1_items.lua")
 
+-- GIFTS
+dofile(path .. "/2_gifts.lua")
+
 -- ANIMALS
 dofile(path .. "/donkey.lua")
 dofile(path .. "/mule.lua")
