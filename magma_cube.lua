@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local magma_cube_big = {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	hp_min = 16,
 	hp_max = 16,
 	collisionbox = {-1.02, -0.01, -1.02, 1.02, 2.03, 1.02},
@@ -122,7 +124,15 @@ mobs:register_mob("mobs_mc:magma_cube_tiny", magma_cube_tiny)
 mobs:register_egg("mobs_mc:magma_cube_big", S("Magma Cube"), "mobs_mc_spawn_icon_magmacube.png")
 
 if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.magma_cube_big)
-	mobs:spawn(mobs_mc.spawns.magma_cube_small)
-	mobs:spawn(mobs_mc.spawns.magma_cube_tiny)
+	if mobs_mc.spawns.magma_cube_big then
+		mobs:spawn(mobs_mc.spawns.magma_cube_big)
+	end
+
+	if mobs_mc.spawns.magma_cube_small then
+		mobs:spawn(mobs_mc.spawns.magma_cube_small)
+	end
+
+	if mobs_mc.spawns.magma_cube_tiny then
+		mobs:spawn(mobs_mc.spawns.magma_cube_tiny)
+	end
 end

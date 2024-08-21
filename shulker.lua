@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:shulker", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	attack_type = "shoot",
 	shoot_interval = 0.5,
 	arrow = "mobs_mc:shulkerbullet",
@@ -88,6 +90,6 @@ mobs:register_arrow("mobs_mc:shulkerbullet", {
 
 mobs:register_egg("mobs_mc:shulker", S("Shulker"), "mobs_mc_spawn_icon_shulker.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.shulker then
 	mobs:spawn(mobs_mc.spawns.shulker)
 end

@@ -4,6 +4,8 @@ local pr = PseudoRandom(os.time()*666)
 
 mobs:register_mob("mobs_mc:evoker", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
 	physical = true,
 	pathfinding = 1,
@@ -63,6 +65,6 @@ mobs:register_mob("mobs_mc:evoker", {
 
 mobs:register_egg("mobs_mc:evoker", S("Evoker"), "mobs_mc_spawn_icon_evoker.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.evoker then
 	mobs:spawn(mobs_mc.spawns.evoker)
 end

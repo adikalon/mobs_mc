@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:wither", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	hp_max = 300,
 	hp_min = 300,
 	armor = 80,
@@ -28,7 +30,6 @@ mobs:register_mob("mobs_mc:wither", {
 	fly = true,
 	dogshoot_switch = 1,
 	dogshoot_count_max = 1,
-	attack_animals = true,
 	passive = false,
 	floats = 1,
 	drops = mobs_mc.drops.wither,
@@ -87,6 +88,6 @@ mobs:register_arrow("mobs_mc:fireball", {
 
 mobs:register_egg("mobs_mc:wither", S("Wither"), "mobs_mc_spawn_icon_wither.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.wither then
 	mobs:spawn(mobs_mc.spawns.wither)
 end

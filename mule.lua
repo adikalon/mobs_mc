@@ -190,6 +190,6 @@ mobs:register_mob("mobs_mc:mule", {
 
 mobs:register_egg("mobs_mc:mule", S("Mule"), "mobs_mc_spawn_icon_mule.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.mule then
 	mobs:spawn(mobs_mc.spawns.mule)
 end

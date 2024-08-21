@@ -2,8 +2,9 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:cave_spider", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
-	docile_by_day = true,
 	attack_type = "dogfight",
 	pathfinding = 1,
 	damage = 3,
@@ -51,6 +52,6 @@ mobs:register_mob("mobs_mc:cave_spider", {
 
 mobs:register_egg("mobs_mc:cave_spider", S("Cave Spider"), "mobs_mc_spawn_icon_cave_spider.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.cave_spider then
 	mobs:spawn(mobs_mc.spawns.cave_spider)
 end

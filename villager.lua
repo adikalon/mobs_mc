@@ -44,12 +44,8 @@ mobs:register_mob("mobs_mc:villager", {
 	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
-if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.villager)
-end
-
 mobs:register_egg("mobs_mc:villager", S("Villager"), "mobs_mc_spawn_icon_villager.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.villager then
 	mobs:spawn(mobs_mc.spawns.villager)
 end

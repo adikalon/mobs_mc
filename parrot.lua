@@ -59,6 +59,6 @@ mobs:register_mob("mobs_mc:parrot", {
 
 mobs:register_egg("mobs_mc:parrot", S("Parrot"), "mobs_mc_spawn_icon_parrot.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.parrot then
 	mobs:spawn(mobs_mc.spawns.parrot)
 end

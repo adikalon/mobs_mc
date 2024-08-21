@@ -146,12 +146,8 @@ mobs:register_mob("mobs_mc:pig", {
 	end,
 })
 
-if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.pig)
-end
-
 mobs:register_egg("mobs_mc:pig", S("Pig"), "mobs_mc_spawn_icon_pig.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.pig then
 	mobs:spawn(mobs_mc.spawns.pig)
 end

@@ -53,6 +53,6 @@ mobs:register_mob("mobs_mc:axolotl", {
 
 mobs:register_egg("mobs_mc:axolotl", S("Axolotl"), "mobs_mc_spawn_icon_axolotl.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.axolotl then
 	mobs:spawn(mobs_mc.spawns.axolotl)
 end

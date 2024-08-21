@@ -71,9 +71,7 @@ mobs_mc.items = {
 	potion_water_breath_01 = (minetest.registered_items["gadgets_consumables:potion_water_breath_01"] and "gadgets_consumables:potion_water_breath_01" or nil),
 	potion_water_breath_02 = (minetest.registered_items["gadgets_consumables:potion_water_breath_02"] and "gadgets_consumables:potion_water_breath_02" or nil),
 	chicken_feather = (minetest.registered_items["mobs:chicken_feather"] and "mobs:chicken_feather" or nil),
-	green_bucket = (minetest.registered_items["underch:green_bucket"] and "underch:green_bucket" or nil),
-	ebiomes_bucket_swamp_water = (minetest.registered_items["ebiomes:bucket_swamp_water"] and "ebiomes:bucket_swamp_water" or nil),
-	swamp_bucket_swamp_water = (minetest.registered_items["swamp:bucket_swamp_water"] and "swamp:bucket_swamp_water" or nil),
+	green_slime_source = (minetest.registered_items["underch:green_slime_source"] and "underch:green_slime_source" or nil),
 	green_slimestone = (minetest.registered_items["underch:green_slimestone"] and "underch:green_slimestone" or nil),
 	shield_bronze = (minetest.registered_items["shields:shield_bronze"] and "shields:shield_bronze" or nil),
 	shield_steel = (minetest.registered_items["shields:shield_steel"] and "shields:shield_steel" or nil),
@@ -100,33 +98,33 @@ mobs_mc.spawn_nodes = {
 	baby_zombie = {"group:cracky", "group:crumbly"},
 	blaze = {"air"},
 	creeper = {"group:cracky", "group:crumbly"},
-	cave_spider = {"group:stone"},
+	cave_spider = {"group:cracky", "group:stone"},
 	dog = {"group:cracky", "group:crumbly"},
-	donkey = {"group:dirt"},
+	donkey = {"group:soil", "group:dirt"},
 	enderman = {"nether:geodelite"},
-	endermite = {"group:stone"},
+	endermite = {"group:cracky", "group:stone"},
 	ghast = {"air"},
 	guardian = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	guardian_elder = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	iron_golem = {"group:cracky", "group:crumbly"},
-	horse = {"group:dirt"},
+	horse = {"group:soil", "group:dirt"},
 	husk = {"group:sand"},
-	llama = {"group:dirt"},
+	llama = {"group:soil", "group:dirt"},
 	magma_cube_tiny = {"default:lava_source"},
 	magma_cube_small = {"default:lava_source"},
 	magma_cube_big = {"default:lava_source"},
-	mule = {"group:dirt"},
+	mule = {"group:soil", "group:dirt"},
 	ocelot = {"naturalbiomes:bambooforest_litter", "variety:dirt_with_bamboo"},
 	parrot = {"default:junglegrass", "ebiomes:jungle_savanna_grass_1", "ebiomes:jungle_savanna_grass_2", "ebiomes:jungle_savanna_grass_3", "ebiomes:jungle_savanna_grass_4", "ebiomes:jungle_savanna_grass_5", "livingjungle:mangrove_leaves", "livingjungle:samauma_leaves", "livingjungle:alocasia", "livingjungle:flamingoflower", "livingjungle:stinkflower", "livingjungle:grass1", "livingjungle:grass2", "naturalbiomes:palmbeach_grass1", "naturalbiomes:palmbeach_grass2", "naturalbiomes:palmbeach_grass3", "naturalbiomes:palm_leaves"},
-	pig = {"group:dirt"},
+	pig = {"group:soil", "group:dirt"},
 	zombie_pigman = {"xnether:rack_with_gold", "xnether:rack_deep_with_mese"},
 	shulker = {"variety:terracotta_1", "default:desert_stone"},
-	silverfish = {"group:stone"},
+	silverfish = {"group:cracky", "group:stone"},
 	slime_tiny = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud"},
 	slime_small = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud"},
 	slime_big = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud"},
 	snowman = {"default:dirt_with_snow", "default:snow", "default:ice", "default:snowblock"},
-	spider = {"group:stone"},
+	spider = {"group:cracky", "group:stone"},
 	squid = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	vex = {"air"},
 	evoker = {"group:cracky", "group:crumbly"},
@@ -669,28 +667,16 @@ if mobs_mc.items.chicken_feather then
 	table.insert(mobs_mc.drops.parrot, {name = mobs_mc.items.chicken_feather, chance = 1, min = 1, max = 2})
 end
 
-if mobs_mc.items.green_bucket then
-	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_bucket, chance = 250, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_bucket, chance = 200, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_bucket, chance = 20, min = 1, max = 1})
+if mobs_mc.items.green_slime_source then
+	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_slime_source, chance = 250, min = 1, max = 1})
+	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_slime_source, chance = 200, min = 1, max = 1})
+	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_slime_source, chance = 20, min = 1, max = 1})
 end
 
 if mobs_mc.items.green_slimestone then
 	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_slimestone, chance = 150, min = 1, max = 5})
 	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_slimestone, chance = 100, min = 1, max = 5})
 	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_slimestone, chance = 10, min = 1, max = 5})
-end
-
-if mobs_mc.items.ebiomes_bucket_swamp_water then
-	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.ebiomes_bucket_swamp_water, chance = 250, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.ebiomes_bucket_swamp_water, chance = 200, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.ebiomes_bucket_swamp_water, chance = 20, min = 1, max = 1})
-end
-
-if mobs_mc.items.swamp_bucket_swamp_water then
-	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.swamp_bucket_swamp_water, chance = 250, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.swamp_bucket_swamp_water, chance = 200, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.swamp_bucket_swamp_water, chance = 20, min = 1, max = 1})
 end
 
 if mobs_mc.items.shield_bronze then
@@ -729,16 +715,6 @@ mobs_mc.spawns = {
 		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
 	},
-	baby_zombie_pigman = {
-		name = "mobs_mc:baby_zombie_pigman",
-		nodes = mobs_mc.spawn_nodes.baby_zombie_pigman,
-		neighbors = {"air"},
-		interval = 30,
-		chance = 15000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
-	},
 	baby_zombie = {
 		name = "mobs_mc:baby_zombie",
 		nodes = mobs_mc.spawn_nodes.baby_zombie,
@@ -749,17 +725,6 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
-	},
-	blaze = {
-		name = "mobs_mc:blaze",
-		nodes = mobs_mc.spawn_nodes.blaze,
-		neighbors = {"nether:lava_crust"},
-		min_light = 0,
-		interval = 30,
-		chance = 5000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
 	},
 	creeper = {
 		name = "mobs_mc:creeper",
@@ -805,17 +770,6 @@ mobs_mc.spawns = {
 		min_height = 0,
 		max_height = mobs_mc.height.max,
 	},
-	enderman = {
-		name = "mobs_mc:enderman",
-		nodes = mobs_mc.spawn_nodes.enderman,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
-	},
 	endermite = {
 		name = "mobs_mc:endermite",
 		nodes = mobs_mc.spawn_nodes.endermite,
@@ -826,17 +780,6 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
-	},
-	ghast = {
-		name = "mobs_mc:ghast",
-		nodes = mobs_mc.spawn_nodes.ghast,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
 	},
 	guardian = {
 		name = "mobs_mc:guardian",
@@ -981,16 +924,6 @@ mobs_mc.spawns = {
 		min_height = 0,
 		max_height = mobs_mc.height.max,
 	},
-	zombie_pigman = {
-		name = "mobs_mc:zombie_pigman",
-		nodes = mobs_mc.spawn_nodes.zombie_pigman,
-		neighbors = {"air"},
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
-	},
 	shulker = {
 		name = "mobs_mc:shulker",
 		nodes = mobs_mc.spawn_nodes.shulker,
@@ -1079,50 +1012,6 @@ mobs_mc.spawns = {
 		min_height = mobs_mc.height.water - 20,
 		max_height = mobs_mc.height.water,
 	},
-	vex = {
-		name = "mobs_mc:vex",
-		nodes = mobs_mc.spawn_nodes.vex,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 30,
-		chance = 15000,
-		active_object_count = 5,
-		min_height = mobs_mc.height.floatlands_min,
-		max_height = 31000,
-	},
-	evoker = {
-		name = "mobs_mc:evoker",
-		nodes = mobs_mc.spawn_nodes.evoker,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.floatlands_min,
-		max_height = 31000,
-	},
-	illusioner = {
-		name = "mobs_mc:illusioner",
-		nodes = mobs_mc.spawn_nodes.illusioner,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.floatlands_min,
-		max_height = 31000,
-	},
-	vindicator = {
-		name = "mobs_mc:vindicator",
-		nodes = mobs_mc.spawn_nodes.vindicator,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.floatlands_min,
-		max_height = 31000,
-	},
 	villager_zombie = {
 		name = "mobs_mc:villager_zombie",
 		nodes = mobs_mc.spawn_nodes.villager_zombie,
@@ -1145,28 +1034,6 @@ mobs_mc.spawns = {
 		min_height = 0,
 		max_height = mobs_mc.height.max,
 	},
-	witch = {
-		name = "mobs_mc:witch",
-		nodes = mobs_mc.spawn_nodes.witch,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 30,
-		chance = 10000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.floatlands_min,
-		max_height = 31000,
-	},
-	wither = {
-		name = "mobs_mc:wither",
-		nodes = mobs_mc.spawn_nodes.wither,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 30,
-		chance = 30000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
-	},
 	zombie = {
 		name = "mobs_mc:zombie",
 		nodes = mobs_mc.spawn_nodes.zombie,
@@ -1179,3 +1046,137 @@ mobs_mc.spawns = {
 		max_height = mobs_mc.height.max,
 	},
 }
+
+if mobs_mc.height.nether_min and mobs_mc.height.nether_max then
+	mobs_mc.spawns.baby_zombie_pigman = {
+		name = "mobs_mc:baby_zombie_pigman",
+		nodes = mobs_mc.spawn_nodes.baby_zombie_pigman,
+		neighbors = {"air"},
+		interval = 30,
+		chance = 15000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+
+	mobs_mc.spawns.blaze = {
+		name = "mobs_mc:blaze",
+		nodes = mobs_mc.spawn_nodes.blaze,
+		neighbors = {"nether:lava_crust"},
+		min_light = 0,
+		interval = 30,
+		chance = 5000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+
+	mobs_mc.spawns.enderman = {
+		name = "mobs_mc:enderman",
+		nodes = mobs_mc.spawn_nodes.enderman,
+		neighbors = {"air"},
+		min_light = 0,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+
+	mobs_mc.spawns.ghast = {
+		name = "mobs_mc:ghast",
+		nodes = mobs_mc.spawn_nodes.ghast,
+		neighbors = {"air"},
+		min_light = 0,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+
+	mobs_mc.spawns.zombie_pigman = {
+		name = "mobs_mc:zombie_pigman",
+		nodes = mobs_mc.spawn_nodes.zombie_pigman,
+		neighbors = {"air"},
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+
+	mobs_mc.spawns.wither = {
+		name = "mobs_mc:wither",
+		nodes = mobs_mc.spawn_nodes.wither,
+		neighbors = {"air"},
+		min_light = 0,
+		interval = 30,
+		chance = 30000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	}
+end
+
+if mobs_mc.height.floatlands_min then
+	mobs_mc.spawns.vex = {
+		name = "mobs_mc:vex",
+		nodes = mobs_mc.spawn_nodes.vex,
+		neighbors = {"air"},
+		min_light = 0,
+		interval = 30,
+		chance = 15000,
+		active_object_count = 5,
+		min_height = mobs_mc.height.floatlands_min,
+		max_height = 31000,
+	}
+
+	mobs_mc.spawns.evoker = {
+		name = "mobs_mc:evoker",
+		nodes = mobs_mc.spawn_nodes.evoker,
+		neighbors = {"air"},
+		max_light = 7,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.floatlands_min,
+		max_height = 31000,
+	}
+
+	mobs_mc.spawns.illusioner = {
+		name = "mobs_mc:illusioner",
+		nodes = mobs_mc.spawn_nodes.illusioner,
+		neighbors = {"air"},
+		max_light = 7,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.floatlands_min,
+		max_height = 31000,
+	}
+
+	mobs_mc.spawns.vindicator = {
+		name = "mobs_mc:vindicator",
+		nodes = mobs_mc.spawn_nodes.vindicator,
+		neighbors = {"air"},
+		max_light = 7,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.floatlands_min,
+		max_height = 31000,
+	}
+
+	mobs_mc.spawns.witch = {
+		name = "mobs_mc:witch",
+		nodes = mobs_mc.spawn_nodes.witch,
+		neighbors = {"air"},
+		max_light = 7,
+		interval = 30,
+		chance = 10000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.floatlands_min,
+		max_height = 31000,
+	}
+end

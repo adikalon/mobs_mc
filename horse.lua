@@ -217,6 +217,6 @@ mobs:register_mob("mobs_mc:horse", {
 
 mobs:register_egg("mobs_mc:horse", S("Horse"), "mobs_mc_spawn_icon_horse.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.horse then
 	mobs:spawn(mobs_mc.spawns.horse)
 end

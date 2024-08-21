@@ -191,6 +191,6 @@ mobs:register_mob("mobs_mc:donkey", {
 
 mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.donkey then
 	mobs:spawn(mobs_mc.spawns.donkey)
 end

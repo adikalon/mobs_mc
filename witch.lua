@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:witch", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	hp_min = 26,
 	hp_max = 26,
 	collisionbox = {-0.3, -0.01, -0.3, 0.3, 1.94, 0.3},
@@ -77,6 +79,6 @@ mobs:register_arrow("mobs_mc:potion_arrow", {
 
 mobs:register_egg("mobs_mc:witch", S("Witch"), "mobs_mc_spawn_icon_witch.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.witch then
 	mobs:spawn(mobs_mc.spawns.witch)
 end

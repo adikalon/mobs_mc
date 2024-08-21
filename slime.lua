@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local slime_big = {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	pathfinding = 1,
 	group_attack = true,
 	hp_min = 16,
@@ -116,7 +118,15 @@ mobs:register_mob("mobs_mc:slime_tiny", slime_tiny)
 mobs:register_egg("mobs_mc:slime_big", S("Slime"), "mobs_mc_spawn_icon_slime.png")
 
 if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.slime_big)
-	mobs:spawn(mobs_mc.spawns.slime_small)
-	mobs:spawn(mobs_mc.spawns.slime_tiny)
+	if mobs_mc.spawns.slime_big then
+		mobs:spawn(mobs_mc.spawns.slime_big)
+	end
+
+	if mobs_mc.spawns.slime_small then
+		mobs:spawn(mobs_mc.spawns.slime_small)
+	end
+
+	if mobs_mc.spawns.slime_tiny then
+		mobs:spawn(mobs_mc.spawns.slime_tiny)
+	end
 end

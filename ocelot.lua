@@ -60,6 +60,6 @@ mobs:register_mob("mobs_mc:ocelot", {
 
 mobs:register_egg("mobs_mc:ocelot", S("Ocelot"), "mobs_mc_spawn_icon_ocelot.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.ocelot then
 	mobs:spawn(mobs_mc.spawns.ocelot)
 end

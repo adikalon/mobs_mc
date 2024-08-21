@@ -2,6 +2,10 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:iron_golem", {
 	type = "npc",
+	attack_animals = false,
+	attack_npcs = false,
+	attacks_monsters = true,
+	group_attack = true,
 	passive = false,
 	hp_min = 100,
 	hp_max = 100,
@@ -25,8 +29,6 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	run_velocity = 1.2,
 	damage = 14,
 	reach = 3,
-	group_attack = true,
-	attacks_monsters = true,
 	attack_type = "dogfight",
 	drops = mobs_mc.drops.iron_golem,
 	water_damage = 0.01,
@@ -54,6 +56,6 @@ mobs:register_mob("mobs_mc:iron_golem", {
 
 mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.iron_golem then
 	mobs:spawn(mobs_mc.spawns.iron_golem)
 end

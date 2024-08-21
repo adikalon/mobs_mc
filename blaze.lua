@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:blaze", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	hp_min = 50,
 	hp_max = 50,
 	collisionbox = {-1.2, -0.04, -1.2, 1.2, 7.16, 1.2},
@@ -90,6 +92,6 @@ mobs:register_arrow("mobs_mc:blaze_fireball", {
 
 mobs:register_egg("mobs_mc:blaze", S("Blaze"), "mobs_mc_spawn_icon_blaze.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.blaze then
 	mobs:spawn(mobs_mc.spawns.blaze)
 end

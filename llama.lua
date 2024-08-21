@@ -117,6 +117,6 @@ mobs:register_mob("mobs_mc:llama", {
 
 mobs:register_egg("mobs_mc:llama", S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.llama then
 	mobs:spawn(mobs_mc.spawns.llama)
 end

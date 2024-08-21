@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:silverfish", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
 	group_attack = true,
 	reach = 1,
@@ -755,6 +757,6 @@ end
 
 mobs:register_egg("mobs_mc:silverfish", S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.silverfish then
 	mobs:spawn(mobs_mc.spawns.silverfish)
 end

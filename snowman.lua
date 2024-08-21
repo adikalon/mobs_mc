@@ -93,6 +93,6 @@ mobs:register_arrow("mobs_mc:snowball_entity", {
 
 mobs:register_egg("mobs_mc:snowman", S("Snow Golem"), "mobs_mc_spawn_icon_snowman.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.snowman then
 	mobs:spawn(mobs_mc.spawns.snowman)
 end

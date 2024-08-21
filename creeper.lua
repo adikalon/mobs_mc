@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:creeper", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
 	hp_min = 20,
 	hp_max = 20,
@@ -90,6 +92,6 @@ mobs:register_mob("mobs_mc:creeper", {
 
 mobs:register_egg("mobs_mc:creeper", S("Creeper"), "mobs_mc_spawn_icon_creeper.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.creeper then
 	mobs:spawn(mobs_mc.spawns.creeper)
 end

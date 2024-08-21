@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local zombie_pigman = {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
 	hp_min = 20,
 	hp_max = 20,
@@ -66,6 +68,11 @@ mobs:register_mob("mobs_mc:baby_pigman", baby_zombie_pigman)
 mobs:register_egg("mobs_mc:zombie_pigman", S("Zombie Pigman"), "mobs_mc_spawn_icon_zombie_pigman.png", 0)
 
 if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.zombie_pigman)
-	mobs:spawn(mobs_mc.spawns.baby_zombie_pigman)
+	if mobs_mc.spawns.zombie_pigman then
+		mobs:spawn(mobs_mc.spawns.zombie_pigman)
+	end
+
+	if mobs_mc.spawns.baby_zombie_pigman then
+		mobs:spawn(mobs_mc.spawns.baby_zombie_pigman)
+	end
 end

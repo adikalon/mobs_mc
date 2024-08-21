@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:ghast", {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	pathfinding = 1,
 	hp_min = 100,
 	hp_max = 100,
@@ -81,6 +83,6 @@ mobs:register_arrow(":mobs_monster:fireball", {
 
 mobs:register_egg("mobs_mc:ghast", S("Ghast"), "mobs_mc_spawn_icon_ghast.png", 0)
 
-if not mobs_mc.custom_spawn then
+if not mobs_mc.custom_spawn and mobs_mc.spawns.ghast then
 	mobs:spawn(mobs_mc.spawns.ghast)
 end

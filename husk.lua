@@ -3,6 +3,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 local husk = {
 	type = "monster",
+	attack_animals = true,
+	attack_npcs = true,
 	passive = false,
 	hp_min = 20,
 	hp_max = 20,
@@ -60,6 +62,11 @@ mobs:register_mob("mobs_mc:baby_husk", baby_husk)
 mobs:register_egg("mobs_mc:husk", S("Husk"), "mobs_mc_spawn_icon_husk.png", 0)
 
 if not mobs_mc.custom_spawn then
-	mobs:spawn(mobs_mc.spawns.husk)
-	mobs:spawn(mobs_mc.spawns.baby_husk)
+	if mobs_mc.spawns.husk then
+		mobs:spawn(mobs_mc.spawns.husk)
+	end
+
+	if mobs_mc.spawns.baby_husk then
+		mobs:spawn(mobs_mc.spawns.baby_husk)
+	end
 end
