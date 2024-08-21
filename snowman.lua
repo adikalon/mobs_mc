@@ -2,6 +2,8 @@ local S = minetest.get_translator(minetest.get_current_modname())
 
 mobs:register_mob("mobs_mc:snowman", {
 	type = "npc",
+	attack_animals = false,
+	attack_npcs = false,
 	passive = false,
 	hp_min = 4,
 	hp_max = 4,
