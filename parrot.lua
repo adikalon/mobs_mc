@@ -47,6 +47,7 @@ mobs:register_mob("mobs_mc:parrot", {
 	fly = true,
 	fly_in = {"air"},
 	view_range = 16,
+	stay_near = {{"aqua_farming:alga_seed", "aqua_farming:sea_anemone_seed", "aqua_farming:sea_cucumber_seed", "aqua_farming:sea_grass_seed", "aqua_farming:sea_strawberry_seed", "aqua_farming:sponge_seed", "df_farming:cave_wheat_seed", "df_farming:dimple_cup_seed", "df_farming:pig_tail_seed", "df_farming:sweet_pod_seed", "farming:seed_barley", "farming:seed_cotton", "farming:seed_hemp", "farming:seed_mint", "farming:seed_oat", "farming:seed_rice", "farming:seed_rye", "farming:seed_sunflower", "farming:seed_wheat", "farming:sunflower_seeds_toasted"}, 5},
 	follow = mobs_mc.follows.parrot,
 
 	on_rightclick = function(self, clicker)
