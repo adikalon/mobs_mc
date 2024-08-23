@@ -770,6 +770,17 @@ mobs_mc.spawns = {
 		min_height = 0,
 		max_height = mobs_mc.height.max,
 	},
+	enderman = {
+		name = "mobs_mc:enderman",
+		nodes = mobs_mc.spawn_nodes.enderman,
+		neighbors = {"air"},
+		min_light = 0,
+		interval = 30,
+		chance = 20000,
+		active_object_count = 1,
+		min_height = mobs_mc.height.nether_min,
+		max_height = mobs_mc.height.nether_max,
+	},
 	endermite = {
 		name = "mobs_mc:endermite",
 		nodes = mobs_mc.spawn_nodes.endermite,
@@ -1066,18 +1077,6 @@ if mobs_mc.height.nether_min and mobs_mc.height.nether_max then
 		min_light = 0,
 		interval = 30,
 		chance = 5000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
-	}
-
-	mobs_mc.spawns.enderman = {
-		name = "mobs_mc:enderman",
-		nodes = mobs_mc.spawn_nodes.enderman,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 30,
-		chance = 20000,
 		active_object_count = 1,
 		min_height = mobs_mc.height.nether_min,
 		max_height = mobs_mc.height.nether_max,
