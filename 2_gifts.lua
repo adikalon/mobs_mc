@@ -36,6 +36,40 @@ if minetest.get_modpath("lootchests_default") then
 	lootchests.add_to_loot_table("lootchests_default:barrel", items)
 end
 
+if minetest.get_modpath("dungeon_loot") then
+	dungeon_loot.register({
+		{name = "mobs_mc:totem", chance = 1, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horse_armor_iron", chance = 10, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horse_armor_gold", chance = 7, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horse_armor_diamond", chance = 3, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horseshoe_steel", chance = 10, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horseshoe_bronze", chance = 7, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horseshoe_mese", chance = 5, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horseshoe_diamond", chance = 3, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:horseshoe_crystal", chance = 1, count = {1, 1}, y = {-31000, 31000}},
+	})
+end
+
+if minetest.get_modpath("bones_loot") then
+	bones_loot.register_loot({
+		{name = "mobs_mc:totem", chance = 1, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horse_armor_iron", chance = 10, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horse_armor_gold", chance = 7, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horse_armor_diamond", chance = 3, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horseshoe_steel", chance = 10, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horseshoe_bronze", chance = 7, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horseshoe_mese", chance = 5, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horseshoe_diamond", chance = 3, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:horseshoe_crystal", chance = 1, count = {1, 1}, types = {"underworld_warrior"}},
+	})
+end
+
 if minetest.get_modpath("handle_schematics") then
 	table.insert(handle_schematics.random_chest_content, {
 		"mobs_mc:totem",
@@ -59,6 +93,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -83,6 +118,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -107,6 +143,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -131,6 +168,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -155,6 +193,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -179,6 +218,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -203,6 +243,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -227,6 +268,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -251,6 +293,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -275,6 +318,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -299,6 +343,7 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 
 	table.insert(handle_schematics.random_chest_content, {
@@ -323,5 +368,6 @@ if minetest.get_modpath("handle_schematics") then
 		tavern = 1,
 		inn = 1,
 		bakery = 1,
+		shelf = 1,
 	})
 end
