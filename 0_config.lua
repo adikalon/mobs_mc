@@ -778,8 +778,8 @@ mobs_mc.spawns = {
 		interval = 30,
 		chance = 20000,
 		active_object_count = 1,
-		min_height = mobs_mc.height.nether_min,
-		max_height = mobs_mc.height.nether_max,
+		min_height = -31000,
+		max_height = mobs_mc.height.max,
 	},
 	endermite = {
 		name = "mobs_mc:endermite",
