@@ -38,7 +38,7 @@ end
 
 if minetest.get_modpath("dungeon_loot") then
 	dungeon_loot.register({
-		{name = "mobs_mc:totem", chance = 1, count = {1, 1}, y = {-31000, 31000}},
+		{name = "mobs_mc:totem", chance = 0.1, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, y = {-31000, 31000}},
@@ -55,7 +55,7 @@ end
 
 if minetest.get_modpath("bones_loot") then
 	bones_loot.register_loot({
-		{name = "mobs_mc:totem", chance = 1, count = {1, 1}, types = {"underworld_warrior"}},
+		{name = "mobs_mc:totem", chance = 0.1, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, types = {"underworld_warrior"}},
