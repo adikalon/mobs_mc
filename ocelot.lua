@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:ocelot", {
 	type = "animal",
 	hp_min = 10,
@@ -24,7 +22,6 @@ mobs:register_mob("mobs_mc:ocelot", {
 	lava_damage = 4,
 	light_damage = 0,
 	fall_damage = true,
-	fear_height = 4,
 	sounds = {
 		random = "mobs_mc_ocelot",
 		damage = "mobs_mc_ocelot_hurt",
@@ -58,7 +55,7 @@ mobs:register_mob("mobs_mc:ocelot", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:ocelot", S("Ocelot"), "mobs_mc_spawn_icon_ocelot.png", 0)
+mobs:register_egg("mobs_mc:ocelot", mobs_mc.S("Ocelot"), "mobs_mc_spawn_icon_ocelot.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.ocelot then
 	mobs:spawn(mobs_mc.spawns.ocelot)

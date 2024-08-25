@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:vex", {
 	type = "monster",
 	attack_animals = true,
@@ -81,7 +79,7 @@ mobs:register_mob("mobs_mc:vex", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:vex", S("Vex"), "mobs_mc_spawn_icon_vex.png", 0)
+mobs:register_egg("mobs_mc:vex", mobs_mc.S("Vex"), "mobs_mc_spawn_icon_vex.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.vex then
 	mobs:spawn(mobs_mc.spawns.vex)

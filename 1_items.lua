@@ -1,8 +1,6 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 -- CARROT ON A STICK
 minetest.register_tool("mobs_mc:carrot_on_a_stick", {
-	description = S("Carrot on a Stick"),
+	description = mobs_mc.S("Carrot on a Stick"),
 	wield_image = "mcl_mobitems_carrot_on_a_stick.png",
 	inventory_image = "mcl_mobitems_carrot_on_a_stick.png",
 	sounds = { breaks = "default_tool_breaks" },
@@ -24,7 +22,7 @@ local totem_fail_nodes = {}
 local hud_totem = {}
 
 minetest.register_craftitem("mobs_mc:totem", {
-	description = S("Totem of Undying"),
+	description = mobs_mc.S("Totem of Undying"),
 	inventory_image = "mcl_totems_totem.png",
 	wield_image = "mcl_totems_totem.png",
 	stack_max = 1,
@@ -94,7 +92,7 @@ end, true)
 
 -- HORSE ARMOR
 minetest.register_craftitem("mobs_mc:horse_armor_iron", {
-	description = S("Iron Horse Armor"),
+	description = mobs_mc.S("Iron Horse Armor"),
 	inventory_image = "mobs_mc_iron_horse_armor.png",
 	_horse_overlay_image = "mobs_mc_horse_armor_iron.png",
 	stack_max = 1,
@@ -102,7 +100,7 @@ minetest.register_craftitem("mobs_mc:horse_armor_iron", {
 })
 
 minetest.register_craftitem("mobs_mc:horse_armor_gold", {
-	description = S("Golden Horse Armor"),
+	description = mobs_mc.S("Golden Horse Armor"),
 	inventory_image = "mobs_mc_gold_horse_armor.png",
 	_horse_overlay_image = "mobs_mc_horse_armor_gold.png",
 	stack_max = 1,
@@ -110,7 +108,7 @@ minetest.register_craftitem("mobs_mc:horse_armor_gold", {
 })
 
 minetest.register_craftitem("mobs_mc:horse_armor_diamond", {
-	description = S("Diamond Horse Armor"),
+	description = mobs_mc.S("Diamond Horse Armor"),
 	inventory_image = "mobs_mc_diamond_horse_armor.png",
 	_horse_overlay_image = "mobs_mc_horse_armor_diamond.png",
 	stack_max = 1,
@@ -119,27 +117,27 @@ minetest.register_craftitem("mobs_mc:horse_armor_diamond", {
 
 -- HORSE SHOES
 minetest.register_craftitem("mobs_mc:horseshoe_steel", {
-	description = S("Steel Horseshoes"),
+	description = mobs_mc.S("Steel Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_steel.png",
 })
 
 minetest.register_craftitem("mobs_mc:horseshoe_bronze", {
-	description = S("Bronze Horseshoes"),
+	description = mobs_mc.S("Bronze Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_bronze.png",
 })
 
 minetest.register_craftitem("mobs_mc:horseshoe_mese", {
-	description = S("Mese Horseshoes"),
+	description = mobs_mc.S("Mese Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_mese.png",
 })
 
 minetest.register_craftitem("mobs_mc:horseshoe_diamond", {
-	description = S("Diamond Horseshoes"),
+	description = mobs_mc.S("Diamond Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_diamond.png",
 })
 
 minetest.register_craftitem("mobs_mc:horseshoe_crystal", {
-	description = S("Crystal Horseshoes"),
+	description = mobs_mc.S("Crystal Horseshoes"),
 	inventory_image = "mobs_mc_horseshoe_crystal.png",
 })
 
@@ -186,5 +184,5 @@ local function addhead(mobname, desc)
 	})
 end
 
-addhead("zombie", S("Zombie Head"))
-addhead("creeper", S("Creeper Head"))
+addhead("zombie", mobs_mc.S("Zombie Head"))
+addhead("creeper", mobs_mc.S("Creeper Head"))

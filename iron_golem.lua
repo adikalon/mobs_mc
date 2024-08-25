@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:iron_golem", {
 	type = "npc",
 	attack_animals = false,
@@ -54,7 +52,7 @@ mobs:register_mob("mobs_mc:iron_golem", {
 	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
-mobs:register_egg("mobs_mc:iron_golem", S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
+mobs:register_egg("mobs_mc:iron_golem", mobs_mc.S("Iron Golem"), "mobs_mc_spawn_icon_iron_golem.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.iron_golem then
 	mobs:spawn(mobs_mc.spawns.iron_golem)

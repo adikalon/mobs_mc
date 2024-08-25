@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:guardian_elder", {
 	type = "monster",
 	attack_animals = true,
@@ -53,7 +51,7 @@ mobs:register_mob("mobs_mc:guardian_elder", {
 	fall_damage = true,
 })
 
-mobs:register_egg("mobs_mc:guardian_elder", S("Elder Guardian"), "mobs_mc_spawn_icon_guardian_elder.png", 0)
+mobs:register_egg("mobs_mc:guardian_elder", mobs_mc.S("Elder Guardian"), "mobs_mc_spawn_icon_guardian_elder.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.guardian_elder then
 	mobs:spawn(mobs_mc.spawns.guardian_elder)

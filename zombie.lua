@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 local zombie = {
 	type = "monster",
 	attack_animals = true,
@@ -25,7 +23,6 @@ local zombie = {
 	run_velocity = 1.6,
 	damage = 3,
 	reach = 2,
-	fear_height = 4,
 	pathfinding = 1,
 	jump = true,
 	group_attack = true,
@@ -57,7 +54,7 @@ baby_zombie.drops = mobs_mc.drops.baby_zombie,
 
 mobs:register_mob("mobs_mc:zombie", zombie)
 mobs:register_mob("mobs_mc:baby_zombie", baby_zombie)
-mobs:register_egg("mobs_mc:zombie", S("Zombie"), "mobs_mc_spawn_icon_zombie.png", 0)
+mobs:register_egg("mobs_mc:zombie", mobs_mc.S("Zombie"), "mobs_mc_spawn_icon_zombie.png", 0)
 
 if not mobs_mc.custom_spawn then
 	if mobs_mc.spawns.zombie then

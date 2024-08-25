@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 local slime_big = {
 	type = "monster",
 	attack_animals = true,
@@ -54,7 +52,6 @@ local slime_big = {
 	walk_chance = 0,
 	jump_height = 5.2,
 	jump_chance = 100,
-	fear_height = 60,
 	drops = mobs_mc.drops.slime_big,
 
 	on_die = function(self, pos)
@@ -115,7 +112,7 @@ mobs:register_mob("mobs_mc:slime_big", slime_big)
 mobs:register_mob("mobs_mc:slime_small", slime_small)
 mobs:register_mob("mobs_mc:slime_tiny", slime_tiny)
 
-mobs:register_egg("mobs_mc:slime_big", S("Slime"), "mobs_mc_spawn_icon_slime.png")
+mobs:register_egg("mobs_mc:slime_big", mobs_mc.S("Slime"), "mobs_mc_spawn_icon_slime.png")
 
 if not mobs_mc.custom_spawn then
 	if mobs_mc.spawns.slime_big then

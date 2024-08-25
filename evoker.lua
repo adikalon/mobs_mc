@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 local pr = PseudoRandom(os.time()*666)
 
 mobs:register_mob("mobs_mc:evoker", {
@@ -43,7 +41,6 @@ mobs:register_mob("mobs_mc:evoker", {
 	lava_damage = 4,
 	light_damage = 2,
 	view_range = 16,
-	fear_height = 4,
 	fall_damage = true,
 	drops = mobs_mc.drops.evoker,
 
@@ -63,7 +60,7 @@ mobs:register_mob("mobs_mc:evoker", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:evoker", S("Evoker"), "mobs_mc_spawn_icon_evoker.png", 0)
+mobs:register_egg("mobs_mc:evoker", mobs_mc.S("Evoker"), "mobs_mc_spawn_icon_evoker.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.evoker then
 	mobs:spawn(mobs_mc.spawns.evoker)

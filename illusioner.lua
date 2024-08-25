@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:illusioner", {
 	type = "monster",
 	attack_animals = true,
@@ -36,7 +34,6 @@ mobs:register_mob("mobs_mc:illusioner", {
 		shoot_end = 170,
 	},
 	view_range = 16,
-	fear_height = 4,
 	lava_damage = 4,
 	light_damage = 2,
 	water_damage = 0.01,
@@ -140,7 +137,7 @@ minetest.register_entity("mobs_mc:arrow_entity", {
 	end
 })
 
-mobs:register_egg("mobs_mc:illusioner", S("Illusioner"), "mobs_mc_spawn_icon_illusioner.png", 0)
+mobs:register_egg("mobs_mc:illusioner", mobs_mc.S("Illusioner"), "mobs_mc_spawn_icon_illusioner.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.illusioner then
 	mobs:spawn(mobs_mc.spawns.illusioner)

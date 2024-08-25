@@ -1,6 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
-
 local husk = {
 	type = "monster",
 	attack_animals = true,
@@ -27,7 +24,6 @@ local husk = {
 	run_velocity = 1.6,
 	damage = 3,
 	reach = 2,
-	fear_height = 4,
 	pathfinding = 1,
 	jump = true,
 	group_attack = true,
@@ -59,7 +55,7 @@ baby_husk.drops = mobs_mc.drops.baby_husk,
 
 mobs:register_mob("mobs_mc:husk", husk)
 mobs:register_mob("mobs_mc:baby_husk", baby_husk)
-mobs:register_egg("mobs_mc:husk", S("Husk"), "mobs_mc_spawn_icon_husk.png", 0)
+mobs:register_egg("mobs_mc:husk", mobs_mc.S("Husk"), "mobs_mc_spawn_icon_husk.png", 0)
 
 if not mobs_mc.custom_spawn then
 	if mobs_mc.spawns.husk then

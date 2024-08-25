@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:vindicator", {
 	type = "monster",
 	attack_animals = true,
@@ -42,12 +40,11 @@ mobs:register_mob("mobs_mc:vindicator", {
 	lava_damage = 4,
 	light_damage = 2,
 	view_range = 16,
-	fear_height = 4,
 	fall_damage = true,
 	drops = mobs_mc.drops.vindicator,
 })
 
-mobs:register_egg("mobs_mc:vindicator", S("Vindicator"), "mobs_mc_spawn_icon_vindicator.png", 0)
+mobs:register_egg("mobs_mc:vindicator", mobs_mc.S("Vindicator"), "mobs_mc_spawn_icon_vindicator.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.vindicator then
 	mobs:spawn(mobs_mc.spawns.vindicator)

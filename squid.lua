@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:squid", {
 	type = "animal",
 	passive = true,
@@ -40,12 +38,11 @@ mobs:register_mob("mobs_mc:squid", {
 	runaway = true,
 	air_damage = 2,
 	fall_damage = true,
-	fear_height = 4,
 	blood_texture = "mobs_mc_squid_blood.png",
 	follow = mobs_mc.follows.squid,
 })
 
-mobs:register_egg("mobs_mc:squid", S("Squid"), "mobs_mc_spawn_icon_squid.png", 0)
+mobs:register_egg("mobs_mc:squid", mobs_mc.S("Squid"), "mobs_mc_spawn_icon_squid.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.squid then
 	mobs:spawn(mobs_mc.spawns.squid)

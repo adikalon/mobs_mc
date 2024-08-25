@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:spider", {
 	type = "monster",
 	attack_animals = true,
@@ -34,7 +32,6 @@ mobs:register_mob("mobs_mc:spider", {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 2,
-	fear_height = 4,
 	fall_damage = true,
 	animation = {
 		stand_speed = 10,
@@ -51,7 +48,7 @@ mobs:register_mob("mobs_mc:spider", {
 	drops = mobs_mc.drops.spider,
 })
 
-mobs:register_egg("mobs_mc:spider", S("Spider"), "mobs_mc_spawn_icon_spider.png", 0)
+mobs:register_egg("mobs_mc:spider", mobs_mc.S("Spider"), "mobs_mc_spawn_icon_spider.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.spider then
 	mobs:spawn(mobs_mc.spawns.spider)

@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:pig", {
 	type = "animal",
 	runaway = true,
@@ -23,7 +21,6 @@ mobs:register_mob("mobs_mc:pig", {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 4,
 	fall_damage = true,
 	sounds = {
 		random = "mobs_pig",
@@ -146,7 +143,7 @@ mobs:register_mob("mobs_mc:pig", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:pig", S("Pig"), "mobs_mc_spawn_icon_pig.png", 0)
+mobs:register_egg("mobs_mc:pig", mobs_mc.S("Pig"), "mobs_mc_spawn_icon_pig.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.pig then
 	mobs:spawn(mobs_mc.spawns.pig)

@@ -11,7 +11,7 @@ This is a fork of a long unsupported [mod for mobs from minecraft for minetest](
 * Removed mobs, improved analogues of which exist in other mods on minetest
 * Something has been added. For example, horseshoes for horses, donkeys and mules from the mob_horse mod
 * Horseshoes and armor do not have crafting recipes. These items can be found in chests or bought from traders from the mob_npc mod
-* Spawn of many mobs depends on additional mods: nether, xnether, naturalbiomes, livingjungle, mg_villages, etc.
+* Spawn of many mobs depends on additional mods: nether, naturalbiomes, livingjungle, mg_villages, etc.
 * All changes are subjective vision of the author and do not try to match the original minecraft mechanics
 
 ## List of mobs

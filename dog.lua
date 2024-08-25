@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:dog", {
 	type = "animal",
 	hp_min = 20,
@@ -34,7 +32,6 @@ mobs:register_mob("mobs_mc:dog", {
 	damage = 4,
 	reach = 2,
 	attack_type = "dogfight",
-	fear_height = 4,
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
@@ -75,7 +72,7 @@ mobs:register_mob("mobs_mc:dog", {
 	attacks_monsters = true,
 })
 
-mobs:register_egg("mobs_mc:dog", S("Dog"), "mobs_mc_spawn_icon_dog.png", 0)
+mobs:register_egg("mobs_mc:dog", mobs_mc.S("Dog"), "mobs_mc_spawn_icon_dog.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.dog then
 	mobs:spawn(mobs_mc.spawns.dog)

@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:enderman", {
 	type = "monster",
 	attack_animals = true,
@@ -42,13 +40,12 @@ mobs:register_mob("mobs_mc:enderman", {
 	lava_damage = 4,
 	light_damage = 2,
 	view_range = 16,
-	fear_height = 4,
 	attack_type = "dogfight",
 	blood_amount = 0,
 	fall_damage = true,
 })
 
-mobs:register_egg("mobs_mc:enderman", S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)
+mobs:register_egg("mobs_mc:enderman", mobs_mc.S("Enderman"), "mobs_mc_spawn_icon_enderman.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.enderman then
 	mobs:spawn(mobs_mc.spawns.enderman)

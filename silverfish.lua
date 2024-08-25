@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:silverfish", {
 	type = "monster",
 	attack_animals = true,
@@ -29,7 +27,6 @@ mobs:register_mob("mobs_mc:silverfish", {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 2,
-	fear_height = 4,
 	replace_rate = 10,
 	fall_damage = true,
 	replace_what = {
@@ -85,7 +82,7 @@ local spawn_silverfish = function(pos, oldnode, oldmetadata, digger)
 end
 
 minetest.register_node("mobs_mc:monster_egg_stone", {
-	description = S("Stone Monster Egg"),
+	description = mobs_mc.S("Stone Monster Egg"),
 	tiles = {"default_stone.png"},
 	groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 	drop = '',
@@ -113,7 +110,7 @@ minetest.register_ore({
 
 if minetest.registered_items["underch:afualite"] then
 	minetest.register_node("mobs_mc:monster_egg_afualite", {
-		description = S("Afualite Monster Egg"),
+		description = mobs_mc.S("Afualite Monster Egg"),
 		tiles = {"underch_afualite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -136,7 +133,7 @@ end
 
 if minetest.registered_items["underch:amphibolite"] then
 	minetest.register_node("mobs_mc:monster_egg_amphibolite", {
-		description = S("Amphibolite Monster Egg"),
+		description = mobs_mc.S("Amphibolite Monster Egg"),
 		tiles = {"underch_amphibolite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -159,7 +156,7 @@ end
 
 if minetest.registered_items["underch:andesite"] then
 	minetest.register_node("mobs_mc:monster_egg_andesite", {
-		description = S("Andesite Monster Egg"),
+		description = mobs_mc.S("Andesite Monster Egg"),
 		tiles = {"underch_andesite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -182,7 +179,7 @@ end
 
 if minetest.registered_items["underch:aplite"] then
 	minetest.register_node("mobs_mc:monster_egg_aplite", {
-		description = S("Aplite Monster Egg"),
+		description = mobs_mc.S("Aplite Monster Egg"),
 		tiles = {"underch_aplite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -205,7 +202,7 @@ end
 
 if minetest.registered_items["underch:basalt"] then
 	minetest.register_node("mobs_mc:monster_egg_basalt", {
-		description = S("Basalt Monster Egg"),
+		description = mobs_mc.S("Basalt Monster Egg"),
 		tiles = {"underch_basalt.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -228,7 +225,7 @@ end
 
 if minetest.registered_items["underch:dark_vindesite"] then
 	minetest.register_node("mobs_mc:monster_egg_dark_vindesite", {
-		description = S("Dark Vindesite Monster Egg"),
+		description = mobs_mc.S("Dark Vindesite Monster Egg"),
 		tiles = {"underch_dark_vindesite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -251,7 +248,7 @@ end
 
 if minetest.registered_items["underch:diorite"] then
 	minetest.register_node("mobs_mc:monster_egg_diorite", {
-		description = S("Diorite Monster Egg"),
+		description = mobs_mc.S("Diorite Monster Egg"),
 		tiles = {"underch_diorite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -274,7 +271,7 @@ end
 
 if minetest.registered_items["underch:dolomite"] then
 	minetest.register_node("mobs_mc:monster_egg_dolomite", {
-		description = S("Dolomite Monster Egg"),
+		description = mobs_mc.S("Dolomite Monster Egg"),
 		tiles = {"underch_dolomite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -297,7 +294,7 @@ end
 
 if minetest.registered_items["underch:emutite"] then
 	minetest.register_node("mobs_mc:monster_egg_emutite", {
-		description = S("Emutite Monster Egg"),
+		description = mobs_mc.S("Emutite Monster Egg"),
 		tiles = {"underch_emutite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -320,7 +317,7 @@ end
 
 if minetest.registered_items["underch:gabbro"] then
 	minetest.register_node("mobs_mc:monster_egg_gabbro", {
-		description = S("Gabbro Monster Egg"),
+		description = mobs_mc.S("Gabbro Monster Egg"),
 		tiles = {"underch_gabbro.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -343,7 +340,7 @@ end
 
 if minetest.registered_items["underch:gneiss"] then
 	minetest.register_node("mobs_mc:monster_egg_gneiss", {
-		description = S("Gneiss Monster Egg"),
+		description = mobs_mc.S("Gneiss Monster Egg"),
 		tiles = {"underch_gneiss.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -366,7 +363,7 @@ end
 
 if minetest.registered_items["underch:granite"] then
 	minetest.register_node("mobs_mc:monster_egg_granite", {
-		description = S("Granite Monster Egg"),
+		description = mobs_mc.S("Granite Monster Egg"),
 		tiles = {"underch_granite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -389,7 +386,7 @@ end
 
 if minetest.registered_items["underch:green_slimestone"] then
 	minetest.register_node("mobs_mc:monster_egg_green_slimestone", {
-		description = S("Green Slimestone Monster Egg"),
+		description = mobs_mc.S("Green Slimestone Monster Egg"),
 		tiles = {"underch_green_slimestone.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -412,7 +409,7 @@ end
 
 if minetest.registered_items["underch:hektorite"] then
 	minetest.register_node("mobs_mc:monster_egg_hektorite", {
-		description = S("Hektorite Monster Egg"),
+		description = mobs_mc.S("Hektorite Monster Egg"),
 		tiles = {"underch_hektorite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -435,7 +432,7 @@ end
 
 if minetest.registered_items["underch:limestone"] then
 	minetest.register_node("mobs_mc:monster_egg_limestone", {
-		description = S("Limestone Monster Egg"),
+		description = mobs_mc.S("Limestone Monster Egg"),
 		tiles = {"underch_limestone.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -458,7 +455,7 @@ end
 
 if minetest.registered_items["underch:marble"] then
 	minetest.register_node("mobs_mc:monster_egg_marble", {
-		description = S("Marble Monster Egg"),
+		description = mobs_mc.S("Marble Monster Egg"),
 		tiles = {"underch_marble.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -481,7 +478,7 @@ end
 
 if minetest.registered_items["underch:omphyrite"] then
 	minetest.register_node("mobs_mc:monster_egg_omphyrite", {
-		description = S("Omphyrite Monster Egg"),
+		description = mobs_mc.S("Omphyrite Monster Egg"),
 		tiles = {"underch_omphyrite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -504,7 +501,7 @@ end
 
 if minetest.registered_items["underch:pegmatite"] then
 	minetest.register_node("mobs_mc:monster_egg_pegmatite", {
-		description = S("Pegmatite Monster Egg"),
+		description = mobs_mc.S("Pegmatite Monster Egg"),
 		tiles = {"underch_pegmatite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -527,7 +524,7 @@ end
 
 if minetest.registered_items["underch:peridotite"] then
 	minetest.register_node("mobs_mc:monster_egg_peridotite", {
-		description = S("Peridotite Monster Egg"),
+		description = mobs_mc.S("Peridotite Monster Egg"),
 		tiles = {"underch_peridotite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -550,7 +547,7 @@ end
 
 if minetest.registered_items["underch:phonolite"] then
 	minetest.register_node("mobs_mc:monster_egg_phonolite", {
-		description = S("Phonolite Monster Egg"),
+		description = mobs_mc.S("Phonolite Monster Egg"),
 		tiles = {"underch_phonolite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -573,7 +570,7 @@ end
 
 if minetest.registered_items["underch:phylite"] then
 	minetest.register_node("mobs_mc:monster_egg_phylite", {
-		description = S("Phylite Monster Egg"),
+		description = mobs_mc.S("Phylite Monster Egg"),
 		tiles = {"underch_phylite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -596,7 +593,7 @@ end
 
 if minetest.registered_items["underch:purple_slimestone"] then
 	minetest.register_node("mobs_mc:monster_egg_purple_slimestone", {
-		description = S("Purple Slimestone Monster Egg"),
+		description = mobs_mc.S("Purple Slimestone Monster Egg"),
 		tiles = {"underch_purple_slimestone.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -619,7 +616,7 @@ end
 
 if minetest.registered_items["underch:quartzite"] then
 	minetest.register_node("mobs_mc:monster_egg_quartzite", {
-		description = S("Quartzite Monster Egg"),
+		description = mobs_mc.S("Quartzite Monster Egg"),
 		tiles = {"underch_quartzite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -642,7 +639,7 @@ end
 
 if minetest.registered_items["underch:red_slimestone"] then
 	minetest.register_node("mobs_mc:monster_egg_red_slimestone", {
-		description = S("Red Slimestone Monster Egg"),
+		description = mobs_mc.S("Red Slimestone Monster Egg"),
 		tiles = {"underch_red_slimestone.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -665,7 +662,7 @@ end
 
 if minetest.registered_items["underch:schist"] then
 	minetest.register_node("mobs_mc:monster_egg_schist", {
-		description = S("Schist Monster Egg"),
+		description = mobs_mc.S("Schist Monster Egg"),
 		tiles = {"underch_schist.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -688,7 +685,7 @@ end
 
 if minetest.registered_items["underch:sichamine"] then
 	minetest.register_node("mobs_mc:monster_egg_sichamine", {
-		description = S("Sichamine Monster Egg"),
+		description = mobs_mc.S("Sichamine Monster Egg"),
 		tiles = {"underch_sichamine.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -711,7 +708,7 @@ end
 
 if minetest.registered_items["underch:slate"] then
 	minetest.register_node("mobs_mc:monster_egg_slate", {
-		description = S("Slate Monster Egg"),
+		description = mobs_mc.S("Slate Monster Egg"),
 		tiles = {"underch_slate.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -734,7 +731,7 @@ end
 
 if minetest.registered_items["underch:vindesite"] then
 	minetest.register_node("mobs_mc:monster_egg_vindesite", {
-		description = S("Vindesite Monster Egg"),
+		description = mobs_mc.S("Vindesite Monster Egg"),
 		tiles = {"underch_vindesite.png"},
 		groups = {oddly_breakable_by_hand = 2, spawns_silverfish = 1},
 		drop = '',
@@ -755,7 +752,7 @@ if minetest.registered_items["underch:vindesite"] then
 	})
 end
 
-mobs:register_egg("mobs_mc:silverfish", S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
+mobs:register_egg("mobs_mc:silverfish", mobs_mc.S("Silverfish"), "mobs_mc_spawn_icon_silverfish.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.silverfish then
 	mobs:spawn(mobs_mc.spawns.silverfish)

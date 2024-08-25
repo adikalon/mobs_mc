@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:mule", {
 	type = "animal",
 	visual = "mesh",
@@ -21,7 +19,6 @@ mobs:register_mob("mobs_mc:mule", {
 	textures = {
 		{"mobs_mc_mule.png"},
 	},
-	fear_height = 4,
 	fly = false,
 	walk_chance = 60,
 	view_range = 16,
@@ -147,7 +144,7 @@ mobs:register_mob("mobs_mc:mule", {
 
 					minetest.chat_send_player(
 						player_name,
-						S("Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
+						mobs_mc.S("Mule shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
 					)
 
 					if not minetest.settings:get_bool("creative_mode") then
@@ -188,7 +185,7 @@ mobs:register_mob("mobs_mc:mule", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:mule", S("Mule"), "mobs_mc_spawn_icon_mule.png", 0)
+mobs:register_egg("mobs_mc:mule", mobs_mc.S("Mule"), "mobs_mc_spawn_icon_mule.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.mule then
 	mobs:spawn(mobs_mc.spawns.mule)

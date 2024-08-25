@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:llama", {
 	type = "animal",
 	hp_min = 15,
@@ -25,7 +23,6 @@ mobs:register_mob("mobs_mc:llama", {
 	water_damage = 0.01,
 	lava_damage = 4,
 	light_damage = 0,
-	fear_height = 4,
 	fall_damage = true,
 	sounds = {
 		random = "mobs_mc_llama",
@@ -115,7 +112,7 @@ mobs:register_mob("mobs_mc:llama", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:llama", S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)
+mobs:register_egg("mobs_mc:llama", mobs_mc.S("Llama"), "mobs_mc_spawn_icon_llama.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.llama then
 	mobs:spawn(mobs_mc.spawns.llama)

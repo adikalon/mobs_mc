@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:villager_zombie", {
 	type = "monster",
 	attack_animals = true,
@@ -48,12 +46,11 @@ mobs:register_mob("mobs_mc:villager_zombie", {
 	lava_damage = 5,
 	light_damage = 2,
 	view_range = 16,
-	fear_height = 5,
 	fall_damage = true,
 	stay_near = {{"mg_villages:mob_spawner"}, 5},
 })
 
-mobs:register_egg("mobs_mc:villager_zombie", S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)
+mobs:register_egg("mobs_mc:villager_zombie", mobs_mc.S("Zombie Villager"), "mobs_mc_spawn_icon_zombie_villager.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.villager_zombie then
 	mobs:spawn(mobs_mc.spawns.villager_zombie)

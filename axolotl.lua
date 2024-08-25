@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:axolotl", {
 	type = "animal",
 	passive = true,
@@ -46,12 +44,11 @@ mobs:register_mob("mobs_mc:axolotl", {
 	lava_damage = 4,
 	light_damage = 0,
 	runaway = true,
-	fear_height = 4,
 	air_damage = 2,
 	blood_texture = "mobs_mc_squid_blood.png",
 })
 
-mobs:register_egg("mobs_mc:axolotl", S("Axolotl"), "mobs_mc_spawn_icon_axolotl.png", 0)
+mobs:register_egg("mobs_mc:axolotl", mobs_mc.S("Axolotl"), "mobs_mc_spawn_icon_axolotl.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.axolotl then
 	mobs:spawn(mobs_mc.spawns.axolotl)

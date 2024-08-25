@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:guardian", {
 	type = "monster",
 	attack_animals = true,
@@ -53,7 +51,7 @@ mobs:register_mob("mobs_mc:guardian", {
 	fall_damage = true,
 })
 
-mobs:register_egg("mobs_mc:guardian", S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)
+mobs:register_egg("mobs_mc:guardian", mobs_mc.S("Guardian"), "mobs_mc_spawn_icon_guardian.png", 0)
 
 if not mobs_mc.guardian and mobs_mc.spawns.guardian then
 	mobs:spawn(mobs_mc.spawns.guardian)

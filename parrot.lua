@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:parrot", {
 	type = "animal",
 	pathfinding = 1,
@@ -57,7 +55,7 @@ mobs:register_mob("mobs_mc:parrot", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:parrot", S("Parrot"), "mobs_mc_spawn_icon_parrot.png", 0)
+mobs:register_egg("mobs_mc:parrot", mobs_mc.S("Parrot"), "mobs_mc_spawn_icon_parrot.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.parrot then
 	mobs:spawn(mobs_mc.spawns.parrot)

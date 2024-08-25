@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:donkey", {
 	type = "animal",
 	visual = "mesh",
@@ -21,7 +19,6 @@ mobs:register_mob("mobs_mc:donkey", {
 	textures = {
 		{"mobs_mc_donkey.png"},
 	},
-	fear_height = 4,
 	fly = false,
 	walk_chance = 60,
 	view_range = 16,
@@ -148,7 +145,7 @@ mobs:register_mob("mobs_mc:donkey", {
 
 					minetest.chat_send_player(
 						player_name,
-						S("Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
+						mobs_mc.S("Donkey shoes fitted. Speed: @1, jump height: @2, stop speed: @3", speed, jump, reverse)
 					)
 
 					if not minetest.settings:get_bool("creative_mode") then
@@ -189,7 +186,7 @@ mobs:register_mob("mobs_mc:donkey", {
 	end,
 })
 
-mobs:register_egg("mobs_mc:donkey", S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)
+mobs:register_egg("mobs_mc:donkey", mobs_mc.S("Donkey"), "mobs_mc_spawn_icon_donkey.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.donkey then
 	mobs:spawn(mobs_mc.spawns.donkey)

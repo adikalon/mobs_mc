@@ -1,5 +1,3 @@
-local S = minetest.get_translator(minetest.get_current_modname())
-
 mobs:register_mob("mobs_mc:snowman", {
 	type = "npc",
 	attack_animals = false,
@@ -93,7 +91,7 @@ mobs:register_arrow("mobs_mc:snowball_entity", {
 
 })
 
-mobs:register_egg("mobs_mc:snowman", S("Snow Golem"), "mobs_mc_spawn_icon_snowman.png", 0)
+mobs:register_egg("mobs_mc:snowman", mobs_mc.S("Snow Golem"), "mobs_mc_spawn_icon_snowman.png", 0)
 
 if not mobs_mc.custom_spawn and mobs_mc.spawns.snowman then
 	mobs:spawn(mobs_mc.spawns.snowman)
