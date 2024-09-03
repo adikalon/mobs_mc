@@ -167,12 +167,6 @@ mobs_mc.drops = {
 			min = 1,
 			max = 1,
 		},
-		{
-			name = "mobs_mc:head_zombie",
-			chance = 200,
-			min = 1,
-			max = 1,
-		},
 	},
 	blaze = {},
 	creeper = {
@@ -181,12 +175,6 @@ mobs_mc.drops = {
 			chance = 1,
 			min = 0,
 			max = 2,
-		},
-		{
-			name = "mobs_mc:head_creeper",
-			chance = 200,
-			min = 1,
-			max = 1,
 		},
 	},
 	cave_spider = {
@@ -501,12 +489,6 @@ mobs_mc.drops = {
 		{
 			name = "default:steel_ingot",
 			chance = 120,
-			min = 1,
-			max = 1,
-		},
-		{
-			name = "mobs_mc:head_zombie",
-			chance = 200,
 			min = 1,
 			max = 1,
 		},

@@ -1,7 +1,5 @@
 if minetest.get_modpath("mobs_npc") then
 	table.insert(mobs.human.items, {"mobs_mc:totem", "default:gold_ingot 150", 10})
-	table.insert(mobs.human.items, {"mobs_mc:head_zombie", "default:gold_ingot 20", 10})
-	table.insert(mobs.human.items, {"mobs_mc:head_creeper", "default:gold_ingot 20", 10})
 	table.insert(mobs.human.items, {"mobs_mc:carrot_on_a_stick", "default:gold_ingot 50", 10})
 	table.insert(mobs.human.items, {"mobs_mc:horse_armor_iron", "default:gold_ingot 60", 10})
 	table.insert(mobs.human.items, {"mobs_mc:horse_armor_gold", "default:gold_ingot 80", 10})
@@ -16,8 +14,6 @@ end
 if minetest.get_modpath("lootchests_default") then
 	local items = {
 		{"mobs_mc:totem"},
-		{"mobs_mc:head_zombie"},
-		{"mobs_mc:head_creeper"},
 		{"mobs_mc:carrot_on_a_stick"},
 		{"mobs_mc:horse_armor_iron"},
 		{"mobs_mc:horse_armor_gold"},
@@ -39,8 +35,6 @@ end
 if minetest.get_modpath("dungeon_loot") then
 	dungeon_loot.register({
 		{name = "mobs_mc:totem", chance = 0.1, count = {1, 1}, y = {-31000, 31000}},
-		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, y = {-31000, 31000}},
-		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:horse_armor_iron", chance = 10, count = {1, 1}, y = {-31000, 31000}},
 		{name = "mobs_mc:horse_armor_gold", chance = 7, count = {1, 1}, y = {-31000, 31000}},
@@ -56,8 +50,6 @@ end
 if minetest.get_modpath("bones_loot") then
 	bones_loot.register_loot({
 		{name = "mobs_mc:totem", chance = 0.1, count = {1, 1}, types = {"underworld_warrior"}},
-		{name = "mobs_mc:head_zombie", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
-		{name = "mobs_mc:head_creeper", chance = 20, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:carrot_on_a_stick", chance = 15, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:horse_armor_iron", chance = 10, count = {1, 1}, types = {"underworld_warrior"}},
 		{name = "mobs_mc:horse_armor_gold", chance = 7, count = {1, 1}, types = {"underworld_warrior"}},
@@ -74,56 +66,6 @@ if minetest.get_modpath("handle_schematics") then
 	table.insert(handle_schematics.random_chest_content, {
 		"mobs_mc:totem",
 		1,
-		1,
-		1,
-		chest_default = 1,
-		farm_tiny = 1,
-		farm_full = 1,
-		shed = 1,
-		hut = 1,
-		chest_work = 1,
-		lumberjack = 1,
-		forge = 1,
-		guard = 1,
-		ship = 1,
-		church = 1,
-		library = 1,
-		chest_private = 1,
-		wreck = 1,
-		tavern = 1,
-		inn = 1,
-		bakery = 1,
-		shelf = 1,
-	})
-
-	table.insert(handle_schematics.random_chest_content, {
-		"mobs_mc:head_zombie",
-		20,
-		1,
-		1,
-		chest_default = 1,
-		farm_tiny = 1,
-		farm_full = 1,
-		shed = 1,
-		hut = 1,
-		chest_work = 1,
-		lumberjack = 1,
-		forge = 1,
-		guard = 1,
-		ship = 1,
-		church = 1,
-		library = 1,
-		chest_private = 1,
-		wreck = 1,
-		tavern = 1,
-		inn = 1,
-		bakery = 1,
-		shelf = 1,
-	})
-
-	table.insert(handle_schematics.random_chest_content, {
-		"mobs_mc:head_creeper",
-		20,
 		1,
 		1,
 		chest_default = 1,
