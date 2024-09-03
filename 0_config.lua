@@ -33,8 +33,6 @@ if mobs_mc.height.floatlands_min then
 	mobs_mc.height.max = mobs_mc.height.floatlands_min
 end
 
-mobs_mc.create_monster_egg_nodes = true
-
 -- ITEMS
 mobs_mc.items = {
 	pork_raw = (minetest.registered_items["mobs:pork_raw"] and "mobs:pork_raw" or nil),
