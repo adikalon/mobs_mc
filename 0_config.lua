@@ -78,7 +78,6 @@ mobs_mc.items = {
 mobs_mc.follows = {
 	dog = {"mobs:meat", "mobs:meat_raw", "bonemeal:bone", "goblins:goblins_goblin_bone", "goblins:goblins_goblin_bone_meaty"},
 	donkey = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
-	horse = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
 	llama = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
 	mule = {"default:apple", "farming:wheat", "farming:oat", "farming:barley", "farming:corn", "farming:carrot"},
 	ocelot = {"animalworld:rawfish", "marinaramobs:raw_exotic_fish", "nativevillages:catfish_raw", "xocean:fish_edible"},
@@ -103,7 +102,6 @@ mobs_mc.spawn_nodes = {
 	guardian = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	guardian_elder = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	iron_golem = {"group:cracky", "group:crumbly"},
-	horse = {"group:soil", "group:dirt"},
 	husk = {"group:sand"},
 	llama = {"group:soil", "group:dirt"},
 	mule = {"group:soil", "group:dirt"},
@@ -251,20 +249,6 @@ mobs_mc.drops = {
 			chance = 1,
 			min = 0,
 			max = 2,
-		},
-	},
-	horse = {
-		{
-			name = "mobs:meat_raw",
-			chance = 1,
-			min = 1,
-			max = 3
-		},
-		{
-			name = "mobs:leather",
-			chance = 1,
-			min = 0,
-			max = 2
 		},
 	},
 	husk = {
@@ -772,17 +756,6 @@ mobs_mc.spawns = {
 		min_light = 7,
 		interval = 10,
 		chance = 100,
-		active_object_count = 1,
-		min_height = 0,
-		max_height = mobs_mc.height.max,
-	},
-	horse = {
-		name = "mobs_mc:horse",
-		nodes = mobs_mc.spawn_nodes.horse,
-		neighbors = {"air"},
-		min_light = 7,
-		interval = 60,
-		chance = 20000,
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,

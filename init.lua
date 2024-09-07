@@ -30,7 +30,6 @@ dofile(path .. "/ocelot.lua")
 dofile(path .. "/pig.lua")
 dofile(path .. "/dog.lua")
 dofile(path .. "/squid.lua")
-dofile(path .. "/horse.lua")
 dofile(path .. "/parrot.lua")
 dofile(path .. "/axolotl.lua")
 
