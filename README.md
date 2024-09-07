@@ -29,7 +29,6 @@ This is a fork of a long unsupported [mod for mobs from minecraft for minetest](
 * Elder Guardian
 * Husk
 * Illusioner
-* Magma Cube
 * Shulker
 * Silverfish
 * Spider

@@ -106,9 +106,6 @@ mobs_mc.spawn_nodes = {
 	horse = {"group:soil", "group:dirt"},
 	husk = {"group:sand"},
 	llama = {"group:soil", "group:dirt"},
-	magma_cube_tiny = {"default:lava_source", "caverealms:hot_cobble", "caverealms:glow_obsidian", "caverealms:glow_obsidian_2"},
-	magma_cube_small = {"default:lava_source", "caverealms:hot_cobble", "caverealms:glow_obsidian", "caverealms:glow_obsidian_2"},
-	magma_cube_big = {"default:lava_source", "caverealms:hot_cobble",  "caverealms:glow_obsidian","caverealms:glow_obsidian_2"},
 	mule = {"group:soil", "group:dirt"},
 	ocelot = {"naturalbiomes:bambooforest_litter", "variety:dirt_with_bamboo"},
 	parrot = {"default:junglegrass", "ebiomes:jungle_savanna_grass_1", "ebiomes:jungle_savanna_grass_2", "ebiomes:jungle_savanna_grass_3", "ebiomes:jungle_savanna_grass_4", "ebiomes:jungle_savanna_grass_5", "livingjungle:mangrove_leaves", "livingjungle:samauma_leaves", "livingjungle:alocasia", "livingjungle:flamingoflower", "livingjungle:stinkflower", "livingjungle:grass1", "livingjungle:grass2", "naturalbiomes:palmbeach_grass1", "naturalbiomes:palmbeach_grass2", "naturalbiomes:palmbeach_grass3", "naturalbiomes:palm_leaves"},
@@ -292,9 +289,6 @@ mobs_mc.drops = {
 			max = 2
 		},
 	},
-	magma_cube_tiny = {},
-	magma_cube_small = {},
-	magma_cube_big = {},
 	mule = {
 		{
 			name = "mobs:meat_raw",
@@ -509,9 +503,6 @@ end
 
 if mobs_mc.items.lava_orb then
 	table.insert(mobs_mc.drops.blaze, {name = mobs_mc.items.lava_orb, chance = 5, min = 1, max = 3})
-	table.insert(mobs_mc.drops.magma_cube_big, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
-	table.insert(mobs_mc.drops.magma_cube_small, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
-	table.insert(mobs_mc.drops.magma_cube_tiny, {name = mobs_mc.items.lava_orb, chance = 10, min = 1, max = 3})
 end
 
 if mobs_mc.items.pork_raw then
@@ -816,39 +807,6 @@ mobs_mc.spawns = {
 		chance = 20000,
 		active_object_count = 1,
 		min_height = 0,
-		max_height = mobs_mc.height.max,
-	},
-	magma_cube_tiny = {
-		name = "mobs_mc:magma_cube_tiny",
-		nodes = mobs_mc.spawn_nodes.magma_cube_tiny,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 60,
-		chance = 40000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
-	magma_cube_small = {
-		name = "mobs_mc:magma_cube_small",
-		nodes = mobs_mc.spawn_nodes.magma_cube_small,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 60,
-		chance = 30000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
-	magma_cube_big = {
-		name = "mobs_mc:magma_cube_big",
-		nodes = mobs_mc.spawn_nodes.magma_cube_big,
-		neighbors = {"air"},
-		min_light = 0,
-		interval = 60,
-		chance = 20000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
 	},
 	mule = {
