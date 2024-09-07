@@ -32,7 +32,6 @@ This is a fork of a long unsupported [mod for mobs from minecraft for minetest](
 * Magma Cube
 * Shulker
 * Silverfish
-* Slime
 * Spider
 * Vex
 * Zombie Villager

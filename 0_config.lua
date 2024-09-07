@@ -69,8 +69,6 @@ mobs_mc.items = {
 	potion_water_breath_01 = (minetest.registered_items["gadgets_consumables:potion_water_breath_01"] and "gadgets_consumables:potion_water_breath_01" or nil),
 	potion_water_breath_02 = (minetest.registered_items["gadgets_consumables:potion_water_breath_02"] and "gadgets_consumables:potion_water_breath_02" or nil),
 	chicken_feather = (minetest.registered_items["mobs:chicken_feather"] and "mobs:chicken_feather" or nil),
-	green_slime_source = (minetest.registered_items["underch:green_slime_source"] and "underch:green_slime_source" or nil),
-	green_slimestone = (minetest.registered_items["underch:green_slimestone"] and "underch:green_slimestone" or nil),
 	shield_bronze = (minetest.registered_items["shields:shield_bronze"] and "shields:shield_bronze" or nil),
 	shield_steel = (minetest.registered_items["shields:shield_steel"] and "shields:shield_steel" or nil),
 	jackolantern = (minetest.registered_items["farming:jackolantern"] and "farming:jackolantern" or nil),
@@ -118,9 +116,6 @@ mobs_mc.spawn_nodes = {
 	zombie_pigman = {"group:cracky", "group:crumbly"},
 	shulker = {"variety:terracotta_1", "default:desert_stone"},
 	silverfish = {"group:cracky", "group:stone"},
-	slime_tiny = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud", "underch:green_slimestone", "underch:red_slimestone", "underch:purple_slimestone", "underch:black_slimy_block", "underch:green_slimy_block", "underch:red_slimy_block", "underch:purple_slimy_block"},
-	slime_small = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud", "underch:green_slimestone", "underch:red_slimestone", "underch:purple_slimestone", "underch:black_slimy_block", "underch:green_slimy_block", "underch:red_slimy_block", "underch:purple_slimy_block"},
-	slime_big = {"ebiomes:dirt_with_grass_swamp", "ebiomes:peat_with_swamp_moss_yellow", "naturalbiomes:alderswamp_dirt", "naturalbiomes:alderswamp_litter", "swamp:dirt_with_swamp_grass", "swamp:mud", "swamp:muddy_mud", "swamp:root_with_mud", "underch:green_slimestone", "underch:red_slimestone", "underch:purple_slimestone", "underch:black_slimy_block", "underch:green_slimy_block", "underch:red_slimy_block", "underch:purple_slimy_block"},
 	snowman = {"default:dirt_with_snow", "default:snow", "default:ice", "default:snowblock"},
 	spider = {"group:cracky", "group:crumbly", "df_trees:spore_tree_fruiting_body", "mobs:cobweb", "big_webs:webbing"},
 	squid = {"default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
@@ -358,9 +353,6 @@ mobs_mc.drops = {
 			max = 5,
 		},
 	},
-	slime_tiny = {},
-	slime_small = {},
-	slime_big = {},
 	snowman = {
 		{
 			name = "default:snowblock",
@@ -647,18 +639,6 @@ if mobs_mc.items.chicken_feather then
 	table.insert(mobs_mc.drops.parrot, {name = mobs_mc.items.chicken_feather, chance = 1, min = 1, max = 2})
 end
 
-if mobs_mc.items.green_slime_source then
-	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_slime_source, chance = 250, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_slime_source, chance = 200, min = 1, max = 1})
-	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_slime_source, chance = 20, min = 1, max = 1})
-end
-
-if mobs_mc.items.green_slimestone then
-	table.insert(mobs_mc.drops.slime_big, {name = mobs_mc.items.green_slimestone, chance = 150, min = 1, max = 5})
-	table.insert(mobs_mc.drops.slime_small, {name = mobs_mc.items.green_slimestone, chance = 100, min = 1, max = 5})
-	table.insert(mobs_mc.drops.slime_tiny, {name = mobs_mc.items.green_slimestone, chance = 10, min = 1, max = 5})
-end
-
 if mobs_mc.items.shield_bronze then
 	table.insert(mobs_mc.drops.shulker, {name = mobs_mc.items.shield_bronze, chance = 100, min = 1, max = 1})
 end
@@ -929,39 +909,6 @@ mobs_mc.spawns = {
 	silverfish = {
 		name = "mobs_mc:silverfish",
 		nodes = mobs_mc.spawn_nodes.silverfish,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 60,
-		chance = 20000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
-	slime_tiny = {
-		name = "mobs_mc:slime_tiny",
-		nodes = mobs_mc.spawn_nodes.slime_tiny,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 60,
-		chance = 40000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
-	slime_small = {
-		name = "mobs_mc:slime_small",
-		nodes = mobs_mc.spawn_nodes.slime_small,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 60,
-		chance = 30000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
-	slime_big = {
-		name = "mobs_mc:slime_big",
-		nodes = mobs_mc.spawn_nodes.slime_big,
 		neighbors = {"air"},
 		max_light = 7,
 		interval = 60,
