@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:ghast", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	pathfinding = 1,
 	hp_min = 100,

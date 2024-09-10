@@ -44,7 +44,7 @@ mobs:register_mob("mobs_mc:ocelot", {
 	pathfinding = 1,
 	damage = 2,
 	reach = 1,
-	attack_animals = true,
+	attack_animals = false,
 	specific_attack = {"mobs_animal:chicken", "mobs_animal:rat", "animalworld:rat"},
 	drops = mobs_mc.drops.ocelot,
 

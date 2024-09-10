@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:silverfish", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	passive = false,
 	group_attack = true,

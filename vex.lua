@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:vex", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	pathfinding = 1,
 	passive = false,

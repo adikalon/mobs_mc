@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:enderman", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	passive = false,
 	pathfinding = 1,

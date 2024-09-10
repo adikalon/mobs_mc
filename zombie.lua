@@ -1,6 +1,6 @@
 local zombie = {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	hp_min = 20,
 	hp_max = 20,

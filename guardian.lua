@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:guardian", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	hp_min = 30,
 	hp_max = 30,

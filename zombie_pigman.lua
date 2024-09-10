@@ -1,6 +1,6 @@
 local zombie_pigman = {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	passive = false,
 	hp_min = 20,

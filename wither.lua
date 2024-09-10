@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:wither", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	hp_max = 300,
 	hp_min = 300,

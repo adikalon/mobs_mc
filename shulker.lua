@@ -1,6 +1,6 @@
 mobs:register_mob("mobs_mc:shulker", {
 	type = "monster",
-	attack_animals = true,
+	attack_animals = false,
 	attack_npcs = true,
 	attack_type = "shoot",
 	shoot_interval = 0.5,
