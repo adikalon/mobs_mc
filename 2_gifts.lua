@@ -1,8 +1,3 @@
-if minetest.get_modpath("mobs_npc") then
-	table.insert(mobs.human.items, {"mobs_mc:totem", "default:gold_ingot 150", 10})
-	table.insert(mobs.human.items, {"mobs_mc:carrot_on_a_stick", "default:gold_ingot 50", 10})
-end
-
 if minetest.get_modpath("lootchests_default") then
 	local items = {
 		{"mobs_mc:totem"},
