@@ -638,6 +638,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = mobs_mc.height.water - 20,
 		max_height = mobs_mc.height.water,
+		day_toggle = true,
 	},
 	baby_husk = {
 		name = "mobs_mc:baby_husk",
@@ -693,6 +694,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	donkey = {
 		name = "mobs_mc:donkey",
@@ -704,6 +706,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	enderman = {
 		name = "mobs_mc:enderman",
@@ -781,6 +784,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	mule = {
 		name = "mobs_mc:mule",
@@ -792,6 +796,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	ocelot = {
 		name = "mobs_mc:ocelot",
@@ -814,6 +819,7 @@ mobs_mc.spawns = {
 		active_object_count = 3,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	pig = {
 		name = "mobs_mc:pig",
@@ -825,6 +831,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = 0,
 		max_height = mobs_mc.height.max,
+		day_toggle = true,
 	},
 	shulker = {
 		name = "mobs_mc:shulker",
@@ -880,6 +887,7 @@ mobs_mc.spawns = {
 		active_object_count = 1,
 		min_height = mobs_mc.height.water - 20,
 		max_height = mobs_mc.height.water,
+		day_toggle = true,
 	},
 	villager_zombie = {
 		name = "mobs_mc:villager_zombie",
