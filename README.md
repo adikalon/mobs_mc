@@ -17,7 +17,6 @@ This is a fork of a long unsupported [mod for mobs from minecraft for minetest](
 ### Monsters
 
 * Blaze
-* Cave Spider
 * Creeper
 * Enderman
 * Endermite
@@ -29,7 +28,6 @@ This is a fork of a long unsupported [mod for mobs from minecraft for minetest](
 * Illusioner
 * Shulker
 * Silverfish
-* Spider
 * Vex
 * Zombie Villager
 * Vindicator

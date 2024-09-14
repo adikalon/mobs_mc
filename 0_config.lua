@@ -93,7 +93,6 @@ mobs_mc.spawn_nodes = {
 	baby_zombie = {"group:cracky", "group:crumbly"},
 	blaze = {"air"},
 	creeper = {"group:cracky", "group:crumbly"},
-	cave_spider = {"group:cracky", "group:stone", "df_trees:spore_tree_fruiting_body", "mobs:cobweb", "big_webs:webbing"},
 	dog = {"group:cracky", "group:crumbly"},
 	donkey = {"group:soil", "group:dirt"},
 	enderman = {"nether:geodelite", "nether:brick", "nextgen_bedrock:bedrock", "bedrock2:bedrock", "df_underworld_items:slade", "df_underworld_items:slade_sand"},
@@ -112,7 +111,6 @@ mobs_mc.spawn_nodes = {
 	shulker = {"variety:terracotta_1", "default:desert_stone"},
 	silverfish = {"group:cracky", "group:stone"},
 	snowman = {"default:dirt_with_snow", "default:snow", "default:ice", "default:snowblock"},
-	spider = {"group:cracky", "group:crumbly", "df_trees:spore_tree_fruiting_body", "mobs:cobweb", "big_webs:webbing"},
 	squid = {"group:water", "default:river_water_source", "default:water_source", "ebiomes:swamp_water_source", "swamp:swamp_water_source"},
 	vex = {"air"},
 	evoker = {"group:cracky", "group:crumbly"},
@@ -162,14 +160,6 @@ mobs_mc.drops = {
 	creeper = {
 		{
 			name = "tnt:gunpowder",
-			chance = 1,
-			min = 0,
-			max = 2,
-		},
-	},
-	cave_spider = {
-		{
-			name = "farming:string",
 			chance = 1,
 			min = 0,
 			max = 2,
@@ -338,14 +328,6 @@ mobs_mc.drops = {
 			min = 0,
 			max = 5,
 		}
-	},
-	spider = {
-		{
-			name = "farming:string",
-			chance = 1,
-			min = 0,
-			max = 2,
-		},
 	},
 	squid = {
 		{
@@ -673,17 +655,6 @@ mobs_mc.spawns = {
 		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
 	},
-	cave_spider = {
-		name = "mobs_mc:cave_spider",
-		nodes = mobs_mc.spawn_nodes.cave_spider,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 60,
-		chance = 20000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
-		max_height = mobs_mc.height.max,
-	},
 	dog = {
 		name = "mobs_mc:dog",
 		nodes = mobs_mc.spawn_nodes.dog,
@@ -864,17 +835,6 @@ mobs_mc.spawns = {
 		chance = 20000,
 		active_object_count = 1,
 		min_height = 0,
-		max_height = mobs_mc.height.max,
-	},
-	spider = {
-		name = "mobs_mc:spider",
-		nodes = mobs_mc.spawn_nodes.spider,
-		neighbors = {"air"},
-		max_light = 7,
-		interval = 60,
-		chance = 20000,
-		active_object_count = 1,
-		min_height = mobs_mc.height.min,
 		max_height = mobs_mc.height.max,
 	},
 	squid = {
