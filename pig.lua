@@ -138,7 +138,7 @@ mobs:register_mob("mobs_mc:pig", {
 			return
 
 		elseif not self.driver and clicker:get_wielded_item():get_name() ~= "" then
-			mobs:capture_mob(self, clicker, 0, 5, 60, false, nil)
+			if mobs:capture_mob(self, clicker, 50, 50, 90, false, nil) then return end
 		end
 	end,
 })

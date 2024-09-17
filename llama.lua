@@ -108,7 +108,7 @@ mobs:register_mob("mobs_mc:llama", {
 			end
 		end
 
-		if mobs:capture_mob(self, clicker, nil, nil, 100, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 50, 80, false, nil) then return end
 	end,
 })
 

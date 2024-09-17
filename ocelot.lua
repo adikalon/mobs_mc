@@ -51,7 +51,7 @@ mobs:register_mob("mobs_mc:ocelot", {
 	on_rightclick = function(self, clicker)
 		if mobs:feed_tame(self, clicker, 5, false, true) then return end
 		if mobs:protect(self, clicker) then return end
-		if mobs:capture_mob(self, clicker, 0, 50, 80, false, nil) then return end
+		if mobs:capture_mob(self, clicker, 0, 50, 90, false, nil) then return end
 	end,
 })
 
